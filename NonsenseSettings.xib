@@ -547,7 +547,7 @@ u7u8vb6/v8DBwsPDxMXGx8fIycrKy8zNzs7P0NHR0tPU1NXW19fY2drb29zd3t/f4OHi4uPk5ebm5+jp
 														<int key="NSPeriodicDelay">400</int>
 														<int key="NSPeriodicInterval">75</int>
 													</object>
-													<object class="NSButtonCell" id="259354391">
+													<object class="NSButtonCell" id="967352183">
 														<int key="NSCellFlags">67239424</int>
 														<int key="NSCellFlags2">0</int>
 														<string key="NSContents">Interjection</string>
@@ -876,6 +876,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{15, 125}, {172, 18}}</string>
 												<reference key="NSSuperview" ref="547886117"/>
+												<reference key="NSNextKeyView" ref="4576712"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="865095320">
 													<int key="NSCellFlags">-2080244224</int>
@@ -928,6 +929,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 																<int key="NSvFlags">2322</int>
 																<string key="NSFrameSize">{553, 14}</string>
 																<reference key="NSSuperview" ref="746631970"/>
+																<reference key="NSNextKeyView" ref="593856165"/>
 																<object class="NSTextContainer" key="NSTextContainer" id="191035739">
 																	<object class="NSLayoutManager" key="NSLayoutManager">
 																		<object class="NSTextStorage" key="NSTextStorage">
@@ -1021,6 +1023,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 														<int key="NSvFlags">256</int>
 														<string key="NSFrame">{{554, 1}, {15, 231}}</string>
 														<reference key="NSSuperview" ref="271185736"/>
+														<reference key="NSNextKeyView" ref="4576712"/>
 														<reference key="NSTarget" ref="271185736"/>
 														<string key="NSAction">_doScroller:</string>
 														<double key="NSCurValue">1</double>
@@ -1031,6 +1034,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 														<int key="NSvFlags">-2147483392</int>
 														<string key="NSFrame">{{-100, -100}, {87, 18}}</string>
 														<reference key="NSSuperview" ref="271185736"/>
+														<reference key="NSNextKeyView" ref="746631970"/>
 														<int key="NSsFlags">1</int>
 														<reference key="NSTarget" ref="271185736"/>
 														<string key="NSAction">_doScroller:</string>
@@ -1040,7 +1044,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 												</object>
 												<string key="NSFrame">{{-3, -3}, {570, 233}}</string>
 												<reference key="NSSuperview" ref="544900514"/>
-												<reference key="NSNextKeyView" ref="746631970"/>
+												<reference key="NSNextKeyView" ref="505098897"/>
 												<int key="NSsFlags">18</int>
 												<reference key="NSVScroller" ref="593856165"/>
 												<reference key="NSHScroller" ref="505098897"/>
@@ -1048,6 +1052,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 											</object>
 										</object>
 										<string key="NSFrame">{{10, 33}, {564, 233}}</string>
+										<reference key="NSNextKeyView" ref="271185736"/>
 									</object>
 									<string key="NSLabel">Credits</string>
 									<reference key="NSColor" ref="967087091"/>
@@ -1859,6 +1864,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="41040225"/>
 						</object>
 						<reference key="parent" ref="1006"/>
+						<string key="objectName">Okay button</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
@@ -1873,6 +1879,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="547211737"/>
 						</object>
 						<reference key="parent" ref="1006"/>
+						<string key="objectName">Cancel button</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">19</int>
@@ -2217,6 +2224,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="260538306"/>
 						</object>
 						<reference key="parent" ref="733918784"/>
+						<string key="objectName">Remove button</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">158</int>
@@ -2281,6 +2289,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="939853341"/>
 						</object>
 						<reference key="parent" ref="733918784"/>
+						<string key="objectName">Add button</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">156</int>
@@ -2300,7 +2309,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="209086773"/>
 							<reference ref="976647146"/>
 							<reference ref="392127593"/>
-							<reference ref="259354391"/>
+							<reference ref="967352183"/>
 						</object>
 						<reference key="parent" ref="733918784"/>
 					</object>
@@ -2352,6 +2361,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="430629744"/>
 						</object>
 						<reference key="parent" ref="547886117"/>
+						<string key="objectName">Number slider</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">265</int>
@@ -2366,6 +2376,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="609264367"/>
 						</object>
 						<reference key="parent" ref="547886117"/>
+						<string key="objectName">Number</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">276</int>
@@ -2398,6 +2409,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="159337990"/>
 						</object>
 						<reference key="parent" ref="547886117"/>
+						<string key="objectName">Duration slider</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">282</int>
@@ -2426,6 +2438,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="868063631"/>
 						</object>
 						<reference key="parent" ref="547886117"/>
+						<string key="objectName">Duration</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">287</int>
@@ -2488,6 +2501,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="865095320"/>
 						</object>
 						<reference key="parent" ref="547886117"/>
+						<string key="objectName">Color background</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">299</int>
@@ -2506,7 +2520,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">304</int>
-						<reference key="object" ref="259354391"/>
+						<reference key="object" ref="967352183"/>
 						<reference key="parent" ref="660834797"/>
 					</object>
 				</object>
