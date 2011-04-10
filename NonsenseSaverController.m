@@ -369,7 +369,6 @@ static NSString *NONSInterjections = @"Interjections";
 }
 
 
-
 -(void)removeVerbs:(NSArray *)verb
 {
 	for(NONSVerb *inArray in verb)
@@ -441,7 +440,6 @@ static NSString *NONSInterjections = @"Interjections";
 	[defaults setObject:massiveNouns forKey:NONSMassiveNounList];
 	[defaults synchronize];
 }
-
 
 +(void)initialize
 {
@@ -991,6 +989,7 @@ static NSString *NONSInterjections = @"Interjections";
 		[defaultVerbs addObject:[NONSVerb verbWithArray:[NSArray arrayWithObjects:@"wobbles",@"wobble",@"wobbled",@"wobbled",@"wobbling",nil]]];
 		[defaultValues setObject:[self prepareVerbsForSaving:defaultVerbs] forKey:NONSVerbList];
 	}
+	
 	{
 #pragma mark Adverbs
 		NSMutableArray *defaultAdverbs = [NSMutableArray array];
@@ -1031,6 +1030,7 @@ static NSString *NONSInterjections = @"Interjections";
 		[defaultAdverbs addObject:@"intelegently"];
 		[defaultValues setObject:defaultAdverbs forKey:NONSAdverbList];
 	}
+	
 	{
 #pragma mark Proper Nouns
 		NSMutableArray *defaultProperNouns = [NSMutableArray array];
@@ -1071,7 +1071,7 @@ static NSString *NONSInterjections = @"Interjections";
 		[defaultProperNouns addObject:@"Shayne"];
 		[defaultProperNouns addObject:@"Syd"];
 		[defaultProperNouns addObject:@"Tom"];
-		[defaultProperNouns addObject:@"Warren"];	
+		[defaultProperNouns addObject:@"Warren"];
 		[defaultValues setObject:defaultProperNouns forKey:NONSProperNounList];
 	}
 
@@ -1100,12 +1100,12 @@ static NSString *NONSInterjections = @"Interjections";
 		[defaultMassiveNouns addObject:@"spaghetti"];
 		[defaultMassiveNouns addObject:@"spinach"];
 		[defaultMassiveNouns addObject:@"underwear"];
-		[defaultMassiveNouns addObject:@"water"];	
+		[defaultMassiveNouns addObject:@"water"];
 		[defaultValues setObject:defaultMassiveNouns forKey:NONSMassiveNounList];
 	}
 	
-#pragma mark Interjections
 	{
+#pragma mark Interjections
 		NSMutableArray *defaultInterjections = [NSMutableArray array];
 		[defaultInterjections addObjectsFromArray:[NSArray arrayWithObjects:@"Ah", @"Alas", @"Dear me", @"Goodness", @"Eh", @"Er", @"Hello", @"Hey", @"Hi", @"Hmm", @"Oh", @"Ouch", @"Uh", @"Um", @"Umm", @"Well", @"Gosh", @"Jeez", @"Wow", @"Oh my", @"Crud", @"Jeepers", @"Darn", @"Yikes", nil]];
 
