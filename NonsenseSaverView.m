@@ -128,7 +128,7 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 			[NSApp beginSheet:wordWindow modalForWindow:configureSheet modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
 			break;
 		case 7:
-			[[fieldWord cell] setPlaceholderString:@"Hey,"];
+			[[fieldWord cell] setPlaceholderString:@"Hey"];
 			[wordToAdd setStringValue:@"Interjection"];
 			[NSApp beginSheet:wordWindow modalForWindow:configureSheet modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
 			break;
