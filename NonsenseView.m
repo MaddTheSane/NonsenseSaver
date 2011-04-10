@@ -7,14 +7,29 @@
 //
 
 #import "NonsenseView.h"
-
+#import "NonsenseSaverController.h"
+#import "NonsenseObject.h"
 
 @implementation NonsenseView
 
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code here.
+		srandom(time(NULL));
+		nonsenseController = [[NonsenseSaverController alloc] init];
+		nonsenses = [[NSMutableArray alloc] init];
+		
+		short i;
+		NSFont *theFont = [NSFont fontWithName:@"Helvetica" size:kPreviewSize];
+		
+		for(i = 0; i < [self nonNumber] ; i++ )
+		{
+			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[nonsenseController radomSaying] bounds:[self bounds] font:theFont];
+			[nonsenses addObject:non];
+			[non release];
+		}
+
+
     }
     return self;
 }

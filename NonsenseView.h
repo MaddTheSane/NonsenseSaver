@@ -7,10 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+@class NonsenseSaverController;
 
 @interface NonsenseView : NSView {
-
+	NonsenseSaverController *nonsenseController;
+	NSMutableArray *nonsenses;
 }
 
 @end
