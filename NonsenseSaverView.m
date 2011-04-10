@@ -124,6 +124,12 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 			[wordToAdd setStringValue:@"Proper Noun"];
 			[NSApp beginSheet:wordWindow modalForWindow:configureSheet modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
 			break;
+		case 7:
+			[[fieldWord cell] setPlaceholderString:@"Hey,"];
+			[wordToAdd setStringValue:@"Interjection"];
+			[NSApp beginSheet:wordWindow modalForWindow:configureSheet modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+			break;
+
 			
 		default:
 			break;
@@ -200,6 +206,11 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 			tempString = [tempArray objectAtIndex:row];
 			[controller removeProperNoun:tempString];
 			break;
+		case 7:
+			tempArray = [controller interjections];
+			tempString = [tempArray objectAtIndex:row];
+			[controller removeInterjection:tempString];
+			break;
 			
 		default:
 			NSBeep();
@@ -261,6 +272,9 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 		case 6:
 			return [[controller properNouns] count];
 			break;
+		case 7:
+			return [[controller interjections] count];
+			break;
 			
 		default:
 			return 0;
@@ -292,6 +306,9 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 		case 6:
 			return [[controller properNouns] objectAtIndex:rowIndex];
 			break;
+		case 7:
+			return [[controller interjections] objectAtIndex:rowIndex];
+			break;
 			
 		default:
 			return nil;
@@ -316,6 +333,8 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 		return 5;
 	} else if ([vocabSelector cellAtRow:6 column:0] == selectedCell) {
 		return 6;
+	} else if ([vocabSelector cellAtRow:7 column:0] == selectedCell) {
+		return 7;
 	} else {
 		return -1;
 	}
@@ -395,6 +414,10 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 		case 6:
 			[controller addProperNoun:[fieldWord stringValue]];
 			break;
+		case 7:
+			[controller addInterjection:[fieldWord stringValue]];
+			break;
+
 			
 		default:
 			break;

@@ -19,15 +19,19 @@
 	NSMutableArray *adverbs;
 	NSMutableArray *adjectives;
 	NSMutableArray *massiveNouns;
+	NSMutableArray *interjections;
 	NSArray *pronouns;
 	NSArray *conjugates;
 	NSArray *amounts;
 	NSArray *relAdjs;
+	NSArray *determiners;
+	NSArray *comparatives;
 }
 -(NONSVerb *)verb;
 -(NSString *)pluralNoun;
 -(NSString *)singularNoun;
 -(NSString *)properNoun;
+-(NSString *)noun;
 -(NSString *)adverb;
 -(NSString *)adjective;
 -(NSString *)massiveNoun;
@@ -35,6 +39,8 @@
 -(NSString *)conjugate;
 -(NSString *)amount;
 -(NSString *)relAdj;
+-(NSString *)determiner;
+-(NSString *)interjection;
 
 -(NSString *)radomSaying;
 
@@ -45,6 +51,7 @@
 -(NSArray *)adverbs;
 -(NSArray *)adjectives;
 -(NSArray *)massiveNouns;
+-(NSArray *)interjections;
 
 -(void)addVerb:(NONSVerb *)verb;
 -(void)addPluralNoun:(NSString *)pluralNoun;
@@ -53,6 +60,7 @@
 -(void)addAdverb:(NSString *)adverb;
 -(void)addAdjective:(NSString *)adjective;
 -(void)addMassiveNoun:(NSString *)massiveNoun;
+-(void)addInterjection:(NSString *)interj;
 
 -(void)removeVerb:(NONSVerb *)verb;
 -(void)removePluralNoun:(NSString *)pluralNoun;
@@ -61,6 +69,7 @@
 -(void)removeAdverb:(NSString *)adverb;
 -(void)removeAdjective:(NSString *)adjective;
 -(void)removeMassiveNoun:(NSString *)massiveNoun;
+-(void)removeInterjection:(NSString *)inter;
 
 -(void)removeVerbs:(NSArray *)verb;
 -(void)removePluralNouns:(NSArray *)pluralNoun;
@@ -69,6 +78,7 @@
 -(void)removeAdverbs:(NSArray *)adverb;
 -(void)removeAdjectives:(NSArray *)adjective;
 -(void)removeMassiveNouns:(NSArray *)massiveNoun;
+-(void)removeInterjections:(NSArray *)inters;
 
 
 -(void)saveSettings;

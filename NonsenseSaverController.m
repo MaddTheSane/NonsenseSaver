@@ -17,6 +17,7 @@ static NSString *NONSVerbList = @"Verbs";
 static NSString *NONSAdverbList = @"Adverb";
 static NSString *NONSProperNounList = @"Proper Nouns";
 static NSString *NONSMassiveNounList = @"Massive Nouns";
+static NSString *NONSInterjections = @"Interjections";
 
 @implementation NonsenseSaverController
 
@@ -60,6 +61,8 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		conjugates = [[NSArray alloc] initWithObjects:@"and", @"but", @"or", @"yet", @"so", @"because", nil];
 		amounts = [[NSArray alloc] initWithObjects:@"excruciatingly", @"extremely", @"marginally", @"possibly", @"quite", @"really", @"slightly", @"somewhat", @"totally", @"very", nil];
 		relAdjs = [[NSArray alloc] initWithObjects:@"however", @"nevertheless", @"therefore", @"and yet", nil];
+		determiners = [[NSArray alloc] initWithObjects:@"a", @"one", @"some", @"that", @"the", @"this", nil];
+		comparatives = [[NSArray alloc] initWithObjects:@"more", @"less", @"far more", @"far less", @"much more", @"much less", @"the same", nil];
 		
 		ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"Nonsense"];
 
@@ -76,6 +79,8 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		[properNouns addObjectsFromArray:[defaults objectForKey:NONSProperNounList]];
 		adverbs = [[NSMutableArray alloc] init];
 		[adverbs addObjectsFromArray:[defaults arrayForKey:NONSAdverbList]];
+		interjections = [[NSMutableArray alloc] init];
+		[interjections addObjectsFromArray:[defaults arrayForKey:NONSInterjections]];
 		adjectives = [[NSMutableArray alloc] init];
 		[adjectives addObjectsFromArray:[defaults arrayForKey:NONSAdjectiveList]];
 		massiveNouns = [[NSMutableArray alloc] init];
@@ -96,6 +101,9 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 	[conjugates release];
 	[amounts release];
 	[relAdjs release];
+	[determiners release];
+	[interjections release];
+	[comparatives release];
 	
 	[super dealloc];
 }
@@ -155,7 +163,28 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 {
 	return randObject(relAdjs);
 }
+
+-(NSString *)determiner
+{
+	return randObject(determiners);
+}
+
+-(NSString *)interjection
+{
+	return randObject(interjections);
+}
+
+-(NSString *)comparative
+{
+	return randObject(comparatives);
+}
+
 #undef randObject
+
+-(NSString *)noun
+{
+	return (random() %2) ? [self singularNoun] : [self properNoun] ;
+}
 
 -(NSArray *)verbs
 {
@@ -192,9 +221,14 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 	return [NSArray arrayWithArray:massiveNouns];
 }
 
+-(NSArray *)interjections
+{
+	return [NSArray arrayWithArray:interjections];	
+}
+
 -(NSString *)radomSaying
 {
-	unsigned casenum = (random() % 12);
+	unsigned casenum = (random() % 13);
 	NSString *nonsensestring;
 	switch(casenum)
 	{
@@ -234,6 +268,14 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		case 11:
 			nonsensestring = [NSString stringWithFormat:@"%@'s %@ hadn't %@.", [self properNoun], [self pluralNoun], [[self verb] verbThirdPersonPast] ] ;
 			break;
+		//case 13:
+		//	nonsensestring = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@.", [self interjection], [self determiner], [self adjective], [self noun], [self adverb], [self verb], [self preposition], [self determiner], [self adjective], [self noun]];
+			
+		//	break;
+			
+		case 12:
+			nonsensestring = [NSString stringWithFormat:@"%@, %@ %@ is %@ %@ than %@ %@ %@.", [self interjection], [self determiner], [self noun], [self comparative], [self adjective], [self determiner], [self adjective], [self noun]];
+
 			
 		default:
 			nonsensestring = [NSString stringWithFormat:@"The developer's brain farted %@, producing this error.", [self adverb]];
@@ -278,6 +320,12 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 {
 	[massiveNouns addObject:massiveNoun];
 }
+
+-(void)addInterjection:(NSString *)interj
+{
+	[interjections addObject:interj];
+}
+
 #pragma mark Removing words
 
 -(void)removeVerb:(NONSVerb *)verb
@@ -314,6 +362,12 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 {
 	[massiveNouns removeObject:massiveNoun];
 }
+
+-(void)removeInterjection:(NSString *)inter
+{
+	[interjections removeObject:inter];
+}
+
 
 
 -(void)removeVerbs:(NSArray *)verb
@@ -368,6 +422,11 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		[self removeMassiveNoun:inArray];
 }
 
+-(void)removeInterjections:(NSArray *)inters
+{
+	for (NSString *inArray in inters)
+		[self removeInterjection:inArray];
+}
 
 
 -(void)saveSettings
@@ -388,9 +447,9 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 {
 	NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
 	
-	NSMutableArray *defaultSingularNouns = [NSMutableArray array];
 	{
 #pragma mark Singular Nouns
+		NSMutableArray *defaultSingularNouns = [NSMutableArray array];
 		[defaultSingularNouns addObject:@"ape"];
 		[defaultSingularNouns addObject:@"apple"];
 		[defaultSingularNouns addObject:@"armpit"];
@@ -521,12 +580,12 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		[defaultSingularNouns addObject:@"woman"];
 		[defaultSingularNouns addObject:@"wombat"];
 		[defaultSingularNouns addObject:@"zombie"];
+		[defaultValues setObject:defaultSingularNouns forKey:NONSSingularNounList];
 	}
-	[defaultValues setObject:defaultSingularNouns forKey:NONSSingularNounList];
 	
-	NSMutableArray *defaultPluralNouns = [NSMutableArray array];
 	{
 #pragma mark Plural Nouns
+		NSMutableArray *defaultPluralNouns = [NSMutableArray array];
 		[defaultPluralNouns addObject:@"apes"];
 		[defaultPluralNouns addObject:@"apples"];
 		[defaultPluralNouns addObject:@"armpits"];
@@ -656,12 +715,12 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		[defaultPluralNouns addObject:@"women"];
 		[defaultPluralNouns addObject:@"wombats"];
 		[defaultPluralNouns addObject:@"zombies"];
+		[defaultValues setObject:defaultPluralNouns forKey:NONSPluralNounList];
 	}
-	[defaultValues setObject:defaultPluralNouns forKey:NONSPluralNounList];
 	
-	NSMutableArray *defaultAdjectives = [NSMutableArray array];
 	{
 #pragma mark Adjectives
+		NSMutableArray *defaultAdjectives = [NSMutableArray array];
 		[defaultAdjectives addObject:@"abashed"];
 		[defaultAdjectives addObject:@"absurd"];
 		[defaultAdjectives addObject:@"admirable"];
@@ -852,12 +911,12 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		[defaultAdjectives addObject:@"woeful"];
 		[defaultAdjectives addObject:@"woolly"];
 		[defaultAdjectives addObject:@"yearning"];
+		[defaultValues setObject:defaultAdjectives forKey:NONSAdjectiveList];
 	}
-	[defaultValues setObject:defaultAdjectives forKey:NONSAdjectiveList];
 
-	NSMutableArray *defaultVerbs = [NSMutableArray array];
 	{
 #pragma mark Verbs
+		NSMutableArray *defaultVerbs = [NSMutableArray array];
 		[defaultVerbs addObject:[NONSVerb verbWithArray:[NSArray arrayWithObjects:@"accepts",@"accept",@"accepted",@"accepted",@"accepting",nil]]];
 		[defaultVerbs addObject:[NONSVerb verbWithArray:[NSArray arrayWithObjects:@"writes",@"write",@"wrote",@"written",@"writing",nil]]];
 		[defaultVerbs addObject:[NONSVerb verbWithArray:[NSArray arrayWithObjects:@"farts",@"fart",@"farted",@"farted",@"farting", nil]]];
@@ -930,12 +989,11 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		[defaultVerbs addObject:[NONSVerb verbWithArray:[NSArray arrayWithObjects:@"tosses",@"toss",@"tossed",@"tossed",@"tossing",nil]]];
 		[defaultVerbs addObject:[NONSVerb verbWithArray:[NSArray arrayWithObjects:@"wants",@"want",@"wanted",@"wanted",@"wanting",nil]]];
 		[defaultVerbs addObject:[NONSVerb verbWithArray:[NSArray arrayWithObjects:@"wobbles",@"wobble",@"wobbled",@"wobbled",@"wobbling",nil]]];
+		[defaultValues setObject:[self prepareVerbsForSaving:defaultVerbs] forKey:NONSVerbList];
 	}
-	[defaultValues setObject:[self prepareVerbsForSaving:defaultVerbs] forKey:NONSVerbList];
-
-	NSMutableArray *defaultAdverbs = [NSMutableArray array];
 	{
 #pragma mark Adverbs
+		NSMutableArray *defaultAdverbs = [NSMutableArray array];
 		[defaultAdverbs addObject:@"accidentally"];
 		[defaultAdverbs addObject:@"automatically"];
 		[defaultAdverbs addObject:@"awfully"];
@@ -968,14 +1026,14 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		[defaultAdverbs addObject:@"sometimes"];
 		[defaultAdverbs addObject:@"stupidly"];
 		[defaultAdverbs addObject:@"typically"];
-		[defaultAdverbs addObject:@"vehemently"];		[defaultAdverbs addObject:@"voraciously"];
+		[defaultAdverbs addObject:@"vehemently"];
+		[defaultAdverbs addObject:@"voraciously"];
 		[defaultAdverbs addObject:@"intelegently"];
+		[defaultValues setObject:defaultAdverbs forKey:NONSAdverbList];
 	}
-	[defaultValues setObject:defaultAdverbs forKey:NONSAdverbList];
-
-	NSMutableArray *defaultProperNouns = [NSMutableArray array];
 	{
 #pragma mark Proper Nouns
+		NSMutableArray *defaultProperNouns = [NSMutableArray array];
 		[defaultProperNouns addObject:@"Al Gore"];
 		[defaultProperNouns addObject:@"Arnold Schwarzenegger"];
 		[defaultProperNouns addObject:@"Ben"];
@@ -1013,13 +1071,13 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		[defaultProperNouns addObject:@"Shayne"];
 		[defaultProperNouns addObject:@"Syd"];
 		[defaultProperNouns addObject:@"Tom"];
-		[defaultProperNouns addObject:@"Warren"];
+		[defaultProperNouns addObject:@"Warren"];	
+		[defaultValues setObject:defaultProperNouns forKey:NONSProperNounList];
 	}
-	[defaultValues setObject:defaultProperNouns forKey:NONSProperNounList];
 
-	NSMutableArray *defaultMassiveNouns = [NSMutableArray array];
 	{
 #pragma mark Massive Nouns
+		NSMutableArray *defaultMassiveNouns = [NSMutableArray array];
 		[defaultMassiveNouns addObject:@"déjà vu"];
 		[defaultMassiveNouns addObject:@"freedom"];
 		[defaultMassiveNouns addObject:@"grass"];
@@ -1042,9 +1100,17 @@ static NSString *NONSMassiveNounList = @"Massive Nouns";
 		[defaultMassiveNouns addObject:@"spaghetti"];
 		[defaultMassiveNouns addObject:@"spinach"];
 		[defaultMassiveNouns addObject:@"underwear"];
-		[defaultMassiveNouns addObject:@"water"];
+		[defaultMassiveNouns addObject:@"water"];	
+		[defaultValues setObject:defaultMassiveNouns forKey:NONSMassiveNounList];
 	}
-	[defaultValues setObject:defaultMassiveNouns forKey:NONSMassiveNounList];
+	
+#pragma mark Interjections
+	{
+		NSMutableArray *defaultInterjections = [NSMutableArray array];
+		[defaultInterjections addObjectsFromArray:[NSArray arrayWithObjects:@"Ah", @"Alas", @"Dear me", @"Goodness", @"Eh", @"Er", @"Hello", @"Hey", @"Hi", @"Hmm", @"Oh", @"Ouch", @"Uh", @"Um", @"Umm", @"Well", @"Gosh", @"Jeez", @"Wow", @"Oh my", @"Crud", @"Jeepers", @"Darn", @"Yikes", nil]];
+
+		[defaultValues setObject:defaultInterjections forKey:NONSInterjections];
+	}
 	
 	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"Nonsense"];
 	[defaults registerDefaults:defaultValues];
