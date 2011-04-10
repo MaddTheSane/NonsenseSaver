@@ -11,6 +11,7 @@
 @class NONSVerb;
 
 @interface NonsenseSaverController : NSObject {
+	@private
 	NSMutableArray *verbs;
 	NSMutableArray *pluralNouns;
 	NSMutableArray *singularNouns;
