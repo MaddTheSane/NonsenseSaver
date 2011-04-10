@@ -16,9 +16,6 @@ static NSString *NONSDuration = @"Nonsense Duration";
 static NSString *NONSBGColor =@"Show Background";
 static NSString *NONSDefaults = @"NonsenseSaver";
 
-#define kPreviewSize 15
-#define kFullSize 30
-
 @implementation NonsenseSaverView
 
 @synthesize nonNumber;

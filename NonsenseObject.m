@@ -28,7 +28,7 @@
 }
 
 -(id)initWithString:(NSString *)nonString bounds:(NSRect)bound {
-	return [self initWithString:nonString bounds:bound font:[NSFont fontWithName:@"Helvetica" size:30]];
+	return [self initWithString:nonString bounds:bound font:[NSFont fontWithName:@"Helvetica" size:kFullSize]];
 }
 
 -(id)initWithString:(NSString *)nonString bounds:(NSRect)bound font:(NSFont *)theFont {
