@@ -70,7 +70,6 @@ static NSString *NONSInterjections = @"Interjections";
 		//Now allocate the mutable arrays
 		verbs = [[NSMutableArray alloc] init];
 		[verbs addObjectsFromArray:[NonsenseSaverController getVerbsFromSaved:[defaults arrayForKey:NONSVerbList]]];
-		
 		pluralNouns = [[NSMutableArray alloc] init];
 		[pluralNouns addObjectsFromArray:[defaults arrayForKey:NONSPluralNounList]];
 		singularNouns = [[NSMutableArray alloc] init];
@@ -228,6 +227,7 @@ static NSString *NONSInterjections = @"Interjections";
 
 -(NSString *)radomSaying
 {
+	//FIXME: this is where it falls short. There needs to be a better way of generating nonsense than the one that I'm using right here.
 	unsigned casenum = (random() % 13);
 	NSString *nonsensestring;
 	switch(casenum)
