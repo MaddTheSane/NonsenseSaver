@@ -16,6 +16,9 @@ static NSString *NONSDuration = @"Nonsense Duration";
 static NSString *NONSBGColor =@"Show Background";
 static NSString *NONSDefaults = @"NonsenseSaver";
 
+#define kPreviewSize 15
+#define kFullSize 30
+
 @implementation NonsenseSaverView
 
 @synthesize nonNumber;
@@ -41,9 +44,9 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 		NSFont *theFont;
 		if (isPreview)
 		{
-			theFont = [NSFont fontWithName:@"Helvetica" size:12];
+			theFont = [NSFont fontWithName:@"Helvetica" size:kPreviewSize];
 		} else {
-			theFont = [NSFont fontWithName:@"Helvetica" size:30];
+			theFont = [NSFont fontWithName:@"Helvetica" size:kFullSize];
 		}
 		
 		for(i = 0; i < [self nonNumber] ; i++ )
@@ -68,9 +71,9 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 	[super drawRect:rect];
 	NSFont *theFont = nil;
 	if ([self isPreview]) {
-		theFont = [NSFont fontWithName:@"Helvetica" size:15];
+		theFont = [NSFont fontWithName:@"Helvetica" size:kPreviewSize];
 	} else {
-		theFont = [NSFont fontWithName:@"Helvetica" size:30];
+		theFont = [NSFont fontWithName:@"Helvetica" size:kFullSize];
 	}
 	for(NonsenseObject *obj in nonsenses) {
 		[obj drawWithBackground:[self showBackground]];
@@ -154,7 +157,7 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 	short i;
 	for(i = 0; i < [self nonNumber] ; i++ )
 	{
-		NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:[NSFont fontWithName:@"Helvetica" size:15]];
+		NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:[NSFont fontWithName:@"Helvetica" size:kPreviewSize]];
 		[nonsenses addObject:non];
 		[non release];
 	}
