@@ -12,12 +12,18 @@
 
 @implementation NonsenseView
 
+@synthesize nonNumber;
+@synthesize nonDuration;
+@synthesize showBackground;
+
+
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
 		srandom(time(NULL));
 		nonsenseController = [[NonsenseSaverController alloc] init];
 		nonsenses = [[NSMutableArray alloc] init];
+		refreshRate = [[NSTimer alloc] init];
 		
 		short i;
 		NSFont *theFont = [NSFont fontWithName:@"Helvetica" size:kPreviewSize];
@@ -29,13 +35,20 @@
 			[non release];
 		}
 
-
     }
     return self;
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-    // Drawing code here.
+	[super drawRect:dirtyRect];
+	NSFont *theFont = [NSFont fontWithName:@"Helvetica" size:kPreviewSize];
+	for(NonsenseObject *obj in nonsenses) {
+		[obj drawWithBackground:[self showBackground]];
+	}
+	[nonsenses removeObjectAtIndex:0];
+	NonsenseObject *non = [[NonsenseObject alloc] initWithString:[nonsenseController radomSaying] bounds:[self bounds] font:theFont];
+	[nonsenses addObject:non];
+	[non release];
 }
 
 @end

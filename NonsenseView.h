@@ -12,6 +12,14 @@
 @interface NonsenseView : NSView {
 	NonsenseSaverController *nonsenseController;
 	NSMutableArray *nonsenses;
+	NSInteger nonNumber;
+	CGFloat nonDuration;
+	BOOL showBackground;
+	NSTimer *refreshRate;
 }
+
+@property (readwrite) NSInteger nonNumber;
+@property (readwrite) CGFloat nonDuration;
+@property (readwrite) BOOL showBackground;
 
 @end
