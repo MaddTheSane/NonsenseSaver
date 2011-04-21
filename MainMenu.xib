@@ -2348,6 +2348,54 @@
 					</object>
 					<int key="connectionID">834</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: self.</string>
+						<reference key="source" ref="651518310"/>
+						<reference key="destination" ref="681451077"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="651518310"/>
+							<reference key="NSDestination" ref="681451077"/>
+							<string key="NSLabel">value: self.</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">self.</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">835</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: self.nonsenseView.nonNumber</string>
+						<reference key="source" ref="608384437"/>
+						<reference key="destination" ref="681451077"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="608384437"/>
+							<reference key="NSDestination" ref="681451077"/>
+							<string key="NSLabel">value: self.nonsenseView.nonNumber</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">self.nonsenseView.nonNumber</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">836</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: self.nonsenseView.nonNumber</string>
+						<reference key="source" ref="670530176"/>
+						<reference key="destination" ref="681451077"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="670530176"/>
+							<reference key="NSDestination" ref="681451077"/>
+							<string key="NSLabel">value: self.nonsenseView.nonNumber</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">self.nonsenseView.nonNumber</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">837</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -4068,7 +4116,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">834</int>
+			<int key="maxID">837</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
