@@ -11,10 +11,10 @@
 #import "NONSVerb.h"
 #import "NonsenseObject.h"
 
-static NSString *NONSAtATime = @"Number at a time";
-static NSString *NONSDuration = @"Nonsense Duration";
-static NSString *NONSBGColor =@"Show Background";
-static NSString *NONSDefaults = @"NonsenseSaver";
+static NSString *NONSAtATime =	@"Number at a time";
+static NSString *NONSDuration =	@"Nonsense Duration";
+static NSString *NONSBGColor =	@"Show Background";
+static NSString *NONSDefaults =	@"NonsenseSaver";
 
 @implementation NonsenseSaverView
 
@@ -56,6 +56,7 @@ static NSString *NONSDefaults = @"NonsenseSaver";
     return self;
 }
 
+#if 0
 - (void)startAnimation {
     [super startAnimation];
 }
@@ -63,6 +64,7 @@ static NSString *NONSDefaults = @"NonsenseSaver";
 - (void)stopAnimation {
     [super stopAnimation];
 }
+#endif
 
 - (void)drawRect:(NSRect)rect {
 	[super drawRect:rect];
