@@ -25,6 +25,9 @@
 		nonsenses = [[NSMutableArray alloc] init];
 		refreshRate = [[NSTimer alloc] init];
 		
+		self.nonNumber = 5;
+		self.showBackground = YES;
+		
 		short i;
 		NSFont *theFont = [NSFont fontWithName:@"Helvetica" size:kPreviewSize];
 		
