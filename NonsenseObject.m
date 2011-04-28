@@ -136,4 +136,8 @@
 	[nonsense drawInRect:[self textPosition] withAttributes:fontAttribs];
 }
 
+-(NSString *)description {
+	return [NSString stringWithString:nonsense];
+}
+
 @end
