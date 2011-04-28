@@ -275,7 +275,7 @@ static NSString *NONSInterjections = @"Interjections";
 			
 		case 12:
 			nonsensestring = [NSString stringWithFormat:@"%@, %@ %@ is %@ %@ than %@ %@ %@.", [self interjection], [self determiner], [self noun], [self comparative], [self adjective], [self determiner], [self adjective], [self noun]];
-
+			break;
 			
 		default:
 			nonsensestring = [NSString stringWithFormat:@"The developer's brain farted %@, producing this error.", [self adverb]];
