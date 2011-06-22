@@ -234,7 +234,7 @@ static NSString *NONSDefaults =	@"NonsenseSaver";
 {
     if (configureSheet == nil) {
 		[NSBundle loadNibNamed:@"NonsenseSettings" owner:self];
-		[credits readRTFDFromFile:[[NSBundle bundleForClass:[NonsenseSaverView class]] pathForResource:@"Credits" ofType:@"rtf"]];
+		[credits readRTFDFromFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"Credits" ofType:@"rtf"]];
 	}
 	return configureSheet;
 }
