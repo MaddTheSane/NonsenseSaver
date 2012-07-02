@@ -8,7 +8,9 @@
 
 #import "NonsenseSaverController.h"
 #import "NONSVerb.h"
+#if !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 #import <ScreenSaver/ScreenSaverDefaults.h>
+#endif
 
 static NSString *NONSSingularNounList = @"Singular Nouns";
 static NSString *NONSPluralNounList = @"Plural Nouns";
@@ -63,9 +65,11 @@ static NSString *NONSInterjections = @"Interjections";
 		relAdjs = [[NSArray alloc] initWithObjects:@"however", @"nevertheless", @"therefore", @"and yet", nil];
 		determiners = [[NSArray alloc] initWithObjects:@"a", @"one", @"some", @"that", @"the", @"this", nil];
 		comparatives = [[NSArray alloc] initWithObjects:@"more", @"less", @"far more", @"far less", @"much more", @"much less", @"the same", nil];
-		
+#if !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 		ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"Nonsense"];
-
+#else
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];	
+#endif
 		
 		//Now allocate the mutable arrays
 		verbs = [[NSMutableArray alloc] init];
@@ -430,7 +434,11 @@ static NSString *NONSInterjections = @"Interjections";
 
 -(void)saveSettings
 {
+#if !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"Nonsense"];
+#else
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+#endif
 	[defaults setObject:[NonsenseSaverController prepareVerbsForSaving:verbs] forKey:NONSVerbList];
 	[defaults setObject:pluralNouns forKey:NONSPluralNounList];
 	[defaults setObject:singularNouns forKey:NONSSingularNounList];
@@ -1111,8 +1119,11 @@ static NSString *NONSInterjections = @"Interjections";
 
 		[defaultValues setObject:defaultInterjections forKey:NONSInterjections];
 	}
-	
+#if !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"Nonsense"];
+#else
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+#endif
 	[defaults registerDefaults:defaultValues];
 }
 
