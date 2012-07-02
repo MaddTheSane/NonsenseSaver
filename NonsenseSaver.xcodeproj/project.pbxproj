@@ -40,6 +40,10 @@
 		55C3967A15A20FCB005DBC66 /* NGViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C3967815A20FCB005DBC66 /* NGViewController_iPad.xib */; };
 		55C3967E15A20FED005DBC66 /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
 		55C3967F15A21094005DBC66 /* NonsenseSaverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE8E121C76370068419E /* NonsenseSaverController.m */; };
+		55D5441915A23BFD00498F62 /* NonsenseGenerator-ipadx2.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D5441815A23BFD00498F62 /* NonsenseGenerator-ipadx2.png */; };
+		55D5441B15A23C2A00498F62 /* NonsenseGenerator-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D5441A15A23C2A00498F62 /* NonsenseGenerator-ipad.png */; };
+		55D5441D15A23C9C00498F62 /* NonsenseGenerator-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D5441C15A23C9C00498F62 /* NonsenseGenerator-iphone.png */; };
+		55D5441F15A23C9E00498F62 /* NonsenseGenerator-iphonex2.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D5441E15A23C9E00498F62 /* NonsenseGenerator-iphonex2.png */; };
 		8D255AC70486D3F9007BF209 /* NonsenseSaver_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* NonsenseSaver_Prefix.pch */; };
 		8D255AC80486D3F9007BF209 /* NonsenseSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* NonsenseSaverView.h */; };
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
@@ -101,6 +105,10 @@
 		55C3967315A20FCB005DBC66 /* NGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGViewController.m; sourceTree = "<group>"; };
 		55C3967615A20FCB005DBC66 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NGViewController_iPhone.xib; sourceTree = "<group>"; };
 		55C3967915A20FCB005DBC66 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NGViewController_iPad.xib; sourceTree = "<group>"; };
+		55D5441815A23BFD00498F62 /* NonsenseGenerator-ipadx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NonsenseGenerator-ipadx2.png"; path = "../NonsenseGenerator-ipadx2.png"; sourceTree = "<group>"; };
+		55D5441A15A23C2A00498F62 /* NonsenseGenerator-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NonsenseGenerator-ipad.png"; path = "../NonsenseGenerator-ipad.png"; sourceTree = "<group>"; };
+		55D5441C15A23C9C00498F62 /* NonsenseGenerator-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NonsenseGenerator-iphone.png"; path = "../NonsenseGenerator-iphone.png"; sourceTree = "<group>"; };
+		55D5441E15A23C9E00498F62 /* NonsenseGenerator-iphonex2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NonsenseGenerator-iphonex2.png"; path = "../NonsenseGenerator-iphonex2.png"; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* NonsenseSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonsenseSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50079790118B23001CA0E54 /* NonsenseSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverView.h; sourceTree = "<group>"; };
@@ -278,6 +286,10 @@
 		55C3966715A20FCB005DBC66 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				55D5441E15A23C9E00498F62 /* NonsenseGenerator-iphonex2.png */,
+				55D5441C15A23C9C00498F62 /* NonsenseGenerator-iphone.png */,
+				55D5441A15A23C2A00498F62 /* NonsenseGenerator-ipad.png */,
+				55D5441815A23BFD00498F62 /* NonsenseGenerator-ipadx2.png */,
 				55C3966815A20FCB005DBC66 /* Nonsense Generator-Info.plist */,
 				55C3966915A20FCB005DBC66 /* InfoPlist.strings */,
 				55C3966C15A20FCB005DBC66 /* main.m */,
@@ -418,6 +430,10 @@
 				55C3966B15A20FCB005DBC66 /* InfoPlist.strings in Resources */,
 				55C3967715A20FCB005DBC66 /* NGViewController_iPhone.xib in Resources */,
 				55C3967A15A20FCB005DBC66 /* NGViewController_iPad.xib in Resources */,
+				55D5441915A23BFD00498F62 /* NonsenseGenerator-ipadx2.png in Resources */,
+				55D5441B15A23C2A00498F62 /* NonsenseGenerator-ipad.png in Resources */,
+				55D5441D15A23C9C00498F62 /* NonsenseGenerator-iphone.png in Resources */,
+				55D5441F15A23C9E00498F62 /* NonsenseGenerator-iphonex2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +756,7 @@
 				55C3967C15A20FCB005DBC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF7AD72D08BB986600CE4634 /* Build configuration list for PBXNativeTarget "NonsenseSaver" */ = {
 			isa = XCConfigurationList;

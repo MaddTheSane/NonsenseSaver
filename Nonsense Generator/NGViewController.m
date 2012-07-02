@@ -55,9 +55,9 @@
 	static int maxCount = 0;
 	if (maxCount == 0) {
 		if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-			maxCount = 5;
+			maxCount = 9;
 		else {
-			maxCount = 16;
+			maxCount = 23;
 		}
 	}
 	
