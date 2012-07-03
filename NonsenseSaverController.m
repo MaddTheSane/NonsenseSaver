@@ -237,7 +237,7 @@ static NSString *NONSInterjections = @"Interjections";
 	switch(casenum)
 	{
 		case 2:
-			nonsensestring = [NSString stringWithFormat:@"The %@, while %@, %@.", [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast], [self adverb]];
+			nonsensestring = [NSString stringWithFormat:@"The %@, while %@, %@.", [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast]];
 			break;
 		case 0:
 			nonsensestring = [NSString stringWithFormat:@"The %@ %@, while %@, %@ %@.", [self adjective], [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast], [self adverb]];
