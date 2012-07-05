@@ -8,7 +8,6 @@
 
 #import "NGViewController.h"
 #import "NonsenseSaverController.h"
-#import "NGNonsenseCell.h"
 
 @interface NGViewController ()
 

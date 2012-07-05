@@ -23,6 +23,11 @@
 	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>NonsenseGenerator-iphone.png</string>
+		<string>NonsenseGenerator-ipad.png</string>
+	</array>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
