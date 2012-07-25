@@ -30,6 +30,7 @@
 - (void)viewDidUnload
 {
 	[self setNonsenseList:nil];
+	
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -110,5 +111,9 @@
 	return rowHeight;
 }
 
+- (IBAction)showSettings:(id)sender
+{
+	
+}
 								 
 @end

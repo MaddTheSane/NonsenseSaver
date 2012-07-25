@@ -15,5 +15,6 @@
 @property (retain, nonatomic) NSMutableArray *nonsenses;
 @property (readonly, nonatomic) NonsenseSaverController *controller;
 - (IBAction)GenerateNonsense:(id)sender;
+- (IBAction)showSettings:(id)sender;
 
 @end
