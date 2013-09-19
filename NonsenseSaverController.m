@@ -402,60 +402,42 @@ NSString * const NONSDefaults = @"NonsenseSaver";
 
 -(void)removeVerbs:(NSArray *)verb
 {
-	for(NONSVerb *inArray in verb)
-	{
-		[self removeVerb:inArray];
-	}
+	[verbs removeObjectsInArray:verb];
 }
 
 -(void)removePluralNouns:(NSArray *)pluralNoun
 {
-	for(NSString *inArray in pluralNoun)
-	{
-		[self removePluralNoun:inArray];
-	}	
+	[pluralNouns removeObjectsInArray:pluralNoun];
 }
 
 -(void)removeSingularNouns:(NSArray *)singularNoun
 {
-	for (NSString *inArray in singularNoun)
-	{
-		[self removeSingularNoun:inArray];
-	}
+	[singularNouns removeObjectsInArray:singularNoun];
 }
 
 -(void)removeProperNouns:(NSArray *)properNoun
 {
-	for (NSString *inArray in properNoun)
-	{
-		[self removeProperNoun:inArray];
-	}
+	[properNouns removeObjectsInArray:properNoun];
 }
 
 -(void)removeAdverbs:(NSArray *)adverb
 {
-	for (NSString *inArray in adverb)
-	{
-		[self removeAdverb:inArray];
-	}
+	[adverbs removeObjectsInArray:adverb];
 }
 
 -(void)removeAdjectives:(NSArray *)adjective
 {
-	for (NSString *inArray in adjective)
-		[self removeAdjective:inArray];
+	[adjectives removeObjectsInArray:adjective];
 }
 
 -(void)removeMassiveNouns:(NSArray *)massiveNoun
 {
-	for (NSString *inArray in massiveNoun)
-		[self removeMassiveNoun:inArray];
+	[massiveNouns removeObjectsInArray:massiveNoun];
 }
 
 -(void)removeInterjections:(NSArray *)inters
 {
-	for (NSString *inArray in inters)
-		[self removeInterjection:inArray];
+	[interjections removeObjectsInArray:inters];
 }
 
 -(void)saveSettings

@@ -7,15 +7,9 @@
 //
 
 #import <ScreenSaver/ScreenSaver.h>
-@class NonsenseSaverController;
 
 @interface NonsenseSaverView : ScreenSaverView <NSTableViewDataSource>
 {
-	NonsenseSaverController *controller;
-	NSMutableArray *nonsenses;
-	NSInteger nonNumber;
-	CGFloat nonDuration;
-	BOOL showBackground;
 	IBOutlet NSWindow *configureSheet;
     IBOutlet NSMatrix *vocabSelector;
 	IBOutlet NSTableView *vocabList;

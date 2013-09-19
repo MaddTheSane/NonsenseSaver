@@ -11,13 +11,9 @@
 #define kPreviewSize 15
 #define kFullSize 30
 
-@interface NonsenseObject : NSObject {
-	NSString *nonsense;
-	NSRect placement;
-	NSColor *bgColor;
-	NSColor *fgColor;
-	NSDictionary *fontAttribs;
-}
+@interface NonsenseObject : NSObject
+@property (readonly, copy) NSString *nonsense;
+
 -(id)initWithString:(NSString *)nonString bounds:(NSRect)bound;
 -(id)initWithString:(NSString *)nonString bounds:(NSRect)bound font:(NSFont *)theFont;
 

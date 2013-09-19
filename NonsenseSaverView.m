@@ -15,18 +15,24 @@
 #define NONSDuration @"Nonsense Duration"
 #define NONSBGColor @"Show Background"
 
+@interface NonsenseSaverView ()
+@property (retain) NSMutableArray *nonsenses;
+@property (retain) NonsenseSaverController *controller;
+@end
+
 @implementation NonsenseSaverView
 
 @synthesize nonNumber;
 @synthesize nonDuration;
 @synthesize showBackground;
+@synthesize controller;
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
 		srandom(0xFFFFFFFF & time(NULL));
-		controller = [[NonsenseSaverController alloc] init];
-		nonsenses = [[NSMutableArray alloc] init];
+		self.controller = [[[NonsenseSaverController alloc] init] autorelease];
+		self.nonsenses = [NSMutableArray array];
 		
 		//Set the Defaults
 		ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:NONSDefaults];
@@ -48,11 +54,19 @@
 		for(i = 0; i < [self nonNumber] ; i++ )
 		{
 			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:theFont];
-			[nonsenses addObject:non];
+			[_nonsenses addObject:non];
 			[non release];
 		}
     }
     return self;
+}
+
+- (void)dealloc
+{
+	self.nonsenses = nil;
+	self.controller = nil;
+	
+	[super dealloc];
 }
 
 #if 0
@@ -73,18 +87,17 @@
 	} else {
 		theFont = [NSFont fontWithName:@"Helvetica" size:kFullSize];
 	}
-	for(NonsenseObject *obj in nonsenses) {
+	for(NonsenseObject *obj in _nonsenses) {
 		[obj drawWithBackground:[self showBackground]];
 	}
-	[nonsenses removeObjectAtIndex:0];
+	[_nonsenses removeObjectAtIndex:0];
 	NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:theFont];
-	[nonsenses addObject:non];
+	[_nonsenses addObject:non];
 	[non release];
 }
 
 - (void)animateOneFrame {
     [self setNeedsDisplay:YES];
-	return;
 }
 
 #pragma mark -
@@ -150,13 +163,13 @@
 	[defaults setObject:[self showBackground] ? @YES : @NO forKey:NONSBGColor];
 	[defaults synchronize];
 	[self setAnimationTimeInterval:nonDuration];
-	[nonsenses removeAllObjects];
 	
+	[_nonsenses removeAllObjects];
 	short i;
 	for(i = 0; i < [self nonNumber] ; i++ )
 	{
 		NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:[NSFont fontWithName:@"Helvetica" size:kPreviewSize]];
-		[nonsenses addObject:non];
+		[_nonsenses addObject:non];
 		[non release];
 	}
 	
@@ -371,7 +384,7 @@
 		[self clearVerbWindow];
 		[verbWindow orderOut:sender];		
 	} else {
-		NSAlert *noVerb = [NSAlert alertWithMessageText:@"Incomplete Verb" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"The verb doesn't have all members filled. Please fill them out."];
+		NSAlert *noVerb = [NSAlert alertWithMessageText:@"Incomplete Verb" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@"The verb doesn't have all members filled. Please fill them out."];
 		[noVerb beginSheetModalForWindow:verbWindow modalDelegate:nil didEndSelector:nil contextInfo:nil];
 	}
 }
@@ -388,7 +401,7 @@
 
 - (IBAction)addWord:(id)sender {
 	if ([[fieldWord stringValue] isEqualToString:@""]) {
-		NSAlert *noVerb = [NSAlert alertWithMessageText:@"No Word" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please enter a word."];
+		NSAlert *noVerb = [NSAlert alertWithMessageText:@"No Word" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please enter a word."];
 		[noVerb beginSheetModalForWindow:wordWindow modalDelegate:nil didEndSelector:nil contextInfo:nil];
 		return;
 	}
@@ -396,26 +409,31 @@
 		case 0:
 			[controller addSingularNoun:[fieldWord stringValue]];
 			break;
+			
 		case 1:
 			[controller addPluralNoun:[fieldWord stringValue]];
 			break;
+			
 		case 2:
 			[controller addAdjective:[fieldWord stringValue]];
 			break;
+			
 		case 4:
 			[controller addAdverb:[fieldWord stringValue]];
 			break;
+			
 		case 5:
 			[controller addMassiveNoun:[fieldWord stringValue]];
 			break;
+			
 		case 6:
 			[controller addProperNoun:[fieldWord stringValue]];
 			break;
+			
 		case 7:
 			[controller addInterjection:[fieldWord stringValue]];
 			break;
 
-			
 		default:
 			break;
 	};

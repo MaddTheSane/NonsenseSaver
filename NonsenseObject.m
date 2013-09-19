@@ -11,7 +11,20 @@
 
 #define kNonsenseBorder (8)
 
+@interface NonsenseObject ()
+@property (retain) NSColor *bgColor;
+@property (retain) NSColor *fgColor;
+@property (readwrite, copy) NSString *nonsense;
+@property (retain) NSDictionary *fontAttribs;
+@property NSRect placement;
+@end
+
 @implementation NonsenseObject
+@synthesize bgColor;
+@synthesize fgColor;
+@synthesize nonsense;
+@synthesize placement;
+@synthesize fontAttribs;
 
 -(NSRect)textPosition {
 	NSRect returnRect = placement;
@@ -36,50 +49,48 @@
 	if (self) {
 		switch (random() % 9) {
 			case 0:
-				bgColor = [NSColor redColor];
-				fgColor = [NSColor yellowColor];
+				self.bgColor = [NSColor redColor];
+				self.fgColor = [NSColor yellowColor];
 				break;
 			case 1:
-				bgColor = [NSColor greenColor];
-				fgColor = [NSColor orangeColor];
+				self.bgColor = [NSColor greenColor];
+				self.fgColor = [NSColor orangeColor];
 				break;
 			case 2:
-				bgColor = [NSColor blueColor];
-				fgColor = [NSColor magentaColor];
+				self.bgColor = [NSColor blueColor];
+				self.fgColor = [NSColor magentaColor];
 				break;
 			case 3:
-				bgColor = [NSColor cyanColor];
-				fgColor = [NSColor orangeColor];
+				self.bgColor = [NSColor cyanColor];
+				self.fgColor = [NSColor orangeColor];
 				break;
 			case 4:
-				bgColor = [NSColor yellowColor];
-				fgColor = [NSColor redColor];
+				self.bgColor = [NSColor yellowColor];
+				self.fgColor = [NSColor redColor];
 				break;
 			case 5:
-				bgColor = [NSColor magentaColor];
-				fgColor = [NSColor blueColor];
+				self.bgColor = [NSColor magentaColor];
+				self.fgColor = [NSColor blueColor];
 				break;
 			case 6:
-				bgColor = [NSColor orangeColor];
-				fgColor = [NSColor blueColor];
+				self.bgColor = [NSColor orangeColor];
+				self.fgColor = [NSColor blueColor];
 				break;
 			case 7:
-				bgColor = [NSColor purpleColor];
-				fgColor = [NSColor orangeColor];
+				self.bgColor = [NSColor purpleColor];
+				self.fgColor = [NSColor orangeColor];
 				break;
 			case 8:
-				bgColor = [NSColor brownColor];
-				fgColor = [NSColor purpleColor];
+				self.bgColor = [NSColor brownColor];
+				self.fgColor = [NSColor purpleColor];
 				break;
 				
 			default:
-				bgColor = [NSColor whiteColor];
-				fgColor = [NSColor blackColor];
+				self.bgColor = [NSColor whiteColor];
+				self.fgColor = [NSColor blackColor];
 				break;
 		}
-		[bgColor retain];
-		[fgColor retain];
-		nonsense = [nonString copy];
+		self.nonsense = nonString;
 		NSMutableDictionary *mutAttrib = [[NSMutableDictionary alloc] init];
 		mutAttrib[NSForegroundColorAttributeName] = fgColor;
 		mutAttrib[NSFontAttributeName] = theFont;
@@ -89,7 +100,7 @@
 		[style release];
 		style = nil;
 		
-		fontAttribs = [[NSDictionary alloc] initWithDictionary:mutAttrib];
+		self.fontAttribs = [NSDictionary dictionaryWithDictionary:mutAttrib];
 		[mutAttrib release];
 		mutAttrib = nil;
 		
@@ -118,10 +129,10 @@
 }
 
 -(void)dealloc {
-	[nonsense release];
-	[bgColor release];
-	[fgColor release];
-	[fontAttribs release];
+	self.nonsense = nil;
+	self.bgColor = nil;
+	self.fgColor = nil;
+	self.fontAttribs = nil;
 	
 	[super dealloc];
 }
@@ -132,14 +143,14 @@
 
 -(void)drawWithBackground:(BOOL)bgDraw {
 	if (bgDraw) {
-		[bgColor set];
+		[self.bgColor set];
 		[NSBezierPath fillRect:placement];
 	}
 	[nonsense drawInRect:[self textPosition] withAttributes:fontAttribs];
 }
 
 -(NSString *)description {
-	return [NSString stringWithString:nonsense];
+	return nonsense;
 }
 
 @end
