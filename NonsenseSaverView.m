@@ -11,10 +11,9 @@
 #import "NONSVerb.h"
 #import "NonsenseObject.h"
 
-static NSString *NONSAtATime =	@"Number at a time";
-static NSString *NONSDuration =	@"Nonsense Duration";
-static NSString *NONSBGColor =	@"Show Background";
-static NSString *NONSDefaults =	@"NonsenseSaver";
+#define NONSAtATime @"Number at a time"
+#define NONSDuration @"Nonsense Duration"
+#define NONSBGColor @"Show Background"
 
 @implementation NonsenseSaverView
 
@@ -175,42 +174,42 @@ static NSString *NONSDefaults =	@"NonsenseSaver";
 	switch ([self vocabSelectorSelected]) {
 		case 0:
 			tempArray = [controller singularNouns];
-			tempString = [tempArray objectAtIndex:row];
+			tempString = tempArray[row];
 			[controller removeSingularNoun:tempString];
 			break;
 		case 1:
 			tempArray = [controller pluralNouns];
-			tempString = [tempArray objectAtIndex:row];
+			tempString = tempArray[row];
 			[controller removePluralNoun:tempString];			
 			break;
 		case 2:
 			tempArray = [controller adjectives];
-			tempString = [tempArray objectAtIndex:row];
+			tempString = tempArray[row];
 			[controller removeAdjective:tempString];
 			break;
 		case 3:
 			tempArray = [controller verbs];
-			NONSVerb *tempVerb = [tempArray objectAtIndex:row];
+			NONSVerb *tempVerb = tempArray[row];
 			[controller removeVerb:tempVerb];
 			break;
 		case 4:
 			tempArray = [controller adverbs];
-			tempString = [tempArray objectAtIndex:row];
+			tempString = tempArray[row];
 			[controller removeAdverb:tempString];
 			break;
 		case 5:
 			tempArray = [controller massiveNouns];
-			tempString = [tempArray objectAtIndex:row];
+			tempString = tempArray[row];
 			[controller removeMassiveNoun:tempString];
 			break;
 		case 6:
 			tempArray = [controller properNouns];
-			tempString = [tempArray objectAtIndex:row];
+			tempString = tempArray[row];
 			[controller removeProperNoun:tempString];
 			break;
 		case 7:
 			tempArray = [controller interjections];
-			tempString = [tempArray objectAtIndex:row];
+			tempString = tempArray[row];
 			[controller removeInterjection:tempString];
 			break;
 			
@@ -241,11 +240,7 @@ static NSString *NONSDefaults =	@"NonsenseSaver";
 
 +(void)initialize {
 	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:NONSDefaults];
-	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-	[dict setObject:[NSNumber numberWithInt:3] forKey:NONSAtATime];
-	[dict setObject:[NSNumber numberWithFloat:2.7] forKey:NONSDuration];
-	[dict setObject:[NSNumber numberWithBool:YES] forKey:NONSBGColor];
-	[defaults registerDefaults:dict];
+	[defaults registerDefaults:@{NONSAtATime: @3, NONSDuration: @2.7, NONSBGColor: @YES}];
 }
 
 #pragma mark Table View delegate methods
@@ -288,28 +283,28 @@ static NSString *NONSDefaults =	@"NonsenseSaver";
 {
 	switch ([self vocabSelectorSelected]) {
 		case 0:
-			return [[controller singularNouns] objectAtIndex:rowIndex];
+			return [controller singularNouns][rowIndex];
 			break;
 		case 1:
-			return [[controller pluralNouns] objectAtIndex:rowIndex];
+			return [controller pluralNouns][rowIndex];
 			break;
 		case 2:
-			return [[controller adjectives] objectAtIndex:rowIndex];
+			return [controller adjectives][rowIndex];
 			break;
 		case 3:
-			return [[controller verbs] objectAtIndex:rowIndex];
+			return [controller verbs][rowIndex];
 			break;
 		case 4:
-			return [[controller adverbs] objectAtIndex:rowIndex];
+			return [controller adverbs][rowIndex];
 			break;
 		case 5:
-			return [[controller massiveNouns] objectAtIndex:rowIndex];
+			return [controller massiveNouns][rowIndex];
 			break;
 		case 6:
-			return [[controller properNouns] objectAtIndex:rowIndex];
+			return [controller properNouns][rowIndex];
 			break;
 		case 7:
-			return [[controller interjections] objectAtIndex:rowIndex];
+			return [controller interjections][rowIndex];
 			break;
 			
 		default:
@@ -435,6 +430,5 @@ static NSString *NONSDefaults =	@"NonsenseSaver";
 	[self clearWordWindow];
 	[wordWindow orderOut:sender];	
 }
-
 
 @end

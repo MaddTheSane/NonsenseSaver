@@ -9,11 +9,11 @@
 #import "NONSVerb.h"
 #import "ARCBridge.h"
 
-NSString *ThirdPersonSinglePresent = @"ThirdPersonSinglePresent";
-NSString *ThirdPersonPluralPresent = @"ThirdPersonPluralPresent";
-NSString *ThirdPersonPast = @"ThirdPersonPast";
-NSString *ThirdPersonPastPerfect = @"ThirdPersonPastPerfect";
-NSString *ThirdPersonPresentCont = @"ThirdPersonPresentCont";
+NSString * const ThirdPersonSinglePresent = @"ThirdPersonSinglePresent";
+NSString * const ThirdPersonPluralPresent = @"ThirdPersonPluralPresent";
+NSString * const ThirdPersonPast = @"ThirdPersonPast";
+NSString * const ThirdPersonPastPerfect = @"ThirdPersonPastPerfect";
+NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 
 @implementation NONSVerb
 -(id)initWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont
@@ -38,7 +38,7 @@ NSString *ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 	} else if ([array count] > 5) {
 		NSLog(@"Array %@ too big! Ignoring other values.", array);
 	}
-	return [self initWithSinglePresent:[array objectAtIndex:0] pluralPresent:[array objectAtIndex:1] past:[array objectAtIndex:2] pastPerfect:[array objectAtIndex:3] presentCont:[array objectAtIndex:4]];
+	return [self initWithSinglePresent:array[0] pluralPresent:array[1] past:array[2] pastPerfect:array[3] presentCont:array[4]];
 }
 
 +(NONSVerb*)verbWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont

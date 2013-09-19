@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const NONSDefaults;
+
 @class NONSVerb;
 
 @interface NonsenseSaverController : NSObject {
@@ -80,8 +82,6 @@
 -(void)removeMassiveNouns:(NSArray *)massiveNoun;
 -(void)removeInterjections:(NSArray *)inters;
 
-
 -(void)saveSettings;
-
 
 @end

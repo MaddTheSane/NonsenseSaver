@@ -77,7 +77,7 @@
 {
 	NSString *NonsenseIdenfifier = @"NonsenseIdentifier";
 	UITableViewCell *returnType = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NonsenseIdenfifier];
-	returnType.textLabel.text = [nonsenses objectAtIndex:[indexPath row]];
+	returnType.textLabel.text = nonsenses[[indexPath row]];
 	returnType.textLabel.font = [UIFont systemFontOfSize:17];
 	returnType.textLabel.numberOfLines = 0;
 	return returnType;
@@ -92,7 +92,7 @@
 
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-	NSString* labelText = [nonsenses objectAtIndex:[indexPath row]];//[self labelTextForIndexPath:indexPath];
+	NSString* labelText = nonsenses[[indexPath row]];//[self labelTextForIndexPath:indexPath];
 	
 	CGSize textSize = [labelText sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:CGSizeMake([nonsenseList bounds].size.width, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
 

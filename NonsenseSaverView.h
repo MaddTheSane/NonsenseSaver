@@ -9,7 +9,7 @@
 #import <ScreenSaver/ScreenSaver.h>
 @class NonsenseSaverController;
 
-@interface NonsenseSaverView : ScreenSaverView 
+@interface NonsenseSaverView : ScreenSaverView <NSTableViewDataSource>
 {
 	NonsenseSaverController *controller;
 	NSMutableArray *nonsenses;
@@ -41,8 +41,6 @@
 - (IBAction)okayNonsense:(id)sender;
 - (IBAction)removeNonsense:(id)sender;
 - (IBAction)changeVocabView:(id)sender;
-- (NSInteger)numberOfRowsInTableView:(NSTableView*)aTableView;
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aColumn row:(NSInteger)rowIndex;
 
 - (IBAction)addVerb:(id)sender;
 - (IBAction)cancelAddVerb:(id)sender;

@@ -81,15 +81,17 @@
 		[fgColor retain];
 		nonsense = [nonString copy];
 		NSMutableDictionary *mutAttrib = [[NSMutableDictionary alloc] init];
-		[mutAttrib setObject:fgColor forKey:NSForegroundColorAttributeName];
-		[mutAttrib setObject:theFont forKey:NSFontAttributeName];
-		NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init] ;
+		mutAttrib[NSForegroundColorAttributeName] = fgColor;
+		mutAttrib[NSFontAttributeName] = theFont;
+		NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
 		[style setAlignment:NSCenterTextAlignment];
-		[mutAttrib setObject:style forKey:NSParagraphStyleAttributeName];
+		mutAttrib[NSParagraphStyleAttributeName] = style;
 		[style release];
+		style = nil;
 		
 		fontAttribs = [[NSDictionary alloc] initWithDictionary:mutAttrib];
 		[mutAttrib release];
+		mutAttrib = nil;
 		
 		NSSize strSize = [nonsense sizeWithAttributes:fontAttribs];
 		if (strSize.width > bound.size.width) {
