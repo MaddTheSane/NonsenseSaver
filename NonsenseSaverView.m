@@ -25,7 +25,7 @@ static NSString *NONSDefaults =	@"NonsenseSaver";
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
-		srandom(time(NULL));
+		srandom(0xFFFFFFFF & time(NULL));
 		controller = [[NonsenseSaverController alloc] init];
 		nonsenses = [[NSMutableArray alloc] init];
 		
@@ -146,9 +146,9 @@ static NSString *NONSDefaults =	@"NonsenseSaver";
 - (IBAction)okayNonsense:(id)sender {
 	[controller saveSettings];
 	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:NONSDefaults];
-	[defaults setObject:[NSNumber numberWithInt:[self nonNumber]] forKey:NONSAtATime];
-	[defaults setObject:[NSNumber numberWithFloat:[self nonDuration]] forKey:NONSDuration];
-	[defaults setObject:[NSNumber numberWithBool:[self showBackground]] forKey:NONSBGColor];
+	[defaults setObject:@([self nonNumber]) forKey:NONSAtATime];
+	[defaults setObject:@([self nonDuration]) forKey:NONSDuration];
+	[defaults setObject:[self showBackground] ? @YES : @NO forKey:NONSBGColor];
 	[defaults synchronize];
 	[self setAnimationTimeInterval:nonDuration];
 	[nonsenses removeAllObjects];

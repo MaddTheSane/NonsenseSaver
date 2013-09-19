@@ -11,6 +11,7 @@
 		5520BE5C121C6C9E0068419E /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
 		5520BE8F121C76370068419E /* NonsenseSaverController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5520BE8D121C76370068419E /* NonsenseSaverController.h */; };
 		5520BE90121C76370068419E /* NonsenseSaverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE8E121C76370068419E /* NonsenseSaverController.m */; };
+		553626B317EB757000D3A3C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553626B217EB757000D3A3C8 /* Images.xcassets */; };
 		553CAF24123F2F7B008EA480 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		553CAF25123F2F7B008EA480 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 		553CAF26123F2F88008EA480 /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
@@ -43,10 +44,6 @@
 		55C3967A15A20FCB005DBC66 /* NGViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C3967815A20FCB005DBC66 /* NGViewController_iPad.xib */; };
 		55C3967E15A20FED005DBC66 /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
 		55C3967F15A21094005DBC66 /* NonsenseSaverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE8E121C76370068419E /* NonsenseSaverController.m */; };
-		55D5441915A23BFD00498F62 /* NonsenseGenerator-ipadx2.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D5441815A23BFD00498F62 /* NonsenseGenerator-ipadx2.png */; };
-		55D5441B15A23C2A00498F62 /* NonsenseGenerator-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D5441A15A23C2A00498F62 /* NonsenseGenerator-ipad.png */; };
-		55D5441D15A23C9C00498F62 /* NonsenseGenerator-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D5441C15A23C9C00498F62 /* NonsenseGenerator-iphone.png */; };
-		55D5441F15A23C9E00498F62 /* NonsenseGenerator-iphonex2.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D5441E15A23C9E00498F62 /* NonsenseGenerator-iphonex2.png */; };
 		8D255AC70486D3F9007BF209 /* NonsenseSaver_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* NonsenseSaver_Prefix.pch */; };
 		8D255AC80486D3F9007BF209 /* NonsenseSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* NonsenseSaverView.h */; };
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
@@ -79,6 +76,8 @@
 		5520BE5A121C6C9E0068419E /* NONSVerb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NONSVerb.m; sourceTree = "<group>"; };
 		5520BE8D121C76370068419E /* NonsenseSaverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverController.h; sourceTree = "<group>"; };
 		5520BE8E121C76370068419E /* NonsenseSaverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseSaverController.m; sourceTree = "<group>"; };
+		553626B217EB757000D3A3C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		553626B617EB770B00D3A3C8 /* ARCBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARCBridge.h; path = "Nonsense Generator/ARCBridge.h"; sourceTree = "<group>"; };
 		553CAF1A123F2F5B008EA480 /* NONSVisualTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NONSVisualTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NONSVisualTester-Info.plist"; sourceTree = "<group>"; };
 		553CAF20123F2F6B008EA480 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -112,10 +111,6 @@
 		55C3967315A20FCB005DBC66 /* NGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGViewController.m; sourceTree = "<group>"; };
 		55C3967615A20FCB005DBC66 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NGViewController_iPhone.xib; sourceTree = "<group>"; };
 		55C3967915A20FCB005DBC66 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NGViewController_iPad.xib; sourceTree = "<group>"; };
-		55D5441815A23BFD00498F62 /* NonsenseGenerator-ipadx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NonsenseGenerator-ipadx2.png"; path = "../NonsenseGenerator-ipadx2.png"; sourceTree = "<group>"; };
-		55D5441A15A23C2A00498F62 /* NonsenseGenerator-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NonsenseGenerator-ipad.png"; path = "../NonsenseGenerator-ipad.png"; sourceTree = "<group>"; };
-		55D5441C15A23C9C00498F62 /* NonsenseGenerator-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NonsenseGenerator-iphone.png"; path = "../NonsenseGenerator-iphone.png"; sourceTree = "<group>"; };
-		55D5441E15A23C9E00498F62 /* NonsenseGenerator-iphonex2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NonsenseGenerator-iphonex2.png"; path = "../NonsenseGenerator-iphonex2.png"; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* NonsenseSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonsenseSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50079790118B23001CA0E54 /* NonsenseSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverView.h; sourceTree = "<group>"; };
@@ -203,6 +198,7 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				553626B617EB770B00D3A3C8 /* ARCBridge.h */,
 				F50079790118B23001CA0E54 /* NonsenseSaverView.h */,
 				F500797A0118B23001CA0E54 /* NonsenseSaverView.m */,
 				5520BE59121C6C9E0068419E /* NONSVerb.h */,
@@ -289,6 +285,7 @@
 				55A0EA7215B1165000EBF0E8 /* NGSettingsViewController.m */,
 				55A0EA7315B1165000EBF0E8 /* NGSettingsViewController_iphone.xib */,
 				55A0EA7615B116BC00EBF0E8 /* NGSettingsViewController_ipad.xib */,
+				553626B217EB757000D3A3C8 /* Images.xcassets */,
 				55C3966715A20FCB005DBC66 /* Supporting Files */,
 			);
 			path = "Nonsense Generator";
@@ -297,10 +294,6 @@
 		55C3966715A20FCB005DBC66 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				55D5441E15A23C9E00498F62 /* NonsenseGenerator-iphonex2.png */,
-				55D5441C15A23C9C00498F62 /* NonsenseGenerator-iphone.png */,
-				55D5441A15A23C2A00498F62 /* NonsenseGenerator-ipad.png */,
-				55D5441815A23BFD00498F62 /* NonsenseGenerator-ipadx2.png */,
 				55C3966815A20FCB005DBC66 /* Nonsense Generator-Info.plist */,
 				55C3966915A20FCB005DBC66 /* InfoPlist.strings */,
 				55C3966C15A20FCB005DBC66 /* main.m */,
@@ -403,7 +396,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = EF7AD73108BB986600CE4634 /* Build configuration list for PBXProject "NonsenseSaver" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -442,12 +435,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C3966B15A20FCB005DBC66 /* InfoPlist.strings in Resources */,
+				553626B317EB757000D3A3C8 /* Images.xcassets in Resources */,
 				55C3967715A20FCB005DBC66 /* NGViewController_iPhone.xib in Resources */,
 				55C3967A15A20FCB005DBC66 /* NGViewController_iPad.xib in Resources */,
-				55D5441915A23BFD00498F62 /* NonsenseGenerator-ipadx2.png in Resources */,
-				55D5441B15A23C2A00498F62 /* NonsenseGenerator-ipad.png in Resources */,
-				55D5441D15A23C9C00498F62 /* NonsenseGenerator-iphone.png in Resources */,
-				55D5441F15A23C9E00498F62 /* NonsenseGenerator-iphonex2.png in Resources */,
 				55A0EA7515B1165000EBF0E8 /* NGSettingsViewController_iphone.xib in Resources */,
 				55A0EA7715B116BC00EBF0E8 /* NGSettingsViewController_ipad.xib in Resources */,
 			);
@@ -554,15 +544,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
 				INFOPLIST_FILE = "NONSVisualTester-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = NONSVisualTester;
 			};
 			name = Debug;
@@ -571,15 +560,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
 				INFOPLIST_FILE = "NONSVisualTester-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = NONSVisualTester;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -588,14 +576,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				GCC_DEBUGGING_SYMBOLS = full;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = NonsenseTester;
 			};
 			name = Debug;
@@ -606,12 +591,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_NAME = NonsenseTester;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -619,14 +602,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nonsense Generator/Nonsense Generator-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -637,8 +621,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "\"${SRCROOT}\"/Classes";
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=arm64]" = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_CFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -650,21 +636,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nonsense Generator/Nonsense Generator-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "\"${SRCROOT}\"/Classes";
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=arm64]" = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -676,9 +667,9 @@
 		EF7AD72E08BB986600CE4634 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
@@ -686,15 +677,14 @@
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				PRODUCT_NAME = NonsenseSaver;
 				WRAPPER_EXTENSION = saver;
-				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
 		EF7AD72F08BB986600CE4634 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
@@ -708,14 +698,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -724,10 +724,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				SDKROOT = macosx;

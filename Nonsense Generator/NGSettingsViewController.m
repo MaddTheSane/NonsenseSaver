@@ -47,8 +47,4 @@
 	}
 }
 
-- (void)dealloc {
-	[settingsBar release];
-	[super dealloc];
-}
 @end

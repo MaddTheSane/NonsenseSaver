@@ -21,7 +21,24 @@ static NSString *NONSProperNounList = @"Proper Nouns";
 static NSString *NONSMassiveNounList = @"Massive Nouns";
 static NSString *NONSInterjections = @"Interjections";
 
+@interface NonsenseSaverController()
+@property (retain) NSArray *pronouns;
+@property (retain) NSArray *conjugates;
+@property (retain) NSArray *amounts;
+@property (retain) NSArray *relAdjs;
+@property (retain) NSArray *determiners;
+@property (retain) NSArray *comparatives;
+
+@end
+
 @implementation NonsenseSaverController
+
+@synthesize pronouns;
+@synthesize conjugates;
+@synthesize amounts;
+@synthesize comparatives;
+@synthesize determiners;
+@synthesize relAdjs;
 
 +(NSDictionary *)prepareVerbForSaving:(NONSVerb *)toSave {
 	NSMutableDictionary *verb = [NSMutableDictionary dictionaryWithCapacity:5];
@@ -59,12 +76,12 @@ static NSString *NONSInterjections = @"Interjections";
 	self = [super init];
 	if (self) {
 		//we use arrays for objects that won't change, and mutable arrays for those that do
-		pronouns = [[NSArray alloc] initWithObjects:@"him", @"her", @"it", @"them", nil];
-		conjugates = [[NSArray alloc] initWithObjects:@"and", @"but", @"or", @"yet", @"so", @"because", nil];
-		amounts = [[NSArray alloc] initWithObjects:@"excruciatingly", @"extremely", @"marginally", @"possibly", @"quite", @"really", @"slightly", @"somewhat", @"totally", @"very", nil];
-		relAdjs = [[NSArray alloc] initWithObjects:@"however", @"nevertheless", @"therefore", @"and yet", nil];
-		determiners = [[NSArray alloc] initWithObjects:@"a", @"one", @"some", @"that", @"the", @"this", nil];
-		comparatives = [[NSArray alloc] initWithObjects:@"more", @"less", @"far more", @"far less", @"much more", @"much less", @"the same", nil];
+		self.pronouns = @[@"him", @"her", @"it", @"them"];
+		self.conjugates = @[@"and", @"but", @"or", @"yet", @"so", @"because"];
+		self.amounts = @[@"excruciatingly", @"extremely", @"marginally", @"possibly", @"quite", @"really", @"slightly", @"somewhat", @"totally", @"very"];
+		self.relAdjs = @[@"however", @"nevertheless", @"therefore", @"and yet"];
+		self.determiners = @[@"a", @"one", @"some", @"that", @"the", @"this"];
+		self.comparatives = @[@"more", @"less", @"far more", @"far less", @"much more", @"much less", @"the same"];
 #if !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 		ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"Nonsense"];
 #else
@@ -92,7 +109,7 @@ static NSString *NONSInterjections = @"Interjections";
 	}
 	return self;
 }
-
+#if !__has_feature(objc_arc)
 -(void)dealloc
 {
 	[verbs release];
@@ -110,6 +127,7 @@ static NSString *NONSInterjections = @"Interjections";
 	
 	[super dealloc];
 }
+#endif
 
 #define randObject(x) [x objectAtIndex:(random() % [x count])]
 -(NONSVerb *)verb
@@ -186,7 +204,7 @@ static NSString *NONSInterjections = @"Interjections";
 
 -(NSString *)noun
 {
-	return (random() %2) ? [self singularNoun] : [self properNoun] ;
+	return (random() %2) ? [self singularNoun] : [self properNoun];
 }
 
 -(NSArray *)verbs

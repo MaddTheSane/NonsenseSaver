@@ -8,26 +8,17 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIcons</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>NonsenseGenerator-ipadx2.png</string>
-				<string>NonsenseGenerator-ipad.png</string>
-				<string>NonsenseGenerator-iphone.png</string>
-				<string>NonsenseGenerator-iphonex2.png</string>
-			</array>
-		</dict>
-	</dict>
-	<key>CFBundleIdentifier</key>
-	<string>com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>NonsenseGenerator-iphone.png</string>
 		<string>NonsenseGenerator-ipad.png</string>
 	</array>
+	<key>CFBundleIcons</key>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
+	<key>CFBundleIdentifier</key>
+	<string>com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

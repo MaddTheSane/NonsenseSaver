@@ -7,6 +7,7 @@
 //
 
 #import "NONSVerb.h"
+#import "ARCBridge.h"
 
 NSString *ThirdPersonSinglePresent = @"ThirdPersonSinglePresent";
 NSString *ThirdPersonPluralPresent = @"ThirdPersonPluralPresent";
@@ -19,11 +20,11 @@ NSString *ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 {
 	self = [super init];
 	if (self) {
-		verbThirdPersonSinglePresent = [singlePresent copy];
-		verbThirdPersonPluralPresent = [pluralPresent copy];
-		verbThirdPersonPast = [past copy];
-		verbThirdPersonPastPerfect = [pastPerfect copy];
-		verbThirdPersonPresentCont = [presentCont copy];
+		self.verbThirdPersonSinglePresent = singlePresent;
+		self.verbThirdPersonPluralPresent = pluralPresent;
+		self.verbThirdPersonPast = past;
+		self.verbThirdPersonPastPerfect = pastPerfect;
+		self.verbThirdPersonPresentCont = presentCont;
 	}
 	return self;
 }
@@ -32,7 +33,7 @@ NSString *ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 {
 	if ([array count] < 5) {
 		NSLog(@"Array %@ too small! Not initializing!", array);
-		[self autorelease];
+		AUTORELEASEOBJNORETURN(self);
 		return nil;
 	} else if ([array count] > 5) {
 		NSLog(@"Array %@ too big! Ignoring other values.", array);
@@ -43,7 +44,7 @@ NSString *ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 +(NONSVerb*)verbWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont
 {
 	NONSVerb *verb = [[NONSVerb alloc] initWithSinglePresent:singlePresent pluralPresent:pluralPresent past:past pastPerfect:pastPerfect presentCont:presentCont];
-	return [verb autorelease];
+	return AUTORELEASEOBJ(verb);
 }
 
 +(NONSVerb*)verbWithArray:(NSArray*)array
@@ -52,19 +53,21 @@ NSString *ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 	if (!verb) {
 		return nil;
 	}
-	return [verb autorelease];
+	return AUTORELEASEOBJ(verb);
 }
 
+#if !__has_feature(objc_arc)
 -(void)dealloc
 {
-	[verbThirdPersonSinglePresent release];
-	[verbThirdPersonPluralPresent release];
-	[verbThirdPersonPast release];
-	[verbThirdPersonPastPerfect release];
-	[verbThirdPersonPresentCont release];
+	self.verbThirdPersonSinglePresent = nil;
+	self.verbThirdPersonPluralPresent = nil;
+	self.verbThirdPersonPast = nil;
+	self.verbThirdPersonPastPerfect = nil;
+	self.verbThirdPersonPresentCont = nil;
 
 	[super dealloc];
 }
+#endif
 
 -(NSString *)description
 {

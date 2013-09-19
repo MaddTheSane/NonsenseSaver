@@ -11,8 +11,8 @@
 @class NonsenseSaverController;
 
 @interface NGViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property (retain, nonatomic) IBOutlet UITableView *nonsenseList;
-@property (retain, nonatomic) NSMutableArray *nonsenses;
+@property (strong, nonatomic) IBOutlet UITableView *nonsenseList;
+@property (strong, nonatomic) NSMutableArray *nonsenses;
 @property (readonly, nonatomic) NonsenseSaverController *controller;
 - (IBAction)GenerateNonsense:(id)sender;
 - (IBAction)showSettings:(id)sender;
