@@ -39,20 +39,26 @@
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="17">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                         </buttonCell>
                         <connections>
-                            <action selector="okayNonsense:" target="-2" id="167"/>
+                            <action selector="closeNonsense:" target="-2" id="KBU-FI-yae"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="18" userLabel="Cancel button">
-                        <rect key="frame" x="392" y="12" width="96" height="32"/>
+                    <button verticalHuggingPriority="750" tag="1" id="18" userLabel="Cancel button">
+                        <rect key="frame" x="404" y="13" width="96" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="19">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
                         </buttonCell>
                         <connections>
-                            <action selector="cancelNonsense:" target="-2" id="169"/>
+                            <action selector="closeNonsense:" target="-2" id="wb8-aU-83o"/>
                         </connections>
                     </button>
                     <tabView id="259">
@@ -454,7 +460,7 @@
                             <outlet property="nextKeyView" destination="194" id="213"/>
                         </connections>
                     </textField>
-                    <button verticalHuggingPriority="750" id="204">
+                    <button verticalHuggingPriority="750" tag="1" id="204">
                         <rect key="frame" x="192" y="12" width="96" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="205">
@@ -474,6 +480,9 @@ Gw
                         <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="207">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                         </buttonCell>
                         <connections>
                             <action selector="addVerb:" target="-2" id="230"/>
@@ -518,12 +527,15 @@ Gw
                         <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="249">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                         </buttonCell>
                         <connections>
                             <action selector="addWord:" target="-2" id="252"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="250">
+                    <button verticalHuggingPriority="750" tag="1" id="250">
                         <rect key="frame" x="102" y="12" width="96" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="251">

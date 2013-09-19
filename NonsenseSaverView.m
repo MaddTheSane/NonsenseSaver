@@ -27,7 +27,8 @@
 @synthesize showBackground;
 @synthesize controller;
 
-- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
+- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
+{
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
 		srandom(0xFFFFFFFF & time(NULL));
@@ -79,7 +80,8 @@
 }
 #endif
 
-- (void)drawRect:(NSRect)rect {
+- (void)drawRect:(NSRect)rect
+{
 	[super drawRect:rect];
 	NSFont *theFont = nil;
 	if ([self isPreview]) {
@@ -96,14 +98,16 @@
 	[non release];
 }
 
-- (void)animateOneFrame {
+- (void)animateOneFrame
+{
     [self setNeedsDisplay:YES];
 }
 
 #pragma mark -
 #pragma mark Configure Sheet functions
 
-- (IBAction)addNonsense:(id)sender {
+- (IBAction)addNonsense:(id)sender
+{
 	switch ([self vocabSelectorSelected]) {
 		case 0:
 			[[fieldWord cell] setPlaceholderString:@"cat"];
@@ -151,32 +155,36 @@
 	[vocabList reloadData];
 }
 
-- (IBAction)cancelNonsense:(id)sender {
-    [NSApp endSheet:configureSheet];
-}
-
-- (IBAction)okayNonsense:(id)sender {
-	[controller saveSettings];
+- (IBAction)closeNonsense:(id)sender
+{
 	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:NONSDefaults];
-	[defaults setObject:@([self nonNumber]) forKey:NONSAtATime];
-	[defaults setObject:@([self nonDuration]) forKey:NONSDuration];
-	[defaults setObject:@([self showBackground]) forKey:NONSBGColor];
-	[defaults synchronize];
-	[self setAnimationTimeInterval:nonDuration];
-	
-	[_nonsenses removeAllObjects];
-	short i;
-	for(i = 0; i < [self nonNumber] ; i++ )
-	{
-		NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:[NSFont fontWithName:@"Helvetica" size:kPreviewSize]];
-		[_nonsenses addObject:non];
-		[non release];
+	if ([sender tag] != 1) {
+		[controller saveSettings];
+		[defaults setInteger:self.nonNumber forKey:NONSAtATime];
+		[defaults setDouble:self.nonDuration forKey:NONSDuration];
+		[defaults setBool:self.showBackground forKey:NONSBGColor];
+		[defaults synchronize];
+		[self setAnimationTimeInterval:nonDuration];
+		
+		[_nonsenses removeAllObjects];
+		short i;
+		for(i = 0; i < [self nonNumber] ; i++ )
+		{
+			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:[NSFont fontWithName:@"Helvetica" size:kPreviewSize]];
+			[_nonsenses addObject:non];
+			[non release];
+		}
+	} else {
+		[controller loadSettings];
+		self.nonNumber = [defaults integerForKey:NONSAtATime];
+		self.nonDuration = [defaults doubleForKey:NONSDuration];
+		self.showBackground = [defaults boolForKey:NONSBGColor];
 	}
-	
 	[NSApp endSheet:configureSheet];
 }
 
-- (IBAction)removeNonsense:(id)sender {
+- (IBAction)removeNonsense:(id)sender
+{
     NSInteger row = [vocabList selectedRow];
 	if (row == -1) {
 		NSBeep();
@@ -233,7 +241,8 @@
 	[vocabList reloadData];
 }
 
-- (IBAction)changeVocabView:(id)sender {
+- (IBAction)changeVocabView:(id)sender
+{
 	[vocabList reloadData];
 }
 
@@ -251,7 +260,8 @@
 	return configureSheet;
 }
 
-+(void)initialize {
++(void)initialize
+{
 	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:NONSDefaults];
 	[defaults registerDefaults:@{NONSAtATime: @3, NONSDuration: @2.7, NONSBGColor: @YES}];
 }
@@ -352,7 +362,8 @@
 
 #pragma mark Adding Windows
 
-- (void)clearVerbWindow {
+- (void)clearVerbWindow
+{
 	[fieldThirdPersonSinglePresent setStringValue:@""];
 	[fieldThirdPersonPluralPresent setStringValue:@""];
 	[fieldThirdPersonPast setStringValue:@""];
@@ -360,7 +371,8 @@
 	[fieldThirdPersonPresentCont setStringValue:@""];
 }
 
-- (IBAction)addVerb:(id)sender {
+- (IBAction)addVerb:(id)sender
+{
 	short i = 0;
 	if (![[fieldThirdPersonSinglePresent stringValue] isEqualToString:@""]) {
 		i++;
@@ -389,17 +401,20 @@
 	}
 }
 
-- (IBAction)cancelAddVerb:(id)sender {
+- (IBAction)cancelAddVerb:(id)sender
+{
 	[NSApp endSheet:verbWindow];
 	[self clearVerbWindow];
 	[verbWindow orderOut:sender];
 }
 
-- (void)clearWordWindow {
+- (void)clearWordWindow
+{
 	[fieldWord setStringValue:@""];
 }
 
-- (IBAction)addWord:(id)sender {
+- (IBAction)addWord:(id)sender
+{
 	if ([[fieldWord stringValue] isEqualToString:@""]) {
 		NSAlert *noVerb = [NSAlert alertWithMessageText:@"No Word" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please enter a word."];
 		[noVerb beginSheetModalForWindow:wordWindow modalDelegate:nil didEndSelector:nil contextInfo:nil];
@@ -443,7 +458,8 @@
 	[wordWindow orderOut:sender];
 }
 
-- (IBAction)cancelAddWord:(id)sender {
+- (IBAction)cancelAddWord:(id)sender
+{
 	[NSApp endSheet:wordWindow];
 	[self clearWordWindow];
 	[wordWindow orderOut:sender];	

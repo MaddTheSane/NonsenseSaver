@@ -82,6 +82,7 @@ extern NSString * const NONSDefaults;
 -(void)removeMassiveNouns:(NSArray *)massiveNoun;
 -(void)removeInterjections:(NSArray *)inters;
 
+- (void)loadSettings;
 -(void)saveSettings;
 
 @end

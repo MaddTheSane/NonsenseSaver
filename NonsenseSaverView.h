@@ -30,9 +30,9 @@
 @property (readwrite) double nonDuration;
 @property (readwrite) BOOL showBackground;
 
+- (IBAction)closeNonsense:(id)sender;
+
 - (IBAction)addNonsense:(id)sender;
-- (IBAction)cancelNonsense:(id)sender;
-- (IBAction)okayNonsense:(id)sender;
 - (IBAction)removeNonsense:(id)sender;
 - (IBAction)changeVocabView:(id)sender;
 
