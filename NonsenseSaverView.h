@@ -27,7 +27,7 @@
 }
 
 @property (readwrite) NSInteger nonNumber;
-@property (readwrite) CGFloat nonDuration;
+@property (readwrite) double nonDuration;
 @property (readwrite) BOOL showBackground;
 
 - (IBAction)addNonsense:(id)sender;

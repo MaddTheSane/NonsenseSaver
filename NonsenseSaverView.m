@@ -36,9 +36,9 @@
 		
 		//Set the Defaults
 		ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:NONSDefaults];
-		[self setNonNumber:[defaults integerForKey:NONSAtATime]];
-		[self setNonDuration:[defaults floatForKey:NONSDuration]];
-		[self setShowBackground:[defaults boolForKey:NONSBGColor]];
+		self.nonNumber = [defaults integerForKey:NONSAtATime];
+		self.nonDuration = [defaults doubleForKey:NONSDuration];
+		self.showBackground = [defaults boolForKey:NONSBGColor];
 		[self setAnimationTimeInterval:[self nonDuration]];
 		
 		//Create Nonsense
@@ -160,7 +160,7 @@
 	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:NONSDefaults];
 	[defaults setObject:@([self nonNumber]) forKey:NONSAtATime];
 	[defaults setObject:@([self nonDuration]) forKey:NONSDuration];
-	[defaults setObject:[self showBackground] ? @YES : @NO forKey:NONSBGColor];
+	[defaults setObject:@([self showBackground]) forKey:NONSBGColor];
 	[defaults synchronize];
 	[self setAnimationTimeInterval:nonDuration];
 	
