@@ -36,7 +36,7 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25">
-                    <rect key="frame" x="218" y="430" width="82" height="30"/>
+                    <rect key="frame" x="228" y="430" width="72" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <state key="normal" title="Settings…">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +55,6 @@
                 <constraint firstAttribute="bottom" secondItem="9" secondAttribute="bottom" constant="20" symbolic="YES" id="lYO-jJ-ZfM"/>
                 <constraint firstItem="9" firstAttribute="baseline" secondItem="25" secondAttribute="baseline" id="mEi-tM-Yu3"/>
                 <constraint firstAttribute="trailing" secondItem="10" secondAttribute="trailing" id="wVw-z1-LaK"/>
-                <constraint firstItem="25" firstAttribute="width" secondItem="9" secondAttribute="width" id="z90-l0-ITW"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
