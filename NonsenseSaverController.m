@@ -12,7 +12,7 @@
 #import <ScreenSaver/ScreenSaverDefaults.h>
 #endif
 
-NSString * const NONSDefaults = @"NonsenseSaver";
+NSString * const NONSDefaults = @"com.github.maddthesane.NonsenseSaver";
 #define NONSSingularNounList @"Singular Nouns"
 #define NONSPluralNounList @"Plural Nouns"
 #define NONSAdjectiveList @"Adjectives"
@@ -29,11 +29,9 @@ NSString * const NONSDefaults = @"NonsenseSaver";
 @property (retain) NSArray *relAdjs;
 @property (retain) NSArray *determiners;
 @property (retain) NSArray *comparatives;
-
 @end
 
 @implementation NonsenseSaverController
-
 @synthesize pronouns;
 @synthesize conjugates;
 @synthesize amounts;
@@ -498,9 +496,10 @@ NSString * const NONSDefaults = @"NonsenseSaver";
 																  @"politician", @"polygon", @"potato", @"pretzel", @"primate", @"program", @"puzzle",
 																  @"queen", @"rabbit", @"rectangle", @"river", @"robot", @"sandwich", @"shoe", @"sign",
 																  @"sprinkler", @"stereo", @"soufflé", @"straightjacket", @"swami", @"sword", @"teenager",
-																  @"thought", @"tomato", @"tooth", @"telephone", @"telescope", @"television", @"tennis ball",
-																  @"toe", @"toilet", @"tricycle", @"tummy", @"twit", @"viola", @"warthog", @"water pistol",
-																  @"wench", @"werewolf", @"wife", @"wimp", @"woman", @"wombat", @"zombie"],
+																  @"thought", @"tomato", @"tooth", @"telephone", @"telescope", @"television",
+																  @"tennis ball", @"toe", @"toilet", @"tricycle", @"tummy", @"twit", @"viola", @"warthog",
+																  @"water pistol", @"wench", @"werewolf", @"wife", @"wimp", @"woman", @"wombat",
+																  @"zombie"],
 										 NONSPluralNounList : @[@"apes", @"apples", @"armpits", @"astronomers", @"baboons", @"badges", @"balloons",
 																@"bananas", @"barns", @"basketballs", @"bathtubs", @"beds", @"bellybuttons", @"bicycles",
 																@"books", @"bottles", @"boys", @"brains", @"bugs", @"cars", @"carnivals", @"cats",
@@ -515,36 +514,40 @@ NSString * const NONSDefaults = @"NonsenseSaver";
 																@"oysters", @"parrots", @"peanuts", @"pecan pies", @"pelicans", @"penguins", @"persimmons",
 																@"phasers", @"pictures", @"pixels", @"pizzas", @"politicians", @"polygons", @"potatoes",
 																@"pretzels", @"primates", @"programs", @"puzzles", @"queens", @"rabbits", @"rectangles",
-																@"rivers", @"robots", @"sandwiches", @"shoes", @"signs", @"sprinklers", @"stereos", @"soufflés",
-																@"straightjackets", @"swamis", @"swords", @"teenagers", @"thoughts", @"tomatoes", @"teeth",
-																@"telephones", @"telescopes", @"televisions", @"tennis balls", @"toes", @"toilets", @"tricycles",
-																@"tummies", @"twits", @"violas", @"warthogs", @"water pistols", @"wenches", @"werewolves",
-																@"wives", @"wimps", @"women", @"wombats", @"zombies"],
-										 NONSAdjectiveList : @[@"abashed", @"absurd", @"admirable", @"amiable", @"ashamed", @"asynchronous", @"bad", @"bald",
+																@"rivers", @"robots", @"sandwiches", @"shoes", @"signs", @"sprinklers", @"stereos",
+																@"soufflés",@"straightjackets", @"swamis", @"swords", @"teenagers", @"thoughts",
+																@"tomatoes", @"teeth", @"telephones", @"telescopes", @"televisions", @"tennis balls",
+																@"toes", @"toilets", @"tricycles", @"tummies", @"twits", @"violas", @"warthogs",
+																@"water pistols", @"wenches", @"werewolves", @"wives", @"wimps", @"women", @"wombats",
+																@"zombies"],
+										 NONSAdjectiveList : @[@"abashed", @"absurd", @"admirable", @"amiable", @"ashamed", @"asynchronous", @"bad",
+															   @"bald",
 															   @"bitter", @"blasé", @"blissful", @"blue", @"bombastic", @"bouncy", @"brooding",
 															   @"buggy", @"canine", @"carnivorous", @"chartreuse", @"cocky", @"common", @"confused",
 															   @"contented", @"contrary", @"cranky", @"crazy", @"crunchy", @"dangerous",@"dead",
 															   @"deadly", @"delirious", @"demented", @"demure", @"digital", @"disgruntled", @"dismayed",
-															   @"distraught", @"disturbed", @"doleful", @"drunk", @"dull", @"elated", @"enraptured", @"evil",
-															   @"exponential", @"fast", @"feline", @"flippant", @"fretful", @"friendly", @"frisky", @"frolicsome",
-															   @"frustrated", @"furry", @"fuzzy", @"gallant", @"gargantuan", @"giddy", @"glorious", @"glowing",
-															   @"glum", @"golden", @"good", @"goofy", @"green", @"grotesque", @"grumpish", @"grumpy", @"grungy",
-															   @"hairy", @"happy", @"haughty", @"huffy", @"humiliating", @"hyperbolic", @"hypocritical",
-															   @"inconsequential", @"inebriated", @"infuriated", @"innocent", @"innovative", @"insane",
-															   @"inscrutable", @"interesting", @"intoxicated", @"itchy", @"itty-bitty", @"jaded", @"jolly",
-															   @"jubilant", @"lackadaisical", @"lascivious", @"listless", @"livid", @"lonesome", @"lovelorn",
-															   @"lumpy", @"lustful", @"luxurious", @"melancholy", @"metallic", @"mirthless", @"mopy", @"morose",
-															   @"motheaten", @"musical", @"naked", @"nasty", @"naughty", @"new", @"nifty", @"nodal", @"nonexistent",
-															   @"obese", @"orange", @"overjoyed", @"peevish", @"perforated", @"perky", @"perturbed", @"petite",
-															   @"petulant", @"piggish", @"plastic", @"pleased", @"polka-dotted", @"polyester", @"prickly", @"prissy",
-															   @"professional", @"pulsating", @"puny", @"purple", @"putrid", @"quadratic", @"quick", @"radioactive",
-															   @"rambunctious", @"raving", @"red", @"redundant", @"relativistic", @"reptilian", @"repulsive",
-															   @"resentful", @"resonant", @"restless", @"robust", @"rotten", @"ruthless", @"sad", @"sanguine",
-															   @"sarcastic", @"sassy", @"seductive", @"seething", @"senile", @"serene", @"silent", @"silly",
-															   @"skinny", @"sleepy", @"smug", @"sordid", @"sparkling", @"spunky", @"stoned", @"stupid", @"sulky",
-															   @"sullen", @"supercilious", @"surprised", @"testy", @"tingly", @"touchy", @"tubular", @"turgid",
-															   @"unexpected", @"unhinged", @"used", @"vacuous", @"vinyl", @"virtuous", @"wanton", @"warlike",
-															   @"warped", @"whimsical", @"woeful", @"woolly", @"yearning"],
+															   @"distraught", @"disturbed", @"doleful", @"drunk", @"dull", @"elated", @"enraptured",
+															   @"evil", @"exponential", @"fast", @"feline", @"flippant", @"fretful", @"friendly",
+															   @"frisky", @"frolicsome", @"frustrated", @"furry", @"fuzzy", @"gallant", @"gargantuan",
+															   @"giddy", @"glorious", @"glowing", @"glum", @"golden", @"good", @"goofy", @"green",
+															   @"grotesque", @"grumpish", @"grumpy", @"grungy", @"hairy", @"happy", @"haughty", @"huffy",
+															   @"humiliating", @"hyperbolic", @"hypocritical", @"inconsequential", @"inebriated",
+															   @"infuriated", @"innocent", @"innovative", @"insane", @"inscrutable", @"interesting",
+															   @"intoxicated", @"itchy", @"itty-bitty", @"jaded", @"jolly", @"jubilant", @"lackadaisical",
+															   @"lascivious", @"listless", @"livid", @"lonesome", @"lovelorn", @"lumpy", @"lustful",
+															   @"luxurious", @"melancholy", @"metallic", @"mirthless", @"mopy", @"morose", @"motheaten",
+															   @"musical", @"naked", @"nasty", @"naughty", @"new", @"nifty", @"nodal", @"nonexistent",
+															   @"obese", @"orange", @"overjoyed", @"peevish", @"perforated", @"perky", @"perturbed",
+															   @"petite", @"petulant", @"piggish", @"plastic", @"pleased", @"polka-dotted", @"polyester",
+															   @"prickly", @"prissy", @"professional", @"pulsating", @"puny", @"purple", @"putrid",
+															   @"quadratic", @"quick", @"radioactive", @"rambunctious", @"raving", @"red", @"redundant",
+															   @"relativistic", @"reptilian", @"repulsive", @"resentful", @"resonant", @"restless",
+															   @"robust", @"rotten", @"ruthless", @"sad", @"sanguine", @"sarcastic", @"sassy",
+															   @"seductive", @"seething", @"senile", @"serene", @"silent", @"silly", @"skinny", @"sleepy",
+															   @"smug", @"sordid", @"sparkling", @"spunky", @"stoned", @"stupid", @"sulky", @"sullen",
+															   @"supercilious", @"surprised", @"testy", @"tingly", @"touchy", @"tubular", @"turgid",
+															   @"unexpected", @"unhinged", @"used", @"vacuous", @"vinyl", @"virtuous", @"wanton",
+															   @"warlike", @"warped", @"whimsical", @"woeful", @"woolly", @"yearning"],
 										 NONSVerbList : [self prepareVerbsForSaving:@[[NONSVerb verbWithArray:@[@"accepts",@"accept",@"accepted",@"accepted",@"accepting"]],
 																					  [NONSVerb verbWithArray:@[@"writes",@"write",@"wrote",@"written",@"writing"]],
 																					  [NONSVerb verbWithArray:@[@"farts",@"fart",@"farted",@"farted",@"farting"]],

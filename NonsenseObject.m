@@ -8,6 +8,7 @@
 
 #import "NonsenseObject.h"
 #import <ScreenSaver/ScreenSaverView.h>
+#import "ARCBridge.h"
 
 #define kNonsenseBorder (8)
 
@@ -97,11 +98,11 @@
 		NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
 		[style setAlignment:NSCenterTextAlignment];
 		mutAttrib[NSParagraphStyleAttributeName] = style;
-		[style release];
+		RELEASEOBJ(style);
 		style = nil;
 		
 		self.fontAttribs = [NSDictionary dictionaryWithDictionary:mutAttrib];
-		[mutAttrib release];
+		RELEASEOBJ(mutAttrib);
 		mutAttrib = nil;
 		
 		NSSize strSize = [nonsense sizeWithAttributes:fontAttribs];
@@ -128,6 +129,7 @@
 	return self;
 }
 
+#if !__has_feature(objc_arc)
 -(void)dealloc {
 	self.nonsense = nil;
 	self.bgColor = nil;
@@ -136,6 +138,7 @@
 	
 	[super dealloc];
 }
+#endif
 
 -(void)draw {
 	[self drawWithBackground:YES];

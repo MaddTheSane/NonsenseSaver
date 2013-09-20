@@ -15,6 +15,14 @@ NSString * const ThirdPersonPast = @"ThirdPersonPast";
 NSString * const ThirdPersonPastPerfect = @"ThirdPersonPastPerfect";
 NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 
+@interface NONSVerb ()
+@property (readwrite, copy) NSString *verbThirdPersonSinglePresent;
+@property (readwrite, copy) NSString *verbThirdPersonPluralPresent;
+@property (readwrite, copy) NSString *verbThirdPersonPast;
+@property (readwrite, copy) NSString *verbThirdPersonPastPerfect;
+@property (readwrite, copy) NSString *verbThirdPersonPresentCont;
+@end
+
 @implementation NONSVerb
 -(id)initWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont
 {

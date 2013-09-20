@@ -8,8 +8,8 @@
 #import <Cocoa/Cocoa.h>
 #import "NonsenseView.h"
 
-@interface AppController : NSObject {
-    IBOutlet NonsenseView *nonsenseView;
-}
+@interface AppController : NSObject
+
+@property (assign) IBOutlet NonsenseView *nonsenseView;
 
 @end
