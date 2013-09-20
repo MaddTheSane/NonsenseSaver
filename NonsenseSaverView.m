@@ -32,7 +32,7 @@
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
 		srandom(0xFFFFFFFF & time(NULL));
-		self.controller = [[[NonsenseSaverController alloc] init] autorelease];
+		self.controller = [[NonsenseSaverController alloc] init];
 		self.nonsenses = [NSMutableArray array];
 		
 		//Set the Defaults
@@ -56,18 +56,9 @@
 		{
 			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:theFont];
 			[_nonsenses addObject:non];
-			[non release];
 		}
     }
     return self;
-}
-
-- (void)dealloc
-{
-	self.nonsenses = nil;
-	self.controller = nil;
-	
-	[super dealloc];
 }
 
 #if 0
@@ -95,7 +86,6 @@
 	[_nonsenses removeObjectAtIndex:0];
 	NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:theFont];
 	[_nonsenses addObject:non];
-	[non release];
 }
 
 - (void)animateOneFrame
@@ -172,7 +162,6 @@
 		{
 			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:[NSFont fontWithName:@"Helvetica" size:kPreviewSize]];
 			[_nonsenses addObject:non];
-			[non release];
 		}
 	} else {
 		[controller loadSettings];
@@ -209,9 +198,11 @@
 			[controller removeAdjective:tempString];
 			break;
 		case 3:
+		{
 			tempArray = [controller verbs];
 			NONSVerb *tempVerb = tempArray[row];
 			[controller removeVerb:tempVerb];
+		}
 			break;
 		case 4:
 			tempArray = [controller adverbs];
