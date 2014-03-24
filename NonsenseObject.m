@@ -20,24 +20,20 @@
 @end
 
 @implementation NonsenseObject
-@synthesize bgColor;
-@synthesize fgColor;
 @synthesize nonsense;
-@synthesize placement;
-@synthesize fontAttribs;
 
 - (NSRect)textPosition
 {
-	NSRect returnRect = placement;
+	NSRect returnRect = self.placement;
 	//returnRect.size.height = returnRect.size.height + kNonsenseBorder;
 	//returnRect.size.width = returnRect.size.width + kNonsenseBorder;
 	//NSRect insideRect = SSCenteredRectInRect(returnRect,placement);
 	//return insideRect;
 	//return placement;
-	returnRect.size.height -= ( kNonsenseBorder / 2);
-	returnRect.size.width -= ( kNonsenseBorder / 2);
-	returnRect.origin.x += (kNonsenseBorder / 2); 
-	returnRect.origin.y += (kNonsenseBorder / 2);
+	returnRect.size.height -= kNonsenseBorder / 2;
+	returnRect.size.width -= kNonsenseBorder / 2;
+	returnRect.origin.x += kNonsenseBorder / 2;
+	returnRect.origin.y += kNonsenseBorder / 2;
 	return returnRect;
 }
 
@@ -101,18 +97,14 @@
 				break;
 		}
 		self.nonsense = nonString;
-		NSMutableDictionary *mutAttrib = [[NSMutableDictionary alloc] init];
-		mutAttrib[NSForegroundColorAttributeName] = fgColor;
-		mutAttrib[NSFontAttributeName] = theFont;
 		NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
 		[style setAlignment:NSCenterTextAlignment];
-		mutAttrib[NSParagraphStyleAttributeName] = style;
+		self.fontAttribs = @{NSForegroundColorAttributeName: self.fgColor,
+							 NSFontAttributeName: theFont,
+							 NSParagraphStyleAttributeName: style};
 		style = nil;
 		
-		self.fontAttribs = [NSDictionary dictionaryWithDictionary:mutAttrib];
-		mutAttrib = nil;
-		
-		NSSize strSize = [nonsense sizeWithAttributes:fontAttribs];
+		NSSize strSize = [nonsense sizeWithAttributes:_fontAttribs];
 		if (strSize.width > bound.size.width) {
 			NSRect drawRect;
 			if (strSize.width > (bound.size.width)*2.0/3.0) {
@@ -122,15 +114,17 @@
 				drawRect.size.width = strSize.width * 2.0/3.0;
 				drawRect.size.height = strSize.height * 2.0;
 			}
-			drawRect.size.height = drawRect.size.height + kNonsenseBorder;
-			drawRect.size.width = drawRect.size.width + kNonsenseBorder;
+			drawRect.size.height += kNonsenseBorder;
+			drawRect.size.width += kNonsenseBorder;
 			drawRect.origin = SSRandomPointForSizeWithinRect(drawRect.size, bound);
-			placement = drawRect;
+			self.placement = drawRect;
 		} else {
-			strSize.height = strSize.height + kNonsenseBorder;
-			strSize.width = strSize.width + kNonsenseBorder;
-			placement.origin = SSRandomPointForSizeWithinRect(strSize, bound);
-			placement.size = strSize;
+			NSRect tmpPlace;
+			strSize.height += kNonsenseBorder;
+			strSize.width += kNonsenseBorder;
+			tmpPlace.origin = SSRandomPointForSizeWithinRect(strSize, bound);
+			tmpPlace.size = strSize;
+			self.placement = tmpPlace;
 		}
 	}
 	return self;
@@ -141,12 +135,13 @@
 	[self drawWithBackground:YES];
 }
 
-- (void)drawWithBackground:(BOOL)bgDraw {
+- (void)drawWithBackground:(BOOL)bgDraw
+{
 	if (bgDraw) {
 		[self.bgColor set];
-		[NSBezierPath fillRect:placement];
+		[NSBezierPath fillRect:self.placement];
 	}
-	[nonsense drawInRect:[self textPosition] withAttributes:fontAttribs];
+	[nonsense drawInRect:[self textPosition] withAttributes:self.fontAttribs];
 }
 
 - (NSString *)description

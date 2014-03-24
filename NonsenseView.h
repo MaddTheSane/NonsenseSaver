@@ -10,7 +10,7 @@
 @class NonsenseSaverController;
 
 @interface NonsenseView : NSView
-@property (readwrite) NSInteger nonNumber;
-@property (nonatomic) CGFloat nonDuration;
-@property (readwrite, nonatomic) BOOL showBackground;
+@property NSInteger nonNumber;
+@property CGFloat nonDuration;
+@property BOOL showBackground;
 @end

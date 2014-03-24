@@ -14,25 +14,10 @@
 @property (strong) NonsenseSaverController *nonsenseController;
 @property (strong) NSMutableArray *nonsenses;
 @property (strong) NSTimer *refreshRate;
+@property BOOL settingsChanged;
 @end
 
 @implementation NonsenseView
-@synthesize showBackground;
-@synthesize nonDuration = _nonDuration;
-
-- (void)setNonDuration:(CGFloat)nonDuration
-{
-	_nonDuration = nonDuration;
-	[self setNeedsDisplay:YES];
-}
-
-- (void)setShowBackground:(BOOL)_showBackground
-{
-	if (showBackground != _showBackground) {
-		showBackground = _showBackground;
-		[self setNeedsDisplay:YES];
-	}
-}
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -71,12 +56,16 @@
 {
 	[super drawRect:dirtyRect];
 	NSFont *theFont = [NSFont systemFontOfSize:kPreviewSize];
+	if (self.settingsChanged) {
+		self.settingsChanged = NO;
+	} else {
+		[self.nonsenses removeObjectAtIndex:0];
+		NonsenseObject *non = [[NonsenseObject alloc] initWithString:[self.nonsenseController radomSaying] bounds:[self bounds] font:theFont];
+		[self.nonsenses addObject:non];
+	}
 	for (NonsenseObject *obj in self.nonsenses) {
 		[obj drawWithBackground:[self showBackground]];
 	}
-	[self.nonsenses removeObjectAtIndex:0];
-	NonsenseObject *non = [[NonsenseObject alloc] initWithString:[self.nonsenseController radomSaying] bounds:[self bounds] font:theFont];
-	[self.nonsenses addObject:non];
 }
 
 @end
