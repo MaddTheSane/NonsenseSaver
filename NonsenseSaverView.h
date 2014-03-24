@@ -9,26 +9,25 @@
 #import <ScreenSaver/ScreenSaver.h>
 
 @interface NonsenseSaverView : ScreenSaverView <NSTableViewDataSource>
-{
-	IBOutlet NSWindow *configureSheet;
-    IBOutlet NSMatrix *vocabSelector;
-	IBOutlet NSTableView *vocabList;
-	
-	IBOutlet NSTextField *fieldThirdPersonPast;
-    IBOutlet NSTextField *fieldThirdPersonPastPerfect;
-    IBOutlet NSTextField *fieldThirdPersonPluralPresent;
-    IBOutlet NSTextField *fieldThirdPersonPresentCont;
-    IBOutlet NSTextField *fieldThirdPersonSinglePresent;
-    IBOutlet NSWindow *verbWindow;
-    IBOutlet NSTextField *fieldWord;
-    IBOutlet NSTextField *wordToAdd;
-	IBOutlet NSWindow *wordWindow;
-	IBOutlet NSTextView *credits;
-}
-
 @property (readwrite) NSInteger nonNumber;
-@property (readwrite) double nonDuration;
+@property (readwrite) CGFloat nonDuration;
 @property (readwrite) BOOL showBackground;
+@property (weak) IBOutlet NSFormCell *fieldThirdPersonPast;
+@property (weak) IBOutlet NSFormCell *fieldThirdPersonPastPerfect;
+@property (weak) IBOutlet NSFormCell *fieldThirdPersonPluralPresent;
+@property (weak) IBOutlet NSFormCell *fieldThirdPersonPresentCont;
+@property (weak) IBOutlet NSFormCell *fieldThirdPersonSinglePresent;
+
+@property (weak, nonatomic) IBOutlet NSWindow *configureSheet;
+@property (weak) IBOutlet NSMatrix *vocabSelector;
+@property (weak) IBOutlet NSTableView *vocabList;
+	
+@property (weak) IBOutlet NSWindow *verbWindow;
+@property (weak) IBOutlet NSTextField *fieldWord;
+@property (weak) IBOutlet NSTextField *wordToAdd;
+@property (weak) IBOutlet NSWindow *wordWindow;
+@property (unsafe_unretained) IBOutlet NSTextView *credits;
+
 
 - (IBAction)closeNonsense:(id)sender;
 

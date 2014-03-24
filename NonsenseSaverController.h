@@ -12,7 +12,8 @@ extern NSString * const NONSDefaults;
 
 @class NONSVerb;
 
-@interface NonsenseSaverController : NSObject {
+@interface NonsenseSaverController : NSObject
+{
 	@private
 	NSMutableArray *verbs;
 	NSMutableArray *pluralNouns;
@@ -29,6 +30,9 @@ extern NSString * const NONSDefaults;
 	NSArray *determiners;
 	NSArray *comparatives;
 }
+
+- (instancetype)init;
+
 -(NONSVerb *)verb;
 -(NSString *)pluralNoun;
 -(NSString *)singularNoun;
@@ -83,6 +87,6 @@ extern NSString * const NONSDefaults;
 -(void)removeInterjections:(NSArray *)inters;
 
 - (void)loadSettings;
--(void)saveSettings;
+- (void)saveSettings;
 
 @end

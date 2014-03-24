@@ -16,24 +16,33 @@
 #define NONSBGColor @"Show Background"
 
 @interface NonsenseSaverView ()
-@property (retain) NSMutableArray *nonsenses;
-@property (retain) NonsenseSaverController *controller;
+@property (strong) NSMutableArray *nonsenses;
+@property (strong) NonsenseSaverController *controller;
 @end
 
 @implementation NonsenseSaverView
-
 @synthesize nonNumber;
 @synthesize nonDuration;
 @synthesize showBackground;
 @synthesize controller;
+@synthesize configureSheet;
+@synthesize vocabSelector;
+@synthesize vocabList;
+
+@synthesize verbWindow;
+@synthesize fieldWord;
+@synthesize wordToAdd;
+@synthesize wordWindow;
+@synthesize credits;
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
+		NSFont *theFont;
 		srandom(0xFFFFFFFF & time(NULL));
-		self.controller = [[[NonsenseSaverController alloc] init] autorelease];
-		self.nonsenses = [NSMutableArray array];
+		self.controller = [[NonsenseSaverController alloc] init];
+		self.nonsenses = [[NSMutableArray alloc] init];
 		
 		//Set the Defaults
 		ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:NONSDefaults];
@@ -43,8 +52,6 @@
 		[self setAnimationTimeInterval:[self nonDuration]];
 		
 		//Create Nonsense
-		short i;
-		NSFont *theFont;
 		if (isPreview)
 		{
 			theFont = [NSFont fontWithName:@"Helvetica" size:kPreviewSize];
@@ -52,22 +59,12 @@
 			theFont = [NSFont fontWithName:@"Helvetica" size:kFullSize];
 		}
 		
-		for(i = 0; i < [self nonNumber] ; i++ )
-		{
+		for (int i = 0; i < [self nonNumber] ; i++ ) {
 			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:theFont];
 			[_nonsenses addObject:non];
-			[non release];
 		}
     }
     return self;
-}
-
-- (void)dealloc
-{
-	self.nonsenses = nil;
-	self.controller = nil;
-	
-	[super dealloc];
 }
 
 #if 0
@@ -82,12 +79,13 @@
 
 - (void)drawRect:(NSRect)rect
 {
+	//Clear the screen
 	[super drawRect:rect];
 	NSFont *theFont = nil;
 	if ([self isPreview]) {
-		theFont = [NSFont fontWithName:@"Helvetica" size:kPreviewSize];
+		theFont = [NSFont systemFontOfSize:kPreviewSize];
 	} else {
-		theFont = [NSFont fontWithName:@"Helvetica" size:kFullSize];
+		theFont = [NSFont systemFontOfSize:kFullSize];
 	}
 	for(NonsenseObject *obj in _nonsenses) {
 		[obj drawWithBackground:[self showBackground]];
@@ -95,7 +93,6 @@
 	[_nonsenses removeObjectAtIndex:0];
 	NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:theFont];
 	[_nonsenses addObject:non];
-	[non release];
 }
 
 - (void)animateOneFrame
@@ -167,12 +164,9 @@
 		[self setAnimationTimeInterval:nonDuration];
 		
 		[_nonsenses removeAllObjects];
-		short i;
-		for(i = 0; i < [self nonNumber] ; i++ )
-		{
-			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:[NSFont fontWithName:@"Helvetica" size:kPreviewSize]];
+		for (int i = 0; i < [self nonNumber] ; i++ ) {
+			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[controller radomSaying] bounds:[self bounds] font:[NSFont systemFontOfSize:kPreviewSize]];
 			[_nonsenses addObject:non];
-			[non release];
 		}
 	} else {
 		[controller loadSettings];
@@ -209,9 +203,11 @@
 			[controller removeAdjective:tempString];
 			break;
 		case 3:
+		{
 			tempArray = [controller verbs];
 			NONSVerb *tempVerb = tempArray[row];
 			[controller removeVerb:tempVerb];
+		}
 			break;
 		case 4:
 			tempArray = [controller adverbs];
@@ -364,34 +360,40 @@
 
 - (void)clearVerbWindow
 {
-	[fieldThirdPersonSinglePresent setStringValue:@""];
-	[fieldThirdPersonPluralPresent setStringValue:@""];
-	[fieldThirdPersonPast setStringValue:@""];
-	[fieldThirdPersonPastPerfect setStringValue:@""];
-	[fieldThirdPersonPresentCont setStringValue:@""];
+	[self.fieldThirdPersonSinglePresent setStringValue:@""];
+	[self.fieldThirdPersonPluralPresent setStringValue:@""];
+	[self.fieldThirdPersonPast setStringValue:@""];
+	[self.fieldThirdPersonPastPerfect setStringValue:@""];
+	[self.fieldThirdPersonPresentCont setStringValue:@""];
 }
 
 - (IBAction)addVerb:(id)sender
 {
 	short i = 0;
-	if (![[fieldThirdPersonSinglePresent stringValue] isEqualToString:@""]) {
+	NSString *thirdPersSingPres, *thirdPersPlurPres, *ThirdPersPas, *thirPersPasPer, *thirPersPresCont;
+	thirdPersSingPres = [self.fieldThirdPersonSinglePresent stringValue];
+	thirdPersPlurPres = [self.fieldThirdPersonPluralPresent stringValue];
+	ThirdPersPas = [self.fieldThirdPersonPast stringValue];
+	thirPersPasPer = [self.fieldThirdPersonPastPerfect stringValue];
+	thirPersPresCont =[self.fieldThirdPersonPresentCont stringValue];
+	if (![thirdPersSingPres isEqualToString:@""]) {
 		i++;
 	}
-	if (![[fieldThirdPersonPluralPresent stringValue] isEqualToString:@""]) {
+	if (![thirdPersPlurPres isEqualToString:@""]) {
 		i++;
 	}
-	if (![[fieldThirdPersonPast stringValue] isEqualToString:@""]) {
+	if (![ThirdPersPas isEqualToString:@""]) {
 		i++;
 	}
-	if (![[fieldThirdPersonPastPerfect stringValue] isEqualToString:@""]) {
+	if (![thirPersPasPer isEqualToString:@""]) {
 		i++;
 	}
-	if (![[fieldThirdPersonPresentCont stringValue] isEqualToString:@""]) {
+	if (![thirPersPresCont isEqualToString:@""]) {
 		i++;
 	}
 	
 	if (i == 5) {
-		[controller addVerb:[NONSVerb verbWithSinglePresent:[fieldThirdPersonSinglePresent stringValue] pluralPresent:[fieldThirdPersonPluralPresent stringValue] past:[fieldThirdPersonPast stringValue] pastPerfect:[fieldThirdPersonPastPerfect stringValue] presentCont:[fieldThirdPersonPresentCont stringValue]]];
+		[controller addVerb:[NONSVerb verbWithSinglePresent:thirdPersSingPres pluralPresent:thirdPersPlurPres past:ThirdPersPas pastPerfect:thirPersPasPer presentCont:thirPersPresCont]];
 		[NSApp endSheet:verbWindow];
 		[self clearVerbWindow];
 		[verbWindow orderOut:sender];		

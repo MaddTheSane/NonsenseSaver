@@ -2,34 +2,20 @@
 //  NGAppDelegate.m
 //  Nonsense Generator
 //
-//  Created by Charles Betts on 7/2/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by C.W. Betts on 3/24/14.
+//
 //
 
 #import "NGAppDelegate.h"
-
-#import "NGViewController.h"
 #import "NonsenseSaverController.h"
 
 @implementation NGAppDelegate
 
-@synthesize window = _window;
-@synthesize viewController = _viewController;
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-	    self.viewController = [[NGViewController alloc] initWithNibName:@"NGViewController_iPhone" bundle:nil];
-	} else {
-	    self.viewController = [[NGViewController alloc] initWithNibName:@"NGViewController_iPad" bundle:nil];
-	}
-	self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
-	srandom(time(NULL));
-    return YES;
+	// Override point for customization after application launch.
+	srandom(time(NULL) & 0xffffffff);
+	return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -57,7 +43,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-	[[_viewController controller] saveSettings];
 }
 
 @end
