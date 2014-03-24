@@ -75,7 +75,6 @@
 		5520BE5A121C6C9E0068419E /* NONSVerb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NONSVerb.m; sourceTree = "<group>"; };
 		5520BE8D121C76370068419E /* NonsenseSaverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverController.h; sourceTree = "<group>"; };
 		5520BE8E121C76370068419E /* NonsenseSaverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseSaverController.m; sourceTree = "<group>"; };
-		553626B617EB770B00D3A3C8 /* ARCBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARCBridge.h; path = "Nonsense Generator/ARCBridge.h"; sourceTree = "<group>"; };
 		553626CE17EBBF5A00D3A3C8 /* NONSVisualTester copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NONSVisualTester copy-Info.plist"; path = "/Users/cwbetts/makestuff/Screen Savers/NonsenseSaver/NONSVisualTester copy-Info.plist"; sourceTree = "<absolute>"; };
 		553CAF1A123F2F5B008EA480 /* NONSVisualTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NONSVisualTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NONSVisualTester-Info.plist"; sourceTree = "<group>"; };
@@ -213,7 +212,6 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				553626B617EB770B00D3A3C8 /* ARCBridge.h */,
 				F50079790118B23001CA0E54 /* NonsenseSaverView.h */,
 				F500797A0118B23001CA0E54 /* NonsenseSaverView.m */,
 				5520BE59121C6C9E0068419E /* NONSVerb.h */,
@@ -821,6 +819,7 @@
 		EF7AD72E08BB986600CE4634 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -837,6 +836,7 @@
 		EF7AD72F08BB986600CE4634 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

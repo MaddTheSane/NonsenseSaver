@@ -7,7 +7,6 @@
 //
 
 #import "NONSVerb.h"
-#import "ARCBridge.h"
 
 NSString * const ThirdPersonSinglePresent = @"ThirdPersonSinglePresent";
 NSString * const ThirdPersonPluralPresent = @"ThirdPersonPluralPresent";
@@ -41,7 +40,6 @@ NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 {
 	if ([array count] < 5) {
 		NSLog(@"Array %@ too small! Not initializing!", array);
-		AUTORELEASEOBJNORETURN(self);
 		return nil;
 	} else if ([array count] > 5) {
 		NSLog(@"Array %@ too big! Ignoring other values.", array);
@@ -52,7 +50,7 @@ NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 +(NONSVerb*)verbWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont
 {
 	NONSVerb *verb = [[NONSVerb alloc] initWithSinglePresent:singlePresent pluralPresent:pluralPresent past:past pastPerfect:pastPerfect presentCont:presentCont];
-	return AUTORELEASEOBJ(verb);
+	return verb;
 }
 
 +(NONSVerb*)verbWithArray:(NSArray*)array
@@ -61,21 +59,8 @@ NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 	if (!verb) {
 		return nil;
 	}
-	return AUTORELEASEOBJ(verb);
+	return verb;
 }
-
-#if !__has_feature(objc_arc)
--(void)dealloc
-{
-	self.verbThirdPersonSinglePresent = nil;
-	self.verbThirdPersonPluralPresent = nil;
-	self.verbThirdPersonPast = nil;
-	self.verbThirdPersonPastPerfect = nil;
-	self.verbThirdPersonPresentCont = nil;
-
-	[super dealloc];
-}
-#endif
 
 -(NSString *)description
 {
@@ -91,7 +76,7 @@ NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 -(BOOL)isEqual:(id)object
 {
 	if ([object isKindOfClass:[NONSVerb class]]) {
-		int i=0;
+		int i = 0;
 		if ([verbThirdPersonPast isEqualToString:[object verbThirdPersonPast]]) {
 			i++;
 		}
@@ -138,9 +123,15 @@ NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 		return NO;
 	}
 }
+
+- (NSUInteger)hash
+{
+	return [ThirdPersonPast hash] ^ [verbThirdPersonPastPerfect hash] ^ [verbThirdPersonPluralPresent hash] ^
+	[verbThirdPersonPresentCont hash] ^ [verbThirdPersonSinglePresent hash];
+}
+
 #if 0
 #pragma mark Archiving
-
 -(id)initWithCoder:(NSCoder *)decoder {
 	
 	if ((self = [super init])) 
