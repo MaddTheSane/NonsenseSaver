@@ -249,64 +249,65 @@ NSString * const NONSDefaults = @"com.github.maddthesane.NonsenseSaver";
 	NSString *nonsensestring;
 	switch (casenum) {
 		case 2:
-			nonsensestring = [NSString stringWithFormat:@"The %@, while %@, %@.", [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast]];
+			nonsensestring = [[NSString alloc] initWithFormat:@"The %@, while %@, %@.", [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast]];
 			break;
 			
 		case 0:
-			nonsensestring = [NSString stringWithFormat:@"The %@ %@, while %@, %@ %@.", [self adjective], [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast], [self adverb]];
+			nonsensestring = [[NSString alloc] initWithFormat:@"The %@ %@, while %@, %@ %@.", [self adjective], [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast], [self adverb]];
 			break;
 			
 		case 1:
-			nonsensestring = [NSString stringWithFormat:@"The %@ %@ %@.", [self singularNoun], [[self verb] verbThirdPersonPast], [self adverb]];
+			nonsensestring = [[NSString alloc] initWithFormat:@"The %@ %@ %@.", [self singularNoun], [[self verb] verbThirdPersonPast], [self adverb]];
 			break;
 			
 		case 3:
-			nonsensestring = [NSString stringWithFormat:@"%@ %@ the %@ %@.", [self properNoun], [[self verb] verbThirdPersonPast], [self singularNoun], [self adverb]];
+			nonsensestring = [[NSString alloc] initWithFormat:@"%@ %@ the %@ %@.", [self properNoun], [[self verb] verbThirdPersonPast], [self singularNoun], [self adverb]];
 			break;
 			
 		case 4:
-			nonsensestring = [NSString stringWithFormat:@"The %@ %@, while %@, %@ %@.", [self adjective], [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast], [self massiveNoun] ];
+			nonsensestring = [[NSString alloc] initWithFormat:@"The %@ %@, while %@, %@ %@.", [self adjective], [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast], [self massiveNoun] ];
 			break;
 			
 		case 5:
-			nonsensestring = [NSString stringWithFormat:@"Can't a %@ have %@?", [self singularNoun], [[self verb] verbThirdPersonPastPerfect] ];
+			nonsensestring = [[NSString alloc] initWithFormat:@"Can't a %@ have %@?", [self singularNoun], [[self verb] verbThirdPersonPastPerfect] ];
 			break;
 			
 		case 6:
-			nonsensestring = [NSString stringWithFormat:@"They %@ %@ %@.", [self adverb], [[self verb] verbThirdPersonPast], [self pronoun] ];
+			nonsensestring = [[NSString alloc] initWithFormat:@"They %@ %@ %@.", [self adverb], [[self verb] verbThirdPersonPast], [self pronoun] ];
 			break;
 			
 		case 7:
-			nonsensestring = [NSString stringWithFormat:@"Can %@, who musn't have %@, %@ %@?", [self massiveNoun], [[self verb] verbThirdPersonPastPerfect], [[self verb] verbThirdPersonPluralPresent], [self adverb]];
+			nonsensestring = [[NSString alloc] initWithFormat:@"Can %@, who musn't have %@, %@ %@?", [self massiveNoun], [[self verb] verbThirdPersonPastPerfect], [[self verb] verbThirdPersonPluralPresent], [self adverb]];
 			break;
 			
 		case 8:
-			nonsensestring = [NSString stringWithFormat:@"The %@ %@, while %@, %@ %@ %@.", [self adjective], [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast], [self massiveNoun], [self adverb] ];
+			nonsensestring = [[NSString alloc] initWithFormat:@"The %@ %@, while %@, %@ %@ %@.", [self adjective], [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast], [self massiveNoun], [self adverb] ];
 			break;
 			
 		case 9:
-			nonsensestring = [NSString stringWithFormat:@"Must you %@ %@?", [[self verb] verbThirdPersonPluralPresent], [self adverb] ];
+			nonsensestring = [[NSString alloc] initWithFormat:@"Must you %@ %@?", [[self verb] verbThirdPersonPluralPresent], [self adverb] ];
 			break;
 			
 		case 10:
-			nonsensestring = [NSString stringWithFormat:@"The %@ %@ %@ %@ %@.", [self adjective], [self adjective], [self singularNoun], [[self verb] verbThirdPersonSinglePresent], [self adverb]];
+			nonsensestring = [[NSString alloc] initWithFormat:@"The %@ %@ %@ %@ %@.", [self adjective], [self adjective], [self singularNoun], [[self verb] verbThirdPersonSinglePresent], [self adverb]];
 			break;
 			
 		case 11:
-			nonsensestring = [NSString stringWithFormat:@"%@'s %@ hadn't %@.", [self properNoun], [self pluralNoun], [[self verb] verbThirdPersonPast] ] ;
+			nonsensestring = [[NSString alloc] initWithFormat:@"%@'s %@ hadn't %@.", [self properNoun], [self pluralNoun], [[self verb] verbThirdPersonPast] ] ;
 			break;
 			
-		//case 13:
-		//	nonsensestring = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@.", [self interjection], [self determiner], [self adjective], [self noun], [self adverb], [self verb], [self preposition], [self determiner], [self adjective], [self noun]];
-			
-		//	break;
+#if 0
+		case 13:
+			nonsensestring = [[NSString alloc] initWithFormat:@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@.", [self interjection], [self determiner], [self adjective], [self noun], [self adverb], [self verb], [self preposition], [self determiner], [self adjective], [self noun]];
+			break;
+#endif
 			
 		case 12:
-			nonsensestring = [NSString stringWithFormat:@"%@, %@ %@ is %@ %@ than %@ %@ %@.", [self interjection], [self determiner], [self noun], [self comparative], [self adjective], [self determiner], [self adjective], [self noun]];
+			nonsensestring = [[NSString alloc] initWithFormat:@"%@, %@ %@ is %@ %@ than %@ %@ %@.", [self interjection], [self determiner], [self noun], [self comparative], [self adjective], [self determiner], [self adjective], [self noun]];
 			break;
 			
 		default:
-			nonsensestring = [NSString stringWithFormat:@"The developer's brain farted %@, producing this error.", [self adverb]];
+			nonsensestring = [[NSString alloc] initWithFormat:@"The developer's brain farted %@, producing this error.", [self adverb]];
 			break;
 	}
 	return nonsensestring;

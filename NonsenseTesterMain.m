@@ -1,12 +1,18 @@
 #import <Cocoa/Cocoa.h>
 #import "NonsenseSaverController.h"
 #import "NONSVerb.h"
-#import "ARCBridge.h"
 
-void WriteToStandardOutput(NSString *string)
+void WriteToStandardOutput(NSString *string, ...) NS_FORMAT_FUNCTION(1,2);
+
+void WriteToStandardOutput(NSString *string, ...)
 {
+	va_list theList;
+	NSString *stdOutStr;
 	NSFileHandle *so = [NSFileHandle fileHandleWithStandardOutput];
-	[so writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+	va_start(theList, string);
+	stdOutStr = [[NSString alloc] initWithFormat:string arguments:theList];
+	va_end(theList);
+	[so writeData:[stdOutStr dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
 int main(int argc, char *argv[])
@@ -14,9 +20,8 @@ int main(int argc, char *argv[])
 	@autoreleasepool {
 		srandom( 0x7FFFFFFF & time(NULL));
 		NonsenseSaverController *controller = [[NonsenseSaverController alloc] init];
-		WriteToStandardOutput([NSString stringWithFormat:@"%@\n", [controller radomSaying]]);
+		WriteToStandardOutput(@"%@\n", [controller radomSaying]);
 		
-		RELEASEOBJ(controller);
 		return EXIT_SUCCESS;
 	}
 }
