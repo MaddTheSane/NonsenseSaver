@@ -28,7 +28,7 @@
 	}
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-	srandom(time(NULL));
+	srandom(time(NULL) & 0xffffffff);
     return YES;
 }
 

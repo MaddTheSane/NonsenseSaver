@@ -12,14 +12,6 @@
 		5520BE8F121C76370068419E /* NonsenseSaverController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5520BE8D121C76370068419E /* NonsenseSaverController.h */; };
 		5520BE90121C76370068419E /* NonsenseSaverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE8E121C76370068419E /* NonsenseSaverController.m */; };
 		553626B317EB757000D3A3C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553626B217EB757000D3A3C8 /* Images.xcassets */; };
-		553626C017EBBF5A00D3A3C8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553CAF29123F2FA7008EA480 /* MainMenu.xib */; };
-		553626C217EBBF5A00D3A3C8 /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
-		553626C317EBBF5A00D3A3C8 /* NonsenseSaverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE8E121C76370068419E /* NonsenseSaverController.m */; };
-		553626C417EBBF5A00D3A3C8 /* NonsenseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 55561FAB123D959400A73C6A /* NonsenseObject.m */; };
-		553626C517EBBF5A00D3A3C8 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553CAF31123F30A4008EA480 /* AppController.m */; };
-		553626C617EBBF5A00D3A3C8 /* NonsenseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558C0DDD123FFED60099AABD /* NonsenseView.m */; };
-		553626C817EBBF5A00D3A3C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
-		553626C917EBBF5A00D3A3C8 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 		553CAF24123F2F7B008EA480 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		553CAF25123F2F7B008EA480 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 		553CAF26123F2F88008EA480 /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
@@ -72,7 +64,6 @@
 		5520BE8E121C76370068419E /* NonsenseSaverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseSaverController.m; sourceTree = "<group>"; };
 		553626B217EB757000D3A3C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		553626B617EB770B00D3A3C8 /* ARCBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARCBridge.h; path = "Nonsense Generator/ARCBridge.h"; sourceTree = "<group>"; };
-		553626CD17EBBF5A00D3A3C8 /* NONSVisualTester-ARC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NONSVisualTester-ARC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		553626CE17EBBF5A00D3A3C8 /* NONSVisualTester copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NONSVisualTester copy-Info.plist"; path = "/Users/cwbetts/makestuff/Screen Savers/NonsenseSaver/NONSVisualTester copy-Info.plist"; sourceTree = "<absolute>"; };
 		553CAF1A123F2F5B008EA480 /* NONSVisualTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NONSVisualTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NONSVisualTester-Info.plist"; sourceTree = "<group>"; };
@@ -114,15 +105,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		553626C717EBBF5A00D3A3C8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				553626C817EBBF5A00D3A3C8 /* Cocoa.framework in Frameworks */,
-				553626C917EBBF5A00D3A3C8 /* ScreenSaver.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		553CAF18123F2F5B008EA480 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,7 +226,6 @@
 				55882B5F121CB53400CB16C6 /* NonsenseTester */,
 				553CAF1A123F2F5B008EA480 /* NONSVisualTester.app */,
 				55C3965D15A20FCB005DBC66 /* Nonsense Generator.app */,
-				553626CD17EBBF5A00D3A3C8 /* NONSVisualTester-ARC.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -327,23 +308,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		553626BE17EBBF5A00D3A3C8 /* NONSVisualTester-ARC */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 553626CA17EBBF5A00D3A3C8 /* Build configuration list for PBXNativeTarget "NONSVisualTester-ARC" */;
-			buildPhases = (
-				553626BF17EBBF5A00D3A3C8 /* Resources */,
-				553626C117EBBF5A00D3A3C8 /* Sources */,
-				553626C717EBBF5A00D3A3C8 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "NONSVisualTester-ARC";
-			productName = NONSVisualTester;
-			productReference = 553626CD17EBBF5A00D3A3C8 /* NONSVisualTester-ARC.app */;
-			productType = "com.apple.product-type.application";
-		};
 		553CAF19123F2F5B008EA480 /* NONSVisualTester */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 553CAF1F123F2F5C008EA480 /* Build configuration list for PBXNativeTarget "NONSVisualTester" */;
@@ -419,7 +383,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 			};
 			buildConfigurationList = EF7AD73108BB986600CE4634 /* Build configuration list for PBXProject "NonsenseSaver" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -440,20 +404,11 @@
 				55882B5E121CB53400CB16C6 /* NonsenseTester */,
 				553CAF19123F2F5B008EA480 /* NONSVisualTester */,
 				55C3965C15A20FCB005DBC66 /* Nonsense Generator */,
-				553626BE17EBBF5A00D3A3C8 /* NONSVisualTester-ARC */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		553626BF17EBBF5A00D3A3C8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				553626C017EBBF5A00D3A3C8 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		553CAF16123F2F5B008EA480 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,18 +443,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		553626C117EBBF5A00D3A3C8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				553626C217EBBF5A00D3A3C8 /* NONSVerb.m in Sources */,
-				553626C317EBBF5A00D3A3C8 /* NonsenseSaverController.m in Sources */,
-				553626C417EBBF5A00D3A3C8 /* NonsenseObject.m in Sources */,
-				553626C517EBBF5A00D3A3C8 /* AppController.m in Sources */,
-				553626C617EBBF5A00D3A3C8 /* NonsenseView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		553CAF17123F2F5B008EA480 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -584,39 +527,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		553626CB17EBBF5A00D3A3C8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
-				INFOPLIST_FILE = "NONSVisualTester copy-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = "NONSVisualTester-ARC";
-			};
-			name = Debug;
-		};
-		553626CC17EBBF5A00D3A3C8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
-				INFOPLIST_FILE = "NONSVisualTester copy-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = "NONSVisualTester-ARC";
-			};
-			name = Release;
-		};
 		553CAF1D123F2F5C008EA480 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -681,7 +591,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -697,7 +606,6 @@
 				HEADER_SEARCH_PATHS = "\"${SRCROOT}\"/Classes";
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[arch=arm64]" = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -711,7 +619,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -725,7 +632,6 @@
 				HEADER_SEARCH_PATHS = "\"${SRCROOT}\"/Classes";
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[arch=arm64]" = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = (
 					"-DNS_BLOCK_ASSERTIONS=1",
@@ -772,7 +678,6 @@
 		EF7AD73208BB986600CE4634 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -780,6 +685,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -793,9 +699,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -803,7 +710,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLY_RULES_IN_COPY_FILES = YES;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -811,6 +717,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -820,7 +727,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_OUTPUT_FORMAT = binary;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PLIST_FILE_OUTPUT_FORMAT = binary;
 				SDKROOT = macosx;
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
@@ -830,15 +737,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		553626CA17EBBF5A00D3A3C8 /* Build configuration list for PBXNativeTarget "NONSVisualTester-ARC" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				553626CB17EBBF5A00D3A3C8 /* Debug */,
-				553626CC17EBBF5A00D3A3C8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		553CAF1F123F2F5C008EA480 /* Build configuration list for PBXNativeTarget "NONSVisualTester" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
