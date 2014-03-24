@@ -20,8 +20,13 @@
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="S2d-ll-A4h">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="1AQ-Iv-sif">
-                                        <barButtonItem key="rightBarButtonItem" title="Info" id="eoT-a4-CEx">
+                                    <navigationItem title="Nonsense" id="1AQ-Iv-sif">
+                                        <barButtonItem key="leftBarButtonItem" title="Generate" id="Mr9-E0-Ymp">
+                                            <connections>
+                                                <action selector="generateNonsense:" destination="aVO-UE-KGo" id="Y7X-hi-qv2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="eoT-a4-CEx">
                                             <connections>
                                                 <action selector="togglePopover:" destination="aVO-UE-KGo" id="VBk-0g-Jb3"/>
                                             </connections>
@@ -45,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asY-HQ-Guj" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-286" y="15"/>
+            <point key="canvasLocation" x="-282" y="32"/>
         </scene>
         <!--Flipside View Controller-->
         <scene sceneID="lym-h4-kxm">
@@ -62,7 +67,7 @@
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="8Bx-U8-Xwy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="UD1-FV-3cM">
+                                    <navigationItem title="Settings" id="UD1-FV-3cM">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="8zt-ik-JXd">
                                             <connections>
                                                 <action selector="done:" destination="FTa-do-hRx" id="JoJ-z8-Ud1"/>

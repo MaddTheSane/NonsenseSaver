@@ -25,8 +25,7 @@ NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 @implementation NONSVerb
 -(id)initWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont
 {
-	self = [super init];
-	if (self) {
+	if (self = [super init]) {
 		self.verbThirdPersonSinglePresent = singlePresent;
 		self.verbThirdPersonPluralPresent = pluralPresent;
 		self.verbThirdPersonPast = past;
@@ -36,7 +35,7 @@ NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 	return self;
 }
 
--(id)initWithArray:(NSArray *)array
+- (id)initWithArray:(NSArray *)array
 {
 	if ([array count] < 5) {
 		NSLog(@"Array %@ too small! Not initializing!", array);
@@ -47,19 +46,14 @@ NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 	return [self initWithSinglePresent:array[0] pluralPresent:array[1] past:array[2] pastPerfect:array[3] presentCont:array[4]];
 }
 
-+(NONSVerb*)verbWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont
++ (NONSVerb*)verbWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont
 {
-	NONSVerb *verb = [[NONSVerb alloc] initWithSinglePresent:singlePresent pluralPresent:pluralPresent past:past pastPerfect:pastPerfect presentCont:presentCont];
-	return verb;
+	return [[NONSVerb alloc] initWithSinglePresent:singlePresent pluralPresent:pluralPresent past:past pastPerfect:pastPerfect presentCont:presentCont];
 }
 
-+(NONSVerb*)verbWithArray:(NSArray*)array
++ (NONSVerb*)verbWithArray:(NSArray*)array
 {
-	NONSVerb *verb = [[NONSVerb alloc] initWithArray:array];
-	if (!verb) {
-		return nil;
-	}
-	return verb;
+	return [[NONSVerb alloc] initWithArray:array];
 }
 
 -(NSString *)description
