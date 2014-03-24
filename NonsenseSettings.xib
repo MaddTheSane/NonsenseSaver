@@ -425,7 +425,7 @@ Gw
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="204">
-                        <rect key="frame" x="259" y="13" width="82" height="32"/>
+                        <rect key="frame" x="243" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="205">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -439,7 +439,7 @@ Gw
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="206">
-                        <rect key="frame" x="341" y="13" width="66" height="32"/>
+                        <rect key="frame" x="325" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="207">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -489,6 +489,7 @@ DQ
                     </form>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="204" firstAttribute="width" secondItem="206" secondAttribute="width" id="28S-u6-bcY"/>
                     <constraint firstItem="206" firstAttribute="leading" secondItem="204" secondAttribute="trailing" constant="12" symbolic="YES" id="9Wp-xJ-vAz"/>
                     <constraint firstItem="pWF-7i-Q17" firstAttribute="top" secondItem="183" secondAttribute="top" constant="20" symbolic="YES" id="AeQ-Cn-v55"/>
                     <constraint firstItem="204" firstAttribute="baseline" secondItem="206" secondAttribute="baseline" id="IBm-wT-lw0"/>

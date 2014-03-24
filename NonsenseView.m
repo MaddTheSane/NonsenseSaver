@@ -9,18 +9,23 @@
 #import "NonsenseView.h"
 #import "NonsenseSaverController.h"
 #import "NonsenseObject.h"
-#import "ARCBridge.h"
 
 @interface NonsenseView ()
-@property (retain) NonsenseSaverController *nonsenseController;
-@property (retain) NSMutableArray *nonsenses;
-@property (retain) NSTimer *refreshRate;
+@property (strong) NonsenseSaverController *nonsenseController;
+@property (strong) NSMutableArray *nonsenses;
+@property (strong) NSTimer *refreshRate;
 @end
 
 @implementation NonsenseView
-@synthesize nonNumber;
-@synthesize nonDuration;
 @synthesize showBackground;
+@synthesize nonDuration = _nonDuration;
+
+- (void)setNonDuration:(CGFloat)nonDuration
+{
+	_nonDuration = nonDuration;
+	[self setNeedsDisplay:YES];
+}
+
 - (void)setShowBackground:(BOOL)_showBackground
 {
 	if (showBackground != _showBackground) {
@@ -29,27 +34,25 @@
 	}
 }
 
-@synthesize nonsenseController;
-@synthesize nonsenses;
-@synthesize refreshRate;
-
-- (id)initWithFrame:(NSRect)frame {
+- (id)initWithFrame:(NSRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
+		self.nonDuration = 2.7;
+		self.nonNumber = 5;
+		self.showBackground = YES;
+		
 		srandom(0x7FFFFFFF & time(NULL));
-		nonsenseController = [[NonsenseSaverController alloc] init];
+		self.nonsenseController = [[NonsenseSaverController alloc] init];
 		self.nonsenses = [NSMutableArray array];
 		
-		short i;
-		NSFont *theFont = [NSFont fontWithName:@"Helvetica" size:kPreviewSize];
+		NSFont *theFont = [NSFont systemFontOfSize:kPreviewSize];
 		
-		for(i = 0; i < [self nonNumber] ; i++ )
-		{
-			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[nonsenseController radomSaying] bounds:[self bounds] font:theFont];
-			[nonsenses addObject:non];
-			RELEASEOBJ(non);
+		for (int i = 0; i < [self nonNumber] ; i++ ) {
+			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[self.nonsenseController radomSaying] bounds:[self bounds] font:theFont];
+			[self.nonsenses addObject:non];
 		}
-
+		
     }
     return self;
 }
@@ -61,24 +64,19 @@
 
 - (void)awakeFromNib
 {
-	self.nonDuration = 2.7;
-	self.nonNumber = 5;
-	self.showBackground = YES;
-
 	self.refreshRate = [NSTimer timerWithTimeInterval:self.nonDuration target:self selector:@selector(reloadScreen:) userInfo:nil repeats:YES];
-	
 }
 
-- (void)drawRect:(NSRect)dirtyRect {
+- (void)drawRect:(NSRect)dirtyRect
+{
 	[super drawRect:dirtyRect];
-	NSFont *theFont = [NSFont fontWithName:@"Helvetica" size:kPreviewSize];
-	for(NonsenseObject *obj in nonsenses) {
+	NSFont *theFont = [NSFont systemFontOfSize:kPreviewSize];
+	for (NonsenseObject *obj in self.nonsenses) {
 		[obj drawWithBackground:[self showBackground]];
 	}
-	[nonsenses removeObjectAtIndex:0];
-	NonsenseObject *non = [[NonsenseObject alloc] initWithString:[nonsenseController radomSaying] bounds:[self bounds] font:theFont];
-	[nonsenses addObject:non];
-	RELEASEOBJ(non);
+	[self.nonsenses removeObjectAtIndex:0];
+	NonsenseObject *non = [[NonsenseObject alloc] initWithString:[self.nonsenseController radomSaying] bounds:[self bounds] font:theFont];
+	[self.nonsenses addObject:non];
 }
 
 @end

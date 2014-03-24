@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4510"/>
+        <deployment defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
@@ -649,24 +649,24 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="52" width="539" height="606"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="368">
                 <rect key="frame" x="0.0" y="0.0" width="539" height="606"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView id="812" customClass="NonsenseView">
-                        <rect key="frame" x="20" y="168" width="499" height="418"/>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="812" customClass="NonsenseView">
+                        <rect key="frame" x="20" y="170" width="499" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
-                    <box autoresizesSubviews="NO" title="Settings" borderType="line" id="831">
-                        <rect key="frame" x="16" y="16" width="506" height="144"/>
+                    <box autoresizesSubviews="NO" title="Settings" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="831">
+                        <rect key="frame" x="17" y="16" width="505" height="146"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="504" height="128"/>
+                            <rect key="frame" x="1" y="1" width="503" height="130"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField verticalHuggingPriority="750" id="817">
-                                    <rect key="frame" x="15" y="101" width="214" height="17"/>
+                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="817">
+                                    <rect key="frame" x="16" y="103" width="222" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Number at a time" id="827">
                                         <font key="font" metaFont="system"/>
@@ -674,8 +674,8 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <button id="821" userLabel="Color background">
-                                    <rect key="frame" x="316" y="67" width="172" height="18"/>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="821" userLabel="Color background">
+                                    <rect key="frame" x="315" y="65" width="172" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Show Color Background" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="822">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -685,24 +685,27 @@
                                         <binding destination="811" name="value" keyPath="self.nonsenseView.showBackground" id="834"/>
                                     </connections>
                                 </button>
-                                <slider verticalHuggingPriority="750" id="815" userLabel="Number slider">
-                                    <rect key="frame" x="16" y="69" width="172" height="25"/>
+                                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="815" userLabel="Number slider">
+                                    <rect key="frame" x="16" y="70" width="172" height="27"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="168" id="v5B-rb-dUd"/>
+                                    </constraints>
                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="3" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="830"/>
                                     <connections>
                                         <binding destination="811" name="value" keyPath="self.nonsenseView.nonNumber" id="eo1-RH-pJz"/>
                                     </connections>
                                 </slider>
-                                <slider verticalHuggingPriority="750" id="818" userLabel="Duration slider">
-                                    <rect key="frame" x="16" y="12" width="172" height="25"/>
+                                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="818" userLabel="Duration slider">
+                                    <rect key="frame" x="16" y="12" width="172" height="27"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="0.5" maxValue="10" doubleValue="2.7000000000000002" tickMarkPosition="below" numberOfTickMarks="14" sliderType="linear" id="826"/>
                                     <connections>
                                         <binding destination="811" name="value" keyPath="self.nonsenseView.nonDuration" id="ZLp-37-DGA"/>
                                     </connections>
                                 </slider>
-                                <textField verticalHuggingPriority="750" id="819">
-                                    <rect key="frame" x="15" y="44" width="214" height="17"/>
+                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="819">
+                                    <rect key="frame" x="16" y="46" width="222" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Duration of Nonsense" id="825">
                                         <font key="font" metaFont="system"/>
@@ -710,16 +713,14 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="820" userLabel="Duration">
-                                    <rect key="frame" x="191" y="23" width="38" height="17"/>
+                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="820" userLabel="Duration">
+                                    <rect key="frame" x="192" y="24" width="46" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="42" id="Ofz-1e-dzr"/>
+                                    </constraints>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Label" id="823">
-                                        <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" minimumFractionDigits="0" maximumFractionDigits="3" id="824">
-                                            <real key="roundingIncrement" value="0.0"/>
-                                            <metadata>
-                                                <bool key="localizesFormat" value="YES"/>
-                                            </metadata>
-                                        </numberFormatter>
+                                        <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" alwaysShowsDecimalSeparator="YES" paddingCharacter="*" minimumIntegerDigits="1" maximumIntegerDigits="309" minimumFractionDigits="2" maximumFractionDigits="2" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="824"/>
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -728,16 +729,14 @@
                                         <binding destination="811" name="value" keyPath="self.nonsenseView.nonDuration" id="YVi-DV-AFW"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="816" userLabel="Number">
-                                    <rect key="frame" x="191" y="80" width="38" height="17"/>
+                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="816" userLabel="Number">
+                                    <rect key="frame" x="192" y="82" width="46" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="42" id="ZJN-KX-g69"/>
+                                    </constraints>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Label" id="828">
-                                        <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" minimumFractionDigits="0" maximumFractionDigits="3" id="829">
-                                            <real key="roundingIncrement" value="0.0"/>
-                                            <metadata>
-                                                <bool key="localizesFormat" value="YES"/>
-                                            </metadata>
-                                        </numberFormatter>
+                                        <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" paddingCharacter="*" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="829"/>
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -748,10 +747,39 @@
                                 </textField>
                             </subviews>
                         </view>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="821" secondAttribute="centerY" id="0bW-ae-9PU"/>
+                            <constraint firstItem="815" firstAttribute="top" secondItem="817" secondAttribute="bottom" constant="8" symbolic="YES" id="1aK-cV-kh6"/>
+                            <constraint firstItem="820" firstAttribute="leading" secondItem="818" secondAttribute="trailing" constant="8" symbolic="YES" id="8UO-F5-pMf"/>
+                            <constraint firstItem="817" firstAttribute="trailing" secondItem="820" secondAttribute="trailing" id="A6H-19-HSd"/>
+                            <constraint firstAttribute="bottom" secondItem="818" secondAttribute="bottom" constant="10" id="BaF-zr-5E3"/>
+                            <constraint firstItem="819" firstAttribute="top" secondItem="815" secondAttribute="bottom" constant="8" symbolic="YES" id="Dab-gn-byf"/>
+                            <constraint firstItem="815" firstAttribute="leading" secondItem="817" secondAttribute="leading" id="Dz8-dF-R7N"/>
+                            <constraint firstItem="815" firstAttribute="leading" secondItem="818" secondAttribute="leading" id="Ejn-x0-cUt"/>
+                            <constraint firstItem="815" firstAttribute="leading" secondItem="819" secondAttribute="leading" id="Gew-OF-zAC"/>
+                            <constraint firstItem="815" firstAttribute="leading" secondItem="831" secondAttribute="leading" constant="16" id="M5e-pS-pr0"/>
+                            <constraint firstItem="818" firstAttribute="baseline" secondItem="820" secondAttribute="baseline" id="One-VU-okd"/>
+                            <constraint firstItem="817" firstAttribute="trailing" secondItem="816" secondAttribute="trailing" id="XUp-qq-Kej"/>
+                            <constraint firstAttribute="trailing" secondItem="821" secondAttribute="trailing" constant="16" id="YPJ-cD-dEp"/>
+                            <constraint firstItem="818" firstAttribute="top" secondItem="819" secondAttribute="bottom" constant="9" id="bbi-rD-xX9"/>
+                            <constraint firstItem="816" firstAttribute="leading" secondItem="815" secondAttribute="trailing" constant="8" symbolic="YES" id="c9f-f7-WLR"/>
+                            <constraint firstItem="815" firstAttribute="baseline" secondItem="816" secondAttribute="baseline" id="hXJ-IB-xIC"/>
+                            <constraint firstItem="817" firstAttribute="top" secondItem="831" secondAttribute="top" constant="25" id="jF9-v0-lcA"/>
+                            <constraint firstItem="817" firstAttribute="trailing" secondItem="819" secondAttribute="trailing" id="wdS-vm-v5k"/>
+                        </constraints>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="831" secondAttribute="bottom" constant="20" symbolic="YES" id="BHH-R2-YhJ"/>
+                    <constraint firstAttribute="trailing" secondItem="812" secondAttribute="trailing" constant="20" symbolic="YES" id="Nhg-nr-wPd"/>
+                    <constraint firstItem="831" firstAttribute="leading" secondItem="368" secondAttribute="leading" constant="20" symbolic="YES" id="ccR-AQ-jfd"/>
+                    <constraint firstItem="812" firstAttribute="leading" secondItem="368" secondAttribute="leading" constant="20" symbolic="YES" id="jie-C9-rt0"/>
+                    <constraint firstItem="831" firstAttribute="top" secondItem="812" secondAttribute="bottom" constant="8" symbolic="YES" id="njt-wF-tem"/>
+                    <constraint firstAttribute="trailing" secondItem="831" secondAttribute="trailing" constant="20" symbolic="YES" id="pa5-mH-eRX"/>
+                    <constraint firstItem="812" firstAttribute="top" secondItem="368" secondAttribute="top" constant="20" symbolic="YES" id="z7p-k4-GsJ"/>
+                </constraints>
             </view>
         </window>
         <customObject id="811" customClass="AppController">

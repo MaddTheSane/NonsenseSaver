@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define kPreviewSize 15
+#define kPreviewSize 12
 #define kFullSize 30
 
 @interface NonsenseObject : NSObject
