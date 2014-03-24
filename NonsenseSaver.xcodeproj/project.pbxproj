@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5504BA6418E0EE7A004E3A44 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 55B2818C12416BAA003CEEF4 /* Credits.rtf */; };
 		5520BE5B121C6C9E0068419E /* NONSVerb.h in Headers */ = {isa = PBXBuildFile; fileRef = 5520BE59121C6C9E0068419E /* NONSVerb.h */; };
 		5520BE5C121C6C9E0068419E /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
 		5520BE8F121C76370068419E /* NonsenseSaverController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5520BE8D121C76370068419E /* NonsenseSaverController.h */; };
@@ -447,7 +448,7 @@
 				LastUpgradeCheck = 0510;
 				TargetAttributes = {
 					5556EFCA18E0B46000B49E98 = {
-						TestTargetID = 553CAF19123F2F5B008EA480;
+						TestTargetID = 5556EFA818E0B46000B49E98;
 					};
 				};
 			};
@@ -482,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5558274218E0DE020072F876 /* MainMenu.xib in Resources */,
+				5504BA6418E0EE7A004E3A44 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,7 +716,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NONSVisualTester.app/Contents/MacOS/NONSVisualTester";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Nonsense Generator.app/Nonsense Generator";
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -740,7 +742,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NONSVisualTester.app/Contents/MacOS/NONSVisualTester";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Nonsense Generator.app/Nonsense Generator";
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				FRAMEWORK_SEARCH_PATHS = (
