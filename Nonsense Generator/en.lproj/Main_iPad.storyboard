@@ -17,6 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="00y-0R-Vas">
+                                <rect key="frame" x="0.0" y="44" width="768" height="980"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="S2d-ll-A4h">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <items>
@@ -38,11 +43,16 @@
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="S2d-ll-A4h" firstAttribute="top" secondItem="mX8-Ee-eGC" secondAttribute="top" id="Kzf-4S-Y7T"/>
+                            <constraint firstAttribute="bottom" secondItem="00y-0R-Vas" secondAttribute="bottom" id="MLr-RW-WNE"/>
+                            <constraint firstItem="00y-0R-Vas" firstAttribute="top" secondItem="S2d-ll-A4h" secondAttribute="bottom" id="MyJ-6x-4xA"/>
+                            <constraint firstItem="00y-0R-Vas" firstAttribute="leading" secondItem="mX8-Ee-eGC" secondAttribute="leading" id="bQW-4f-Z33"/>
+                            <constraint firstAttribute="trailing" secondItem="00y-0R-Vas" secondAttribute="trailing" id="bef-SK-EKY"/>
                             <constraint firstItem="S2d-ll-A4h" firstAttribute="leading" secondItem="mX8-Ee-eGC" secondAttribute="leading" id="jbs-cd-p3c"/>
                             <constraint firstItem="S2d-ll-A4h" firstAttribute="trailing" secondItem="mX8-Ee-eGC" secondAttribute="trailing" id="sah-fe-1aa"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nonsenseTable" destination="00y-0R-Vas" id="RsM-io-yWK"/>
                         <segue destination="FTa-do-hRx" kind="popover" identifier="showAlternate" popoverAnchorBarButtonItem="eoT-a4-CEx" id="pXF-iP-W5x">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>

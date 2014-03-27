@@ -14,6 +14,7 @@
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 @property (strong) NonsenseSaverController *nonsenseController;
 @property (strong) NSMutableArray *nonsenses;
+@property (weak, nonatomic) IBOutlet UITableView *nonsenseTable;
 
 - (IBAction)generateNonsense:(id)sender;
 @end

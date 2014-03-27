@@ -34,15 +34,37 @@
                                     <action selector="generateNonsense:" destination="rQl-PL-IFJ" eventType="touchUpInside" id="cHv-Mn-AOl"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SOn-uq-DFc">
+                                <rect key="frame" x="5" y="28" width="310" height="482"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aUY-sK-EIM">
+                                        <rect key="frame" x="0.0" y="22" width="310" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aUY-sK-EIM" id="rsY-u4-BO6">
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kSY-MR-wde" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leading" constant="20" symbolic="YES" id="0eT-xa-rJq"/>
                             <constraint firstAttribute="trailing" secondItem="jqg-sy-dxO" secondAttribute="trailing" constant="20" symbolic="YES" id="1ym-A3-aKq"/>
                             <constraint firstItem="kSY-MR-wde" firstAttribute="baseline" secondItem="jqg-sy-dxO" secondAttribute="baseline" id="6t9-Dv-2Bx"/>
+                            <constraint firstAttribute="trailing" secondItem="SOn-uq-DFc" secondAttribute="trailing" constant="5" id="Hcu-HM-3oV"/>
+                            <constraint firstItem="SOn-uq-DFc" firstAttribute="top" secondItem="bfD-tQ-IfD" secondAttribute="bottom" constant="20" symbolic="YES" id="OW1-cF-SpC"/>
+                            <constraint firstItem="kSY-MR-wde" firstAttribute="top" secondItem="SOn-uq-DFc" secondAttribute="bottom" constant="8" symbolic="YES" id="OYR-pC-7G1"/>
                             <constraint firstAttribute="bottom" secondItem="jqg-sy-dxO" secondAttribute="bottom" constant="20" symbolic="YES" id="Uf2-YL-3zF"/>
+                            <constraint firstItem="SOn-uq-DFc" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leading" constant="5" id="jpV-hS-uIv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nonsenseTable" destination="SOn-uq-DFc" id="xjF-HM-ZSj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4L-l5-tyG" sceneMemberID="firstResponder"/>
             </objects>

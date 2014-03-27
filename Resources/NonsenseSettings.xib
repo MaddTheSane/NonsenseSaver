@@ -234,11 +234,11 @@ Gw
                             </tabViewItem>
                             <tabViewItem label="Display" identifier="2" id="262">
                                 <view key="view" id="263">
-                                    <rect key="frame" x="10" y="33" width="570" height="250"/>
+                                    <rect key="frame" x="10" y="33" width="570" height="257"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="264" userLabel="Number slider">
-                                            <rect key="frame" x="18" y="180" width="172" height="27"/>
+                                            <rect key="frame" x="18" y="187" width="172" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="168" id="dVy-rb-jzA"/>
@@ -256,7 +256,7 @@ Gw
                                             </connections>
                                         </slider>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="275" userLabel="Number">
-                                            <rect key="frame" x="194" y="192" width="44" height="17"/>
+                                            <rect key="frame" x="194" y="199" width="44" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="C0O-B1-h5q"/>
@@ -272,7 +272,7 @@ Gw
                                             </connections>
                                         </textField>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="279">
-                                            <rect key="frame" x="18" y="213" width="220" height="17"/>
+                                            <rect key="frame" x="18" y="220" width="220" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Number at a time" id="280">
                                                 <font key="font" metaFont="system"/>
@@ -281,7 +281,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="281" userLabel="Duration slider">
-                                            <rect key="frame" x="340" y="180" width="164" height="27"/>
+                                            <rect key="frame" x="340" y="187" width="164" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="0.5" maxValue="10" doubleValue="2.6923076923076921" tickMarkPosition="below" numberOfTickMarks="14" sliderType="linear" id="282"/>
                                             <connections>
@@ -289,7 +289,7 @@ Gw
                                             </connections>
                                         </slider>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="284">
-                                            <rect key="frame" x="340" y="213" width="212" height="17"/>
+                                            <rect key="frame" x="340" y="220" width="212" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="208" id="JUV-Mb-sXT"/>
@@ -301,7 +301,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="286" userLabel="Duration">
-                                            <rect key="frame" x="508" y="192" width="44" height="17"/>
+                                            <rect key="frame" x="508" y="199" width="44" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="HL9-AN-9V8"/>
@@ -317,7 +317,7 @@ Gw
                                             </connections>
                                         </textField>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="298" userLabel="Color background">
-                                            <rect key="frame" x="18" y="157" width="172" height="18"/>
+                                            <rect key="frame" x="18" y="164" width="172" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Show Color Background" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="299">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -365,17 +365,17 @@ Gw
                                             <rect key="frame" x="0.0" y="0.0" width="570" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <clipView key="contentView" id="xsa-AQ-deT">
-                                                <rect key="frame" x="1" y="1" width="568" height="248"/>
+                                                <rect key="frame" x="1" y="1" width="553" height="248"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="296">
-                                                        <rect key="frame" x="0.0" y="0.0" width="568" height="248"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="553" height="248"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="568" height="248"/>
+                                                        <size key="minSize" width="553" height="248"/>
                                                         <size key="maxSize" width="570" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="568" height="248"/>
+                                                        <size key="minSize" width="553" height="248"/>
                                                         <size key="maxSize" width="570" height="10000000"/>
                                                     </textView>
                                                 </subviews>
@@ -386,7 +386,7 @@ Gw
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="294">
-                                                <rect key="frame" x="553" y="1" width="16" height="248"/>
+                                                <rect key="frame" x="554" y="1" width="15" height="248"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>

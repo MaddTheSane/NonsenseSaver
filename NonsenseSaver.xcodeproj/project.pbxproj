@@ -46,10 +46,10 @@
 		55882B6F121CB5BD00CB16C6 /* NonsenseSaverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE8E121C76370068419E /* NonsenseSaverController.m */; };
 		55882BAB121CBB8700CB16C6 /* NonsenseSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55882BAA121CBB8700CB16C6 /* NonsenseSettings.xib */; };
 		558C0DDE123FFED60099AABD /* NonsenseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558C0DDD123FFED60099AABD /* NonsenseView.m */; };
+		558FFD8318E4DAE7009AF7E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 558FFD8118E4DAE7009AF7E6 /* InfoPlist.strings */; };
 		55B2818D12416BAA003CEEF4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 55B2818C12416BAA003CEEF4 /* Credits.rtf */; };
 		8D255AC70486D3F9007BF209 /* NonsenseSaver_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* NonsenseSaver_Prefix.pch */; };
 		8D255AC80486D3F9007BF209 /* NonsenseSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* NonsenseSaverView.h */; };
-		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D255ACC0486D3F9007BF209 /* NonsenseSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* NonsenseSaverView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
@@ -68,7 +68,6 @@
 /* Begin PBXFileReference section */
 		06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = /System/Library/Frameworks/ScreenSaver.framework; sourceTree = "<absolute>"; };
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCFA80370C50100C91783 /* NonsenseSaver_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaver_Prefix.pch; sourceTree = "<group>"; };
@@ -78,11 +77,11 @@
 		5520BE8E121C76370068419E /* NonsenseSaverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseSaverController.m; sourceTree = "<group>"; };
 		553626CE17EBBF5A00D3A3C8 /* NONSVisualTester copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NONSVisualTester copy-Info.plist"; path = "/Users/cwbetts/makestuff/Screen Savers/NonsenseSaver/NONSVisualTester copy-Info.plist"; sourceTree = "<absolute>"; };
 		553CAF1A123F2F5B008EA480 /* NONSVisualTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NONSVisualTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NONSVisualTester-Info.plist"; sourceTree = "<group>"; };
+		553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NONSVisualTester-Info.plist"; path = "../NONSVisualTester-Info.plist"; sourceTree = "<group>"; };
 		553CAF20123F2F6B008EA480 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		553CAF30123F30A4008EA480 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		553CAF31123F30A4008EA480 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
-		5549DE731350D5CD00745EF3 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		5549DE731350D5CD00745EF3 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = ../README; sourceTree = "<group>"; };
 		55561FAA123D959400A73C6A /* NonsenseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseObject.h; sourceTree = "<group>"; };
 		55561FAB123D959400A73C6A /* NonsenseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseObject.m; sourceTree = "<group>"; };
 		5556EFA918E0B46000B49E98 /* Nonsense Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nonsense Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,11 +109,12 @@
 		55882BAA121CBB8700CB16C6 /* NonsenseSettings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NonsenseSettings.xib; sourceTree = "<group>"; };
 		558C0DDC123FFED60099AABD /* NonsenseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseView.h; sourceTree = "<group>"; };
 		558C0DDD123FFED60099AABD /* NonsenseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseView.m; sourceTree = "<group>"; };
+		558FFD8218E4DAE7009AF7E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55B2818C12416BAA003CEEF4 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		55C3966015A20FCB005DBC66 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966215A20FCB005DBC66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966415A20FCB005DBC66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* NonsenseSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonsenseSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50079790118B23001CA0E54 /* NonsenseSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverView.h; sourceTree = "<group>"; };
 		F500797A0118B23001CA0E54 /* NonsenseSaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseSaverView.m; sourceTree = "<group>"; };
@@ -202,12 +202,12 @@
 				5549DE731350D5CD00745EF3 /* README */,
 				55882BAA121CBB8700CB16C6 /* NonsenseSettings.xib */,
 				553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */,
+				558FFD8118E4DAE7009AF7E6 /* InfoPlist.strings */,
 				8D255AD20486D3F9007BF209 /* Info.plist */,
-				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 				5558274418E0DE020072F876 /* MainMenu.xib */,
 				55B2818C12416BAA003CEEF4 /* Credits.rtf */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
@@ -510,8 +510,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */,
 				55882BAB121CBB8700CB16C6 /* NonsenseSettings.xib in Resources */,
+				558FFD8318E4DAE7009AF7E6 /* InfoPlist.strings in Resources */,
 				55B2818D12416BAA003CEEF4 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,14 +584,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				089C167EFE841241C02AAC07 /* English */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		5556EFB018E0B46000B49E98 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -630,6 +622,14 @@
 				5558274318E0DE020072F876 /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		558FFD8118E4DAE7009AF7E6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				558FFD8218E4DAE7009AF7E6 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
