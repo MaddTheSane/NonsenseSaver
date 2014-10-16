@@ -163,5 +163,13 @@ class NonsenseSaverController: NSObject {
 	func randomNoun() -> String {
 		return (random() % 2) == 1  ? randomSingularNoun() : randomProperNoun()
 	}
+	
+	func randomSaying() -> String {
+		return "The developer's brain farted \(randomAdverb()), causing this error"
+	}
+
+	func saveSettings() {
+
+	}
 
 }

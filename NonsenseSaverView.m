@@ -226,11 +226,6 @@
 			tempString = tempArray[row];
 			[controller removeProperNoun:tempString];
 			break;
-		case 7:
-			tempArray = [controller interjections];
-			tempString = tempArray[row];
-			[controller removeInterjection:tempString];
-			break;
 			
 		default:
 			NSBeep();
@@ -441,10 +436,6 @@
 			[controller addProperNoun:[fieldWord stringValue]];
 			break;
 			
-		case 7:
-			[controller addInterjection:[fieldWord stringValue]];
-			break;
-
 		default:
 			break;
 	};
