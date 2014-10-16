@@ -69,6 +69,14 @@ class NonsenseSaverController: NSObject {
 		return theArray
 	}
 	
+	private class func prepareVerbsForSaving(toSave: [Verb]) -> [[String: String]] {
+		var theArray = [[String: String]]()
+		for i in toSave{
+			theArray.append(prepareVerbForSaving(i))
+		}
+		return theArray
+	}
+	
 	func defaultsProvider() -> NSUserDefaults {
 	#if os(iOS)
 		return NSUserDefaults.standardUserDefaults()
@@ -165,11 +173,75 @@ class NonsenseSaverController: NSObject {
 	}
 	
 	func randomSaying() -> String {
-		return "The developer's brain farted \(randomAdverb()), causing this error"
+		//FIXME: this is where it falls short. There needs to be a better way of generating nonsense than the one that I'm using right here.
+		let casenum = random() % 13
+		var nonsensestring: String
+		switch (casenum) {
+		case 2:
+			nonsensestring = "The \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast)."
+			
+		case 0:
+			nonsensestring = "The \(randomAdjective()) \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast) \(randomAdverb())."
+			
+		case 1:
+			nonsensestring = "The \(randomSingularNoun()) \(randomVerb().thirdPersonPast) \(randomAdverb())"
+			
+		case 3:
+			nonsensestring = "\(randomProperNoun()) \(randomVerb().thirdPersonPast) the \(randomSingularNoun()) \(randomAdverb())."
+			
+		case 4:
+			nonsensestring = "The \(randomAdjective()) \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast) \(randomMassiveNoun())."
+			
+		case 5:
+			nonsensestring = "Can't a \(randomSingularNoun()) have \(randomVerb().thirdPersonPastPerfect)?"
+			
+		case 6:
+			nonsensestring = "They \(randomAdverb()) \(randomVerb().thirdPersonPast) \(randomPronoun())."
+			
+		case 7:
+			nonsensestring = "Can \(randomMassiveNoun()), who musn't have \(randomVerb().thirdPersonPastPerfect), \(randomVerb().thirdPersonPluralPresent) \(randomAdverb())?"
+			
+			/*
+		case 8:
+			nonsensestring = [[NSString alloc] initWithFormat:@"The %@ %@, while %@, %@ %@ %@.", [self adjective], [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast], [self massiveNoun], [self adverb] ];
+			break;
+			
+		case 9:
+			nonsensestring = [[NSString alloc] initWithFormat:@"Must you %@ %@?", [[self verb] verbThirdPersonPluralPresent], [self adverb] ];
+			break;
+			
+		case 10:
+			nonsensestring = [[NSString alloc] initWithFormat:@"The %@ %@ %@ %@ %@.", [self adjective], [self adjective], [self singularNoun], [[self verb] verbThirdPersonSinglePresent], [self adverb]];
+			break;
+			
+		case 11:
+			nonsensestring = [[NSString alloc] initWithFormat:@"%@'s %@ hadn't %@.", [self properNoun], [self pluralNoun], [[self verb] verbThirdPersonPast] ] ;
+			break;
+			*/
+			/*
+				case 13:
+				nonsensestring = [[NSString alloc] initWithFormat:@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@.", [self interjection], [self determiner], [self adjective], [self noun], [self adverb], [self verb], [self preposition], [self determiner], [self adjective], [self noun]];
+				break;
+			*/
+			
+			
+		default:
+			nonsensestring = "The developer's brain farted \(randomAdverb()), producing this error.";
+			break;
+		}
+		return nonsensestring;
 	}
 
 	func saveSettings() {
-
+		let defaults = defaultsProvider()
+		defaults.setObject(NonsenseSaverController.prepareVerbsForSaving(verbs), forKey: NONSVerbList)
+		defaults.setObject(pluralNouns, forKey: NONSPluralNounList)
+		defaults.setObject(singularNouns, forKey: NONSSingularNounList)
+		defaults.setObject(properNouns, forKey: NONSProperNounList)
+		defaults.setObject(adverbs, forKey: NONSAdverbList)
+		defaults.setObject(adjectives, forKey: NONSAdjectiveList)
+		defaults.setObject(massiveNouns, forKey: NONSMassiveNounList)
+		defaults.synchronize()
 	}
 
 }

@@ -15,9 +15,23 @@ let ThirdPersonPastPerfect = "ThirdPersonPastPerfect";
 let ThirdPersonPresentCont = "ThirdPersonPresentCont";
 
 func ==(lhs: Verb, rhs: Verb) -> Bool {
-	return false
+	if lhs.thirdPersonPast != rhs.thirdPersonPast {
+		return false
+	}
+	if lhs.thirdPersonSinglePresent != rhs.thirdPersonSinglePresent {
+		return false
+	}
+	if lhs.thirdPersonPluralPresent != rhs.thirdPersonPluralPresent {
+		return false
+	}
+	if rhs.thirdPersonPastPerfect != lhs.thirdPersonPastPerfect {
+		return false
+	}
+	if lhs.thirdPersonPresentCont != rhs.thirdPersonPresentCont {
+		return false
+	}
+	return true
 }
-
 
 class Verb: Hashable {
 	let thirdPersonSinglePresent: String
@@ -30,7 +44,6 @@ class Verb: Hashable {
 		return ThirdPersonPast.hashValue ^ thirdPersonPastPerfect.hashValue ^ thirdPersonPluralPresent.hashValue ^
 			thirdPersonPresentCont.hashValue ^ thirdPersonSinglePresent.hashValue
 	}
-
 	
 	init(singlePresent: String, pluralPresent: String, past: String, pastPerfect: String, presentCont: String) {
 		thirdPersonSinglePresent = singlePresent;
@@ -50,16 +63,15 @@ class Verb: Hashable {
 	
 	convenience init?(array: [String]) {
 		if (array.count < 5) {
-			//NSLog("Array %@ too small! Not initializing!", array);
+			NSLog("Array is too small! Not initializing!");
 
 			self.init(privateInit: ())
 			return nil;
 		} else if (array.count > 5) {
-			NSLog("Array %@ too big! Ignoring other values.", array);
+			NSLog("Array is too big! Ignoring other values")
 		}
 		
 		self.init(singlePresent: array[0], pluralPresent: array[1], past: array[2], pastPerfect: array[3], presentCont: array[4])
-		//return [self initWithSinglePresent:array[0] pluralPresent:array[1] past:array[2] pastPerfect:array[3] presentCont:array[4]];
 	}
 }
 
