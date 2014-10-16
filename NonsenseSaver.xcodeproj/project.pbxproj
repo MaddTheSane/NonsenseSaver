@@ -8,16 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5504BA6418E0EE7A004E3A44 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 55B2818C12416BAA003CEEF4 /* Credits.rtf */; };
-		5520BE5B121C6C9E0068419E /* NONSVerb.h in Headers */ = {isa = PBXBuildFile; fileRef = 5520BE59121C6C9E0068419E /* NONSVerb.h */; };
-		5520BE5C121C6C9E0068419E /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
 		553CAF24123F2F7B008EA480 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		553CAF25123F2F7B008EA480 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
-		553CAF26123F2F88008EA480 /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
-		553CAF28123F2F8E008EA480 /* NonsenseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 55561FAB123D959400A73C6A /* NonsenseObject.m */; };
 		553CAF32123F30A4008EA480 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553CAF31123F30A4008EA480 /* AppController.m */; };
 		55561F71123C133300A73C6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089C1672FE841209C02AAC07 /* Foundation.framework */; };
 		55561FAC123D959400A73C6A /* NonsenseObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 55561FAA123D959400A73C6A /* NonsenseObject.h */; };
-		55561FAD123D959400A73C6A /* NonsenseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 55561FAB123D959400A73C6A /* NonsenseObject.m */; };
 		5556EFAA18E0B46000B49E98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966215A20FCB005DBC66 /* Foundation.framework */; };
 		5556EFAB18E0B46000B49E98 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966415A20FCB005DBC66 /* CoreGraphics.framework */; };
 		5556EFAC18E0B46000B49E98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966015A20FCB005DBC66 /* UIKit.framework */; };
@@ -34,11 +29,9 @@
 		5556EFCF18E0B46000B49E98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966015A20FCB005DBC66 /* UIKit.framework */; };
 		5556EFD718E0B46000B49E98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5556EFD518E0B46000B49E98 /* InfoPlist.strings */; };
 		5556EFD918E0B46000B49E98 /* Nonsense_GeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5556EFD818E0B46000B49E98 /* Nonsense_GeneratorTests.m */; };
-		5558273818E0B4FD0072F876 /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
 		5558274218E0DE020072F876 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5558274418E0DE020072F876 /* MainMenu.xib */; };
 		555DD394121EF1BE00C8BB4E /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 		55882B6D121CB56F00CB16C6 /* NonsenseTesterMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 55882B6C121CB56F00CB16C6 /* NonsenseTesterMain.m */; };
-		55882B6E121CB5BA00CB16C6 /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
 		55882BAB121CBB8700CB16C6 /* NonsenseSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55882BAA121CBB8700CB16C6 /* NonsenseSettings.xib */; };
 		558C0DDE123FFED60099AABD /* NonsenseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558C0DDD123FFED60099AABD /* NonsenseView.m */; };
 		558FFD8318E4DAE7009AF7E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 558FFD8118E4DAE7009AF7E6 /* InfoPlist.strings */; };
@@ -47,11 +40,11 @@
 		559C663F19EF7A0700D35E25 /* NonsenseSaverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */; };
 		559C664019EF7A0800D35E25 /* NonsenseSaverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */; };
 		559C664119EF7A0900D35E25 /* NonsenseSaverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */; };
+		559C664319EF7C1800D35E25 /* NonsenseSaverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664219EF7C1800D35E25 /* NonsenseSaverView.swift */; };
+		559C664519EF7DAA00D35E25 /* NONSVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664419EF7DAA00D35E25 /* NONSVerb.swift */; };
 		55B2818D12416BAA003CEEF4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 55B2818C12416BAA003CEEF4 /* Credits.rtf */; };
-		55D1A04119EF647900DE3929 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D1A04019EF647900DE3929 /* Constants.m */; };
 		8D255AC70486D3F9007BF209 /* NonsenseSaver_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* NonsenseSaver_Prefix.pch */; };
 		8D255AC80486D3F9007BF209 /* NonsenseSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* NonsenseSaverView.h */; };
-		8D255ACC0486D3F9007BF209 /* NonsenseSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* NonsenseSaverView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 /* End PBXBuildFile section */
@@ -112,6 +105,8 @@
 		558C0DDD123FFED60099AABD /* NonsenseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseView.m; sourceTree = "<group>"; };
 		558FFD8218E4DAE7009AF7E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		559C663C19EF75A000D35E25 /* Defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Defaults.plist; sourceTree = "<group>"; };
+		559C664219EF7C1800D35E25 /* NonsenseSaverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseSaverView.swift; sourceTree = "<group>"; };
+		559C664419EF7DAA00D35E25 /* NONSVerb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NONSVerb.swift; sourceTree = "<group>"; };
 		55B2818C12416BAA003CEEF4 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		55C3966015A20FCB005DBC66 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966215A20FCB005DBC66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -221,8 +216,10 @@
 			isa = PBXGroup;
 			children = (
 				55D1A03D19EF5E9600DE3929 /* NonsenseSaver-Bridging-Header.h */,
+				559C664219EF7C1800D35E25 /* NonsenseSaverView.swift */,
 				F50079790118B23001CA0E54 /* NonsenseSaverView.h */,
 				F500797A0118B23001CA0E54 /* NonsenseSaverView.m */,
+				559C664419EF7DAA00D35E25 /* NONSVerb.swift */,
 				5520BE59121C6C9E0068419E /* NONSVerb.h */,
 				5520BE5A121C6C9E0068419E /* NONSVerb.m */,
 				55D1A04219EF648700DE3929 /* Constants.h */,
@@ -354,7 +351,6 @@
 			files = (
 				8D255AC70486D3F9007BF209 /* NonsenseSaver_Prefix.pch in Headers */,
 				8D255AC80486D3F9007BF209 /* NonsenseSaverView.h in Headers */,
-				5520BE5B121C6C9E0068419E /* NONSVerb.h in Headers */,
 				55561FAC123D959400A73C6A /* NonsenseObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,8 +531,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				559C664019EF7A0800D35E25 /* NonsenseSaverController.swift in Sources */,
-				553CAF26123F2F88008EA480 /* NONSVerb.m in Sources */,
-				553CAF28123F2F8E008EA480 /* NonsenseObject.m in Sources */,
 				553CAF32123F30A4008EA480 /* AppController.m in Sources */,
 				558C0DDE123FFED60099AABD /* NonsenseView.m in Sources */,
 			);
@@ -548,7 +542,6 @@
 			files = (
 				559C664119EF7A0900D35E25 /* NonsenseSaverController.swift in Sources */,
 				5556EFB418E0B46000B49E98 /* main.m in Sources */,
-				5558273818E0B4FD0072F876 /* NONSVerb.m in Sources */,
 				5556EFC418E0B46000B49E98 /* NGFlipsideViewController.m in Sources */,
 				5556EFB818E0B46000B49E98 /* NGAppDelegate.m in Sources */,
 				5556EFC118E0B46000B49E98 /* NGMainViewController.m in Sources */,
@@ -569,7 +562,6 @@
 			files = (
 				559C663F19EF7A0700D35E25 /* NonsenseSaverController.swift in Sources */,
 				55882B6D121CB56F00CB16C6 /* NonsenseTesterMain.m in Sources */,
-				55882B6E121CB5BA00CB16C6 /* NONSVerb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,10 +570,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				559C663E19EF75E600D35E25 /* NonsenseSaverController.swift in Sources */,
-				8D255ACC0486D3F9007BF209 /* NonsenseSaverView.m in Sources */,
-				5520BE5C121C6C9E0068419E /* NONSVerb.m in Sources */,
-				55561FAD123D959400A73C6A /* NonsenseObject.m in Sources */,
-				55D1A04119EF647900DE3929 /* Constants.m in Sources */,
+				559C664319EF7C1800D35E25 /* NonsenseSaverView.swift in Sources */,
+				559C664519EF7DAA00D35E25 /* NONSVerb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,7 +860,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -905,7 +895,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
 			};

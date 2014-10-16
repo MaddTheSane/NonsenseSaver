@@ -25,7 +25,7 @@ private func randObject<X>(anArray: [X]) -> X {
 }
 
 class NonsenseSaverController: NSObject {
-	private(set) dynamic var verbs = [NONSVerb]()
+	private(set) dynamic var verbs = [Verb]()
 	private(set) dynamic var pluralNouns = [String]()
 	private(set) dynamic var singularNouns = [String]()
 	private(set) dynamic var properNouns = [String]()
@@ -33,16 +33,16 @@ class NonsenseSaverController: NSObject {
 	private(set) dynamic var adjectives = [String]()
 	private(set) dynamic var massiveNouns = [String]()
 	
-	private class func prepareVerbForSaving(toSave: NONSVerb) -> [String: String] {
-		return [ThirdPersonPast: toSave.verbThirdPersonPast,
-			ThirdPersonSinglePresent : toSave.verbThirdPersonSinglePresent,
-			ThirdPersonPluralPresent : toSave.verbThirdPersonPluralPresent,
-			ThirdPersonPastPerfect : toSave.verbThirdPersonPastPerfect,
-			ThirdPersonPresentCont : toSave.verbThirdPersonPresentCont]
+	private class func prepareVerbForSaving(toSave: Verb) -> [String: String] {
+		return [ThirdPersonPast: toSave.thirdPersonPast,
+			ThirdPersonSinglePresent : toSave.thirdPersonSinglePresent,
+			ThirdPersonPluralPresent : toSave.thirdPersonPluralPresent,
+			ThirdPersonPastPerfect : toSave.thirdPersonPastPerfect,
+			ThirdPersonPresentCont : toSave.thirdPersonPresentCont]
 	}
 	
-	private class func getVerbFromSaved(theSaved: [String: String]) -> NONSVerb {
-		return NONSVerb(singlePresent: theSaved[ThirdPersonSinglePresent], pluralPresent: theSaved[ThirdPersonPluralPresent], past: theSaved[ThirdPersonPast], pastPerfect: theSaved[ThirdPersonPastPerfect], presentCont: theSaved[ThirdPersonPresentCont])
+	private class func getVerbFromSaved(theSaved: [String: String]) -> Verb {
+		return Verb(singlePresent: theSaved[ThirdPersonSinglePresent]!, pluralPresent: theSaved[ThirdPersonPluralPresent]!, past: theSaved[ThirdPersonPast]!, pastPerfect: theSaved[ThirdPersonPastPerfect]!, presentCont: theSaved[ThirdPersonPresentCont]!)
 	}
 	
 	let pronouns = ["him", "her", "it", "them"]
@@ -59,8 +59,8 @@ class NonsenseSaverController: NSObject {
 		loadSettings()
 	}
 	
-	private class func getVerbsFromSaved(theSaved: [[String: String]]) -> [NONSVerb] {
-		var theArray = [NONSVerb]()
+	private class func getVerbsFromSaved(theSaved: [[String: String]]) -> [Verb] {
+		var theArray = [Verb]()
 		
 		for i in theSaved {
 			theArray.append(getVerbFromSaved(i))
@@ -73,7 +73,7 @@ class NonsenseSaverController: NSObject {
 	#if os(iOS)
 		return NSUserDefaults.standardUserDefaults()
 	#else
-		return ScreenSaverDefaults.defaultsForModuleWithName(NONSDefaults) as ScreenSaverDefaults
+		return ScreenSaverDefaults.defaultsForModuleWithName(NonsenseDefaultsKey) as ScreenSaverDefaults
 	#endif
 	}
 	
@@ -108,7 +108,7 @@ class NonsenseSaverController: NSObject {
 		massiveNouns += defaults.arrayForKey(NONSMassiveNounList) as [String]
 	}
 	
-	func randomVerb() -> NONSVerb {
+	func randomVerb() -> Verb {
 		return randObject(verbs);
 	}
 	
