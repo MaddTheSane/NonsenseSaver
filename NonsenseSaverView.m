@@ -7,9 +7,11 @@
 //
 
 #import "NonsenseSaverView.h"
-#import "NonsenseSaverController.h"
+//#import "NonsenseSaverController.h"
 #import "NONSVerb.h"
 #import "NonsenseObject.h"
+#import "Constants.h"
+#import "NonsenseSaver-Swift.h"
 
 #define NONSAtATime @"Number at a time"
 #define NONSDuration @"Nonsense Duration"
@@ -288,9 +290,6 @@
 		case 6:
 			return [[controller properNouns] count];
 			break;
-		case 7:
-			return [[controller interjections] count];
-			break;
 			
 		default:
 			return 0;
@@ -322,9 +321,6 @@
 		case 6:
 			return [controller properNouns][rowIndex];
 			break;
-		case 7:
-			return [controller interjections][rowIndex];
-			break;
 			
 		default:
 			return nil;
@@ -349,8 +345,6 @@
 		return 5;
 	} else if ([vocabSelector cellAtRow:6 column:0] == selectedCell) {
 		return 6;
-	} else if ([vocabSelector cellAtRow:7 column:0] == selectedCell) {
-		return 7;
 	} else {
 		return -1;
 	}

@@ -11,7 +11,6 @@
 		5520BE5B121C6C9E0068419E /* NONSVerb.h in Headers */ = {isa = PBXBuildFile; fileRef = 5520BE59121C6C9E0068419E /* NONSVerb.h */; };
 		5520BE5C121C6C9E0068419E /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
 		5520BE8F121C76370068419E /* NonsenseSaverController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5520BE8D121C76370068419E /* NonsenseSaverController.h */; };
-		5520BE90121C76370068419E /* NonsenseSaverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE8E121C76370068419E /* NonsenseSaverController.m */; };
 		553CAF24123F2F7B008EA480 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		553CAF25123F2F7B008EA480 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 		553CAF26123F2F88008EA480 /* NONSVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5520BE5A121C6C9E0068419E /* NONSVerb.m */; };
@@ -47,7 +46,10 @@
 		55882BAB121CBB8700CB16C6 /* NonsenseSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55882BAA121CBB8700CB16C6 /* NonsenseSettings.xib */; };
 		558C0DDE123FFED60099AABD /* NonsenseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558C0DDD123FFED60099AABD /* NonsenseView.m */; };
 		558FFD8318E4DAE7009AF7E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 558FFD8118E4DAE7009AF7E6 /* InfoPlist.strings */; };
+		559C663D19EF75A000D35E25 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559C663C19EF75A000D35E25 /* Defaults.plist */; };
+		559C663E19EF75E600D35E25 /* NonsenseSaverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */; };
 		55B2818D12416BAA003CEEF4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 55B2818C12416BAA003CEEF4 /* Credits.rtf */; };
+		55D1A04119EF647900DE3929 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D1A04019EF647900DE3929 /* Constants.m */; };
 		8D255AC70486D3F9007BF209 /* NonsenseSaver_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* NonsenseSaver_Prefix.pch */; };
 		8D255AC80486D3F9007BF209 /* NonsenseSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* NonsenseSaverView.h */; };
 		8D255ACC0486D3F9007BF209 /* NonsenseSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* NonsenseSaverView.m */; };
@@ -110,10 +112,15 @@
 		558C0DDC123FFED60099AABD /* NonsenseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseView.h; sourceTree = "<group>"; };
 		558C0DDD123FFED60099AABD /* NonsenseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseView.m; sourceTree = "<group>"; };
 		558FFD8218E4DAE7009AF7E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		559C663C19EF75A000D35E25 /* Defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Defaults.plist; sourceTree = "<group>"; };
 		55B2818C12416BAA003CEEF4 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		55C3966015A20FCB005DBC66 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966215A20FCB005DBC66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966415A20FCB005DBC66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		55D1A03D19EF5E9600DE3929 /* NonsenseSaver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NonsenseSaver-Bridging-Header.h"; sourceTree = "<group>"; };
+		55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseSaverController.swift; sourceTree = "<group>"; };
+		55D1A04019EF647900DE3929 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		55D1A04219EF648700DE3929 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* NonsenseSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonsenseSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50079790118B23001CA0E54 /* NonsenseSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverView.h; sourceTree = "<group>"; };
@@ -199,6 +206,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				559C663C19EF75A000D35E25 /* Defaults.plist */,
 				5549DE731350D5CD00745EF3 /* README */,
 				55882BAA121CBB8700CB16C6 /* NonsenseSettings.xib */,
 				553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */,
@@ -213,10 +221,14 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				55D1A03D19EF5E9600DE3929 /* NonsenseSaver-Bridging-Header.h */,
 				F50079790118B23001CA0E54 /* NonsenseSaverView.h */,
 				F500797A0118B23001CA0E54 /* NonsenseSaverView.m */,
 				5520BE59121C6C9E0068419E /* NONSVerb.h */,
 				5520BE5A121C6C9E0068419E /* NONSVerb.m */,
+				55D1A04219EF648700DE3929 /* Constants.h */,
+				55D1A04019EF647900DE3929 /* Constants.m */,
+				55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */,
 				5520BE8D121C76370068419E /* NonsenseSaverController.h */,
 				5520BE8E121C76370068419E /* NonsenseSaverController.m */,
 				55561FAA123D959400A73C6A /* NonsenseObject.h */,
@@ -445,7 +457,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				TargetAttributes = {
 					5556EFCA18E0B46000B49E98 = {
 						TestTargetID = 5556EFA818E0B46000B49E98;
@@ -510,6 +522,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559C663D19EF75A000D35E25 /* Defaults.plist in Resources */,
 				55882BAB121CBB8700CB16C6 /* NonsenseSettings.xib in Resources */,
 				558FFD8318E4DAE7009AF7E6 /* InfoPlist.strings in Resources */,
 				55B2818D12416BAA003CEEF4 /* Credits.rtf in Resources */,
@@ -566,10 +579,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559C663E19EF75E600D35E25 /* NonsenseSaverController.swift in Sources */,
 				8D255ACC0486D3F9007BF209 /* NonsenseSaverView.m in Sources */,
 				5520BE5C121C6C9E0068419E /* NONSVerb.m in Sources */,
-				5520BE90121C76370068419E /* NonsenseSaverController.m in Sources */,
 				55561FAD123D959400A73C6A /* NonsenseObject.m in Sources */,
+				55D1A04119EF647900DE3929 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,13 +806,17 @@
 		EF7AD72E08BB986600CE4634 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = NonsenseSaver;
+				SWIFT_OBJC_BRIDGING_HEADER = "NonsenseSaver-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -806,13 +824,16 @@
 		EF7AD72F08BB986600CE4634 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = NonsenseSaver;
+				SWIFT_OBJC_BRIDGING_HEADER = "NonsenseSaver-Bridging-Header.h";
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
@@ -831,9 +852,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -849,7 +872,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -871,9 +894,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -882,7 +907,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
 			};

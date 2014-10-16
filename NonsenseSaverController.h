@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const NONSDefaults;
-
 @class NONSVerb;
 
 @interface NonsenseSaverController : NSObject

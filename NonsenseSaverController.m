@@ -11,8 +11,8 @@
 #if !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 #import <ScreenSaver/ScreenSaverDefaults.h>
 #endif
+#import "Constants.h"
 
-NSString * const NONSDefaults = @"com.github.maddthesane.NonsenseSaver";
 #define NONSSingularNounList @"Singular Nouns"
 #define NONSPluralNounList @"Plural Nouns"
 #define NONSAdjectiveList @"Adjectives"
