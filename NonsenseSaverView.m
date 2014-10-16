@@ -18,6 +18,7 @@
 @interface NonsenseSaverView ()
 @property (strong) NSMutableArray *nonsenses;
 @property (strong) NonsenseSaverController *controller;
+@property (strong) NSArray *nibArray;
 @end
 
 @implementation NonsenseSaverView
@@ -35,7 +36,7 @@
 @synthesize wordWindow;
 @synthesize credits;
 
-- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
+- (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
@@ -250,7 +251,9 @@
 - (NSWindow*)configureSheet
 {
     if (configureSheet == nil) {
-		[NSBundle loadNibNamed:@"NonsenseSettings" owner:self];
+		NSArray *objectArray;
+		[[NSBundle bundleForClass:[self class]] loadNibNamed:@"NonsenseSettings" owner:self topLevelObjects:&objectArray];
+		self.nibArray = objectArray;
 		[credits readRTFDFromFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"Credits" ofType:@"rtf"]];
 	}
 	return configureSheet;

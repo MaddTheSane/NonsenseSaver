@@ -21,8 +21,8 @@ extern NSString * const ThirdPersonPresentCont;
 @property (readonly, copy) NSString *verbThirdPersonPastPerfect;
 @property (readonly, copy) NSString *verbThirdPersonPresentCont;
 
-- (id)initWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont;
-- (id)initWithArray:(NSArray *)array;
+- (instancetype)initWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithArray:(NSArray *)array;
 + (NONSVerb*)verbWithArray:(NSArray*)array;
 + (NONSVerb*)verbWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont;
 

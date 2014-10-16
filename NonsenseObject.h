@@ -14,8 +14,8 @@
 @interface NonsenseObject : NSObject
 @property (readonly, copy) NSString *nonsense;
 
--(id)initWithString:(NSString *)nonString bounds:(NSRect)bound;
--(id)initWithString:(NSString *)nonString bounds:(NSRect)bound font:(NSFont *)theFont;
+-(instancetype)initWithString:(NSString *)nonString bounds:(NSRect)bound;
+-(instancetype)initWithString:(NSString *)nonString bounds:(NSRect)bound font:(NSFont *)theFont NS_DESIGNATED_INITIALIZER;
 
 -(void)draw;
 -(void)drawWithBackground:(BOOL)bgDraw;

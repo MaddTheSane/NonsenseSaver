@@ -23,7 +23,7 @@ NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 @end
 
 @implementation NONSVerb
--(id)initWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont
+-(instancetype)initWithSinglePresent:(NSString *)singlePresent pluralPresent:(NSString *)pluralPresent past:(NSString *)past pastPerfect:(NSString *)pastPerfect presentCont:(NSString *)presentCont
 {
 	if (self = [super init]) {
 		self.verbThirdPersonSinglePresent = singlePresent;
@@ -35,7 +35,7 @@ NSString * const ThirdPersonPresentCont = @"ThirdPersonPresentCont";
 	return self;
 }
 
-- (id)initWithArray:(NSArray *)array
+- (instancetype)initWithArray:(NSArray *)array
 {
 	if ([array count] < 5) {
 		NSLog(@"Array %@ too small! Not initializing!", array);

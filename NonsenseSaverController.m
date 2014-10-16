@@ -100,7 +100,7 @@ NSString * const NONSDefaults = @"com.github.maddthesane.NonsenseSaver";
 	[massiveNouns addObjectsFromArray:[defaults arrayForKey:NONSMassiveNounList]];
 }
 
-- (id)init
+- (instancetype)init
 {
 	if (self = [super init]) {
 		//we use arrays for objects that won't change, and mutable arrays for those that do

@@ -40,6 +40,6 @@
 - (IBAction)addWord:(id)sender;
 - (IBAction)cancelAddWord:(id)sender;
 
-- (NSInteger)vocabSelectorSelected;
+@property (NS_NONATOMIC_IOSONLY, readonly) NSInteger vocabSelectorSelected;
 
 @end

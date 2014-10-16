@@ -37,12 +37,12 @@
 	return returnRect;
 }
 
-- (id)initWithString:(NSString *)nonString bounds:(NSRect)bound
+- (instancetype)initWithString:(NSString *)nonString bounds:(NSRect)bound
 {
 	return [self initWithString:nonString bounds:bound font:[NSFont systemFontOfSize:kFullSize]];
 }
 
-- (id)initWithString:(NSString *)nonString bounds:(NSRect)bound font:(NSFont *)theFont
+- (instancetype)initWithString:(NSString *)nonString bounds:(NSRect)bound font:(NSFont *)theFont
 {
 	if (self = [super init]) {
 		switch (random() % 9) {
