@@ -114,6 +114,14 @@ class NonsenseSaverView: ScreenSaverView {
 	}
 	
 	@IBAction func changeVocabView(sender: AnyObject) {
+		
 	}
 	
+	@IBAction func removeSelectedWord(sender: AnyObject) {
+		
+	}
+	
+	@IBAction func addWord(sender: AnyObject) {
+		
+	}
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6249" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6249"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NonsenseSaverView" customModule="NonsenseSaver">
@@ -77,7 +77,7 @@ Gw
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="removeNonsense:" target="-2" id="168"/>
+                                                <action selector="removeSelectedWord:" target="-2" id="fzw-zk-pcm"/>
                                             </connections>
                                         </button>
                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="113">
@@ -136,7 +136,7 @@ Gw
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="addNonsense:" target="-2" id="170"/>
+                                                <action selector="addWord:" target="-2" id="PaW-VT-WzH"/>
                                             </connections>
                                         </button>
                                         <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ckc-F1-pFC">
@@ -289,14 +289,14 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="281" userLabel="Duration slider">
-                                            <rect key="frame" x="340" y="187" width="164" height="27"/>
+                                            <rect key="frame" x="343" y="187" width="164" height="27"/>
                                             <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="0.5" maxValue="10" doubleValue="2.6923076923076921" tickMarkPosition="below" numberOfTickMarks="14" sliderType="linear" id="282"/>
                                             <connections>
                                                 <binding destination="-2" name="value" keyPath="self.nonsenseDuration" id="qS9-WC-MP2"/>
                                             </connections>
                                         </slider>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="284">
-                                            <rect key="frame" x="340" y="220" width="212" height="17"/>
+                                            <rect key="frame" x="343" y="220" width="212" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="208" id="JUV-Mb-sXT"/>
                                             </constraints>
@@ -307,7 +307,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="286" userLabel="Duration">
-                                            <rect key="frame" x="508" y="199" width="44" height="17"/>
+                                            <rect key="frame" x="511" y="199" width="44" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="HL9-AN-9V8"/>
                                             </constraints>
@@ -366,7 +366,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="293">
-                                            <rect key="frame" x="0.0" y="0.0" width="570" height="257"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="573" height="257"/>
                                             <clipView key="contentView" id="xsa-AQ-deT">
                                                 <rect key="frame" x="1" y="1" width="553" height="248"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -375,11 +375,11 @@ Gw
                                                         <rect key="frame" x="0.0" y="0.0" width="553" height="255"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="553" height="255"/>
-                                                        <size key="maxSize" width="570" height="10000000"/>
+                                                        <size key="minSize" width="571" height="255"/>
+                                                        <size key="maxSize" width="573" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="553" height="255"/>
-                                                        <size key="maxSize" width="570" height="10000000"/>
+                                                        <size key="minSize" width="571" height="255"/>
+                                                        <size key="maxSize" width="573" height="10000000"/>
                                                     </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -422,7 +422,7 @@ Gw
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="292" width="421" height="223"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="183">
                 <rect key="frame" x="0.0" y="0.0" width="421" height="223"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -505,7 +505,7 @@ DQ
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="423" width="308" height="91"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="241">
                 <rect key="frame" x="0.0" y="0.0" width="308" height="91"/>
                 <autoresizingMask key="autoresizingMask"/>
