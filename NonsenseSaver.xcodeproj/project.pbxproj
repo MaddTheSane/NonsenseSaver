@@ -12,7 +12,6 @@
 		553CAF25123F2F7B008EA480 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 		553CAF32123F30A4008EA480 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553CAF31123F30A4008EA480 /* AppController.m */; };
 		55561F71123C133300A73C6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089C1672FE841209C02AAC07 /* Foundation.framework */; };
-		55561FAC123D959400A73C6A /* NonsenseObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 55561FAA123D959400A73C6A /* NonsenseObject.h */; };
 		5556EFAA18E0B46000B49E98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966215A20FCB005DBC66 /* Foundation.framework */; };
 		5556EFAB18E0B46000B49E98 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966415A20FCB005DBC66 /* CoreGraphics.framework */; };
 		5556EFAC18E0B46000B49E98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966015A20FCB005DBC66 /* UIKit.framework */; };
@@ -66,8 +65,6 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCFA80370C50100C91783 /* NonsenseSaver_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaver_Prefix.pch; sourceTree = "<group>"; };
-		5520BE59121C6C9E0068419E /* NONSVerb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NONSVerb.h; sourceTree = "<group>"; };
-		5520BE5A121C6C9E0068419E /* NONSVerb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NONSVerb.m; sourceTree = "<group>"; };
 		5520BE8D121C76370068419E /* NonsenseSaverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverController.h; sourceTree = "<group>"; };
 		5520BE8E121C76370068419E /* NonsenseSaverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseSaverController.m; sourceTree = "<group>"; };
 		553CAF1A123F2F5B008EA480 /* NONSVisualTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NONSVisualTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,8 +73,6 @@
 		553CAF30123F30A4008EA480 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		553CAF31123F30A4008EA480 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		5549DE731350D5CD00745EF3 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = ../README; sourceTree = "<group>"; };
-		55561FAA123D959400A73C6A /* NonsenseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseObject.h; sourceTree = "<group>"; };
-		55561FAB123D959400A73C6A /* NonsenseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseObject.m; sourceTree = "<group>"; };
 		5556EFA918E0B46000B49E98 /* Nonsense Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nonsense Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5556EFAF18E0B46000B49E98 /* Nonsense Generator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Nonsense Generator-Info.plist"; sourceTree = "<group>"; };
 		5556EFB118E0B46000B49E98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -114,8 +109,6 @@
 		55C3966415A20FCB005DBC66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		55D1A03D19EF5E9600DE3929 /* NonsenseSaver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NonsenseSaver-Bridging-Header.h"; sourceTree = "<group>"; };
 		55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseSaverController.swift; sourceTree = "<group>"; };
-		55D1A04019EF647900DE3929 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		55D1A04219EF648700DE3929 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* NonsenseSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonsenseSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50079790118B23001CA0E54 /* NonsenseSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverView.h; sourceTree = "<group>"; };
@@ -220,16 +213,10 @@
 				F50079790118B23001CA0E54 /* NonsenseSaverView.h */,
 				F500797A0118B23001CA0E54 /* NonsenseSaverView.m */,
 				559C664419EF7DAA00D35E25 /* NONSVerb.swift */,
-				5520BE59121C6C9E0068419E /* NONSVerb.h */,
-				5520BE5A121C6C9E0068419E /* NONSVerb.m */,
-				55D1A04219EF648700DE3929 /* Constants.h */,
-				55D1A04019EF647900DE3929 /* Constants.m */,
 				55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */,
 				5520BE8D121C76370068419E /* NonsenseSaverController.h */,
 				5520BE8E121C76370068419E /* NonsenseSaverController.m */,
 				557B1DB719F04C58009DFEA5 /* NonsenseObject.swift */,
-				55561FAA123D959400A73C6A /* NonsenseObject.h */,
-				55561FAB123D959400A73C6A /* NonsenseObject.m */,
 				553CAF2F123F2FF3008EA480 /* Testing Classes */,
 			);
 			name = Classes;
@@ -352,7 +339,6 @@
 			files = (
 				8D255AC70486D3F9007BF209 /* NonsenseSaver_Prefix.pch in Headers */,
 				8D255AC80486D3F9007BF209 /* NonsenseSaverView.h in Headers */,
-				55561FAC123D959400A73C6A /* NonsenseObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
