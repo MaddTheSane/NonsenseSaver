@@ -174,17 +174,16 @@ class NonsenseSaverController: NSObject {
 	
 	func randomSaying() -> String {
 		//FIXME: this is where it falls short. There needs to be a better way of generating nonsense than the one that I'm using right here.
-		let casenum = random() % 13
+		let casenum = random() % 12
 		var nonsensestring: String
 		switch (casenum) {
-		case 2:
-			nonsensestring = "The \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast)."
-			
 		case 0:
 			nonsensestring = "The \(randomAdjective()) \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast) \(randomAdverb())."
-			
 		case 1:
 			nonsensestring = "The \(randomSingularNoun()) \(randomVerb().thirdPersonPast) \(randomAdverb())"
+			
+		case 2:
+			nonsensestring = "The \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast)."
 			
 		case 3:
 			nonsensestring = "\(randomProperNoun()) \(randomVerb().thirdPersonPast) the \(randomSingularNoun()) \(randomAdverb())."
@@ -201,29 +200,17 @@ class NonsenseSaverController: NSObject {
 		case 7:
 			nonsensestring = "Can \(randomMassiveNoun()), who musn't have \(randomVerb().thirdPersonPastPerfect), \(randomVerb().thirdPersonPluralPresent) \(randomAdverb())?"
 			
-			/*
 		case 8:
-			nonsensestring = [[NSString alloc] initWithFormat:@"The %@ %@, while %@, %@ %@ %@.", [self adjective], [self pluralNoun], [[self verb] verbThirdPersonPresentCont], [[self verb] verbThirdPersonPast], [self massiveNoun], [self adverb] ];
-			break;
+			nonsensestring = "The \(randomAdjective()) \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast) \(randomMassiveNoun()) \(randomAdverb())."
 			
 		case 9:
-			nonsensestring = [[NSString alloc] initWithFormat:@"Must you %@ %@?", [[self verb] verbThirdPersonPluralPresent], [self adverb] ];
-			break;
+			nonsensestring = "Must you \(randomVerb().thirdPersonPluralPresent) \(randomAdverb())?"
 			
 		case 10:
-			nonsensestring = [[NSString alloc] initWithFormat:@"The %@ %@ %@ %@ %@.", [self adjective], [self adjective], [self singularNoun], [[self verb] verbThirdPersonSinglePresent], [self adverb]];
-			break;
+			nonsensestring = "The \(randomAdjective()) \(randomAdjective()) \(randomSingularNoun()) \(randomVerb().thirdPersonSinglePresent) \(randomAdverb())."
 			
 		case 11:
-			nonsensestring = [[NSString alloc] initWithFormat:@"%@'s %@ hadn't %@.", [self properNoun], [self pluralNoun], [[self verb] verbThirdPersonPast] ] ;
-			break;
-			*/
-			/*
-				case 13:
-				nonsensestring = [[NSString alloc] initWithFormat:@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@.", [self interjection], [self determiner], [self adjective], [self noun], [self adverb], [self verb], [self preposition], [self determiner], [self adjective], [self noun]];
-				break;
-			*/
-			
+			nonsensestring = "\(randomProperNoun())'s \(randomPluralNoun()) hadn't \(randomVerb().thirdPersonPast)."
 			
 		default:
 			nonsensestring = "The developer's brain farted \(randomAdverb()), producing this error.";

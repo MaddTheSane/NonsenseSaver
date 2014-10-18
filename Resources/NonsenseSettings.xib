@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6249" systemVersion="14A388b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6249" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6249"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NonsenseSaverView">
+        <customObject id="-2" userLabel="File's Owner" customClass="NonsenseSaverView" customModule="NonsenseSaver">
             <connections>
-                <outlet property="configureSheet" destination="1" id="174"/>
+                <outlet property="configSheet" destination="1" id="t3u-li-YQV"/>
                 <outlet property="credits" destination="296" id="297"/>
                 <outlet property="fieldThirdPersonPast" destination="BdP-zN-Khi" id="HSj-x3-rcy"/>
                 <outlet property="fieldThirdPersonPastPerfect" destination="RUu-rx-Hm2" id="ms4-3g-dOk"/>
@@ -17,7 +16,6 @@
                 <outlet property="fieldWord" destination="242" id="246"/>
                 <outlet property="verbWindow" destination="182" id="225"/>
                 <outlet property="vocabList" destination="116" id="175"/>
-                <outlet property="vocabSelector" destination="122" id="239"/>
                 <outlet property="wordToAdd" destination="244" id="247"/>
                 <outlet property="wordWindow" destination="240" id="254"/>
             </connections>
@@ -27,14 +25,14 @@
         <window title="Nonsense Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="185" width="616" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="contentRect" x="196" y="185" width="619" height="360"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="616" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="619" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="16" userLabel="Okay button">
-                        <rect key="frame" x="519" y="13" width="83" height="32"/>
+                        <rect key="frame" x="522" y="13" width="83" height="32"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="17">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -47,7 +45,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="18" userLabel="Cancel button">
-                        <rect key="frame" x="436" y="13" width="83" height="32"/>
+                        <rect key="frame" x="439" y="13" width="83" height="32"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="19">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -60,16 +58,16 @@ Gw
                         </connections>
                     </button>
                     <tabView translatesAutoresizingMaskIntoConstraints="NO" id="259">
-                        <rect key="frame" x="13" y="51" width="590" height="303"/>
+                        <rect key="frame" x="13" y="51" width="593" height="303"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="Words" identifier="1" id="260">
                                 <view key="view" id="261">
-                                    <rect key="frame" x="10" y="33" width="570" height="257"/>
+                                    <rect key="frame" x="10" y="33" width="573" height="257"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="157" userLabel="Remove button">
-                                            <rect key="frame" x="526" y="20" width="24" height="24"/>
+                                            <rect key="frame" x="529" y="20" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="6iL-Mm-c34"/>
                                                 <constraint firstAttribute="width" constant="24" id="OkC-F9-L3E"/>
@@ -83,7 +81,7 @@ Gw
                                             </connections>
                                         </button>
                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="113">
-                                            <rect key="frame" x="224" y="52" width="326" height="185"/>
+                                            <rect key="frame" x="227" y="52" width="326" height="185"/>
                                             <clipView key="contentView" id="dbW-Al-Ch1">
                                                 <rect key="frame" x="1" y="1" width="324" height="183"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +127,7 @@ Gw
                                             </scroller>
                                         </scrollView>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="155" userLabel="Add button">
-                                            <rect key="frame" x="503" y="20" width="24" height="24"/>
+                                            <rect key="frame" x="506" y="20" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="24" id="n4S-Gm-lmM"/>
                                             </constraints>
@@ -141,92 +139,113 @@ Gw
                                                 <action selector="addNonsense:" target="-2" id="170"/>
                                             </connections>
                                         </button>
-                                        <matrix verticalHuggingPriority="750" selectionByRect="NO" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="122">
-                                            <rect key="frame" x="20" y="71" width="113" height="166"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="cellSize" width="113" height="19"/>
-                                            <size key="intercellSpacing" width="4" height="2"/>
-                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="125">
+                                        <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ckc-F1-pFC">
+                                            <rect key="frame" x="19" y="220" width="116" height="18"/>
+                                            <buttonCell key="cell" type="radio" title="Singular Nouns" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="mSu-xf-3Ca">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
-                                            <cells>
-                                                <column>
-                                                    <buttonCell type="radio" title="Singular Noun" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="123">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="changeVocabView:" target="-2" id="181"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="Plural Noun" imagePosition="left" alignment="left" inset="2" id="131">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="changeVocabView:" target="-2" id="180"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="Adjective" imagePosition="left" alignment="left" inset="2" id="132">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="changeVocabView:" target="-2" id="179"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="Verb" imagePosition="left" alignment="left" inset="2" id="133">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="changeVocabView:" target="-2" id="178"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="Adverb" imagePosition="left" alignment="left" inset="2" id="134">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="changeVocabView:" target="-2" id="177"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="Massive Noun" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="135">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="changeVocabView:" target="-2" id="176"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="Proper Noun" imagePosition="left" alignment="left" inset="2" id="255">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="changeVocabView:" target="-2" id="256"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="Interjection" imagePosition="left" alignment="left" inset="2" id="304">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </column>
-                                            </cells>
-                                        </matrix>
+                                            <connections>
+                                                <action selector="changeVocabView:" target="-2" id="PZa-XF-kWn"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="9kj-Xo-l7z">
+                                            <rect key="frame" x="19" y="198" width="116" height="18"/>
+                                            <buttonCell key="cell" type="radio" title="Plural Nouns" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="VWY-pn-KQb">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="changeVocabView:" target="-2" id="Lcj-gQ-h2h"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="kLm-MD-gaB">
+                                            <rect key="frame" x="19" y="176" width="116" height="18"/>
+                                            <buttonCell key="cell" type="radio" title="Verbs" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="XVK-ai-2ks">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="changeVocabView:" target="-2" id="lqW-y9-OyB"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="Tnq-7V-6TG">
+                                            <rect key="frame" x="19" y="154" width="116" height="18"/>
+                                            <buttonCell key="cell" type="radio" title="Proper Nouns" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="QFq-kV-tdS">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="changeVocabView:" target="-2" id="pZg-Mf-Orr"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="znb-M5-phC">
+                                            <rect key="frame" x="19" y="132" width="116" height="18"/>
+                                            <buttonCell key="cell" type="radio" title="Adjectives" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="SBK-tT-pRE">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="changeVocabView:" target="-2" id="tAZ-za-3cw"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="74H-kP-7Nw">
+                                            <rect key="frame" x="19" y="110" width="116" height="18"/>
+                                            <buttonCell key="cell" type="radio" title="Adverbs" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Yfq-Le-xga">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="changeVocabView:" target="-2" id="ekg-hW-r9m"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="N7A-ty-t2i">
+                                            <rect key="frame" x="19" y="88" width="116" height="18"/>
+                                            <buttonCell key="cell" type="radio" title="Massive Nouns" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="iqi-aM-3F9">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="changeVocabView:" target="-2" id="vwW-Q7-q5d"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="122" firstAttribute="leading" secondItem="261" secondAttribute="leading" constant="20" symbolic="YES" id="2ai-X7-KG8"/>
-                                        <constraint firstItem="113" firstAttribute="leading" secondItem="122" secondAttribute="trailing" constant="91" id="EDq-h4-cZW"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="trailing" secondItem="N7A-ty-t2i" secondAttribute="trailing" id="0mP-qE-puE"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="leading" secondItem="9kj-Xo-l7z" secondAttribute="leading" id="1WB-ns-Bey"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="leading" secondItem="Ckc-F1-pFC" secondAttribute="leading" id="33x-Z9-AsI"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="leading" secondItem="74H-kP-7Nw" secondAttribute="leading" id="L1q-t8-PnA"/>
+                                        <constraint firstItem="113" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ckc-F1-pFC" secondAttribute="trailing" priority="750" constant="8" symbolic="YES" id="LA3-TU-FMf"/>
+                                        <constraint firstItem="Ckc-F1-pFC" firstAttribute="leading" secondItem="261" secondAttribute="leading" constant="20" symbolic="YES" id="OV1-jT-mgG"/>
+                                        <constraint firstItem="74H-kP-7Nw" firstAttribute="top" secondItem="znb-M5-phC" secondAttribute="bottom" constant="6" symbolic="YES" id="QEO-C6-ngV"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="trailing" secondItem="Tnq-7V-6TG" secondAttribute="trailing" id="SRz-HI-cBU"/>
+                                        <constraint firstItem="kLm-MD-gaB" firstAttribute="top" secondItem="9kj-Xo-l7z" secondAttribute="bottom" constant="6" symbolic="YES" id="UHa-Ac-2gW"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="trailing" secondItem="74H-kP-7Nw" secondAttribute="trailing" id="V50-WS-bvT"/>
                                         <constraint firstItem="157" firstAttribute="top" secondItem="113" secondAttribute="bottom" constant="8" symbolic="YES" id="VZd-ik-q5B"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="trailing" secondItem="kLm-MD-gaB" secondAttribute="trailing" id="Vgp-ii-Fjf"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="trailing" secondItem="Ckc-F1-pFC" secondAttribute="trailing" id="ceR-Bi-g9e"/>
                                         <constraint firstItem="157" firstAttribute="trailing" secondItem="113" secondAttribute="trailing" id="dBw-0h-z57"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="leading" secondItem="kLm-MD-gaB" secondAttribute="leading" id="dbV-9Z-CXy"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="leading" secondItem="Tnq-7V-6TG" secondAttribute="leading" id="fM3-V8-4sE"/>
+                                        <constraint firstItem="Tnq-7V-6TG" firstAttribute="top" secondItem="kLm-MD-gaB" secondAttribute="bottom" constant="6" symbolic="YES" id="glX-0a-HVd"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="leading" secondItem="N7A-ty-t2i" secondAttribute="leading" id="hLQ-4D-ITv"/>
                                         <constraint firstItem="155" firstAttribute="top" secondItem="157" secondAttribute="top" id="jEs-S6-S0j"/>
                                         <constraint firstItem="157" firstAttribute="leading" secondItem="155" secondAttribute="trailing" constant="-1" id="k2i-4f-GEj"/>
+                                        <constraint firstItem="Ckc-F1-pFC" firstAttribute="top" secondItem="261" secondAttribute="top" constant="20" symbolic="YES" id="mK1-Ik-gUp"/>
                                         <constraint firstAttribute="trailing" secondItem="157" secondAttribute="trailing" constant="20" symbolic="YES" id="msm-WN-sRj"/>
                                         <constraint firstAttribute="bottom" secondItem="157" secondAttribute="bottom" constant="20" symbolic="YES" id="ocm-ie-t7n"/>
+                                        <constraint firstItem="9kj-Xo-l7z" firstAttribute="top" secondItem="Ckc-F1-pFC" secondAttribute="bottom" constant="6" symbolic="YES" id="p2d-bK-ro5"/>
                                         <constraint firstItem="155" firstAttribute="bottom" secondItem="157" secondAttribute="bottom" id="qRd-Oe-UKG"/>
-                                        <constraint firstItem="122" firstAttribute="top" secondItem="261" secondAttribute="top" constant="20" symbolic="YES" id="qzm-Na-nTn"/>
                                         <constraint firstItem="113" firstAttribute="top" secondItem="261" secondAttribute="top" constant="20" symbolic="YES" id="rkG-90-WXq"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="trailing" secondItem="9kj-Xo-l7z" secondAttribute="trailing" id="uWt-Vh-yul"/>
+                                        <constraint firstItem="N7A-ty-t2i" firstAttribute="top" secondItem="74H-kP-7Nw" secondAttribute="bottom" constant="6" symbolic="YES" id="wLf-XN-cqq"/>
+                                        <constraint firstItem="znb-M5-phC" firstAttribute="top" secondItem="Tnq-7V-6TG" secondAttribute="bottom" constant="6" symbolic="YES" id="zbO-xO-jts"/>
                                     </constraints>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Display" identifier="2" id="262">
                                 <view key="view" id="263">
-                                    <rect key="frame" x="10" y="33" width="570" height="257"/>
+                                    <rect key="frame" x="10" y="33" width="573" height="257"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="264" userLabel="Number slider">
@@ -236,7 +255,7 @@ Gw
                                             </constraints>
                                             <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="3" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="265"/>
                                             <connections>
-                                                <binding destination="-2" name="value" keyPath="self.nonNumber" id="6Wy-TG-hUF">
+                                                <binding destination="-2" name="value" keyPath="self.maxNonsenses" id="UQ2-Xm-Exu">
                                                     <dictionary key="options">
                                                         <real key="NSMultipleValuesPlaceholder" value="1"/>
                                                         <real key="NSNoSelectionPlaceholder" value="1"/>
@@ -258,7 +277,7 @@ Gw
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="-2" name="value" keyPath="self.nonNumber" id="YAD-t3-McK"/>
+                                                <binding destination="-2" name="value" keyPath="self.maxNonsenses" id="MWA-5x-yJd"/>
                                             </connections>
                                         </textField>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="279">
@@ -273,7 +292,7 @@ Gw
                                             <rect key="frame" x="340" y="187" width="164" height="27"/>
                                             <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="0.5" maxValue="10" doubleValue="2.6923076923076921" tickMarkPosition="below" numberOfTickMarks="14" sliderType="linear" id="282"/>
                                             <connections>
-                                                <binding destination="-2" name="value" keyPath="self.nonDuration" id="MJH-gy-cny"/>
+                                                <binding destination="-2" name="value" keyPath="self.nonsenseDuration" id="qS9-WC-MP2"/>
                                             </connections>
                                         </slider>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="284">
@@ -299,7 +318,7 @@ Gw
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="-2" name="value" keyPath="self.nonDuration" id="0pv-Hl-Ycl"/>
+                                                <binding destination="-2" name="value" keyPath="self.nonsenseDuration" id="Re6-cj-cNA"/>
                                             </connections>
                                         </textField>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="298" userLabel="Color background">
@@ -343,7 +362,7 @@ Gw
                             </tabViewItem>
                             <tabViewItem label="Credits" identifier="Item 2" id="291">
                                 <view key="view" id="292">
-                                    <rect key="frame" x="10" y="33" width="570" height="257"/>
+                                    <rect key="frame" x="10" y="33" width="573" height="257"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="293">
@@ -353,13 +372,13 @@ Gw
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="296">
-                                                        <rect key="frame" x="0.0" y="0.0" width="553" height="248"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="553" height="255"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="568" height="255"/>
+                                                        <size key="minSize" width="553" height="255"/>
                                                         <size key="maxSize" width="570" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="568" height="255"/>
+                                                        <size key="minSize" width="553" height="255"/>
                                                         <size key="maxSize" width="570" height="10000000"/>
                                                     </textView>
                                                 </subviews>

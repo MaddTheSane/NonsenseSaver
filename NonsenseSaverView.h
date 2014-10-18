@@ -8,7 +8,7 @@
 
 #import <ScreenSaver/ScreenSaver.h>
 
-@interface NonsenseSaverView : ScreenSaverView <NSTableViewDataSource>
+@interface NonsenseSaverView454 : ScreenSaverView <NSTableViewDataSource>
 @property (readwrite) NSInteger nonNumber;
 @property (readwrite) CGFloat nonDuration;
 @property (readwrite) BOOL showBackground;

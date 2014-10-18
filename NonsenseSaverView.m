@@ -17,12 +17,12 @@
 #define NONSDuration @"Nonsense Duration"
 #define NONSBGColor @"Show Background"
 
-@interface NonsenseSaverView ()
+@interface NonsenseSaverView454 ()
 @property (strong) NSMutableArray *nonsenses;
 @property (strong) NonsenseSaverController *controller;
 @end
 
-@implementation NonsenseSaverView
+@implementation NonsenseSaverView454
 @synthesize nonNumber;
 @synthesize nonDuration;
 @synthesize showBackground;

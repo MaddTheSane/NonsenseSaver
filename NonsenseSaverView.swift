@@ -25,13 +25,15 @@ private var oursreensaverDefaults: dispatch_once_t = 0
 
 class NonsenseSaverView: ScreenSaverView {
 	dynamic var maxNonsenses: Int = 3
-	dynamic var nonsenseDuration: CGFloat = 2.7
+	dynamic var nonsenseDuration: NSTimeInterval = 2.7
 	dynamic var showBackground = true
+	
+	@IBOutlet var configSheet: NSWindow! = nil
+	@IBOutlet var credits: NSTextView! = nil
+	
 	let controller = NonsenseSaverController()
 	var nonsenses = [NonsenseObject]()
 	var nibArray: NSArray? = nil
-	@IBOutlet var configSheet: NSWindow! = nil
-	@IBOutlet var credits: NSTextView! = nil
 
 	override init(frame: NSRect, isPreview: Bool) {
 		srandom(UInt32(time(nil) & 0xFFFFFFFF))
@@ -39,26 +41,23 @@ class NonsenseSaverView: ScreenSaverView {
 
 		super.init(frame: frame, isPreview: isPreview)
 		
+		let defaults = ScreenSaverDefaults.defaultsForModuleWithName(NonsenseDefaultsKey) as ScreenSaverDefaults
+		maxNonsenses = defaults.integerForKey(NONSAtATime)
+		nonsenseDuration = defaults.doubleForKey(NONSDuration)
+		showBackground = defaults.boolForKey(NONSBGColor)
+		setAnimationTimeInterval(nonsenseDuration)
+		
 		var theFont: NSFont
 		if isPreview {
-			if let atheFont = NSFont(name: "Helvetica", size: kPreviewSize) {
-				theFont = atheFont
-			} else {
-				theFont = NSFont.systemFontOfSize(kPreviewSize)
-			}
+			theFont = NSFont.systemFontOfSize(kPreviewSize)
 		} else {
-			if let atheFont = NSFont(name: "Helvetica", size: kFullSize) {
-				theFont = atheFont
-			} else {
-				theFont = NSFont.systemFontOfSize(kFullSize)
-			}
+			theFont = NSFont.systemFontOfSize(kFullSize)
 		}
 
 		for i in 0..<maxNonsenses {
 			let non = NonsenseObject(string: controller.randomSaying(), bounds: self.bounds, font: theFont)
 			nonsenses.append(non)
 		}
-
 	}
 	
 	override func hasConfigureSheet() -> Bool {
@@ -76,6 +75,10 @@ class NonsenseSaverView: ScreenSaverView {
 		return configSheet
 	}
 	
+	override func animateOneFrame() {
+		needsDisplay = true
+	}
+	
 	convenience override init(frame: NSRect) {
 		self.init(frame: frame, isPreview: false)
 	}
@@ -88,9 +91,29 @@ class NonsenseSaverView: ScreenSaverView {
 	}
 	
     override func drawRect(dirtyRect: NSRect) {
+		//Clear the screen
         super.drawRect(dirtyRect)
 
-        // Drawing code here.
+		var theFont: NSFont
+		if isPreview() {
+			theFont = NSFont.systemFontOfSize(kPreviewSize)
+		} else {
+			theFont = NSFont.systemFontOfSize(kFullSize)
+		}
+		for obj in nonsenses {
+			obj.draw(background: showBackground)
+		}
+		nonsenses.removeAtIndex(0)
+		let non = NonsenseObject(string: controller.randomSaying(), bounds: bounds, font:theFont)
+		nonsenses.append(non)
     }
-    
+	
+	
+	@IBAction func closeNonsense(sender: AnyObject?) {
+		
+	}
+	
+	@IBAction func changeVocabView(sender: AnyObject) {
+	}
+	
 }
