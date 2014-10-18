@@ -19,7 +19,6 @@ private func ourSetDefaults() {
 	let defaults = ScreenSaverDefaults.defaultsForModuleWithName(NonsenseDefaultsKey) as NSUserDefaults
 	defaults.registerDefaults([NONSAtATime: 3, NONSDuration: 2.7, NONSBGColor: true])
 }
-	
 
 private var oursreensaverDefaults: dispatch_once_t = 0
 
@@ -34,7 +33,11 @@ class NonsenseSaverView: ScreenSaverView {
 	let controller = NonsenseSaverController()
 	var nonsenses = [NonsenseObject]()
 	var nibArray: NSArray? = nil
-
+	
+	convenience override init(frame: NSRect) {
+		self.init(frame: frame, isPreview: false)
+	}
+	
 	override init(frame: NSRect, isPreview: Bool) {
 		srandom(UInt32(time(nil) & 0xFFFFFFFF))
 		dispatch_once(&oursreensaverDefaults, ourSetDefaults)
@@ -79,10 +82,6 @@ class NonsenseSaverView: ScreenSaverView {
 		needsDisplay = true
 	}
 	
-	convenience override init(frame: NSRect) {
-		self.init(frame: frame, isPreview: false)
-	}
-
 	required init?(coder: NSCoder) {
 		srandom(UInt32(time(nil) & 0xFFFFFFFF))
 		dispatch_once(&oursreensaverDefaults, ourSetDefaults)

@@ -230,5 +230,180 @@ class NonsenseSaverController: NSObject {
 		defaults.setObject(massiveNouns, forKey: NONSMassiveNounList)
 		defaults.synchronize()
 	}
-
+	
+	func addVerb(verb: Verb) {
+		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: verbs.count), forKey: "verbs")
+		verbs.append(verb)
+		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: verbs.count), forKey: "verbs")
+	}
+	
+	func addPluralNoun(pluralNoun: String) {
+		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: pluralNouns.count), forKey: "pluralNouns")
+		pluralNouns.append(pluralNoun)
+		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: pluralNouns.count), forKey: "pluralNouns")
+	}
+	
+	func addSingularNoun(singularNoun: String) {
+		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: singularNouns.count), forKey: "singularNouns")
+		singularNouns.append(singularNoun)
+		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: singularNouns.count), forKey: "singularNouns")
+	}
+	
+	func addProperNoun(properNoun: String) {
+		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: properNouns.count), forKey: "properNouns")
+		properNouns.append(properNoun)
+		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: properNouns.count), forKey: "properNouns")
+	}
+	
+	func addAdverb(adverb: String) {
+		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: properNouns.count), forKey: "properNouns")
+		adverbs.append(adverb)
+		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: properNouns.count), forKey: "properNouns")
+	}
+	
+	func addAdjective(adjective: String) {
+		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: adjectives.count), forKey: "adjectives")
+		adjectives.append(adjective)
+		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: adjectives.count), forKey: "adjectives")
+	}
+	
+	func addMassiveNoun(massiveNoun: String) {
+		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: massiveNouns.count), forKey: "massiveNouns")
+		massiveNouns.append(massiveNoun)
+		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: massiveNouns.count), forKey: "massiveNouns")
+	}
+	
+	@objc(removeVerbsAtIndexes:) func removeVerbs(#indexes: NSIndexSet) {
+		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "verbs")
+		verbs = verbs.filter { (tmpVerb) -> Bool in
+			var verbIndex = find(self.verbs, tmpVerb)!
+			return !indexes.containsIndex(verbIndex)
+		}
+		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "verbs")
+	}
+	
+	@objc(removePluralNounsAtIndexes:) func removePluralNouns(#indexes: NSIndexSet) {
+		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "pluralNouns")
+		pluralNouns = pluralNouns.filter { (tmpVerb) -> Bool in
+			var verbIndex = find(self.pluralNouns, tmpVerb)!
+			return !indexes.containsIndex(verbIndex)
+		}
+		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "pluralNouns")
+	}
+	
+	@objc(removeSingularNounsAtIndexes:) func removeSingularNouns(#indexes: NSIndexSet) {
+		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "singularNouns")
+		singularNouns = singularNouns.filter { (tmpVerb) -> Bool in
+			var verbIndex = find(self.singularNouns, tmpVerb)!
+			return !indexes.containsIndex(verbIndex)
+		}
+		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "singularNouns")
+	}
+	
+	@objc(removeProperNounsAtIndexes:) func removeProperNouns(#indexes: NSIndexSet) {
+		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "properNouns")
+		properNouns = properNouns.filter { (tmpVerb) -> Bool in
+			var verbIndex = find(self.properNouns, tmpVerb)!
+			return !indexes.containsIndex(verbIndex)
+		}
+		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "properNouns")
+	}
+	
+	@objc(removeAdverbsAtIndexes:) func removeAdverbs(#indexes: NSIndexSet) {
+		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "adverbs")
+		adverbs = adverbs.filter { (tmpVerb) -> Bool in
+			var verbIndex = find(self.adverbs, tmpVerb)!
+			return !indexes.containsIndex(verbIndex)
+		}
+		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "adverbs")
+	}
+	
+	@objc(removeAdjectivesAtIndexes:) func removeAdjectives(#indexes: NSIndexSet) {
+		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "adjectives")
+		adjectives = adjectives.filter { (tmpVerb) -> Bool in
+			var verbIndex = find(self.adjectives, tmpVerb)!
+			return !indexes.containsIndex(verbIndex)
+		}
+		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "adjectives")
+	}
+	
+	@objc(removeMassiveNounsAtIndexes:) func removeMassiveNouns(#indexes: NSIndexSet) {
+		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "massiveNouns")
+		massiveNouns = massiveNouns.filter { (tmpVerb) -> Bool in
+			var verbIndex = find(self.massiveNouns, tmpVerb)!
+			return !indexes.containsIndex(verbIndex)
+		}
+		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "massiveNouns")
+	}
+	
+	@objc(removeVerbsInArray:) func removeVerbs(array arrays: [Verb]) {
+		let idxSet = NSMutableIndexSet()
+		for aVerb in arrays {
+			if let anIdx = find(verbs, aVerb) {
+				idxSet.addIndex(anIdx)
+			}
+		}
+		removeVerbs(indexes: idxSet)
+	}
+	
+	@objc(removePluralNounsInArray:) func removePluralNouns(array arrays: [String]) {
+		let idxSet = NSMutableIndexSet()
+		for aVerb in arrays {
+			if let anIdx = find(pluralNouns, aVerb) {
+				idxSet.addIndex(anIdx)
+			}
+		}
+		removePluralNouns(indexes: idxSet)
+	}
+	
+	@objc(removeSingularNounsInArray:) func removeSingularNouns(array arrays: [String]) {
+		let idxSet = NSMutableIndexSet()
+		for aVerb in arrays {
+			if let anIdx = find(singularNouns, aVerb) {
+				idxSet.addIndex(anIdx)
+			}
+		}
+		removeSingularNouns(indexes: idxSet)
+	}
+	
+	@objc(removeProperNounsInArray:) func removeProperNouns(array arrays: [String]) {
+		let idxSet = NSMutableIndexSet()
+		for aVerb in arrays {
+			if let anIdx = find(properNouns, aVerb) {
+				idxSet.addIndex(anIdx)
+			}
+		}
+		removeProperNouns(indexes: idxSet)
+	}
+	
+	@objc(removeAdverbsInArray:) func removeAdverbs(array arrays: [String]) {
+		let idxSet = NSMutableIndexSet()
+		for aVerb in arrays {
+			if let anIdx = find(adverbs, aVerb) {
+				idxSet.addIndex(anIdx)
+			}
+		}
+		removeAdverbs(indexes: idxSet)
+	}
+	
+	@objc(removeAdjectivesInArray:) func removeAdjectives(array arrays: [String]) {
+		let idxSet = NSMutableIndexSet()
+		for aVerb in arrays {
+			if let anIdx = find(adjectives, aVerb) {
+				idxSet.addIndex(anIdx)
+			}
+		}
+		removeAdjectives(indexes: idxSet)
+	}
+	
+	@objc(removeMassiveNounsInArray:) func removeMassiveNouns(array arrays: [String]) {
+		let idxSet = NSMutableIndexSet()
+		for aVerb in arrays {
+			if let anIdx = find(massiveNouns, aVerb) {
+				idxSet.addIndex(anIdx)
+			}
+		}
+		removeMassiveNouns(indexes: idxSet)
+	}
+	
 }
