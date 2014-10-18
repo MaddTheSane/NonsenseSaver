@@ -7,8 +7,11 @@
 //
 
 #import "NonsenseView.h"
-#import "NonsenseSaverController.h"
-#import "NonsenseObject.h"
+#import "NONSVisualTester-Swift.h"
+//#import "NonsenseSaverController.h"
+//#import "NonsenseObject.h"
+
+#define kPreviewSize 12.0f
 
 @interface NonsenseView ()
 @property (strong) NonsenseSaverController *nonsenseController;
@@ -34,7 +37,7 @@
 		NSFont *theFont = [NSFont systemFontOfSize:kPreviewSize];
 		
 		for (int i = 0; i < [self nonNumber] ; i++ ) {
-			NonsenseObject *non = [[NonsenseObject alloc] initWithString:[self.nonsenseController radomSaying] bounds:[self bounds] font:theFont];
+			NonsenseObject *non = [NonsenseObject newNonsenseWithString:[self.nonsenseController randomAdjective] bounds:[self bounds] font:theFont];
 			[self.nonsenses addObject:non];
 		}
 		
@@ -60,7 +63,7 @@
 		self.settingsChanged = NO;
 	} else {
 		[self.nonsenses removeObjectAtIndex:0];
-		NonsenseObject *non = [[NonsenseObject alloc] initWithString:[self.nonsenseController radomSaying] bounds:[self bounds] font:theFont];
+		NonsenseObject *non = [NonsenseObject newNonsenseWithString:[self.nonsenseController randomAdjective] bounds:[self bounds] font:theFont];
 		[self.nonsenses addObject:non];
 	}
 	for (NonsenseObject *obj in self.nonsenses) {

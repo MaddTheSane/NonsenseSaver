@@ -9,8 +9,6 @@
 import Cocoa
 import ScreenSaver
 
-let NonsenseDefaultsKey = "com.github.maddthesane.NonsenseSaver"
-
 private let NONSAtATime = "Number at a time"
 private let NONSDuration = "Nonsense Duration"
 private let NONSBGColor = "Show Background"

@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-@class NonsenseSaverController;
 
 @interface NonsenseView : NSView
 @property NSInteger nonNumber;

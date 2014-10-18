@@ -6,8 +6,14 @@
 //
 //
 
+#if os(OSX)
 import Cocoa
 import ScreenSaver
+	#else
+	import Foundation
+	#endif
+	
+let NonsenseDefaultsKey = "com.github.maddthesane.NonsenseSaver"
 
 let NONSSingularNounList = "Singular Nouns"
 let NONSPluralNounList = "Plural Nouns"
