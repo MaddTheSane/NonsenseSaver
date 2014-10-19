@@ -14,7 +14,7 @@ private let NONSDuration = "Nonsense Duration"
 private let NONSBGColor = "Show Background"
 
 private func ourSetDefaults() {
-	let defaults = ScreenSaverDefaults.defaultsForModuleWithName(NonsenseDefaultsKey) as NSUserDefaults
+	let defaults = ScreenSaverDefaults.defaultsForModuleWithName(NonsenseDefaultsKey) as ScreenSaverDefaults
 	defaults.registerDefaults([NONSAtATime: 3, NONSDuration: 2.7, NONSBGColor: true])
 }
 
@@ -37,7 +37,7 @@ class NonsenseSaverView: ScreenSaverView {
 	}
 	
 	override init(frame: NSRect, isPreview: Bool) {
-		srandom(UInt32(time(nil) & 0xFFFFFFFF))
+		srandom(UInt32(time(nil) & 0x7FFFFFFF))
 		dispatch_once(&oursreensaverDefaults, ourSetDefaults)
 
 		super.init(frame: frame, isPreview: isPreview)
@@ -65,8 +65,8 @@ class NonsenseSaverView: ScreenSaverView {
 		return true
 	}
 	
-	override func configureSheet() -> NSWindow! {
-		if let ourconfigsheet = configSheet {
+	override func configureSheet() -> NSWindow {
+		if configSheet == nil {
 			let ourBundle = NSBundle(forClass: self.dynamicType)
 			ourBundle.loadNibNamed("NonsenseSettings", owner: self, topLevelObjects: &nibArray)
 			if let creditsPath = ourBundle.pathForResource("Credits", ofType: "rtf") {
@@ -81,7 +81,7 @@ class NonsenseSaverView: ScreenSaverView {
 	}
 	
 	required init?(coder: NSCoder) {
-		srandom(UInt32(time(nil) & 0xFFFFFFFF))
+		srandom(UInt32(time(nil) & 0x7FFFFFFF))
 		dispatch_once(&oursreensaverDefaults, ourSetDefaults)
 
 		super.init(coder: coder)

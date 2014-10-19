@@ -6,12 +6,12 @@
 //
 //
 
+import Foundation
+
 #if os(OSX)
 import Cocoa
 import ScreenSaver
-	#else
-	import Foundation
-	#endif
+#endif
 	
 let NonsenseDefaultsKey = "com.github.maddthesane.NonsenseSaver"
 

@@ -14,7 +14,7 @@ let kFullSize: CGFloat = 30
 
 private let kNonsenseBorder: CGFloat = 8
 
-@objc final class NonsenseObject: Printable, DebugPrintable {
+final class NonsenseObject: NSObject, Printable, DebugPrintable {
 	let nonsense: String
 	let backgroundColor: NSColor
 	let foregroundColor: NSColor
@@ -128,10 +128,7 @@ private let kNonsenseBorder: CGFloat = 8
 			tmpPlace.size = strSize;
 			placement = tmpPlace;
 		}
-	}
-	
-	class func newNonsense(#string: String, bounds: NSRect, font: NSFont) -> NonsenseObject {
-		return NonsenseObject(string: string, bounds: bounds, font: font)
+		super.init()
 	}
 	
 	func draw(background bgDraw: Bool = true) {
@@ -142,11 +139,11 @@ private let kNonsenseBorder: CGFloat = 8
 		(nonsense as NSString).drawInRect(textPosition, withAttributes: fontAttributes)
 	}
 
-	var description: String {
+	override var description: String {
 		return nonsense
 	}
 	
-	var debugDescription: String {
+	override var debugDescription: String {
 		return nonsense + ", placement: " + NSStringFromRect(placement)
 	}
 }
