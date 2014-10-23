@@ -238,45 +238,52 @@ class NonsenseSaverController: NSObject {
 	}
 	
 	func addVerb(verb: Verb) {
-		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: verbs.count), forKey: "verbs")
+		let curIdx = NSIndexSet(index: verbs.count)
+		self.willChange(.Insertion, valuesAtIndexes: curIdx, forKey: "verbs")
 		verbs.append(verb)
-		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: verbs.count), forKey: "verbs")
+		self.didChange(.Insertion, valuesAtIndexes: curIdx, forKey: "verbs")
 	}
 	
 	func addPluralNoun(pluralNoun: String) {
-		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: pluralNouns.count), forKey: "pluralNouns")
+		let curIdx = NSIndexSet(index: pluralNouns.count)
+		self.willChange(.Insertion, valuesAtIndexes: curIdx, forKey: "pluralNouns")
 		pluralNouns.append(pluralNoun)
-		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: pluralNouns.count), forKey: "pluralNouns")
+		self.didChange(.Insertion, valuesAtIndexes: curIdx, forKey: "pluralNouns")
 	}
 	
 	func addSingularNoun(singularNoun: String) {
-		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: singularNouns.count), forKey: "singularNouns")
+		let curIdx = NSIndexSet(index: singularNouns.count)
+		self.willChange(.Insertion, valuesAtIndexes: curIdx, forKey: "singularNouns")
 		singularNouns.append(singularNoun)
-		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: singularNouns.count), forKey: "singularNouns")
+		self.didChange(.Insertion, valuesAtIndexes: curIdx, forKey: "singularNouns")
 	}
 	
 	func addProperNoun(properNoun: String) {
-		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: properNouns.count), forKey: "properNouns")
+		let curIdx = NSIndexSet(index: properNouns.count)
+		self.willChange(.Insertion, valuesAtIndexes: curIdx, forKey: "properNouns")
 		properNouns.append(properNoun)
-		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: properNouns.count), forKey: "properNouns")
+		self.didChange(.Insertion, valuesAtIndexes: curIdx, forKey: "properNouns")
 	}
 	
 	func addAdverb(adverb: String) {
-		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: properNouns.count), forKey: "properNouns")
+		let curIdx = NSIndexSet(index: properNouns.count)
+		self.willChange(.Insertion, valuesAtIndexes: curIdx, forKey: "properNouns")
 		adverbs.append(adverb)
-		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: properNouns.count), forKey: "properNouns")
+		self.didChange(.Insertion, valuesAtIndexes: curIdx, forKey: "properNouns")
 	}
 	
 	func addAdjective(adjective: String) {
-		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: adjectives.count), forKey: "adjectives")
+		let curIdx = NSIndexSet(index: adjectives.count)
+		self.willChange(.Insertion, valuesAtIndexes: curIdx, forKey: "adjectives")
 		adjectives.append(adjective)
-		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: adjectives.count), forKey: "adjectives")
+		self.didChange(.Insertion, valuesAtIndexes: curIdx, forKey: "adjectives")
 	}
 	
 	func addMassiveNoun(massiveNoun: String) {
-		self.willChange(.Insertion, valuesAtIndexes: NSIndexSet(index: massiveNouns.count), forKey: "massiveNouns")
+		let curIdx = NSIndexSet(index: massiveNouns.count)
+		self.willChange(.Insertion, valuesAtIndexes: curIdx, forKey: "massiveNouns")
 		massiveNouns.append(massiveNoun)
-		self.didChange(.Insertion, valuesAtIndexes: NSIndexSet(index: massiveNouns.count), forKey: "massiveNouns")
+		self.didChange(.Insertion, valuesAtIndexes: curIdx, forKey: "massiveNouns")
 	}
 	
 	@objc(removeVerbsAtIndexes:) func removeVerbs(#indexes: NSIndexSet) {

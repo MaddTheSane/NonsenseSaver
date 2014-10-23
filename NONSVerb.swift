@@ -33,7 +33,7 @@ func ==(lhs: Verb, rhs: Verb) -> Bool {
 	return true
 }
 
-@objc class Verb: Hashable {
+@objc final class Verb: Hashable {
 	let thirdPersonSinglePresent: String
 	let thirdPersonPluralPresent: String
 	let thirdPersonPast: String
