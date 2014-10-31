@@ -26,7 +26,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="185" width="619" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="619" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -41,7 +41,7 @@ DQ
 </string>
                         </buttonCell>
                         <connections>
-                            <action selector="closeNonsense:" target="-2" id="KBU-FI-yae"/>
+                            <action selector="okayNonsense:" target="-2" id="lgO-CV-3Or"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="18" userLabel="Cancel button">
@@ -54,7 +54,7 @@ Gw
 </string>
                         </buttonCell>
                         <connections>
-                            <action selector="closeNonsense:" target="-2" id="wb8-aU-83o"/>
+                            <action selector="cancelNonsense:" target="-2" id="0fZ-jd-WG4"/>
                         </connections>
                     </button>
                     <tabView translatesAutoresizingMaskIntoConstraints="NO" id="259">
@@ -422,7 +422,7 @@ Gw
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="292" width="421" height="223"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="183">
                 <rect key="frame" x="0.0" y="0.0" width="421" height="223"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -505,7 +505,7 @@ DQ
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="423" width="308" height="91"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="241">
                 <rect key="frame" x="0.0" y="0.0" width="308" height="91"/>
                 <autoresizingMask key="autoresizingMask"/>

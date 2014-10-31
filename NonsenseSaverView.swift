@@ -27,6 +27,7 @@ class NonsenseSaverView: ScreenSaverView {
 	
 	@IBOutlet var configSheet: NSWindow! = nil
 	@IBOutlet var credits: NSTextView! = nil
+	@IBOutlet var vocabList: NSTableView! = nil
 	
 	let controller = NonsenseSaverController()
 	var nonsenses = [NonsenseObject]()
@@ -106,7 +107,11 @@ class NonsenseSaverView: ScreenSaverView {
     }
 	
 	
-	@IBAction func closeNonsense(sender: AnyObject?) {
+	@IBAction func okayNonsense(sender: AnyObject?) {
+		
+	}
+	
+	@IBAction func cancelNonsense(sender: AnyObject?) {
 		
 	}
 	

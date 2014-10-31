@@ -30,6 +30,44 @@ private func randObject<X>(anArray: [X]) -> X {
 	return anArray[random() % anArray.count]
 }
 
+private func PrepareVerbsForSaving(toSave: [Verb]) -> [[String: String]] {
+	func PrepareVerbForSaving(toSave: Verb) -> [String: String] {
+		return [ThirdPersonPast: toSave.thirdPersonPast,
+			ThirdPersonSinglePresent : toSave.thirdPersonSinglePresent,
+			ThirdPersonPluralPresent : toSave.thirdPersonPluralPresent,
+			ThirdPersonPastPerfect : toSave.thirdPersonPastPerfect,
+			ThirdPersonPresentCont : toSave.thirdPersonPresentCont]
+	}
+
+	var theArray = [[String: String]]()
+	for i in toSave{
+		theArray.append(PrepareVerbForSaving(i))
+	}
+	return theArray
+}
+
+private func GetVerbsFromSaved(theSaved: [[String: String]]) -> [Verb] {
+	func GetVerbFromSaved(theSaved: [String: String]) -> Verb {
+		return Verb(singlePresent: theSaved[ThirdPersonSinglePresent]!, pluralPresent: theSaved[ThirdPersonPluralPresent]!, past: theSaved[ThirdPersonPast]!, pastPerfect: theSaved[ThirdPersonPastPerfect]!, presentCont: theSaved[ThirdPersonPresentCont]!)
+	}
+	
+	var theArray = [Verb]()
+	
+	for i in theSaved {
+		theArray.append(GetVerbFromSaved(i))
+	}
+	
+	return theArray
+}
+
+private func defaultsProvider() -> NSUserDefaults {
+#if os(iOS)
+	return NSUserDefaults.standardUserDefaults()
+#else
+	return ScreenSaverDefaults.defaultsForModuleWithName(NonsenseDefaultsKey) as ScreenSaverDefaults
+#endif
+}
+
 class NonsenseSaverController: NSObject {
 	private(set) dynamic var verbs = [Verb]()
 	private(set) dynamic var pluralNouns = [String]()
@@ -38,18 +76,6 @@ class NonsenseSaverController: NSObject {
 	private(set) dynamic var adverbs = [String]()
 	private(set) dynamic var adjectives = [String]()
 	private(set) dynamic var massiveNouns = [String]()
-	
-	private class func prepareVerbForSaving(toSave: Verb) -> [String: String] {
-		return [ThirdPersonPast: toSave.thirdPersonPast,
-			ThirdPersonSinglePresent : toSave.thirdPersonSinglePresent,
-			ThirdPersonPluralPresent : toSave.thirdPersonPluralPresent,
-			ThirdPersonPastPerfect : toSave.thirdPersonPastPerfect,
-			ThirdPersonPresentCont : toSave.thirdPersonPresentCont]
-	}
-	
-	private class func getVerbFromSaved(theSaved: [String: String]) -> Verb {
-		return Verb(singlePresent: theSaved[ThirdPersonSinglePresent]!, pluralPresent: theSaved[ThirdPersonPluralPresent]!, past: theSaved[ThirdPersonPast]!, pastPerfect: theSaved[ThirdPersonPastPerfect]!, presentCont: theSaved[ThirdPersonPresentCont]!)
-	}
 	
 	let pronouns = ["him", "her", "it", "them"]
 	let conjugates = ["and", "but", "or", "yet", "so", "because"]
@@ -65,39 +91,15 @@ class NonsenseSaverController: NSObject {
 		loadSettings()
 	}
 	
-	private class func getVerbsFromSaved(theSaved: [[String: String]]) -> [Verb] {
-		var theArray = [Verb]()
-		
-		for i in theSaved {
-			theArray.append(getVerbFromSaved(i))
-		}
-		
-		return theArray
-	}
-	
-	private class func prepareVerbsForSaving(toSave: [Verb]) -> [[String: String]] {
-		var theArray = [[String: String]]()
-		for i in toSave{
-			theArray.append(prepareVerbForSaving(i))
-		}
-		return theArray
-	}
-	
-	func defaultsProvider() -> NSUserDefaults {
-	#if os(iOS)
-		return NSUserDefaults.standardUserDefaults()
-	#else
-		return ScreenSaverDefaults.defaultsForModuleWithName(NonsenseDefaultsKey) as ScreenSaverDefaults
-	#endif
-	}
-	
 	private func setDefaults() {
 		dispatch_once(&singleDefaults) {
 			let ourClass = NSBundle(forClass: self.dynamicType)
-			let defaults = self.defaultsProvider()
-			let ourDict = NSDictionary(contentsOfURL: ourClass.URLForResource("Defaults", withExtension: "plist")!)!
-			
-			defaults.registerDefaults(ourDict)
+			let defaults = defaultsProvider()
+			if let defaultsURL = ourClass.URLForResource("Defaults", withExtension: "plist") {
+				if let ourDict = NSDictionary(contentsOfURL: defaultsURL) {
+					defaults.registerDefaults(ourDict)
+				}
+			}
 		}
 	}
 	
@@ -113,13 +115,27 @@ class NonsenseSaverController: NSObject {
 		massiveNouns.removeAll(keepCapacity: true)
 		
 		//load values from settings.
-		verbs += NonsenseSaverController.getVerbsFromSaved(defaults.arrayForKey(NONSVerbList) as [[String: String]])
+		verbs += GetVerbsFromSaved(defaults.arrayForKey(NONSVerbList) as [[String: String]])
 		pluralNouns += defaults.arrayForKey(NONSPluralNounList) as [String]
 		singularNouns += defaults.arrayForKey(NONSSingularNounList) as [String]
 		properNouns += defaults.arrayForKey(NONSProperNounList) as [String]
 		adverbs += defaults.arrayForKey(NONSAdverbList) as [String]
 		adjectives += defaults.arrayForKey(NONSAdjectiveList) as [String]
 		massiveNouns += defaults.arrayForKey(NONSMassiveNounList) as [String]
+	}
+	
+	// Simple test to see if a noun ends with an 's'
+	private func nounOwningObject(theNoun: String) -> String {
+		var endNounPos = theNoun.endIndex
+		endNounPos--
+		let endNounChar = theNoun[endNounPos]
+		switch endNounChar {
+		case "s":
+			return theNoun + "'"
+			
+		default:
+			return theNoun + "'s"
+		}
 	}
 	
 	func randomVerb() -> Verb {
@@ -185,6 +201,7 @@ class NonsenseSaverController: NSObject {
 		switch (casenum) {
 		case 0:
 			nonsensestring = "The \(randomAdjective()) \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast) \(randomAdverb())."
+			
 		case 1:
 			nonsensestring = "The \(randomSingularNoun()) \(randomVerb().thirdPersonPast) \(randomAdverb())"
 			
@@ -216,7 +233,7 @@ class NonsenseSaverController: NSObject {
 			nonsensestring = "The \(randomAdjective()) \(randomAdjective()) \(randomSingularNoun()) \(randomVerb().thirdPersonSinglePresent) \(randomAdverb())."
 			
 		case 11:
-			nonsensestring = "\(randomProperNoun())'s \(randomPluralNoun()) hadn't \(randomVerb().thirdPersonPast)."
+			nonsensestring = "\(nounOwningObject(randomProperNoun())) \(randomPluralNoun()) hadn't \(randomVerb().thirdPersonPast)."
 			
 		default:
 			nonsensestring = "The developer's brain farted \(randomAdverb()), producing this error.";
@@ -227,7 +244,7 @@ class NonsenseSaverController: NSObject {
 
 	func saveSettings() {
 		let defaults = defaultsProvider()
-		defaults.setObject(NonsenseSaverController.prepareVerbsForSaving(verbs), forKey: NONSVerbList)
+		defaults.setObject(PrepareVerbsForSaving(verbs), forKey: NONSVerbList)
 		defaults.setObject(pluralNouns, forKey: NONSPluralNounList)
 		defaults.setObject(singularNouns, forKey: NONSSingularNounList)
 		defaults.setObject(properNouns, forKey: NONSProperNounList)
