@@ -68,8 +68,6 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCFA80370C50100C91783 /* NonsenseSaver_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaver_Prefix.pch; sourceTree = "<group>"; };
-		5520BE8D121C76370068419E /* NonsenseSaverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverController.h; sourceTree = "<group>"; };
-		5520BE8E121C76370068419E /* NonsenseSaverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseSaverController.m; sourceTree = "<group>"; };
 		553CAF1A123F2F5B008EA480 /* NONSVisualTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NONSVisualTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NONSVisualTester-Info.plist"; path = "../NONSVisualTester-Info.plist"; sourceTree = "<group>"; };
 		553CAF20123F2F6B008EA480 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -107,6 +105,7 @@
 		559C664219EF7C1800D35E25 /* NonsenseSaverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseSaverView.swift; sourceTree = "<group>"; };
 		559C664419EF7DAA00D35E25 /* NONSVerb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NONSVerb.swift; sourceTree = "<group>"; };
 		55B2818C12416BAA003CEEF4 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		55BBE31B1A0347E800DDE9F7 /* NGSwiftBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGSwiftBridge.h; sourceTree = "<group>"; };
 		55C3966015A20FCB005DBC66 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966215A20FCB005DBC66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966415A20FCB005DBC66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -218,8 +217,6 @@
 				F500797A0118B23001CA0E54 /* NonsenseSaverView.m */,
 				559C664419EF7DAA00D35E25 /* NONSVerb.swift */,
 				55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */,
-				5520BE8D121C76370068419E /* NonsenseSaverController.h */,
-				5520BE8E121C76370068419E /* NonsenseSaverController.m */,
 				557B1DB719F04C58009DFEA5 /* NonsenseObject.swift */,
 				553CAF2F123F2FF3008EA480 /* Testing Classes */,
 			);
@@ -282,6 +279,7 @@
 		5556EFAD18E0B46000B49E98 /* Nonsense Generator */ = {
 			isa = PBXGroup;
 			children = (
+				55BBE31B1A0347E800DDE9F7 /* NGSwiftBridge.h */,
 				5556EFB618E0B46000B49E98 /* NGAppDelegate.h */,
 				5556EFB718E0B46000B49E98 /* NGAppDelegate.m */,
 				5556EFB918E0B46000B49E98 /* Main_iPhone.storyboard */,
@@ -679,10 +677,11 @@
 				GCC_PREFIX_HEADER = "Nonsense Generator/Nonsense Generator-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Nonsense Generator/NGSwiftBridge.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -703,10 +702,11 @@
 				GCC_PREFIX_HEADER = "Nonsense Generator/Nonsense Generator-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Nonsense Generator/NGSwiftBridge.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

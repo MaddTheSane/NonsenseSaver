@@ -7,7 +7,7 @@
 //
 
 #import "NGAppDelegate.h"
-#import "NonsenseSaverController.h"
+#import "Nonsense_Generator-Swift.h"
 
 @implementation NGAppDelegate
 

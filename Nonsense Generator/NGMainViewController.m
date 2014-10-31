@@ -7,7 +7,7 @@
 //
 
 #import "NGMainViewController.h"
-#import "NonsenseSaverController.h"
+#import "Nonsense_Generator-Swift.h"
 
 @interface NGMainViewController ()
 

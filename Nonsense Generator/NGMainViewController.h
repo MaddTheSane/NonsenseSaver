@@ -10,7 +10,7 @@
 
 @class NonsenseSaverController;
 
-@interface NGMainViewController : UIViewController <NGFlipsideViewControllerDelegate, UIPopoverControllerDelegate>
+@interface NGMainViewController : UIViewController <NGFlipsideViewControllerDelegate, UIPopoverControllerDelegate, NSFileManagerDelegate>
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 @property (strong) NonsenseSaverController *nonsenseController;
 @property (strong) NSMutableArray *nonsenses;
