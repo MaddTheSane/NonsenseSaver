@@ -16,12 +16,6 @@
 		5556EFAB18E0B46000B49E98 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966415A20FCB005DBC66 /* CoreGraphics.framework */; };
 		5556EFAC18E0B46000B49E98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966015A20FCB005DBC66 /* UIKit.framework */; };
 		5556EFB218E0B46000B49E98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5556EFB018E0B46000B49E98 /* InfoPlist.strings */; };
-		5556EFB418E0B46000B49E98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5556EFB318E0B46000B49E98 /* main.m */; };
-		5556EFB818E0B46000B49E98 /* NGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5556EFB718E0B46000B49E98 /* NGAppDelegate.m */; };
-		5556EFBB18E0B46000B49E98 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5556EFB918E0B46000B49E98 /* Main_iPhone.storyboard */; };
-		5556EFBE18E0B46000B49E98 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5556EFBC18E0B46000B49E98 /* Main_iPad.storyboard */; };
-		5556EFC118E0B46000B49E98 /* NGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5556EFC018E0B46000B49E98 /* NGMainViewController.m */; };
-		5556EFC418E0B46000B49E98 /* NGFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5556EFC318E0B46000B49E98 /* NGFlipsideViewController.m */; };
 		5556EFC618E0B46000B49E98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5556EFC518E0B46000B49E98 /* Images.xcassets */; };
 		5556EFCD18E0B46000B49E98 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5556EFCC18E0B46000B49E98 /* XCTest.framework */; };
 		5556EFCE18E0B46000B49E98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966215A20FCB005DBC66 /* Foundation.framework */; };
@@ -43,6 +37,10 @@
 		559C664319EF7C1800D35E25 /* NonsenseSaverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664219EF7C1800D35E25 /* NonsenseSaverView.swift */; };
 		559C664519EF7DAA00D35E25 /* NONSVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664419EF7DAA00D35E25 /* NONSVerb.swift */; };
 		55B2818D12416BAA003CEEF4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 55B2818C12416BAA003CEEF4 /* Credits.rtf */; };
+		55BBE3511A034BB800DDE9F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BBE3501A034BB800DDE9F7 /* Main.storyboard */; };
+		55BBE3551A034CB500DDE9F7 /* NGAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBE3521A034CB500DDE9F7 /* NGAppDelegate.swift */; };
+		55BBE3561A034CB500DDE9F7 /* NGDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBE3531A034CB500DDE9F7 /* NGDetailViewController.swift */; };
+		55BBE3571A034CB500DDE9F7 /* NGMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBE3541A034CB500DDE9F7 /* NGMasterViewController.swift */; };
 		55F759FA19F2EC4900B56DF7 /* NONSVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664419EF7DAA00D35E25 /* NONSVerb.swift */; };
 		55F759FB19F2EC4900B56DF7 /* NonsenseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B1DB719F04C58009DFEA5 /* NonsenseObject.swift */; };
 		55F759FC19F2EC4C00B56DF7 /* NONSVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664419EF7DAA00D35E25 /* NONSVerb.swift */; };
@@ -77,22 +75,13 @@
 		5556EFA918E0B46000B49E98 /* Nonsense Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nonsense Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5556EFAF18E0B46000B49E98 /* Nonsense Generator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Nonsense Generator-Info.plist"; sourceTree = "<group>"; };
 		5556EFB118E0B46000B49E98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5556EFB318E0B46000B49E98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5556EFB518E0B46000B49E98 /* Nonsense Generator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nonsense Generator-Prefix.pch"; sourceTree = "<group>"; };
-		5556EFB618E0B46000B49E98 /* NGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGAppDelegate.h; sourceTree = "<group>"; };
-		5556EFB718E0B46000B49E98 /* NGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGAppDelegate.m; sourceTree = "<group>"; };
-		5556EFBF18E0B46000B49E98 /* NGMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGMainViewController.h; sourceTree = "<group>"; };
-		5556EFC018E0B46000B49E98 /* NGMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGMainViewController.m; sourceTree = "<group>"; };
-		5556EFC218E0B46000B49E98 /* NGFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGFlipsideViewController.h; sourceTree = "<group>"; };
-		5556EFC318E0B46000B49E98 /* NGFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGFlipsideViewController.m; sourceTree = "<group>"; };
 		5556EFC518E0B46000B49E98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5556EFCB18E0B46000B49E98 /* Nonsense GeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nonsense GeneratorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5556EFCC18E0B46000B49E98 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5556EFD418E0B46000B49E98 /* Nonsense GeneratorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Nonsense GeneratorTests-Info.plist"; sourceTree = "<group>"; };
 		5556EFD618E0B46000B49E98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5556EFD818E0B46000B49E98 /* Nonsense_GeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nonsense_GeneratorTests.m; sourceTree = "<group>"; };
-		5558273C18E0B5BA0072F876 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		5558273F18E0B5C60072F876 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		5558274318E0DE020072F876 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		557B1DB719F04C58009DFEA5 /* NonsenseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseObject.swift; sourceTree = "<group>"; };
 		55882B5F121CB53400CB16C6 /* NonsenseTester */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NonsenseTester; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +95,10 @@
 		559C664419EF7DAA00D35E25 /* NONSVerb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NONSVerb.swift; sourceTree = "<group>"; };
 		55B2818C12416BAA003CEEF4 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		55BBE31B1A0347E800DDE9F7 /* NGSwiftBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGSwiftBridge.h; sourceTree = "<group>"; };
+		55BBE3501A034BB800DDE9F7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		55BBE3521A034CB500DDE9F7 /* NGAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGAppDelegate.swift; sourceTree = "<group>"; };
+		55BBE3531A034CB500DDE9F7 /* NGDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGDetailViewController.swift; sourceTree = "<group>"; };
+		55BBE3541A034CB500DDE9F7 /* NGMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGMasterViewController.swift; sourceTree = "<group>"; };
 		55C3966015A20FCB005DBC66 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966215A20FCB005DBC66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966415A20FCB005DBC66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -280,14 +273,10 @@
 			isa = PBXGroup;
 			children = (
 				55BBE31B1A0347E800DDE9F7 /* NGSwiftBridge.h */,
-				5556EFB618E0B46000B49E98 /* NGAppDelegate.h */,
-				5556EFB718E0B46000B49E98 /* NGAppDelegate.m */,
-				5556EFB918E0B46000B49E98 /* Main_iPhone.storyboard */,
-				5556EFBC18E0B46000B49E98 /* Main_iPad.storyboard */,
-				5556EFBF18E0B46000B49E98 /* NGMainViewController.h */,
-				5556EFC018E0B46000B49E98 /* NGMainViewController.m */,
-				5556EFC218E0B46000B49E98 /* NGFlipsideViewController.h */,
-				5556EFC318E0B46000B49E98 /* NGFlipsideViewController.m */,
+				55BBE3521A034CB500DDE9F7 /* NGAppDelegate.swift */,
+				55BBE3531A034CB500DDE9F7 /* NGDetailViewController.swift */,
+				55BBE3541A034CB500DDE9F7 /* NGMasterViewController.swift */,
+				55BBE3501A034BB800DDE9F7 /* Main.storyboard */,
 				5556EFC518E0B46000B49E98 /* Images.xcassets */,
 				5556EFAE18E0B46000B49E98 /* Supporting Files */,
 			);
@@ -299,7 +288,6 @@
 			children = (
 				5556EFAF18E0B46000B49E98 /* Nonsense Generator-Info.plist */,
 				5556EFB018E0B46000B49E98 /* InfoPlist.strings */,
-				5556EFB318E0B46000B49E98 /* main.m */,
 				5556EFB518E0B46000B49E98 /* Nonsense Generator-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -488,9 +476,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5556EFBE18E0B46000B49E98 /* Main_iPad.storyboard in Resources */,
+				55BBE3511A034BB800DDE9F7 /* Main.storyboard in Resources */,
 				5556EFC618E0B46000B49E98 /* Images.xcassets in Resources */,
-				5556EFBB18E0B46000B49E98 /* Main_iPhone.storyboard in Resources */,
 				5556EFB218E0B46000B49E98 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,11 +521,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				559C664119EF7A0900D35E25 /* NonsenseSaverController.swift in Sources */,
-				5556EFB418E0B46000B49E98 /* main.m in Sources */,
-				5556EFC418E0B46000B49E98 /* NGFlipsideViewController.m in Sources */,
-				5556EFB818E0B46000B49E98 /* NGAppDelegate.m in Sources */,
+				55BBE3551A034CB500DDE9F7 /* NGAppDelegate.swift in Sources */,
+				55BBE3571A034CB500DDE9F7 /* NGMasterViewController.swift in Sources */,
 				55F759FC19F2EC4C00B56DF7 /* NONSVerb.swift in Sources */,
-				5556EFC118E0B46000B49E98 /* NGMainViewController.m in Sources */,
+				55BBE3561A034CB500DDE9F7 /* NGDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,22 +573,6 @@
 				5556EFB118E0B46000B49E98 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		5556EFB918E0B46000B49E98 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5558273C18E0B5BA0072F876 /* en */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		5556EFBC18E0B46000B49E98 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5558273F18E0B5C60072F876 /* en */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		5556EFD518E0B46000B49E98 /* InfoPlist.strings */ = {
@@ -677,7 +647,7 @@
 				GCC_PREFIX_HEADER = "Nonsense Generator/Nonsense Generator-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -702,7 +672,7 @@
 				GCC_PREFIX_HEADER = "Nonsense Generator/Nonsense Generator-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -731,7 +701,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Nonsense GeneratorTests/Nonsense GeneratorTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -757,7 +727,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Nonsense GeneratorTests/Nonsense GeneratorTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUNDLE_LOADER)";
