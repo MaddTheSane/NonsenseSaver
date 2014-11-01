@@ -647,17 +647,17 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" animationBehavior="default" id="367">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="52" width="539" height="606"/>
+            <rect key="contentRect" x="196" y="52" width="539" height="724"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="368">
-                <rect key="frame" x="0.0" y="0.0" width="539" height="606"/>
+                <rect key="frame" x="0.0" y="0.0" width="539" height="724"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="812" customClass="NonsenseView">
-                        <rect key="frame" x="20" y="170" width="499" height="416"/>
+                        <rect key="frame" x="20" y="259" width="499" height="445"/>
                     </customView>
                     <box autoresizesSubviews="NO" title="Settings" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="831">
-                        <rect key="frame" x="17" y="16" width="505" height="146"/>
+                        <rect key="frame" x="17" y="105" width="505" height="146"/>
                         <view key="contentView">
                             <rect key="frame" x="1" y="1" width="503" height="130"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -760,21 +760,63 @@
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
+                    <box autoresizesSubviews="NO" title="Just Generate Nonsense" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="7lq-g4-Lv4">
+                        <rect key="frame" x="17" y="16" width="505" height="85"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="503" height="69"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dBO-ro-S9q">
+                                    <rect key="frame" x="203" y="7" width="97" height="32"/>
+                                    <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ich-pj-Wsv">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="generateNonsense:" target="811" id="aWY-YU-X9Z"/>
+                                    </connections>
+                                </button>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sqw-Yq-AGB">
+                                    <rect key="frame" x="219" y="43" width="66" height="17"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Nonsense" id="LMw-Rl-tva">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <constraints>
+                            <constraint firstItem="sqw-Yq-AGB" firstAttribute="top" secondItem="7lq-g4-Lv4" secondAttribute="top" constant="24" id="D1z-pg-ZVu"/>
+                            <constraint firstItem="sqw-Yq-AGB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7lq-g4-Lv4" secondAttribute="leading" priority="750" constant="16" id="HZF-jo-udd"/>
+                            <constraint firstAttribute="centerX" secondItem="dBO-ro-S9q" secondAttribute="centerX" id="KlK-oA-1pA"/>
+                            <constraint firstAttribute="centerX" secondItem="sqw-Yq-AGB" secondAttribute="centerX" id="LOd-ZP-Tsx"/>
+                            <constraint firstItem="dBO-ro-S9q" firstAttribute="top" secondItem="sqw-Yq-AGB" secondAttribute="bottom" constant="8" symbolic="YES" id="SfA-Zb-tRE"/>
+                            <constraint firstAttribute="bottom" secondItem="dBO-ro-S9q" secondAttribute="bottom" constant="11" id="jYW-mb-LEb"/>
+                        </constraints>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="831" secondAttribute="bottom" constant="20" symbolic="YES" id="BHH-R2-YhJ"/>
+                    <constraint firstItem="7lq-g4-Lv4" firstAttribute="top" secondItem="831" secondAttribute="bottom" constant="8" symbolic="YES" id="A4W-fu-US9"/>
+                    <constraint firstItem="7lq-g4-Lv4" firstAttribute="leading" secondItem="368" secondAttribute="leading" constant="20" symbolic="YES" id="KCd-8z-Mt3"/>
+                    <constraint firstAttribute="bottom" secondItem="7lq-g4-Lv4" secondAttribute="bottom" constant="20" symbolic="YES" id="LPO-4f-frb"/>
                     <constraint firstAttribute="trailing" secondItem="812" secondAttribute="trailing" constant="20" symbolic="YES" id="Nhg-nr-wPd"/>
                     <constraint firstItem="831" firstAttribute="leading" secondItem="368" secondAttribute="leading" constant="20" symbolic="YES" id="ccR-AQ-jfd"/>
+                    <constraint firstAttribute="trailing" secondItem="7lq-g4-Lv4" secondAttribute="trailing" constant="20" symbolic="YES" id="dLJ-vE-ym5"/>
                     <constraint firstItem="812" firstAttribute="leading" secondItem="368" secondAttribute="leading" constant="20" symbolic="YES" id="jie-C9-rt0"/>
                     <constraint firstItem="831" firstAttribute="top" secondItem="812" secondAttribute="bottom" constant="8" symbolic="YES" id="njt-wF-tem"/>
                     <constraint firstAttribute="trailing" secondItem="831" secondAttribute="trailing" constant="20" symbolic="YES" id="pa5-mH-eRX"/>
                     <constraint firstItem="812" firstAttribute="top" secondItem="368" secondAttribute="top" constant="20" symbolic="YES" id="z7p-k4-GsJ"/>
                 </constraints>
             </view>
+            <point key="canvasLocation" x="448.5" y="495"/>
         </window>
         <customObject id="811" customClass="AppController">
             <connections>
                 <outlet property="nonsenseView" destination="812" id="814"/>
+                <outlet property="userGeneratedNonsense" destination="sqw-Yq-AGB" id="wTY-b4-qdu"/>
             </connections>
         </customObject>
     </objects>

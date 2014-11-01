@@ -8,7 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class NonsenseSaverController;
+
 @interface NonsenseView : NSView
+@property (strong) NonsenseSaverController *nonsenseController;
 @property NSInteger nonNumber;
 @property CGFloat nonDuration;
 @property BOOL showBackground;

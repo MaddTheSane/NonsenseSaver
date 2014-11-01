@@ -14,7 +14,6 @@
 #define kPreviewSize 12.0f
 
 @interface NonsenseView ()
-@property (strong) NonsenseSaverController *nonsenseController;
 @property (strong) NSMutableArray *nonsenses;
 @property (strong) NSTimer *refreshRate;
 @property BOOL settingsChanged;
@@ -32,7 +31,7 @@
 		
 		srandom(0x7FFFFFFF & time(NULL));
 		self.nonsenseController = [[NonsenseSaverController alloc] init];
-		self.nonsenses = [NSMutableArray array];
+		self.nonsenses = [[NSMutableArray alloc] initWithCapacity:self.nonNumber];
 		
 		NSFont *theFont = [NSFont systemFontOfSize:kPreviewSize];
 		

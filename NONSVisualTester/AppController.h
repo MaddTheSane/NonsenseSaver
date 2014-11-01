@@ -10,6 +10,9 @@
 
 @interface AppController : NSObject
 
-@property (assign) IBOutlet NonsenseView *nonsenseView;
+@property (weak) IBOutlet NonsenseView *nonsenseView;
+@property (weak) IBOutlet NSTextField *userGeneratedNonsense;
+
+- (IBAction)generateNonsense:(id)sender;
 
 @end

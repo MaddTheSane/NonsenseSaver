@@ -6,6 +6,8 @@
 //
 
 #import "AppController.h"
+#import "NonsenseView.h"
+#import "NONSVisualTester-Swift.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,5 +15,10 @@ int main(int argc, char *argv[])
 }
 
 @implementation AppController
+
+- (IBAction)generateNonsense:(id)sender {
+	NSString *ourStr = [self.nonsenseView.nonsenseController randomSaying];
+	[self.userGeneratedNonsense setStringValue:ourStr];
+}
 
 @end
