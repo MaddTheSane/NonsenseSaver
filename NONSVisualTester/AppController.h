@@ -6,7 +6,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "NonsenseView.h"
+@class NonsenseView;
 
 @interface AppController : NSObject
 

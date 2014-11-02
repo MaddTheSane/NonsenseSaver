@@ -27,7 +27,6 @@
 		557B1DB819F04C58009DFEA5 /* NonsenseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B1DB719F04C58009DFEA5 /* NonsenseObject.swift */; };
 		55882B6D121CB56F00CB16C6 /* NonsenseTesterMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 55882B6C121CB56F00CB16C6 /* NonsenseTesterMain.m */; };
 		55882BAB121CBB8700CB16C6 /* NonsenseSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55882BAA121CBB8700CB16C6 /* NonsenseSettings.xib */; };
-		558C0DDE123FFED60099AABD /* NonsenseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558C0DDD123FFED60099AABD /* NonsenseView.m */; };
 		558FFD8318E4DAE7009AF7E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 558FFD8118E4DAE7009AF7E6 /* InfoPlist.strings */; };
 		559C663D19EF75A000D35E25 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559C663C19EF75A000D35E25 /* Defaults.plist */; };
 		559C663E19EF75E600D35E25 /* NonsenseSaverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */; };
@@ -43,6 +42,7 @@
 		55BBE3571A034CB500DDE9F7 /* NGMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBE3541A034CB500DDE9F7 /* NGMasterViewController.swift */; };
 		55EE2D431A06EF5000C10523 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559C663C19EF75A000D35E25 /* Defaults.plist */; };
 		55EE2D441A06EF5100C10523 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559C663C19EF75A000D35E25 /* Defaults.plist */; };
+		55EE2D461A06F01300C10523 /* NonsenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EE2D451A06F01300C10523 /* NonsenseView.swift */; };
 		55F759FA19F2EC4900B56DF7 /* NONSVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664419EF7DAA00D35E25 /* NONSVerb.swift */; };
 		55F759FB19F2EC4900B56DF7 /* NonsenseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B1DB719F04C58009DFEA5 /* NonsenseObject.swift */; };
 		55F759FC19F2EC4C00B56DF7 /* NONSVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664419EF7DAA00D35E25 /* NONSVerb.swift */; };
@@ -89,8 +89,6 @@
 		55882B5F121CB53400CB16C6 /* NonsenseTester */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NonsenseTester; sourceTree = BUILT_PRODUCTS_DIR; };
 		55882B6C121CB56F00CB16C6 /* NonsenseTesterMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseTesterMain.m; sourceTree = "<group>"; };
 		55882BAA121CBB8700CB16C6 /* NonsenseSettings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NonsenseSettings.xib; sourceTree = "<group>"; };
-		558C0DDC123FFED60099AABD /* NonsenseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseView.h; sourceTree = "<group>"; };
-		558C0DDD123FFED60099AABD /* NonsenseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseView.m; sourceTree = "<group>"; };
 		558FFD8218E4DAE7009AF7E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		559C663C19EF75A000D35E25 /* Defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Defaults.plist; sourceTree = "<group>"; };
 		559C664219EF7C1800D35E25 /* NonsenseSaverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseSaverView.swift; sourceTree = "<group>"; };
@@ -106,6 +104,7 @@
 		55C3966415A20FCB005DBC66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		55D1A03D19EF5E9600DE3929 /* NonsenseSaver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NonsenseSaver-Bridging-Header.h"; sourceTree = "<group>"; };
 		55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseSaverController.swift; sourceTree = "<group>"; };
+		55EE2D451A06F01300C10523 /* NonsenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseView.swift; sourceTree = "<group>"; };
 		55F759FE19F2EE5700B56DF7 /* NONSVisualTester-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NONSVisualTester-Bridging-Header.h"; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* NonsenseSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonsenseSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,8 +263,7 @@
 				55F759FE19F2EE5700B56DF7 /* NONSVisualTester-Bridging-Header.h */,
 				553CAF30123F30A4008EA480 /* AppController.h */,
 				553CAF31123F30A4008EA480 /* AppController.m */,
-				558C0DDC123FFED60099AABD /* NonsenseView.h */,
-				558C0DDD123FFED60099AABD /* NonsenseView.m */,
+				55EE2D451A06F01300C10523 /* NonsenseView.swift */,
 			);
 			name = "Testing Classes";
 			path = NONSVisualTester;
@@ -515,8 +513,8 @@
 				559C664019EF7A0800D35E25 /* NonsenseSaverController.swift in Sources */,
 				55F759FB19F2EC4900B56DF7 /* NonsenseObject.swift in Sources */,
 				553CAF32123F30A4008EA480 /* AppController.m in Sources */,
+				55EE2D461A06F01300C10523 /* NonsenseView.swift in Sources */,
 				55F759FA19F2EC4900B56DF7 /* NONSVerb.swift in Sources */,
-				558C0DDE123FFED60099AABD /* NonsenseView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,11 +609,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "NONSVisualTester-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
 				PRODUCT_NAME = NONSVisualTester;
 				SWIFT_OBJC_BRIDGING_HEADER = "NONSVisualTester/NONSVisualTester-Bridging-Header.h";
 			};
@@ -626,11 +626,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NonsenseSaver_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "NONSVisualTester-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
 				PRODUCT_NAME = NONSVisualTester;
 				SWIFT_OBJC_BRIDGING_HEADER = "NONSVisualTester/NONSVisualTester-Bridging-Header.h";
 			};
@@ -652,6 +654,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -677,6 +680,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -773,7 +777,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
 				PRODUCT_NAME = NonsenseSaver;
 				SWIFT_OBJC_BRIDGING_HEADER = "NonsenseSaver-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -790,7 +794,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
 				PRODUCT_NAME = NonsenseSaver;
 				SWIFT_OBJC_BRIDGING_HEADER = "NonsenseSaver-Bridging-Header.h";
 				WRAPPER_EXTENSION = saver;
