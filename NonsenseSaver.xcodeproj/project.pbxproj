@@ -41,6 +41,8 @@
 		55BBE3551A034CB500DDE9F7 /* NGAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBE3521A034CB500DDE9F7 /* NGAppDelegate.swift */; };
 		55BBE3561A034CB500DDE9F7 /* NGDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBE3531A034CB500DDE9F7 /* NGDetailViewController.swift */; };
 		55BBE3571A034CB500DDE9F7 /* NGMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBE3541A034CB500DDE9F7 /* NGMasterViewController.swift */; };
+		55EE2D431A06EF5000C10523 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559C663C19EF75A000D35E25 /* Defaults.plist */; };
+		55EE2D441A06EF5100C10523 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559C663C19EF75A000D35E25 /* Defaults.plist */; };
 		55F759FA19F2EC4900B56DF7 /* NONSVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664419EF7DAA00D35E25 /* NONSVerb.swift */; };
 		55F759FB19F2EC4900B56DF7 /* NonsenseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B1DB719F04C58009DFEA5 /* NonsenseObject.swift */; };
 		55F759FC19F2EC4C00B56DF7 /* NONSVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664419EF7DAA00D35E25 /* NONSVerb.swift */; };
@@ -469,6 +471,7 @@
 			files = (
 				5558274218E0DE020072F876 /* MainMenu.xib in Resources */,
 				5504BA6418E0EE7A004E3A44 /* Credits.rtf in Resources */,
+				55EE2D431A06EF5000C10523 /* Defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +479,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55EE2D441A06EF5100C10523 /* Defaults.plist in Resources */,
 				55BBE3511A034BB800DDE9F7 /* Main.storyboard in Resources */,
 				5556EFC618E0B46000B49E98 /* Images.xcassets in Resources */,
 				5556EFB218E0B46000B49E98 /* InfoPlist.strings in Resources */,

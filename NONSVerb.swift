@@ -45,10 +45,10 @@ func ==(lhs: Verb, rhs: Verb) -> Bool {
 			thirdPersonPresentCont.hashValue ^ thirdPersonSinglePresent.hashValue
 	}
 	
-    var description: String {
-        return thirdPersonPluralPresent
-    }
-
+	var description: String {
+		return thirdPersonPluralPresent
+	}
+	
 	init(singlePresent: String, pluralPresent: String, past: String, pastPerfect: String, presentCont: String) {
 		thirdPersonSinglePresent = singlePresent;
 		thirdPersonPluralPresent = pluralPresent;
