@@ -813,7 +813,7 @@
             </view>
             <point key="canvasLocation" x="448.5" y="495"/>
         </window>
-        <customObject id="811" customClass="AppController">
+        <customObject id="811" customClass="AppController" customModule="NONSVisualTester" customModuleProvider="target">
             <connections>
                 <outlet property="nonsenseView" destination="812" id="814"/>
                 <outlet property="userGeneratedNonsense" destination="sqw-Yq-AGB" id="wTY-b4-qdu"/>

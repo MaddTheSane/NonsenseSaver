@@ -10,7 +10,6 @@
 		5504BA6418E0EE7A004E3A44 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 55B2818C12416BAA003CEEF4 /* Credits.rtf */; };
 		553CAF24123F2F7B008EA480 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		553CAF25123F2F7B008EA480 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
-		553CAF32123F30A4008EA480 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553CAF31123F30A4008EA480 /* AppController.m */; };
 		55561F71123C133300A73C6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089C1672FE841209C02AAC07 /* Foundation.framework */; };
 		5556EFAA18E0B46000B49E98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966215A20FCB005DBC66 /* Foundation.framework */; };
 		5556EFAB18E0B46000B49E98 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C3966415A20FCB005DBC66 /* CoreGraphics.framework */; };
@@ -43,6 +42,7 @@
 		55EE2D431A06EF5000C10523 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559C663C19EF75A000D35E25 /* Defaults.plist */; };
 		55EE2D441A06EF5100C10523 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559C663C19EF75A000D35E25 /* Defaults.plist */; };
 		55EE2D461A06F01300C10523 /* NonsenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EE2D451A06F01300C10523 /* NonsenseView.swift */; };
+		55EE2D481A06F9F700C10523 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EE2D471A06F9F700C10523 /* AppController.swift */; };
 		55F759FA19F2EC4900B56DF7 /* NONSVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664419EF7DAA00D35E25 /* NONSVerb.swift */; };
 		55F759FB19F2EC4900B56DF7 /* NonsenseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B1DB719F04C58009DFEA5 /* NonsenseObject.swift */; };
 		55F759FC19F2EC4C00B56DF7 /* NONSVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C664419EF7DAA00D35E25 /* NONSVerb.swift */; };
@@ -71,8 +71,6 @@
 		553CAF1A123F2F5B008EA480 /* NONSVisualTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NONSVisualTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NONSVisualTester-Info.plist"; path = "../NONSVisualTester-Info.plist"; sourceTree = "<group>"; };
 		553CAF20123F2F6B008EA480 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		553CAF30123F30A4008EA480 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
-		553CAF31123F30A4008EA480 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		5549DE731350D5CD00745EF3 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = ../README; sourceTree = "<group>"; };
 		5556EFA918E0B46000B49E98 /* Nonsense Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nonsense Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5556EFAF18E0B46000B49E98 /* Nonsense Generator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Nonsense Generator-Info.plist"; sourceTree = "<group>"; };
@@ -105,7 +103,7 @@
 		55D1A03D19EF5E9600DE3929 /* NonsenseSaver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NonsenseSaver-Bridging-Header.h"; sourceTree = "<group>"; };
 		55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseSaverController.swift; sourceTree = "<group>"; };
 		55EE2D451A06F01300C10523 /* NonsenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseView.swift; sourceTree = "<group>"; };
-		55F759FE19F2EE5700B56DF7 /* NONSVisualTester-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NONSVisualTester-Bridging-Header.h"; sourceTree = "<group>"; };
+		55EE2D471A06F9F700C10523 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* NonsenseSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonsenseSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50079790118B23001CA0E54 /* NonsenseSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverView.h; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 				553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */,
 				558FFD8118E4DAE7009AF7E6 /* InfoPlist.strings */,
 				8D255AD20486D3F9007BF209 /* Info.plist */,
-				5558274418E0DE020072F876 /* MainMenu.xib */,
 				55B2818C12416BAA003CEEF4 /* Credits.rtf */,
 			);
 			path = Resources;
@@ -260,10 +257,9 @@
 		553CAF2F123F2FF3008EA480 /* Testing Classes */ = {
 			isa = PBXGroup;
 			children = (
-				55F759FE19F2EE5700B56DF7 /* NONSVisualTester-Bridging-Header.h */,
-				553CAF30123F30A4008EA480 /* AppController.h */,
-				553CAF31123F30A4008EA480 /* AppController.m */,
+				55EE2D471A06F9F700C10523 /* AppController.swift */,
 				55EE2D451A06F01300C10523 /* NonsenseView.swift */,
+				5558274418E0DE020072F876 /* MainMenu.xib */,
 			);
 			name = "Testing Classes";
 			path = NONSVisualTester;
@@ -512,9 +508,9 @@
 			files = (
 				559C664019EF7A0800D35E25 /* NonsenseSaverController.swift in Sources */,
 				55F759FB19F2EC4900B56DF7 /* NonsenseObject.swift in Sources */,
-				553CAF32123F30A4008EA480 /* AppController.m in Sources */,
 				55EE2D461A06F01300C10523 /* NonsenseView.swift in Sources */,
 				55F759FA19F2EC4900B56DF7 /* NONSVerb.swift in Sources */,
+				55EE2D481A06F9F700C10523 /* AppController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +587,7 @@
 				5558274318E0DE020072F876 /* en */,
 			);
 			name = MainMenu.xib;
+			path = ../Resources;
 			sourceTree = "<group>";
 		};
 		558FFD8118E4DAE7009AF7E6 /* InfoPlist.strings */ = {
@@ -617,7 +614,6 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
 				PRODUCT_NAME = NONSVisualTester;
-				SWIFT_OBJC_BRIDGING_HEADER = "NONSVisualTester/NONSVisualTester-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -634,7 +630,6 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
 				PRODUCT_NAME = NONSVisualTester;
-				SWIFT_OBJC_BRIDGING_HEADER = "NONSVisualTester/NONSVisualTester-Bridging-Header.h";
 			};
 			name = Release;
 		};
