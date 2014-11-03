@@ -26,7 +26,7 @@ let NONSInterjections = "Interjections"
 
 private var singleDefaults: dispatch_once_t = 0
 
-private func randObject<X>(anArray: [X]) -> X {
+internal func randObject<X>(anArray: [X]) -> X {
 	return anArray[random() % anArray.count]
 }
 

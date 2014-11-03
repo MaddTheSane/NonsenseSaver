@@ -37,6 +37,12 @@ final class NonsenseObject: NSObject, Printable, DebugPrintable {
 
 	
 	class func randomColors(showBackgroundColor: Bool = true) -> (foreground: NSColor, background: NSColor) {
+		let tupleArray: [(foreground: NSColor, background: NSColor)] = [(NSColor.redColor(), NSColor.yellowColor()),
+		(NSColor.greenColor(), NSColor.orangeColor()), (NSColor.blueColor(), NSColor.magentaColor()), (NSColor.cyanColor(), NSColor.orangeColor()),
+		(NSColor.yellowColor(), NSColor.redColor()), (NSColor.magentaColor(), NSColor.blueColor()), (NSColor.orangeColor(), NSColor.blueColor()),
+		(NSColor.purpleColor(), NSColor.orangeColor()), (NSColor.brownColor(), NSColor.purpleColor())]
+		return randObject(tupleArray)
+/*
 		var bgColor: NSColor
 		var fgColor: NSColor
 		switch (random() % 9) {
@@ -93,6 +99,7 @@ final class NonsenseObject: NSObject, Printable, DebugPrintable {
 		}
 
 		return (fgColor, bgColor)
+*/
 	}
 	
 	init(string nonString: String, bounds bound: NSRect, font theFont: NSFont = NSFont.systemFontOfSize(kFullSize)) {
