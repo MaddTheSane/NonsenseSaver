@@ -114,6 +114,7 @@ final class NonsenseObject: NSObject, Printable, DebugPrintable {
 			NSParagraphStyleAttributeName: style];
 		
 		var strSize = (nonsense as NSString).sizeWithAttributes(fontAttributes)
+		strSize.width = ceil(strSize.width)
 		if (strSize.width > bound.size.width) {
 			var drawRect = NSZeroRect
 			if (strSize.width > (bound.size.width)*2.0/3.0) {
