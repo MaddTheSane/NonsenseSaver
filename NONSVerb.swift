@@ -67,12 +67,12 @@ func ==(lhs: Verb, rhs: Verb) -> Bool {
 	
 	convenience init?(array: [String]) {
 		if (array.count < 5) {
-			NSLog("Array is too small! Not initializing!");
+			println("Array is too small! Not initializing!");
 
 			self.init(privateInit: ())
 			return nil;
 		} else if (array.count > 5) {
-			NSLog("Array is too big! Ignoring other values")
+			println("Array is too big! Ignoring other values")
 		}
 		
 		self.init(singlePresent: array[0], pluralPresent: array[1], past: array[2], pastPerfect: array[3], presentCont: array[4])
