@@ -41,6 +41,8 @@ private func PrepareVerbsForSaving(toSave: [Verb]) -> [[String: String]] {
 	}
 
 	var theArray = [[String: String]]()
+	theArray.reserveCapacity(toSave.count)
+	
 	for i in toSave{
 		theArray.append(PrepareVerbForSaving(i))
 	}
@@ -53,6 +55,7 @@ private func GetVerbsFromSaved(theSaved: [[String: String]]) -> [Verb] {
 	}
 	
 	var theArray = [Verb]()
+	theArray.reserveCapacity(theSaved.count)
 	
 	for i in theSaved {
 		theArray.append(GetVerbFromSaved(i))
@@ -88,11 +91,6 @@ class NonsenseSaverController: NSObject {
 	override init() {
 		super.init()
 		
-		setDefaults()
-		loadSettings()
-	}
-	
-	private func setDefaults() {
 		dispatch_once(&singleDefaults) {
 			let ourClass = NSBundle(forClass: self.dynamicType)
 			let defaults = defaultsProvider()
@@ -102,6 +100,7 @@ class NonsenseSaverController: NSObject {
 				}
 			}
 		}
+		loadSettings()
 	}
 	
 	func loadSettings() {
@@ -197,7 +196,7 @@ class NonsenseSaverController: NSObject {
 	
 	func randomSaying() -> String {
 		//FIXME: this is where it falls short. There needs to be a better way of generating nonsense than the one that I'm using right here.
-		let casenum: UInt32 = arc4random_uniform(12)
+		let casenum = arc4random_uniform(12)
 		var nonsensestring: String
 		switch (casenum) {
 		case 0:

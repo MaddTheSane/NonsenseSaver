@@ -20,24 +20,33 @@ private func ourSetDefaults() {
 
 private var oursreensaverDefaults: dispatch_once_t = 0
 
-class NonsenseSaverView: ScreenSaverView {
+public class NonsenseSaverView: ScreenSaverView {
 	dynamic var maxNonsenses: Int = 3
 	dynamic var nonsenseDuration: NSTimeInterval = 2.7
 	dynamic var showBackground = true
 	
-	@IBOutlet var configSheet: NSWindow! = nil
-	@IBOutlet var credits: NSTextView! = nil
-	@IBOutlet var vocabList: NSTableView! = nil
+	@IBOutlet weak var configSheet: NSWindow! = nil
+	@IBOutlet weak var credits: NSTextView! = nil
+	@IBOutlet weak var vocabList: NSTableView! = nil
+	
+	// verb IBOutlets
+	@IBOutlet weak var fieldThirdPersonPast: NSFormCell!
+	@IBOutlet weak var fieldThirdPersonPastPerfect: NSFormCell!
+	@IBOutlet weak var fieldThirdPersonPluralPresent: NSFormCell!
+	@IBOutlet weak var fieldThirdPersonPresentCont: NSFormCell!
+	@IBOutlet weak var fieldThirdPersonSinglePresent: NSFormCell!
+	
+	@IBOutlet weak var fieldWord: NSTextField!
 	
 	let controller = NonsenseSaverController()
 	var nonsenses = [NonsenseObject]()
 	var nibArray: NSArray? = nil
 	
-	convenience override init(frame: NSRect) {
+	convenience public override init(frame: NSRect) {
 		self.init(frame: frame, isPreview: false)
 	}
 	
-	override init(frame: NSRect, isPreview: Bool) {
+	public override init(frame: NSRect, isPreview: Bool) {
 		srandom(UInt32(time(nil) & 0x7FFFFFFF))
 		dispatch_once(&oursreensaverDefaults, ourSetDefaults)
 
@@ -62,11 +71,11 @@ class NonsenseSaverView: ScreenSaverView {
 		}
 	}
 	
-	override func hasConfigureSheet() -> Bool {
+	public override func hasConfigureSheet() -> Bool {
 		return true
 	}
 	
-	override func configureSheet() -> NSWindow {
+	public override func configureSheet() -> NSWindow {
 		if configSheet == nil {
 			let ourBundle = NSBundle(forClass: self.dynamicType)
 			ourBundle.loadNibNamed("NonsenseSettings", owner: self, topLevelObjects: &nibArray)
@@ -77,18 +86,18 @@ class NonsenseSaverView: ScreenSaverView {
 		return configSheet
 	}
 	
-	override func animateOneFrame() {
+	public override func animateOneFrame() {
 		needsDisplay = true
 	}
 	
-	required init?(coder: NSCoder) {
+	public required init?(coder: NSCoder) {
 		srandom(UInt32(time(nil) & 0x7FFFFFFF))
 		dispatch_once(&oursreensaverDefaults, ourSetDefaults)
 
 		super.init(coder: coder)
 	}
 	
-    override func drawRect(dirtyRect: NSRect) {
+    public override func drawRect(dirtyRect: NSRect) {
 		//Clear the screen
         super.drawRect(dirtyRect)
 
@@ -106,6 +115,25 @@ class NonsenseSaverView: ScreenSaverView {
 		nonsenses.append(non)
     }
 	
+	func clearVerbWindow() {
+		fieldThirdPersonSinglePresent.stringValue = ""
+		fieldThirdPersonPluralPresent.stringValue = ""
+		fieldThirdPersonPast.stringValue = ""
+		fieldThirdPersonPastPerfect.stringValue = ""
+		fieldThirdPersonPresentCont.stringValue = ""
+	}
+	
+	/*
+	- (void)clearVerbWindow
+	{
+	[self.fieldThirdPersonSinglePresent setStringValue:@""];
+	[self.fieldThirdPersonPluralPresent setStringValue:@""];
+	[self.fieldThirdPersonPast setStringValue:@""];
+	[self.fieldThirdPersonPastPerfect setStringValue:@""];
+	[self.fieldThirdPersonPresentCont setStringValue:@""];
+	}
+
+*/
 	
 	@IBAction func okayNonsense(sender: AnyObject?) {
 		

@@ -1,6 +1,6 @@
-﻿/* Localized versions of Info.plist keys */
+/* Localized versions of Info.plist keys */
 
-NSHumanReadableCopyright = "Copyright © 2010-2014, C.W. \"Madd the Sane\" Betts.";
+NSHumanReadableCopyright = "Copyright © 2010-2015, C.W. \"Madd the Sane\" Betts.";
 CFBundleName = "Nonsense";
 CFBundleGetInfoString = "A screen saver that prints nonsensical sayings on the screen.";
-CFBundleShortVersionString = "Nonsense 1.1";
+CFBundleShortVersionString = "Nonsense 1.2";
