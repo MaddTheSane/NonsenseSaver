@@ -27,7 +27,8 @@ let NONSInterjections = "Interjections"
 private var singleDefaults: dispatch_once_t = 0
 
 internal func randObject<X>(anArray: [X]) -> X {
-	return anArray[random() % anArray.count]
+	let aRand = Int(arc4random_uniform(UInt32(anArray.count)))
+	return anArray[aRand]
 }
 
 private func PrepareVerbsForSaving(toSave: [Verb]) -> [[String: String]] {
@@ -196,7 +197,7 @@ class NonsenseSaverController: NSObject {
 	
 	func randomSaying() -> String {
 		//FIXME: this is where it falls short. There needs to be a better way of generating nonsense than the one that I'm using right here.
-		let casenum = random() % 12
+		let casenum: UInt32 = arc4random_uniform(12)
 		var nonsensestring: String
 		switch (casenum) {
 		case 0:
@@ -305,63 +306,56 @@ class NonsenseSaverController: NSObject {
 	
 	@objc(removeVerbsAtIndexes:) func removeVerbs(#indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "verbs")
-		verbs = verbs.filter { (tmpVerb) -> Bool in
-			var verbIndex = find(self.verbs, tmpVerb)!
-			return !indexes.containsIndex(verbIndex)
+		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+			verbs.removeAtIndex(i)
 		}
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "verbs")
 	}
 	
 	@objc(removePluralNounsAtIndexes:) func removePluralNouns(#indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "pluralNouns")
-		pluralNouns = pluralNouns.filter { (tmpVerb) -> Bool in
-			var verbIndex = find(self.pluralNouns, tmpVerb)!
-			return !indexes.containsIndex(verbIndex)
+		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+			pluralNouns.removeAtIndex(i)
 		}
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "pluralNouns")
 	}
 	
 	@objc(removeSingularNounsAtIndexes:) func removeSingularNouns(#indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "singularNouns")
-		singularNouns = singularNouns.filter { (tmpVerb) -> Bool in
-			var verbIndex = find(self.singularNouns, tmpVerb)!
-			return !indexes.containsIndex(verbIndex)
+		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+			singularNouns.removeAtIndex(i)
 		}
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "singularNouns")
 	}
 	
 	@objc(removeProperNounsAtIndexes:) func removeProperNouns(#indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "properNouns")
-		properNouns = properNouns.filter { (tmpVerb) -> Bool in
-			var verbIndex = find(self.properNouns, tmpVerb)!
-			return !indexes.containsIndex(verbIndex)
+		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+			properNouns.removeAtIndex(i)
 		}
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "properNouns")
 	}
 	
 	@objc(removeAdverbsAtIndexes:) func removeAdverbs(#indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "adverbs")
-		adverbs = adverbs.filter { (tmpVerb) -> Bool in
-			var verbIndex = find(self.adverbs, tmpVerb)!
-			return !indexes.containsIndex(verbIndex)
+		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+			adverbs.removeAtIndex(i)
 		}
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "adverbs")
 	}
 	
 	@objc(removeAdjectivesAtIndexes:) func removeAdjectives(#indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "adjectives")
-		adjectives = adjectives.filter { (tmpVerb) -> Bool in
-			var verbIndex = find(self.adjectives, tmpVerb)!
-			return !indexes.containsIndex(verbIndex)
+		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+			adjectives.removeAtIndex(i)
 		}
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "adjectives")
 	}
 	
 	@objc(removeMassiveNounsAtIndexes:) func removeMassiveNouns(#indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "massiveNouns")
-		massiveNouns = massiveNouns.filter { (tmpVerb) -> Bool in
-			var verbIndex = find(self.massiveNouns, tmpVerb)!
-			return !indexes.containsIndex(verbIndex)
+		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+			massiveNouns.removeAtIndex(i)
 		}
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "massiveNouns")
 	}
@@ -435,5 +429,4 @@ class NonsenseSaverController: NSObject {
 		}
 		removeMassiveNouns(indexes: idxSet)
 	}
-	
 }
