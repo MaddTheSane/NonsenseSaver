@@ -7,12 +7,29 @@
 //
 
 import Cocoa
-import ScreenSaver
+//import ScreenSaver
 
 let kPreviewSize: CGFloat = 12
 let kFullSize: CGFloat = 30
+let MaxNonsenseWidth: CGFloat = 350
 
 private let kNonsenseBorder: CGFloat = 8
+
+private func RandomFloatBetween(a: CGFloat, b: CGFloat) -> CGFloat {
+	return a + (b - a) * (CGFloat(random()) / CGFloat(RAND_MAX))
+}
+
+private func RandomPoint(forSize size: NSSize, withinRect rect: NSRect) -> NSPoint {
+	return NSPoint(x: RandomFloatBetween(rect.origin.x, rect.origin.x + rect.size.width - size.width),
+		y: RandomFloatBetween(rect.origin.y, rect.origin.y + rect.size.height - size.height))
+}
+
+private func CenteredInRect(innerRect: NSRect, outerRect: NSRect) -> NSRect {
+	var aInner = innerRect
+	aInner.origin.x = floor((outerRect.size.width - innerRect.size.width) / 2.0);
+	aInner.origin.y = floor((outerRect.size.height - innerRect.size.height) / 2.0);
+	return aInner
+}
 
 final class NonsenseObject: NSObject, Printable, DebugPrintable {
 	let nonsense: String
@@ -103,11 +120,12 @@ final class NonsenseObject: NSObject, Printable, DebugPrintable {
 	}
 	
 	init(string nonString: String, bounds bound: NSRect, font theFont: NSFont = NSFont.systemFontOfSize(kFullSize)) {
+		let maxWidth = MaxNonsenseWidth > (bound.size.width / 3) ? bound.size.width / 3 : MaxNonsenseWidth
 		let ourColors = NonsenseObject.randomColors()
 		foregroundColor = ourColors.foreground
 		backgroundColor = ourColors.background
 		nonsense = nonString;
-		var style = NSMutableParagraphStyle()
+		let style = NSMutableParagraphStyle()
 		style.alignment = .CenterTextAlignment
 		fontAttributes = [NSForegroundColorAttributeName: foregroundColor,
 			NSFontAttributeName: theFont,
@@ -115,24 +133,25 @@ final class NonsenseObject: NSObject, Printable, DebugPrintable {
 		
 		var strSize = (nonsense as NSString).sizeWithAttributes(fontAttributes)
 		strSize.width = ceil(strSize.width)
-		if (strSize.width > bound.size.width) {
-			var drawRect = NSZeroRect
-			if (strSize.width > (bound.size.width)*2.0/3.0) {
-				drawRect.size.width = strSize.width / 3.0;
-				drawRect.size.height = strSize.height * 4.0;
-			} else {
-				drawRect.size.width = strSize.width * 2.0/3.0;
-				drawRect.size.height = strSize.height * 2.0;
-			}
-			drawRect.size.height += kNonsenseBorder;
-			drawRect.size.width += kNonsenseBorder;
-			drawRect.origin = SSRandomPointForSizeWithinRect(drawRect.size, bound);
-			placement = drawRect;
+		if strSize.width > maxWidth {
+			// How much greater is it?
+			var greaterBy = strSize.width / maxWidth
+			greaterBy = ceil(greaterBy)
+			var tmpPlace = NSZeroRect
+			strSize.width = maxWidth
+			strSize.height *= greaterBy
+			
+			strSize.height += kNonsenseBorder;
+			strSize.width += kNonsenseBorder;
+			tmpPlace.origin = RandomPoint(forSize: strSize, withinRect: bound)
+			tmpPlace.size = strSize;
+			
+			placement = tmpPlace
 		} else {
 			var tmpPlace = NSZeroRect
 			strSize.height += kNonsenseBorder;
 			strSize.width += kNonsenseBorder;
-			tmpPlace.origin = SSRandomPointForSizeWithinRect(strSize, bound);
+			tmpPlace.origin = RandomPoint(forSize: strSize, withinRect: bound)
 			tmpPlace.size = strSize;
 			placement = tmpPlace;
 		}
