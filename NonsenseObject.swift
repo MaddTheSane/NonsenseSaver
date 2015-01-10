@@ -31,7 +31,7 @@ private func CenteredInRect(innerRect: NSRect, outerRect: NSRect) -> NSRect {
 	return aInner
 }
 
-final class NonsenseObject: NSObject, Printable, DebugPrintable {
+final class NonsenseObject: Printable, DebugPrintable {
 	let nonsense: String
 	let backgroundColor: NSColor
 	let foregroundColor: NSColor
@@ -120,42 +120,27 @@ final class NonsenseObject: NSObject, Printable, DebugPrintable {
 	}
 	
 	init(string nonString: String, bounds bound: NSRect, font theFont: NSFont = NSFont.systemFontOfSize(kFullSize)) {
-		let maxWidth = MaxNonsenseWidth > (bound.size.width / 3) ? bound.size.width / 3 : MaxNonsenseWidth
-		let ourColors = NonsenseObject.randomColors()
-		foregroundColor = ourColors.foreground
-		backgroundColor = ourColors.background
+		let maxWidth = min(MaxNonsenseWidth,  (bound.size.width / 3))
+		(foregroundColor, backgroundColor) = NonsenseObject.randomColors()
 		nonsense = nonString;
 		let style = NSMutableParagraphStyle()
 		style.alignment = .CenterTextAlignment
+		style.lineBreakMode = .ByWordWrapping
 		fontAttributes = [NSForegroundColorAttributeName: foregroundColor,
 			NSFontAttributeName: theFont,
 			NSParagraphStyleAttributeName: style];
 		
-		var strSize = (nonsense as NSString).sizeWithAttributes(fontAttributes)
-		strSize.width = ceil(strSize.width)
-		if strSize.width > maxWidth {
-			// How much greater is it?
-			var greaterBy = strSize.width / maxWidth
-			greaterBy = ceil(greaterBy)
-			var tmpPlace = NSZeroRect
-			strSize.width = maxWidth
-			strSize.height *= greaterBy
-			
-			strSize.height += kNonsenseBorder;
-			strSize.width += kNonsenseBorder;
-			tmpPlace.origin = RandomPoint(forSize: strSize, withinRect: bound)
-			tmpPlace.size = strSize;
-			
-			placement = tmpPlace
-		} else {
-			var tmpPlace = NSZeroRect
-			strSize.height += kNonsenseBorder;
-			strSize.width += kNonsenseBorder;
-			tmpPlace.origin = RandomPoint(forSize: strSize, withinRect: bound)
-			tmpPlace.size = strSize;
-			placement = tmpPlace;
-		}
-		super.init()
+		var tmpPlace = NSRect.zeroRect
+		
+		var strRect = (nonsense as NSString).boundingRectWithSize(NSSize(width: maxWidth, height: 0), options: .UsesFontLeading | .UsesDeviceMetrics | .UsesLineFragmentOrigin, attributes: fontAttributes)
+		var strSize = strRect.size
+		
+		strSize.height += kNonsenseBorder;
+		strSize.width += kNonsenseBorder;
+		tmpPlace.origin = RandomPoint(forSize: strSize, withinRect: bound)
+		tmpPlace.size = strSize;
+		
+		placement = tmpPlace
 	}
 	
 	func draw(background bgDraw: Bool = true) {
@@ -166,11 +151,11 @@ final class NonsenseObject: NSObject, Printable, DebugPrintable {
 		(nonsense as NSString).drawInRect(textPosition, withAttributes: fontAttributes)
 	}
 
-	override var description: String {
+	var description: String {
 		return nonsense
 	}
 	
-	override var debugDescription: String {
+	var debugDescription: String {
 		return nonsense + ", placement: " + NSStringFromRect(placement)
 	}
 }

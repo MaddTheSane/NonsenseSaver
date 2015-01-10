@@ -10,12 +10,24 @@ import Cocoa
 
 class NonsenseView: NSView {
 	let nonsenseController = NonsenseSaverController()
-	var nonDuration: CGFloat = 2.7
-	var nonNumber = 5
-	var showBackground = true
+	dynamic var nonDuration: CGFloat = 2.7 {
+		didSet {
+			refreshRate?.invalidate()
+			refreshRate = NSTimer(timeInterval: NSTimeInterval(nonDuration), target: self, selector: "reloadScreen:", userInfo:nil, repeats: true)
+			NSRunLoop.mainRunLoop().addTimer(refreshRate!, forMode: NSRunLoopCommonModes)
+		}
+	}
+	dynamic var nonNumber = 5
+	dynamic var showBackground: Bool = true {
+		didSet {
+			if oldValue != showBackground {
+				needsDisplay = true
+			}
+		}
+	}
 	private var nonsenses = [NonsenseObject]()
 	private var settingsChanged = false
-	private var refreshRate: NSTimer? = nil
+	private var refreshRate: NSTimer! = nil
 
     override func drawRect(dirtyRect: NSRect) {
 		super.drawRect(dirtyRect)
@@ -56,7 +68,7 @@ class NonsenseView: NSView {
 		populateNonsenses()
 	}
 	
-	@objc func reloadScreen(theTime: NSTimer?) {
+	@objc(reloadScreen:) func reloadScreen(theTime: NSTimer?) {
 		self.needsDisplay = true
 	}
 	
@@ -64,6 +76,7 @@ class NonsenseView: NSView {
 		super.awakeFromNib()
 		
 		refreshRate = NSTimer(timeInterval: NSTimeInterval(nonDuration), target: self, selector: "reloadScreen:", userInfo:nil, repeats: true)
+		NSRunLoop.mainRunLoop().addTimer(refreshRate!, forMode: NSRunLoopCommonModes)
 	}
 	
 }
