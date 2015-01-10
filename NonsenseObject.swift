@@ -16,7 +16,7 @@ let MaxNonsenseWidth: CGFloat = 350
 private let kNonsenseBorder: CGFloat = 8
 
 private func RandomFloatBetween(a: CGFloat, b: CGFloat) -> CGFloat {
-	return a + (b - a) * (CGFloat(random()) / CGFloat(RAND_MAX))
+	return a + (b - a) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
 }
 
 private func RandomPoint(forSize size: NSSize, withinRect rect: NSRect) -> NSPoint {
