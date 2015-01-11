@@ -26,6 +26,7 @@ let NONSInterjections = "Interjections"
 
 private var singleDefaults: dispatch_once_t = 0
 
+/// Get a random object in an array
 internal func randObject<X>(anArray: [X]) -> X {
 	let aRand = Int(arc4random_uniform(UInt32(anArray.count)))
 	return anArray[aRand]
@@ -50,21 +51,34 @@ private func PrepareVerbsForSaving(toSave: [Verb]) -> [[String: String]] {
 }
 
 private func GetVerbsFromSaved(theSaved: [[String: String]]) -> [Verb] {
-	func GetVerbFromSaved(theSaved: [String: String]) -> Verb {
-		return Verb(singlePresent: theSaved[ThirdPersonSinglePresent]!, pluralPresent: theSaved[ThirdPersonPluralPresent]!, past: theSaved[ThirdPersonPast]!, pastPerfect: theSaved[ThirdPersonPastPerfect]!, presentCont: theSaved[ThirdPersonPresentCont]!)
+	func GetVerbFromSaved(theSaved1: [String: String]) -> Verb? {
+		if let singPres = theSaved1[ThirdPersonSinglePresent] {
+			if let pluralPres = theSaved1[ThirdPersonPluralPresent] {
+				if let pas = theSaved1[ThirdPersonPast] {
+					if let pasPerfect = theSaved1[ThirdPersonPastPerfect]{
+						if let presCont = theSaved1[ThirdPersonPresentCont] {
+							return Verb(singlePresent: singPres, pluralPresent: pluralPres, past: pas, pastPerfect: pasPerfect, presentCont: presCont)
+						}
+					}
+				}
+			}
+		}
+		return nil
 	}
 	
 	var theArray = [Verb]()
 	theArray.reserveCapacity(theSaved.count)
 	
 	for i in theSaved {
-		theArray.append(GetVerbFromSaved(i))
+		if let aVerb = GetVerbFromSaved(i) {
+			theArray.append(aVerb)
+		}
 	}
 	
 	return theArray
 }
 
-private func defaultsProvider() -> NSUserDefaults {
+internal func defaultsProvider() -> NSUserDefaults {
 #if os(iOS)
 	return NSUserDefaults.standardUserDefaults()
 #else

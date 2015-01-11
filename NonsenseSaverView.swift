@@ -13,12 +13,22 @@ private let NONSAtATime = "Number at a time"
 private let NONSDuration = "Nonsense Duration"
 private let NONSBGColor = "Show Background"
 
-private func ourSetDefaults() {
-	let defaults = ScreenSaverDefaults.defaultsForModuleWithName(NonsenseDefaultsKey) as ScreenSaverDefaults
-	defaults.registerDefaults([NONSAtATime: 3, NONSDuration: 2.7, NONSBGColor: true])
+private enum VocabType: Int {
+	case None = 0
+	case SingularNoun = 1
+	case PluralNoun = 2
+	case Verb = 3
+	case ProperNoun = 4
+	case Adjective = 5
+	case Adverb = 6
+	case MassiveNoun = 7
 }
 
 private var oursreensaverDefaults: dispatch_once_t = 0
+private func ourSetDefaults() {
+	let defaults = defaultsProvider()
+	defaults.registerDefaults([NONSAtATime: 3, NONSDuration: 2.7, NONSBGColor: true])
+}
 
 public class NonsenseSaverView: ScreenSaverView {
 	dynamic var maxNonsenses: Int = 3
@@ -52,7 +62,7 @@ public class NonsenseSaverView: ScreenSaverView {
 
 		super.init(frame: frame, isPreview: isPreview)
 		
-		let defaults = ScreenSaverDefaults.defaultsForModuleWithName(NonsenseDefaultsKey) as ScreenSaverDefaults
+		let defaults = defaultsProvider()
 		maxNonsenses = defaults.integerForKey(NONSAtATime)
 		nonsenseDuration = defaults.doubleForKey(NONSDuration)
 		showBackground = defaults.boolForKey(NONSBGColor)
@@ -123,18 +133,6 @@ public class NonsenseSaverView: ScreenSaverView {
 		fieldThirdPersonPresentCont.stringValue = ""
 	}
 	
-	/*
-	- (void)clearVerbWindow
-	{
-	[self.fieldThirdPersonSinglePresent setStringValue:@""];
-	[self.fieldThirdPersonPluralPresent setStringValue:@""];
-	[self.fieldThirdPersonPast setStringValue:@""];
-	[self.fieldThirdPersonPastPerfect setStringValue:@""];
-	[self.fieldThirdPersonPresentCont setStringValue:@""];
-	}
-
-*/
-	
 	@IBAction func okayNonsense(sender: AnyObject?) {
 		
 	}
@@ -144,7 +142,11 @@ public class NonsenseSaverView: ScreenSaverView {
 	}
 	
 	@IBAction func changeVocabView(sender: AnyObject) {
-		
+		if let aTag = (sender as? NSControl)?.tag {
+			if let aVocabType = VocabType(rawValue: aTag) {
+				// TODO: implement
+			}
+		}
 	}
 	
 	@IBAction func removeSelectedWord(sender: AnyObject) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NonsenseSaverView" customModule="NonsenseSaver">
@@ -57,7 +57,7 @@ Gw
                             <action selector="cancelNonsense:" target="-2" id="0fZ-jd-WG4"/>
                         </connections>
                     </button>
-                    <tabView translatesAutoresizingMaskIntoConstraints="NO" id="259">
+                    <tabView initialItem="260" translatesAutoresizingMaskIntoConstraints="NO" id="259">
                         <rect key="frame" x="13" y="51" width="593" height="303"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
@@ -290,7 +290,7 @@ Gw
                                         </textField>
                                         <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="281" userLabel="Duration slider">
                                             <rect key="frame" x="343" y="187" width="164" height="27"/>
-                                            <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="0.5" maxValue="10" doubleValue="2.6923076923076921" tickMarkPosition="below" numberOfTickMarks="14" sliderType="linear" id="282"/>
+                                            <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="0.5" maxValue="10" doubleValue="2.7000000000000002" tickMarkPosition="below" numberOfTickMarks="14" sliderType="linear" id="282"/>
                                             <connections>
                                                 <binding destination="-2" name="value" keyPath="self.nonsenseDuration" id="qS9-WC-MP2"/>
                                             </connections>
@@ -312,7 +312,7 @@ Gw
                                                 <constraint firstAttribute="width" constant="40" id="HL9-AN-9V8"/>
                                             </constraints>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Label" id="287">
-                                                <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" alwaysShowsDecimalSeparator="YES" paddingCharacter="*" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="2" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="302"/>
+                                                <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" alwaysShowsDecimalSeparator="YES" paddingCharacter="*" minimumIntegerDigits="1" maximumIntegerDigits="309" minimumFractionDigits="2" maximumFractionDigits="2" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="302"/>
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -360,7 +360,7 @@ Gw
                                     </constraints>
                                 </view>
                             </tabViewItem>
-                            <tabViewItem label="Credits" identifier="Item 2" id="291">
+                            <tabViewItem label="Credits" identifier="3" id="291">
                                 <view key="view" id="292">
                                     <rect key="frame" x="10" y="33" width="573" height="257"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -538,9 +538,6 @@ DQ
 DQ
 </string>
                         </buttonCell>
-                        <connections>
-                            <action selector="addWord:" target="-2" id="252"/>
-                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="250">
                         <rect key="frame" x="128" y="13" width="83" height="32"/>
