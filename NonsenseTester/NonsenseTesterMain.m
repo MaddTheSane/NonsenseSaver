@@ -1,6 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import "NonsenseSaverController.h"
-#import "NONSVerb.h"
+#import "NonsenseTester-Swift.h"
 
 void WriteToStandardOutput(NSString *string, ...) NS_FORMAT_FUNCTION(1,2);
 
@@ -20,7 +19,7 @@ int main(int argc, char *argv[])
 	@autoreleasepool {
 		srandom( 0x7FFFFFFF & time(NULL));
 		NonsenseSaverController *controller = [[NonsenseSaverController alloc] init];
-		WriteToStandardOutput(@"%@\n", [controller radomSaying]);
+		WriteToStandardOutput(@"%@\n", [controller randomSaying]);
 		
 		return EXIT_SUCCESS;
 	}

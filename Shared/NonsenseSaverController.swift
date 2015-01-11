@@ -86,7 +86,7 @@ internal func defaultsProvider() -> NSUserDefaults {
 #endif
 }
 
-class NonsenseSaverController: NSObject {
+internal class NonsenseSaverController: NSObject {
 	private(set) dynamic var verbs = [Verb]()
 	private(set) dynamic var pluralNouns = [String]()
 	private(set) dynamic var singularNouns = [String]()
