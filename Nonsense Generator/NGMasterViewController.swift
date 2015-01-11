@@ -89,7 +89,7 @@ class NGMasterViewController: UITableViewController {
 		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
 		let object = objects[indexPath.row] as NSDate
-		cell.textLabel.text = object.description
+		cell.textLabel?.text = object.description
 		return cell
 	}
 
