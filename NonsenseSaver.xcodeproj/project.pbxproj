@@ -72,7 +72,7 @@
 		553CAF1A123F2F5B008EA480 /* NONSVisualTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NONSVisualTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553CAF1C123F2F5C008EA480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		553CAF20123F2F6B008EA480 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		5549DE731350D5CD00745EF3 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = ../README; sourceTree = "<group>"; };
+		5549DE731350D5CD00745EF3 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
 		5556EFA918E0B46000B49E98 /* Nonsense Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nonsense Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5556EFAF18E0B46000B49E98 /* Nonsense Generator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Nonsense Generator-Info.plist"; sourceTree = "<group>"; };
 		5556EFB118E0B46000B49E98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -169,21 +169,12 @@
 				55BD4CD71A62FC5F00940970 /* NonsenseSaver */,
 				55BD4CD61A62FC4400940970 /* NONSVisualTester */,
 				32DBCFA70370C4F300C91783 /* NonsenseTester */,
-				089C167CFE841241C02AAC07 /* Resources */,
 				5556EFAD18E0B46000B49E98 /* Nonsense Generator */,
 				5556EFD218E0B46000B49E98 /* Nonsense GeneratorTests */,
 				55C3965F15A20FCB005DBC66 /* Frameworks */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
 			);
 			name = NonsenseSaver;
-			sourceTree = "<group>";
-		};
-		089C167CFE841241C02AAC07 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5549DE731350D5CD00745EF3 /* README */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
@@ -305,6 +296,7 @@
 				55D1A03E19EF5E9700DE3929 /* NonsenseSaverController.swift */,
 				557B1DB719F04C58009DFEA5 /* NonsenseObject.swift */,
 				559C663C19EF75A000D35E25 /* Defaults.plist */,
+				5549DE731350D5CD00745EF3 /* README */,
 				55B2818C12416BAA003CEEF4 /* Credits.rtf */,
 			);
 			path = Shared;

@@ -41,12 +41,8 @@ private func PrepareVerbsForSaving(toSave: [Verb]) -> [[String: String]] {
 			ThirdPersonPresentCont : toSave.thirdPersonPresentCont]
 	}
 
-	var theArray = [[String: String]]()
-	theArray.reserveCapacity(toSave.count)
+	let theArray:[[String: String]] = toSave.map {PrepareVerbForSaving($0)}
 	
-	for i in toSave{
-		theArray.append(PrepareVerbForSaving(i))
-	}
 	return theArray
 }
 
