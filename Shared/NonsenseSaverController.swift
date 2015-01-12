@@ -201,7 +201,7 @@ internal class NonsenseSaverController: NSObject {
 	}
 
 	func randomNoun() -> String {
-		return (random() % 2) == 1  ? randomSingularNoun() : randomProperNoun()
+		return (arc4random_uniform(2)) == 1 ? randomSingularNoun() : randomProperNoun()
 	}
 	
 	func randomSaying() -> String {
