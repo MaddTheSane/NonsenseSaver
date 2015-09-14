@@ -412,7 +412,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					5556EFCA18E0B46000B49E98 = {
 						TestTargetID = 5556EFA818E0B46000B49E98;
@@ -599,6 +599,7 @@
 				INFOPLIST_FILE = NONSVisualTester/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.nonsensesaver.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NONSVisualTester;
 			};
 			name = Debug;
@@ -615,6 +616,7 @@
 				INFOPLIST_FILE = NONSVisualTester/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.nonsensesaver.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NONSVisualTester;
 			};
 			name = Release;
@@ -637,6 +639,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Nonsense Generator/NGSwiftBridge.h";
@@ -663,6 +666,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Nonsense Generator/NGSwiftBridge.h";
@@ -691,6 +695,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Nonsense GeneratorTests/Nonsense GeneratorTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -717,6 +722,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Nonsense GeneratorTests/Nonsense GeneratorTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -761,6 +767,7 @@
 				INFOPLIST_FILE = NonsenseSaver/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.nonsensesaver.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NonsenseSaver;
 				SWIFT_OBJC_BRIDGING_HEADER = "NonsenseSaver/NonsenseSaver-Bridging-Header.h";
 				WRAPPER_EXTENSION = saver;
@@ -777,6 +784,7 @@
 				INFOPLIST_FILE = NonsenseSaver/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.nonsensesaver.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NonsenseSaver;
 				SWIFT_OBJC_BRIDGING_HEADER = "NonsenseSaver/NonsenseSaver-Bridging-Header.h";
 				WRAPPER_EXTENSION = saver;
@@ -802,8 +810,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -847,6 +857,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
