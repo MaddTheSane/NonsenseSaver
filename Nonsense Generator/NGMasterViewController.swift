@@ -32,7 +32,7 @@ class NGMasterViewController: UITableViewController {
 		self.navigationItem.rightBarButtonItem = addButton
 		if let split = self.splitViewController {
 		    let controllers = split.viewControllers
-		    self.detailViewController = controllers[controllers.count-1].topViewController as? NGDetailViewController
+		    //self.detailViewController = controllers[controllers.count-1].topViewController as? NGDetailViewController
 		}
 	}
 	
@@ -65,9 +65,9 @@ class NGMasterViewController: UITableViewController {
 
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "showDetail" {
-		    if let indexPath = self.tableView.indexPathForSelectedRow() {
-		        let object = objects[indexPath.row] as NSDate
-		        let controller = (segue.destinationViewController as UINavigationController).topViewController as NGDetailViewController
+		    if let indexPath = self.tableView.indexPathForSelectedRow {
+		        let object = objects[indexPath.row] as! NSDate
+		        let controller = (segue.destinationViewController as! UINavigationController).topViewController as! NGDetailViewController
 		        controller.detailItem = object
 		        controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
 		        controller.navigationItem.leftItemsSupplementBackButton = true
@@ -88,7 +88,7 @@ class NGMasterViewController: UITableViewController {
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
-		let object = objects[indexPath.row] as NSDate
+		let object = objects[indexPath.row] as! NSDate
 		cell.textLabel?.text = object.description
 		return cell
 	}

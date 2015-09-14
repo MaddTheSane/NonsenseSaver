@@ -18,9 +18,9 @@ final class NGAppDelegate: UIResponder, UIApplicationDelegate, UISplitViewContro
 		srandom(UInt32(time(nil) & 0x7fffffff))
 
 		// Override point for customization after application launch.
-		let splitViewController = self.window!.rootViewController as UISplitViewController
-		let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController
-		navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
+		let splitViewController = self.window!.rootViewController as! UISplitViewController
+		let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+		navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
 		splitViewController.delegate = self
 		return true
 	}
@@ -49,7 +49,7 @@ final class NGAppDelegate: UIResponder, UIApplicationDelegate, UISplitViewContro
 
 	// MARK: - Split view
 
-	func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController!, ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
+	func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
 	    if let secondaryAsNavController = secondaryViewController as? UINavigationController {
 	        if let topAsDetailController = secondaryAsNavController.topViewController as? NGDetailViewController {
 	            if topAsDetailController.detailItem == nil {

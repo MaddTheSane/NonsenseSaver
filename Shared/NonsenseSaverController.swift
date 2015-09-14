@@ -78,7 +78,7 @@ internal func defaultsProvider() -> NSUserDefaults {
 #if os(iOS)
 	return NSUserDefaults.standardUserDefaults()
 #else
-	return ScreenSaverDefaults.defaultsForModuleWithName(NonsenseDefaultsKey) as ScreenSaverDefaults
+	return ScreenSaverDefaults(forModuleWithName: NonsenseDefaultsKey)!
 #endif
 }
 
@@ -106,7 +106,7 @@ internal class NonsenseSaverController: NSObject {
 			let defaults = defaultsProvider()
 			if let defaultsURL = ourClass.URLForResource("Defaults", withExtension: "plist") {
 				if let ourDict = NSDictionary(contentsOfURL: defaultsURL) {
-					defaults.registerDefaults(ourDict)
+					defaults.registerDefaults(ourDict as! [String : AnyObject])
 				}
 			}
 		}
@@ -125,13 +125,13 @@ internal class NonsenseSaverController: NSObject {
 		massiveNouns.removeAll(keepCapacity: true)
 		
 		//load values from settings.
-		verbs += GetVerbsFromSaved(defaults.arrayForKey(NONSVerbList) as [[String: String]])
-		pluralNouns += defaults.arrayForKey(NONSPluralNounList) as [String]
-		singularNouns += defaults.arrayForKey(NONSSingularNounList) as [String]
-		properNouns += defaults.arrayForKey(NONSProperNounList) as [String]
-		adverbs += defaults.arrayForKey(NONSAdverbList) as [String]
-		adjectives += defaults.arrayForKey(NONSAdjectiveList) as [String]
-		massiveNouns += defaults.arrayForKey(NONSMassiveNounList) as [String]
+		verbs += GetVerbsFromSaved(defaults.arrayForKey(NONSVerbList) as! [[String: String]])
+		pluralNouns += defaults.arrayForKey(NONSPluralNounList) as! [String]
+		singularNouns += defaults.arrayForKey(NONSSingularNounList) as! [String]
+		properNouns += defaults.arrayForKey(NONSProperNounList) as! [String]
+		adverbs += defaults.arrayForKey(NONSAdverbList) as! [String]
+		adjectives += defaults.arrayForKey(NONSAdjectiveList) as! [String]
+		massiveNouns += defaults.arrayForKey(NONSMassiveNounList) as! [String]
 	}
 	
 	// Simple test to see if a noun ends with an 's'
@@ -313,7 +313,7 @@ internal class NonsenseSaverController: NSObject {
 		self.didChange(.Insertion, valuesAtIndexes: curIdx, forKey: "massiveNouns")
 	}
 	
-	@objc(removeVerbsAtIndexes:) func removeVerbs(#indexes: NSIndexSet) {
+	@objc(removeVerbsAtIndexes:) func removeVerbs(indexes indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "verbs")
 		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
 			verbs.removeAtIndex(i)
@@ -321,7 +321,7 @@ internal class NonsenseSaverController: NSObject {
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "verbs")
 	}
 	
-	@objc(removePluralNounsAtIndexes:) func removePluralNouns(#indexes: NSIndexSet) {
+	@objc(removePluralNounsAtIndexes:) func removePluralNouns(indexes indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "pluralNouns")
 		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
 			pluralNouns.removeAtIndex(i)
@@ -329,7 +329,7 @@ internal class NonsenseSaverController: NSObject {
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "pluralNouns")
 	}
 	
-	@objc(removeSingularNounsAtIndexes:) func removeSingularNouns(#indexes: NSIndexSet) {
+	@objc(removeSingularNounsAtIndexes:) func removeSingularNouns(indexes indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "singularNouns")
 		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
 			singularNouns.removeAtIndex(i)
@@ -337,7 +337,7 @@ internal class NonsenseSaverController: NSObject {
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "singularNouns")
 	}
 	
-	@objc(removeProperNounsAtIndexes:) func removeProperNouns(#indexes: NSIndexSet) {
+	@objc(removeProperNounsAtIndexes:) func removeProperNouns(indexes indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "properNouns")
 		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
 			properNouns.removeAtIndex(i)
@@ -345,7 +345,7 @@ internal class NonsenseSaverController: NSObject {
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "properNouns")
 	}
 	
-	@objc(removeAdverbsAtIndexes:) func removeAdverbs(#indexes: NSIndexSet) {
+	@objc(removeAdverbsAtIndexes:) func removeAdverbs(indexes indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "adverbs")
 		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
 			adverbs.removeAtIndex(i)
@@ -353,7 +353,7 @@ internal class NonsenseSaverController: NSObject {
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "adverbs")
 	}
 	
-	@objc(removeAdjectivesAtIndexes:) func removeAdjectives(#indexes: NSIndexSet) {
+	@objc(removeAdjectivesAtIndexes:) func removeAdjectives(indexes indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "adjectives")
 		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
 			adjectives.removeAtIndex(i)
@@ -361,7 +361,7 @@ internal class NonsenseSaverController: NSObject {
 		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "adjectives")
 	}
 	
-	@objc(removeMassiveNounsAtIndexes:) func removeMassiveNouns(#indexes: NSIndexSet) {
+	@objc(removeMassiveNounsAtIndexes:) func removeMassiveNouns(indexes indexes: NSIndexSet) {
 		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "massiveNouns")
 		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
 			massiveNouns.removeAtIndex(i)
@@ -372,7 +372,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeVerbsInArray:) func removeVerbs(array arrays: [Verb]) {
 		let idxSet = NSMutableIndexSet()
 		for aVerb in arrays {
-			if let anIdx = find(verbs, aVerb) {
+			if let anIdx = verbs.indexOf(aVerb) {
 				idxSet.addIndex(anIdx)
 			}
 		}
@@ -382,7 +382,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removePluralNounsInArray:) func removePluralNouns(array arrays: [String]) {
 		let idxSet = NSMutableIndexSet()
 		for aVerb in arrays {
-			if let anIdx = find(pluralNouns, aVerb) {
+			if let anIdx = pluralNouns.indexOf(aVerb) {
 				idxSet.addIndex(anIdx)
 			}
 		}
@@ -392,7 +392,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeSingularNounsInArray:) func removeSingularNouns(array arrays: [String]) {
 		let idxSet = NSMutableIndexSet()
 		for aVerb in arrays {
-			if let anIdx = find(singularNouns, aVerb) {
+			if let anIdx = singularNouns.indexOf(aVerb) {
 				idxSet.addIndex(anIdx)
 			}
 		}
@@ -402,7 +402,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeProperNounsInArray:) func removeProperNouns(array arrays: [String]) {
 		let idxSet = NSMutableIndexSet()
 		for aVerb in arrays {
-			if let anIdx = find(properNouns, aVerb) {
+			if let anIdx = properNouns.indexOf(aVerb) {
 				idxSet.addIndex(anIdx)
 			}
 		}
@@ -412,7 +412,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeAdverbsInArray:) func removeAdverbs(array arrays: [String]) {
 		let idxSet = NSMutableIndexSet()
 		for aVerb in arrays {
-			if let anIdx = find(adverbs, aVerb) {
+			if let anIdx = adverbs.indexOf(aVerb) {
 				idxSet.addIndex(anIdx)
 			}
 		}
@@ -422,7 +422,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeAdjectivesInArray:) func removeAdjectives(array arrays: [String]) {
 		let idxSet = NSMutableIndexSet()
 		for aVerb in arrays {
-			if let anIdx = find(adjectives, aVerb) {
+			if let anIdx = adjectives.indexOf(aVerb) {
 				idxSet.addIndex(anIdx)
 			}
 		}
@@ -432,7 +432,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeMassiveNounsInArray:) func removeMassiveNouns(array arrays: [String]) {
 		let idxSet = NSMutableIndexSet()
 		for aVerb in arrays {
-			if let anIdx = find(massiveNouns, aVerb) {
+			if let anIdx = massiveNouns.indexOf(aVerb) {
 				idxSet.addIndex(anIdx)
 			}
 		}

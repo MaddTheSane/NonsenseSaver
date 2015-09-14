@@ -15,7 +15,7 @@ let MaxNonsenseWidth: CGFloat = 350
 
 private let kNonsenseBorder: CGFloat = 8
 
-private func RandomFloatBetween(a: CGFloat, b: CGFloat) -> CGFloat {
+private func RandomFloatBetween(a: CGFloat, _ b: CGFloat) -> CGFloat {
 	return a + (b - a) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
 }
 
@@ -31,7 +31,7 @@ private func CenteredInRect(innerRect: NSRect, outerRect: NSRect) -> NSRect {
 	return aInner
 }
 
-final class NonsenseObject: Printable, DebugPrintable {
+final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertible {
 	let nonsense: String
 	let backgroundColor: NSColor
 	let foregroundColor: NSColor
@@ -124,15 +124,15 @@ final class NonsenseObject: Printable, DebugPrintable {
 		(foregroundColor, backgroundColor) = NonsenseObject.randomColors()
 		nonsense = nonString;
 		let style = NSMutableParagraphStyle()
-		style.alignment = .CenterTextAlignment
+		style.alignment = .Center
 		style.lineBreakMode = .ByWordWrapping
 		fontAttributes = [NSForegroundColorAttributeName: foregroundColor,
 			NSFontAttributeName: theFont,
 			NSParagraphStyleAttributeName: style];
 		
-		var tmpPlace = NSRect.zeroRect
+		var tmpPlace = NSRect.zero
 		
-		var strRect = (nonsense as NSString).boundingRectWithSize(NSSize(width: maxWidth, height: 0), options: .UsesFontLeading | .UsesDeviceMetrics | .UsesLineFragmentOrigin, attributes: fontAttributes)
+		let strRect = (nonsense as NSString).boundingRectWithSize(NSSize(width: maxWidth, height: 0), options: [.UsesFontLeading, .UsesDeviceMetrics, .UsesLineFragmentOrigin], attributes: fontAttributes)
 		var strSize = strRect.size
 		
 		strSize.height += kNonsenseBorder;

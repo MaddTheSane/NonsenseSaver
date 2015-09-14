@@ -52,11 +52,11 @@ public class NonsenseSaverView: ScreenSaverView {
 	var nonsenses = [NonsenseObject]()
 	var nibArray: NSArray? = nil
 	
-	convenience public override init(frame: NSRect) {
+	convenience public init?(frame: NSRect) {
 		self.init(frame: frame, isPreview: false)
 	}
 	
-	public override init(frame: NSRect, isPreview: Bool) {
+	public override init?(frame: NSRect, isPreview: Bool) {
 		srandom(UInt32(time(nil) & 0x7FFFFFFF))
 		dispatch_once(&oursreensaverDefaults, ourSetDefaults)
 
@@ -66,7 +66,7 @@ public class NonsenseSaverView: ScreenSaverView {
 		maxNonsenses = defaults.integerForKey(NONSAtATime)
 		nonsenseDuration = defaults.doubleForKey(NONSDuration)
 		showBackground = defaults.boolForKey(NONSBGColor)
-		setAnimationTimeInterval(nonsenseDuration)
+		animationTimeInterval = nonsenseDuration
 		
 		var theFont: NSFont
 		if isPreview {
@@ -75,7 +75,7 @@ public class NonsenseSaverView: ScreenSaverView {
 			theFont = NSFont.systemFontOfSize(kFullSize)
 		}
 
-		for i in 0..<maxNonsenses {
+		for _ in 0..<maxNonsenses {
 			let non = NonsenseObject(string: controller.randomSaying(), bounds: self.bounds, font: theFont)
 			nonsenses.append(non)
 		}
@@ -112,7 +112,7 @@ public class NonsenseSaverView: ScreenSaverView {
         super.drawRect(dirtyRect)
 
 		var theFont: NSFont
-		if isPreview() {
+		if preview {
 			theFont = NSFont.systemFontOfSize(kPreviewSize)
 		} else {
 			theFont = NSFont.systemFontOfSize(kFullSize)

@@ -17,7 +17,18 @@ class NonsenseView: NSView {
 			NSRunLoop.mainRunLoop().addTimer(refreshRate!, forMode: NSRunLoopCommonModes)
 		}
 	}
-	dynamic var nonNumber = 5
+	dynamic var nonNumber: Int = 5 {
+		didSet {
+			if nonNumber > oldValue {
+				
+			} else if nonNumber < oldValue {
+				
+			} else {
+				return
+			}
+			needsDisplay = true
+		}
+	}
 	dynamic var showBackground: Bool = true {
 		didSet {
 			if oldValue != showBackground {
