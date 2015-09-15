@@ -8,11 +8,11 @@
 
 import Foundation
 
-let ThirdPersonSinglePresent = "ThirdPersonSinglePresent";
-let ThirdPersonPluralPresent = "ThirdPersonPluralPresent";
-let ThirdPersonPast = "ThirdPersonPast";
-let ThirdPersonPastPerfect = "ThirdPersonPastPerfect";
-let ThirdPersonPresentCont = "ThirdPersonPresentCont";
+let ThirdPersonSinglePresentKey = "ThirdPersonSinglePresent";
+let ThirdPersonPluralPresentKey = "ThirdPersonPluralPresent";
+let ThirdPersonPastKey = "ThirdPersonPast";
+let ThirdPersonPastPerfectKey = "ThirdPersonPastPerfect";
+let ThirdPersonPresentContKey = "ThirdPersonPresentCont";
 
 func ==(lhs: Verb, rhs: Verb) -> Bool {
 	if lhs.thirdPersonPast != rhs.thirdPersonPast {
@@ -41,7 +41,7 @@ final class Verb: NSObject {
 	let thirdPersonPresentCont: String
 	
 	override var hashValue: Int {
-		return ThirdPersonPast.hashValue ^ thirdPersonPastPerfect.hashValue ^ thirdPersonPluralPresent.hashValue ^
+		return thirdPersonPast.hashValue ^ thirdPersonPastPerfect.hashValue ^ thirdPersonPluralPresent.hashValue ^
 			thirdPersonPresentCont.hashValue ^ thirdPersonSinglePresent.hashValue
 	}
 	
@@ -58,6 +58,14 @@ final class Verb: NSObject {
 		super.init()
 	}
 
+	override func isEqual(object: AnyObject?) -> Bool {
+		if let objectVerb = object as? Verb {
+			return self == objectVerb
+		}
+		
+		return false
+	}
+	
 	private init(privateInit: ()) {
 		thirdPersonSinglePresent = ""
 		thirdPersonPluralPresent = ""

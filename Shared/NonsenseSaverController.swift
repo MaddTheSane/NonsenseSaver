@@ -24,8 +24,6 @@ let NONSProperNounList = "Proper Nouns"
 let NONSMassiveNounList = "Massive Nouns"
 let NONSInterjections = "Interjections"
 
-private var singleDefaults: dispatch_once_t = 0
-
 /// Get a random object in an array
 internal func randObject<X>(anArray: [X]) -> X {
 	let aRand = Int(arc4random_uniform(UInt32(anArray.count)))
@@ -34,11 +32,11 @@ internal func randObject<X>(anArray: [X]) -> X {
 
 private func PrepareVerbsForSaving(toSave: [Verb]) -> [[String: String]] {
 	func PrepareVerbForSaving(toSave: Verb) -> [String: String] {
-		return [ThirdPersonPast: toSave.thirdPersonPast,
-			ThirdPersonSinglePresent : toSave.thirdPersonSinglePresent,
-			ThirdPersonPluralPresent : toSave.thirdPersonPluralPresent,
-			ThirdPersonPastPerfect : toSave.thirdPersonPastPerfect,
-			ThirdPersonPresentCont : toSave.thirdPersonPresentCont]
+		return [ThirdPersonPastKey: toSave.thirdPersonPast,
+			ThirdPersonSinglePresentKey : toSave.thirdPersonSinglePresent,
+			ThirdPersonPluralPresentKey : toSave.thirdPersonPluralPresent,
+			ThirdPersonPastPerfectKey : toSave.thirdPersonPastPerfect,
+			ThirdPersonPresentContKey : toSave.thirdPersonPresentCont]
 	}
 
 	let theArray:[[String: String]] = toSave.map {PrepareVerbForSaving($0)}
@@ -48,16 +46,10 @@ private func PrepareVerbsForSaving(toSave: [Verb]) -> [[String: String]] {
 
 private func GetVerbsFromSaved(theSaved: [[String: String]]) -> [Verb] {
 	func GetVerbFromSaved(theSaved1: [String: String]) -> Verb? {
-		if let singPres = theSaved1[ThirdPersonSinglePresent] {
-			if let pluralPres = theSaved1[ThirdPersonPluralPresent] {
-				if let pas = theSaved1[ThirdPersonPast] {
-					if let pasPerfect = theSaved1[ThirdPersonPastPerfect]{
-						if let presCont = theSaved1[ThirdPersonPresentCont] {
-							return Verb(singlePresent: singPres, pluralPresent: pluralPres, past: pas, pastPerfect: pasPerfect, presentCont: presCont)
-						}
-					}
-				}
-			}
+		if let singPres = theSaved1[ThirdPersonSinglePresentKey], pluralPres = theSaved1[ThirdPersonPluralPresentKey],
+			pas = theSaved1[ThirdPersonPastKey], pasPerfect = theSaved1[ThirdPersonPastPerfectKey],
+			presCont = theSaved1[ThirdPersonPresentContKey] {
+				return Verb(singlePresent: singPres, pluralPresent: pluralPres, past: pas, pastPerfect: pasPerfect, presentCont: presCont)
 		}
 		return nil
 	}
@@ -98,10 +90,13 @@ internal class NonsenseSaverController: NSObject {
 	let determiners = ["a", "one", "some", "that", "the", "this"];
 	let comparatives = ["more", "less", "far more", "far less", "much more", "much less", "the same"]
 
+	private static var singleDefaults: dispatch_once_t = 0
+
+	
 	override init() {
 		super.init()
 		
-		dispatch_once(&singleDefaults) {
+		dispatch_once(&NonsenseSaverController.singleDefaults) {
 			let ourClass = NSBundle(forClass: self.dynamicType)
 			let defaults = defaultsProvider()
 			if let defaultsURL = ourClass.URLForResource("Defaults", withExtension: "plist") {
@@ -247,7 +242,6 @@ internal class NonsenseSaverController: NSObject {
 			
 		default:
 			nonsensestring = "The developer's brain farted \(randomAdverb()), producing this error.";
-			break;
 		}
 		return nonsensestring;
 	}

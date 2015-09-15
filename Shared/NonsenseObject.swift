@@ -119,7 +119,7 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 */
 	}
 	
-	init(string nonString: String, bounds bound: NSRect, font theFont: NSFont = NSFont.systemFontOfSize(kFullSize)) {
+	init(string nonString: String, bounds bound: NSRect, font theFont: NSFont = NSFont.systemFontOfSize(kFullSize), objectsToAvoid otherNons: [NonsenseObject]? = nil) {
 		let maxWidth = min(MaxNonsenseWidth,  (bound.size.width / 3))
 		(foregroundColor, backgroundColor) = NonsenseObject.randomColors()
 		nonsense = nonString;
@@ -156,6 +156,6 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 	}
 	
 	var debugDescription: String {
-		return nonsense + ", placement: " + NSStringFromRect(placement)
+		return "\"\(nonsense), placement: \(NSStringFromRect(placement))"
 	}
 }

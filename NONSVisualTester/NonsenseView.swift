@@ -57,7 +57,7 @@ class NonsenseView: NSView {
 	
 	func populateNonsenses() {
 		let theFont = NSFont.systemFontOfSize(kPreviewSize)
-		for i in 0 ..< nonNumber {
+		for _ in 0 ..< nonNumber {
 			let non = NonsenseObject(string: nonsenseController.randomSaying(), bounds: self.bounds, font: theFont)
 			nonsenses.append(non)
 		}
