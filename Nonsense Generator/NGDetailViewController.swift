@@ -1,9 +1,9 @@
 //
-//  DetailViewController.swift
-//  aTest12
+//  NGDetailViewController.swift
+//  NonsenseSaver
 //
-//  Created by C.W. Betts on 10/30/14.
-//  Copyright (c) 2014 C.W. Betts. All rights reserved.
+//  Created by C.W. Betts on 10/3/15.
+//  Copyright © 2015 C.W. Betts. All rights reserved.
 //
 
 import UIKit
@@ -22,7 +22,7 @@ class NGDetailViewController: UIViewController {
 
 	func configureView() {
 		// Update the user interface for the detail item.
-		if let detail: AnyObject = self.detailItem {
+		if let detail = self.detailItem {
 		    if let label = self.detailDescriptionLabel {
 		        label.text = detail.description
 		    }

@@ -1,15 +1,15 @@
 //
-//  AppDelegate.swift
-//  aTest12
+//  NGAppDelegate.swift
+//  NonsenseSaver
 //
-//  Created by C.W. Betts on 10/30/14.
-//  Copyright (c) 2014 C.W. Betts. All rights reserved.
+//  Created by C.W. Betts on 10/3/15.
+//  Copyright © 2015 C.W. Betts. All rights reserved.
 //
 
 import UIKit
 
 @UIApplicationMain
-final class NGAppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+class NGAppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
 	var window: UIWindow?
 
@@ -50,13 +50,11 @@ final class NGAppDelegate: UIResponder, UIApplicationDelegate, UISplitViewContro
 	// MARK: - Split view
 
 	func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
-	    if let secondaryAsNavController = secondaryViewController as? UINavigationController {
-	        if let topAsDetailController = secondaryAsNavController.topViewController as? NGDetailViewController {
-	            if topAsDetailController.detailItem == nil {
-	                // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-	                return true
-	            }
-	        }
+	    guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+	    guard let topAsDetailController = secondaryAsNavController.topViewController as? NGDetailViewController else { return false }
+	    if topAsDetailController.detailItem == nil {
+	        // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+	        return true
 	    }
 	    return false
 	}

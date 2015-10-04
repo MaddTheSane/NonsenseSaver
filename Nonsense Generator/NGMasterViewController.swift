@@ -1,9 +1,9 @@
 //
-//  MasterViewController.swift
-//  aTest12
+//  NGMasterViewController.swift
+//  NonsenseSaver
 //
-//  Created by C.W. Betts on 10/30/14.
-//  Copyright (c) 2014 C.W. Betts. All rights reserved.
+//  Created by C.W. Betts on 10/3/15.
+//  Copyright © 2015 C.W. Betts. All rights reserved.
 //
 
 import UIKit
@@ -11,17 +11,9 @@ import UIKit
 class NGMasterViewController: UITableViewController {
 
 	var detailViewController: NGDetailViewController? = nil
-	var objects = NSMutableArray()
+	var objects = [AnyObject]()
 	var nonsenseController = NonsenseSaverController()
 
-
-	override func awakeFromNib() {
-		super.awakeFromNib()
-		if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-		    self.clearsSelectionOnViewWillAppear = false
-		    self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
-		}
-	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -32,17 +24,22 @@ class NGMasterViewController: UITableViewController {
 		self.navigationItem.rightBarButtonItem = addButton
 		if let split = self.splitViewController {
 		    let controllers = split.viewControllers
-		    //self.detailViewController = controllers[controllers.count-1].topViewController as? NGDetailViewController
+		    self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? NGDetailViewController
 		}
+	}
+
+	override func viewWillAppear(animated: Bool) {
+		self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
+		super.viewWillAppear(animated)
 	}
 	
 	/*
 	@IBAction func generateNonsense(sender: AnyObject?) {
-		if objects.count == 10 {
-			objects.removeObjectAtIndex(0)
-		}
-		let newNons = nonsenseController.randomSaying()
-		objects.addObject(newNons as NSString)
+	if objects.count == 10 {
+	objects.removeObjectAtIndex(0)
+	}
+	let newNons = nonsenseController.randomSaying()
+	objects.addObject(newNons as NSString)
 	}*/
 
 	override func didReceiveMemoryWarning() {
@@ -52,7 +49,7 @@ class NGMasterViewController: UITableViewController {
 
 	func insertNewObject(sender: AnyObject) {
 		let newNons = nonsenseController.randomSaying()
-		objects.insertObject(newNons, atIndex: 0)
+		objects.insert(newNons, atIndex: 0)
 		let indexPath = NSIndexPath(forRow: 0, inSection: 0)
 		self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
 		if objects.count == 10 {
@@ -86,10 +83,10 @@ class NGMasterViewController: UITableViewController {
 	}
 
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
 		let object = objects[indexPath.row] as! NSDate
-		cell.textLabel?.text = object.description
+		cell.textLabel!.text = object.description
 		return cell
 	}
 
@@ -100,7 +97,7 @@ class NGMasterViewController: UITableViewController {
 
 	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 		if editingStyle == .Delete {
-		    objects.removeObjectAtIndex(indexPath.row)
+		    objects.removeAtIndex(indexPath.row)
 		    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
 		} else if editingStyle == .Insert {
 		    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
