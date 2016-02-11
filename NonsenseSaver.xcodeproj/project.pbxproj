@@ -75,7 +75,7 @@
 		5520BE5A121C6C9E0068419E /* NONSVerb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NONSVerb.m; sourceTree = "<group>"; };
 		5520BE8D121C76370068419E /* NonsenseSaverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonsenseSaverController.h; sourceTree = "<group>"; };
 		5520BE8E121C76370068419E /* NonsenseSaverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonsenseSaverController.m; sourceTree = "<group>"; };
-		553626CE17EBBF5A00D3A3C8 /* NONSVisualTester copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NONSVisualTester copy-Info.plist"; path = "/Users/cwbetts/makestuff/Screen Savers/NonsenseSaver/NONSVisualTester copy-Info.plist"; sourceTree = "<absolute>"; };
+		553626CE17EBBF5A00D3A3C8 /* NONSVisualTester copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NONSVisualTester copy-Info.plist"; sourceTree = "<group>"; };
 		553CAF1A123F2F5B008EA480 /* NONSVisualTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NONSVisualTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553CAF1C123F2F5C008EA480 /* NONSVisualTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NONSVisualTester-Info.plist"; path = "../NONSVisualTester-Info.plist"; sourceTree = "<group>"; };
 		553CAF20123F2F6B008EA480 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -181,8 +181,8 @@
 				5556EFAD18E0B46000B49E98 /* Nonsense Generator */,
 				5556EFD218E0B46000B49E98 /* Nonsense GeneratorTests */,
 				55C3965F15A20FCB005DBC66 /* Frameworks */,
-				19C28FB8FE9D52D311CA2CBB /* Products */,
 				553626CE17EBBF5A00D3A3C8 /* NONSVisualTester copy-Info.plist */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
 			);
 			name = NonsenseSaver;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				TargetAttributes = {
 					5556EFCA18E0B46000B49E98 = {
 						TestTargetID = 5556EFA818E0B46000B49E98;
@@ -645,6 +645,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "NONSVisualTester-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.nonsensesaver.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NONSVisualTester;
 			};
 			name = Debug;
@@ -659,6 +660,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "NONSVisualTester-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.nonsensesaver.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NONSVisualTester;
 			};
 			name = Release;
@@ -680,6 +682,7 @@
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -704,6 +707,7 @@
 				INFOPLIST_FILE = "Nonsense Generator/Nonsense Generator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -731,6 +735,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Nonsense GeneratorTests/Nonsense GeneratorTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -757,6 +762,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Nonsense GeneratorTests/Nonsense GeneratorTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -798,6 +804,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.nonsensesaver.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NonsenseSaver;
 				WRAPPER_EXTENSION = saver;
 			};
@@ -812,6 +819,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.nonsensesaver.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NonsenseSaver;
 				WRAPPER_EXTENSION = saver;
 			};
@@ -834,6 +842,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
