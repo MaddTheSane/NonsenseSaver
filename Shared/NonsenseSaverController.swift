@@ -131,8 +131,7 @@ internal class NonsenseSaverController: NSObject {
 	
 	// Simple test to see if a noun ends with an 's'
 	private func nounOwningObject(theNoun: String) -> String {
-		var endNounPos = theNoun.endIndex
-		endNounPos--
+		let endNounPos = theNoun.endIndex.predecessor()
 		let endNounChar = theNoun[endNounPos]
 		switch endNounChar {
 		case "s":
@@ -199,51 +198,63 @@ internal class NonsenseSaverController: NSObject {
 		return (arc4random_uniform(2)) == 1 ? randomSingularNoun() : randomProperNoun()
 	}
 	
+	private lazy var nonsenseGenList: Array<() -> String> = {
+		var nonsenseCaller = Array<() -> String>()
+
+		nonsenseCaller.append({
+			return "The \(self.randomAdjective()) \(self.randomPluralNoun()), while \(self.randomVerb().thirdPersonPresentCont), \(self.randomVerb().thirdPersonPast) \(self.randomAdverb())."
+		})
+		
+		nonsenseCaller.append({
+			return "The \(self.randomSingularNoun()) \(self.randomVerb().thirdPersonPast) \(self.randomAdverb())"
+		})
+		
+		nonsenseCaller.append({
+			return "The \(self.randomPluralNoun()), while \(self.randomVerb().thirdPersonPresentCont), \(self.randomVerb().thirdPersonPast)."
+		})
+		nonsenseCaller.append({
+			return "\(self.randomProperNoun()) \(self.randomVerb().thirdPersonPast) the \(self.randomSingularNoun()) \(self.randomAdverb())."
+		})
+		
+		nonsenseCaller.append({
+			return "The \(self.randomAdjective()) \(self.randomPluralNoun()), while \(self.randomVerb().thirdPersonPresentCont), \(self.randomVerb().thirdPersonPast) \(self.randomMassiveNoun())."
+		})
+		
+		nonsenseCaller.append({
+			return "Can't a \(self.randomSingularNoun()) have \(self.randomVerb().thirdPersonPastPerfect)?"
+		})
+		
+		nonsenseCaller.append({
+			return "They \(self.randomAdverb()) \(self.randomVerb().thirdPersonPast) \(self.randomPronoun())."
+		})
+		
+		nonsenseCaller.append({
+			return "Can \(self.randomMassiveNoun()), who musn't have \(self.randomVerb().thirdPersonPastPerfect), \(self.randomVerb().thirdPersonPluralPresent) \(self.randomAdverb())?"
+		})
+		
+		nonsenseCaller.append({
+			return "The \(self.randomAdjective()) \(self.randomPluralNoun()), while \(self.randomVerb().thirdPersonPresentCont), \(self.randomVerb().thirdPersonPast) \(self.randomMassiveNoun()) \(self.randomAdverb())."
+		})
+		
+		nonsenseCaller.append({
+			return "Must you \(self.randomVerb().thirdPersonPluralPresent) \(self.randomAdverb())?"
+		})
+		
+		nonsenseCaller.append({
+			return "The \(self.randomAdjective()) \(self.randomAdjective()) \(self.randomSingularNoun()) \(self.randomVerb().thirdPersonSinglePresent) \(self.randomAdverb())."
+		})
+		
+		nonsenseCaller.append({
+			return "\(self.nounOwningObject(self.randomProperNoun())) \(self.randomPluralNoun()) hadn't \(self.randomVerb().thirdPersonPast)."
+		})
+
+		return nonsenseCaller
+	}()
+	
 	func randomSaying() -> String {
 		//FIXME: this is where it falls short. There needs to be a better way of generating nonsense than the one that I'm using right here.
-		let casenum = arc4random_uniform(12)
-		var nonsensestring: String
-		switch (casenum) {
-		case 0:
-			nonsensestring = "The \(randomAdjective()) \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast) \(randomAdverb())."
-			
-		case 1:
-			nonsensestring = "The \(randomSingularNoun()) \(randomVerb().thirdPersonPast) \(randomAdverb())"
-			
-		case 2:
-			nonsensestring = "The \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast)."
-			
-		case 3:
-			nonsensestring = "\(randomProperNoun()) \(randomVerb().thirdPersonPast) the \(randomSingularNoun()) \(randomAdverb())."
-			
-		case 4:
-			nonsensestring = "The \(randomAdjective()) \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast) \(randomMassiveNoun())."
-			
-		case 5:
-			nonsensestring = "Can't a \(randomSingularNoun()) have \(randomVerb().thirdPersonPastPerfect)?"
-			
-		case 6:
-			nonsensestring = "They \(randomAdverb()) \(randomVerb().thirdPersonPast) \(randomPronoun())."
-			
-		case 7:
-			nonsensestring = "Can \(randomMassiveNoun()), who musn't have \(randomVerb().thirdPersonPastPerfect), \(randomVerb().thirdPersonPluralPresent) \(randomAdverb())?"
-			
-		case 8:
-			nonsensestring = "The \(randomAdjective()) \(randomPluralNoun()), while \(randomVerb().thirdPersonPresentCont), \(randomVerb().thirdPersonPast) \(randomMassiveNoun()) \(randomAdverb())."
-			
-		case 9:
-			nonsensestring = "Must you \(randomVerb().thirdPersonPluralPresent) \(randomAdverb())?"
-			
-		case 10:
-			nonsensestring = "The \(randomAdjective()) \(randomAdjective()) \(randomSingularNoun()) \(randomVerb().thirdPersonSinglePresent) \(randomAdverb())."
-			
-		case 11:
-			nonsensestring = "\(nounOwningObject(randomProperNoun())) \(randomPluralNoun()) hadn't \(randomVerb().thirdPersonPast)."
-			
-		default:
-			nonsensestring = "The developer's brain farted \(randomAdverb()), producing this error.";
-		}
-		return nonsensestring;
+		return randObject(self.nonsenseGenList)()
+			//nonsensestring = "The developer's brain farted \(randomAdverb()), producing this error.";
 	}
 
 	func saveSettings() {

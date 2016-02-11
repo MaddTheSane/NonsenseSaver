@@ -24,7 +24,6 @@ private enum VocabType: Int {
 	case MassiveNoun = 7
 }
 
-
 public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 	dynamic var maxNonsenses: Int = 3
 	dynamic var nonsenseDuration: NSTimeInterval = 2.7
@@ -35,9 +34,7 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 	@IBOutlet weak var vocabList: NSTableView! = nil
 	@IBOutlet weak var vocabSelector: NSMatrix!
 	var credits: NSTextView! {
-		get {
-			return creditsScrollView.contentView.documentView as? NSTextView
-		}
+		return creditsScrollView.contentView.documentView as? NSTextView
 	}
 
 	@IBOutlet weak var wordToAdd: NSTextField!
@@ -56,7 +53,7 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 	
 	let controller = NonsenseSaverController()
 	var nonsenses = [NonsenseObject]()
-	var nibArray: NSArray? = nil
+	private var nibArray: NSArray? = nil
 	
 	public override init?(frame: NSRect, isPreview: Bool) {
 		srandom(UInt32(time(nil) & 0x7FFFFFFF))
@@ -87,7 +84,7 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		return true
 	}
 	
-	public override func configureSheet() -> NSWindow {
+	public override func configureSheet() -> NSWindow? {
 		if configSheet == nil {
 			let ourBundle = NSBundle(forClass: self.dynamicType)
 			ourBundle.loadNibNamed("NonsenseSettings", owner: self, topLevelObjects: &nibArray)
@@ -258,7 +255,7 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		} else {
 			NSLog("I just don't know what went wrong!\nGot sent \"nil\".")
 		}
-		NSApp.endSheet(configSheet) //Ignore warning: Sceen Saver's documentation says we need to call NSApp's version!
+		NSApp.endSheet(configSheet) //Ignore warning: Sceen Saver's documentation says we *need* to call NSApp's version!
 	}
 
 	@IBAction func okayNonsense(sender: AnyObject?) {
@@ -388,48 +385,51 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 			
 		default:
 			NSBeep()
-			return
 		}
 		vocabList.reloadData()
 	}
 
 	@IBAction func addWord(sender: AnyObject) {
+		func completion(response: NSModalResponse) {
+			self.vocabList.reloadData()
+		}
+		
 		switch vocabSelectorSelected {
 		case .SingularNoun:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "cat"
 			wordToAdd.stringValue = "Singular Noun"
-			configSheet.beginSheet(wordWindow, completionHandler: nil)
+			configSheet.beginSheet(wordWindow, completionHandler: completion)
 			
 		case .PluralNoun:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "cats"
 			wordToAdd.stringValue = "Plural Noun"
-			configSheet.beginSheet(wordWindow, completionHandler: nil)
+			configSheet.beginSheet(wordWindow, completionHandler: completion)
 
 		case .Adjective:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "blue"
 			wordToAdd.stringValue = "Adjective"
-			configSheet.beginSheet(wordWindow, completionHandler: nil)
+			configSheet.beginSheet(wordWindow, completionHandler: completion)
 			
 		case .Verb:
-			configSheet.beginSheet(verbWindow, completionHandler: nil)
+			configSheet.beginSheet(verbWindow, completionHandler: completion)
 			
 		case .Adverb:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "quickly"
 			wordToAdd.stringValue = "Adverb"
-			configSheet.beginSheet(wordWindow, completionHandler: nil)
+			configSheet.beginSheet(wordWindow, completionHandler: completion)
 
 		case .MassiveNoun:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "water"
 			wordToAdd.stringValue = "Massive Noun"
-			configSheet.beginSheet(wordWindow, completionHandler: nil)
+			configSheet.beginSheet(wordWindow, completionHandler: completion)
 
 		case .ProperNoun:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "Al Gore"
 			wordToAdd.stringValue = "Proper Noun"
-			configSheet.beginSheet(wordWindow, completionHandler: nil)
+			configSheet.beginSheet(wordWindow, completionHandler: completion)
 			
 		default:
-			break;
+			NSBeep()
 		}
 	}
 

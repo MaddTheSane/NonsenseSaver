@@ -52,13 +52,13 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 		return returnRect;
 	}
 
-	
-	class func randomColors(showBackgroundColor: Bool = true) -> (foreground: NSColor, background: NSColor) {
-		let tupleArray: [(foreground: NSColor, background: NSColor)] = [(NSColor.redColor(), NSColor.yellowColor()),
+	private static let randomColorArray: [(foreground: NSColor, background: NSColor)] = [(NSColor.redColor(), NSColor.yellowColor()),
 		(NSColor.greenColor(), NSColor.orangeColor()), (NSColor.blueColor(), NSColor.magentaColor()), (NSColor.cyanColor(), NSColor.orangeColor()),
 		(NSColor.yellowColor(), NSColor.redColor()), (NSColor.magentaColor(), NSColor.blueColor()), (NSColor.orangeColor(), NSColor.blueColor()),
 		(NSColor.purpleColor(), NSColor.orangeColor()), (NSColor.brownColor(), NSColor.purpleColor())]
-		return randObject(tupleArray)
+	
+	class func randomColors(showBackgroundColor: Bool = true) -> (foreground: NSColor, background: NSColor) {
+		return randObject(randomColorArray)
 /*
 		var bgColor: NSColor
 		var fgColor: NSColor
