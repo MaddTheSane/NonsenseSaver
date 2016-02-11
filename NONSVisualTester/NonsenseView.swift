@@ -46,7 +46,7 @@ class NonsenseView: NSView {
 		if settingsChanged {
 			settingsChanged = false
 		} else {
-			nonsenses.removeAtIndex(0)
+			nonsenses.removeFirst()
 			let non = NonsenseObject(string: nonsenseController.randomSaying(), bounds: self.bounds, font: theFont)
 			nonsenses.append(non)
 		}
@@ -79,7 +79,7 @@ class NonsenseView: NSView {
 		populateNonsenses()
 	}
 	
-	@objc(reloadScreen:) func reloadScreen(theTime: NSTimer?) {
+	@objc(reloadScreen:) private func reloadScreen(theTime: NSTimer?) {
 		self.needsDisplay = true
 	}
 	

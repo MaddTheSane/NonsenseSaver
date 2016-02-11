@@ -40,15 +40,7 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 
 	var textPosition: NSRect {
 		var returnRect = placement;
-		//returnRect.size.height = returnRect.size.height + kNonsenseBorder;
-		//returnRect.size.width = returnRect.size.width + kNonsenseBorder;
-		//NSRect insideRect = SSCenteredRectInRect(returnRect,placement);
-		//return insideRect;
-		//return placement;
-		returnRect.size.height -= kNonsenseBorder / 2;
-		returnRect.size.width -= kNonsenseBorder / 2;
-		returnRect.origin.x += kNonsenseBorder / 2;
-		returnRect.origin.y += kNonsenseBorder / 2;
+		returnRect.insetInPlace(dx: kNonsenseBorder / 2, dy: kNonsenseBorder / 2)
 		return returnRect;
 	}
 
@@ -132,11 +124,9 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 		
 		var tmpPlace = NSRect.zero
 		
-		let strRect = (nonsense as NSString).boundingRectWithSize(NSSize(width: maxWidth, height: 0), options: [.UsesFontLeading, .UsesDeviceMetrics, .UsesLineFragmentOrigin], attributes: fontAttributes)
-		var strSize = strRect.size
+		let strRect = (nonsense as NSString).boundingRectWithSize(NSSize(width: maxWidth, height: 0), options: [.UsesFontLeading, .UsesDeviceMetrics, .UsesLineFragmentOrigin], attributes: fontAttributes).insetBy(dx: -kNonsenseBorder / 2, dy: -kNonsenseBorder / 2)
+		let strSize = strRect.size
 		
-		strSize.height += kNonsenseBorder;
-		strSize.width += kNonsenseBorder;
 		tmpPlace.origin = RandomPoint(forSize: strSize, withinRect: bound)
 		tmpPlace.size = strSize;
 		

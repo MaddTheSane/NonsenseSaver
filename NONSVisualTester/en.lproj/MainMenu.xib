@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
@@ -648,22 +650,22 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="52" width="539" height="724"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="368">
                 <rect key="frame" x="0.0" y="0.0" width="539" height="724"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="812" customClass="NonsenseView" customModule="NONSVisualTester">
-                        <rect key="frame" x="20" y="259" width="499" height="445"/>
+                        <rect key="frame" x="20" y="251" width="499" height="453"/>
                     </customView>
                     <box autoresizesSubviews="NO" title="Settings" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="831">
-                        <rect key="frame" x="17" y="105" width="505" height="146"/>
-                        <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="503" height="130"/>
+                        <rect key="frame" x="17" y="101" width="505" height="142"/>
+                        <view key="contentView" id="B9U-NR-fEv">
+                            <rect key="frame" x="1" y="1" width="503" height="126"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="817">
-                                    <rect key="frame" x="16" y="103" width="222" height="17"/>
+                                    <rect key="frame" x="16" y="99" width="222" height="17"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Number at a time" id="827">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -671,7 +673,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="821" userLabel="Color background">
-                                    <rect key="frame" x="314" y="65" width="173" height="18"/>
+                                    <rect key="frame" x="319" y="63" width="168" height="18"/>
                                     <buttonCell key="cell" type="check" title="Show Color Background" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="822">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -681,7 +683,7 @@
                                     </connections>
                                 </button>
                                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="815" userLabel="Number slider">
-                                    <rect key="frame" x="16" y="70" width="172" height="27"/>
+                                    <rect key="frame" x="16" y="68" width="172" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="168" id="v5B-rb-dUd"/>
                                     </constraints>
@@ -691,14 +693,14 @@
                                     </connections>
                                 </slider>
                                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="818" userLabel="Duration slider">
-                                    <rect key="frame" x="16" y="12" width="172" height="27"/>
+                                    <rect key="frame" x="16" y="12" width="172" height="25"/>
                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="0.5" maxValue="10" doubleValue="2.7000000000000002" tickMarkPosition="below" numberOfTickMarks="14" sliderType="linear" id="826"/>
                                     <connections>
                                         <binding destination="811" name="value" keyPath="self.nonsenseView.nonDuration" id="ZLp-37-DGA"/>
                                     </connections>
                                 </slider>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="819">
-                                    <rect key="frame" x="16" y="46" width="222" height="17"/>
+                                    <rect key="frame" x="16" y="44" width="222" height="17"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Duration of Nonsense" id="825">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -721,7 +723,7 @@
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="816" userLabel="Number">
-                                    <rect key="frame" x="192" y="82" width="46" height="17"/>
+                                    <rect key="frame" x="192" y="80" width="46" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="42" id="ZJN-KX-g69"/>
                                     </constraints>
@@ -736,38 +738,40 @@
                                     </connections>
                                 </textField>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="820" firstAttribute="leading" secondItem="816" secondAttribute="leading" id="TxJ-CK-XPz"/>
+                            </constraints>
                         </view>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="821" secondAttribute="centerY" id="0bW-ae-9PU"/>
-                            <constraint firstItem="815" firstAttribute="top" secondItem="817" secondAttribute="bottom" constant="8" symbolic="YES" id="1aK-cV-kh6"/>
-                            <constraint firstItem="820" firstAttribute="leading" secondItem="818" secondAttribute="trailing" constant="8" symbolic="YES" id="8UO-F5-pMf"/>
-                            <constraint firstItem="817" firstAttribute="trailing" secondItem="820" secondAttribute="trailing" id="A6H-19-HSd"/>
-                            <constraint firstAttribute="bottom" secondItem="818" secondAttribute="bottom" constant="10" id="BaF-zr-5E3"/>
-                            <constraint firstItem="819" firstAttribute="top" secondItem="815" secondAttribute="bottom" constant="8" symbolic="YES" id="Dab-gn-byf"/>
-                            <constraint firstItem="815" firstAttribute="leading" secondItem="817" secondAttribute="leading" id="Dz8-dF-R7N"/>
-                            <constraint firstItem="815" firstAttribute="leading" secondItem="818" secondAttribute="leading" id="Ejn-x0-cUt"/>
-                            <constraint firstItem="815" firstAttribute="leading" secondItem="819" secondAttribute="leading" id="Gew-OF-zAC"/>
-                            <constraint firstItem="815" firstAttribute="leading" secondItem="831" secondAttribute="leading" constant="16" id="M5e-pS-pr0"/>
-                            <constraint firstItem="818" firstAttribute="baseline" secondItem="820" secondAttribute="baseline" id="One-VU-okd"/>
-                            <constraint firstItem="817" firstAttribute="trailing" secondItem="816" secondAttribute="trailing" id="XUp-qq-Kej"/>
-                            <constraint firstAttribute="trailing" secondItem="821" secondAttribute="trailing" constant="16" id="YPJ-cD-dEp"/>
-                            <constraint firstItem="818" firstAttribute="top" secondItem="819" secondAttribute="bottom" constant="9" id="bbi-rD-xX9"/>
-                            <constraint firstItem="816" firstAttribute="leading" secondItem="815" secondAttribute="trailing" constant="8" symbolic="YES" id="c9f-f7-WLR"/>
-                            <constraint firstItem="815" firstAttribute="baseline" secondItem="816" secondAttribute="baseline" id="hXJ-IB-xIC"/>
-                            <constraint firstItem="817" firstAttribute="top" secondItem="831" secondAttribute="top" constant="25" id="jF9-v0-lcA"/>
-                            <constraint firstItem="817" firstAttribute="trailing" secondItem="819" secondAttribute="trailing" id="wdS-vm-v5k"/>
+                            <constraint firstItem="817" firstAttribute="trailing" secondItem="819" secondAttribute="trailing" id="4Ga-Hz-29a"/>
+                            <constraint firstItem="815" firstAttribute="baseline" secondItem="816" secondAttribute="baseline" id="83Y-CN-0kj"/>
+                            <constraint firstItem="815" firstAttribute="leading" secondItem="817" secondAttribute="leading" id="8TK-t0-Upo"/>
+                            <constraint firstItem="817" firstAttribute="top" secondItem="831" secondAttribute="top" constant="25" id="Bf3-2v-07N"/>
+                            <constraint firstItem="815" firstAttribute="leading" secondItem="818" secondAttribute="leading" id="DDR-UC-Mdv"/>
+                            <constraint firstItem="816" firstAttribute="leading" secondItem="815" secondAttribute="trailing" constant="8" symbolic="YES" id="IWP-Cn-Vf6"/>
+                            <constraint firstItem="815" firstAttribute="top" secondItem="817" secondAttribute="bottom" constant="8" symbolic="YES" id="JiZ-38-Iid"/>
+                            <constraint firstItem="815" firstAttribute="leading" secondItem="831" secondAttribute="leading" constant="16" id="KBY-z9-j8u"/>
+                            <constraint firstItem="817" firstAttribute="trailing" secondItem="816" secondAttribute="trailing" id="KWV-jw-hKb"/>
+                            <constraint firstItem="818" firstAttribute="top" secondItem="819" secondAttribute="bottom" constant="9" id="Pt0-it-QOg"/>
+                            <constraint firstItem="818" firstAttribute="baseline" secondItem="820" secondAttribute="baseline" id="e5Y-27-pbv"/>
+                            <constraint firstItem="819" firstAttribute="top" secondItem="815" secondAttribute="bottom" constant="8" symbolic="YES" id="et3-vZ-VcY"/>
+                            <constraint firstAttribute="bottom" secondItem="818" secondAttribute="bottom" constant="10" id="hff-6P-E2v"/>
+                            <constraint firstAttribute="centerY" secondItem="821" secondAttribute="centerY" id="jDw-6e-mfw"/>
+                            <constraint firstItem="815" firstAttribute="leading" secondItem="819" secondAttribute="leading" id="jLx-tH-g3L"/>
+                            <constraint firstAttribute="trailing" secondItem="821" secondAttribute="trailing" constant="16" id="jh7-Zc-fXv"/>
+                            <constraint firstItem="820" firstAttribute="leading" secondItem="818" secondAttribute="trailing" constant="8" symbolic="YES" id="y4H-4m-K9c"/>
                         </constraints>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" title="Just Generate Nonsense" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="7lq-g4-Lv4">
-                        <rect key="frame" x="17" y="16" width="505" height="85"/>
-                        <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="503" height="69"/>
+                        <rect key="frame" x="17" y="16" width="505" height="81"/>
+                        <view key="contentView" id="r3a-ZS-OBl">
+                            <rect key="frame" x="1" y="1" width="503" height="65"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dBO-ro-S9q">
-                                    <rect key="frame" x="203" y="7" width="97" height="32"/>
+                                    <rect key="frame" x="204" y="7" width="96" height="32"/>
                                     <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ich-pj-Wsv">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -776,9 +780,9 @@
                                         <action selector="generateNonsense:" target="811" id="aWY-YU-X9Z"/>
                                     </connections>
                                 </button>
-                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sqw-Yq-AGB">
-                                    <rect key="frame" x="219" y="43" width="66" height="17"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Nonsense" id="LMw-Rl-tva">
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqw-Yq-AGB">
+                                    <rect key="frame" x="220" y="43" width="65" height="17"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="Nonsense" id="LMw-Rl-tva">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -787,12 +791,12 @@
                             </subviews>
                         </view>
                         <constraints>
-                            <constraint firstItem="sqw-Yq-AGB" firstAttribute="top" secondItem="7lq-g4-Lv4" secondAttribute="top" constant="24" id="D1z-pg-ZVu"/>
-                            <constraint firstItem="sqw-Yq-AGB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7lq-g4-Lv4" secondAttribute="leading" priority="750" constant="16" id="HZF-jo-udd"/>
-                            <constraint firstAttribute="centerX" secondItem="dBO-ro-S9q" secondAttribute="centerX" id="KlK-oA-1pA"/>
-                            <constraint firstAttribute="centerX" secondItem="sqw-Yq-AGB" secondAttribute="centerX" id="LOd-ZP-Tsx"/>
-                            <constraint firstItem="dBO-ro-S9q" firstAttribute="top" secondItem="sqw-Yq-AGB" secondAttribute="bottom" constant="8" symbolic="YES" id="SfA-Zb-tRE"/>
-                            <constraint firstAttribute="bottom" secondItem="dBO-ro-S9q" secondAttribute="bottom" constant="11" id="jYW-mb-LEb"/>
+                            <constraint firstItem="sqw-Yq-AGB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7lq-g4-Lv4" secondAttribute="leading" priority="750" constant="16" id="6y2-bm-sMs"/>
+                            <constraint firstAttribute="centerX" secondItem="dBO-ro-S9q" secondAttribute="centerX" id="75D-nD-pbO"/>
+                            <constraint firstItem="sqw-Yq-AGB" firstAttribute="top" secondItem="7lq-g4-Lv4" secondAttribute="top" constant="20" id="NpA-hX-3vE"/>
+                            <constraint firstAttribute="centerX" secondItem="sqw-Yq-AGB" secondAttribute="centerX" id="Rii-cE-aRw"/>
+                            <constraint firstAttribute="bottom" secondItem="dBO-ro-S9q" secondAttribute="bottom" constant="11" id="tCv-4I-qNu"/>
+                            <constraint firstItem="dBO-ro-S9q" firstAttribute="top" secondItem="sqw-Yq-AGB" secondAttribute="bottom" constant="8" symbolic="YES" id="zMC-kg-gMN"/>
                         </constraints>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
