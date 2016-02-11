@@ -72,9 +72,9 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		
 		var theFont: NSFont
 		if isPreview {
-			theFont = NSFont.systemFontOfSize(kPreviewSize)
+			theFont = NSFont.systemFontOfSize(kPreviewFontSize)
 		} else {
-			theFont = NSFont.systemFontOfSize(kFullSize)
+			theFont = NSFont.systemFontOfSize(kFullFontSize)
 		}
 
 		for _ in 0..<maxNonsenses {
@@ -115,9 +115,9 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 
 		var theFont: NSFont
 		if preview {
-			theFont = NSFont.systemFontOfSize(kPreviewSize)
+			theFont = NSFont.systemFontOfSize(kPreviewFontSize)
 		} else {
-			theFont = NSFont.systemFontOfSize(kFullSize)
+			theFont = NSFont.systemFontOfSize(kFullFontSize)
 		}
 		for obj in nonsenses {
 			obj.draw(background: showBackground)
@@ -241,7 +241,7 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 				nonsenses.removeAll()
 				
 				for _ in 0..<maxNonsenses {
-					let non = NonsenseObject(string: controller.randomSaying(), bounds: bounds, font: NSFont.systemFontOfSize(kPreviewSize))
+					let non = NonsenseObject(string: controller.randomSaying(), bounds: bounds, font: NSFont.systemFontOfSize(kPreviewFontSize))
 					nonsenses.append(non)
 				}
 			} else {
@@ -438,5 +438,4 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		let defaults = defaultsProvider()
 		defaults.registerDefaults([NONSAtATime: 3, NONSDuration: 2.7, NONSBGColor: true])
 	}
-
 }

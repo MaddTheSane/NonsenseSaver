@@ -42,7 +42,7 @@ class NonsenseView: NSView {
 
     override func drawRect(dirtyRect: NSRect) {
 		super.drawRect(dirtyRect)
-		let theFont = NSFont.systemFontOfSize(kPreviewSize)
+		let theFont = NSFont.systemFontOfSize(kPreviewFontSize)
 		if settingsChanged {
 			settingsChanged = false
 		} else {
@@ -56,7 +56,7 @@ class NonsenseView: NSView {
 	}
 	
 	func populateNonsenses() {
-		let theFont = NSFont.systemFontOfSize(kPreviewSize)
+		let theFont = NSFont.systemFontOfSize(kPreviewFontSize)
 		for _ in 0 ..< nonNumber {
 			let non = NonsenseObject(string: nonsenseController.randomSaying(), bounds: self.bounds, font: theFont)
 			nonsenses.append(non)

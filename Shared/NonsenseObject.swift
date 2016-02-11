@@ -9,8 +9,8 @@
 import Cocoa
 //import ScreenSaver
 
-let kPreviewSize: CGFloat = 12
-let kFullSize: CGFloat = 30
+let kPreviewFontSize: CGFloat = 12
+let kFullFontSize: CGFloat = 30
 let MaxNonsenseWidth: CGFloat = 350
 
 private let kNonsenseBorder: CGFloat = 8
@@ -119,7 +119,7 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 */
 	}
 	
-	init(string nonString: String, bounds bound: NSRect, font theFont: NSFont = NSFont.systemFontOfSize(kFullSize), objectsToAvoid otherNons: [NonsenseObject]? = nil) {
+	init(string nonString: String, bounds bound: NSRect, font theFont: NSFont = NSFont.systemFontOfSize(kFullFontSize), objectsToAvoid otherNons: [NonsenseObject]? = nil) {
 		let maxWidth = min(MaxNonsenseWidth,  (bound.size.width / 3))
 		(foregroundColor, backgroundColor) = NonsenseObject.randomColors()
 		nonsense = nonString;
