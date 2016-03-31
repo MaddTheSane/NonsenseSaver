@@ -182,19 +182,19 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 			let thirPersPresCont	= fieldThirdPersonPresentCont.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
 			
 			if thirdPersSingPres != "" {
-				i++;
+				i += 1;
 			}
 			if thirdPersPlurPres != "" {
-				i++;
+				i += 1;
 			}
 			if thirdPersPas != "" {
-				i++;
+				i += 1;
 			}
 			if thirPersPasPer != "" {
-				i++;
+				i += 1;
 			}
 			if thirPersPresCont != "" {
-				i++;
+				i += 1;
 			}
 			
 			if i == 5 {

@@ -319,59 +319,73 @@ internal class NonsenseSaverController: NSObject {
 	}
 	
 	@objc(removeVerbsAtIndexes:) func removeVerbs(indexes indexes: NSIndexSet) {
-		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "verbs")
-		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+		self.willChange(.Removal, valuesAtIndexes: indexes, forKey: "verbs")
+		var i = indexes.lastIndex
+		while i != NSNotFound {
 			verbs.removeAtIndex(i)
+			i = indexes.indexLessThanIndex(i)
 		}
-		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "verbs")
+		self.didChange(.Removal, valuesAtIndexes: indexes, forKey: "verbs")
 	}
 	
 	@objc(removePluralNounsAtIndexes:) func removePluralNouns(indexes indexes: NSIndexSet) {
-		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "pluralNouns")
-		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+		self.willChange(.Removal, valuesAtIndexes: indexes, forKey: "pluralNouns")
+		var i = indexes.lastIndex
+		while i != NSNotFound {
 			pluralNouns.removeAtIndex(i)
+			i = indexes.indexLessThanIndex(i)
 		}
-		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "pluralNouns")
+		self.didChange(.Removal, valuesAtIndexes: indexes, forKey: "pluralNouns")
 	}
 	
 	@objc(removeSingularNounsAtIndexes:) func removeSingularNouns(indexes indexes: NSIndexSet) {
-		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "singularNouns")
-		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+		self.willChange(.Removal, valuesAtIndexes: indexes, forKey: "singularNouns")
+		var i = indexes.lastIndex
+		while i != NSNotFound {
 			singularNouns.removeAtIndex(i)
+			i = indexes.indexLessThanIndex(i)
 		}
-		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "singularNouns")
+		self.didChange(.Removal, valuesAtIndexes: indexes, forKey: "singularNouns")
 	}
 	
 	@objc(removeProperNounsAtIndexes:) func removeProperNouns(indexes indexes: NSIndexSet) {
-		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "properNouns")
-		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+		self.willChange(.Removal, valuesAtIndexes: indexes, forKey: "properNouns")
+		var i = indexes.lastIndex
+		while i != NSNotFound {
 			properNouns.removeAtIndex(i)
+			i = indexes.indexLessThanIndex(i)
 		}
-		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "properNouns")
+		self.didChange(.Removal, valuesAtIndexes: indexes, forKey: "properNouns")
 	}
 	
 	@objc(removeAdverbsAtIndexes:) func removeAdverbs(indexes indexes: NSIndexSet) {
-		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "adverbs")
-		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+		self.willChange(.Removal, valuesAtIndexes: indexes, forKey: "adverbs")
+		var i = indexes.lastIndex
+		while i != NSNotFound {
 			adverbs.removeAtIndex(i)
+			i = indexes.indexLessThanIndex(i)
 		}
-		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "adverbs")
+		self.didChange(.Removal, valuesAtIndexes: indexes, forKey: "adverbs")
 	}
 	
 	@objc(removeAdjectivesAtIndexes:) func removeAdjectives(indexes indexes: NSIndexSet) {
-		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "adjectives")
-		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+		self.willChange(.Removal, valuesAtIndexes: indexes, forKey: "adjectives")
+		var i = indexes.lastIndex
+		while i != NSNotFound {
 			adjectives.removeAtIndex(i)
+			i = indexes.indexLessThanIndex(i)
 		}
-		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "adjectives")
+		self.didChange(.Removal, valuesAtIndexes: indexes, forKey: "adjectives")
 	}
 	
 	@objc(removeMassiveNounsAtIndexes:) func removeMassiveNouns(indexes indexes: NSIndexSet) {
-		self.willChange(.Insertion, valuesAtIndexes: indexes, forKey: "massiveNouns")
-		for var i = indexes.lastIndex; i != NSNotFound; i = indexes.indexLessThanIndex(i) {
+		self.willChange(.Removal, valuesAtIndexes: indexes, forKey: "massiveNouns")
+		var i = indexes.lastIndex
+		while i != NSNotFound {
 			massiveNouns.removeAtIndex(i)
+			i = indexes.indexLessThanIndex(i)
 		}
-		self.didChange(.Insertion, valuesAtIndexes: indexes, forKey: "massiveNouns")
+		self.didChange(.Removal, valuesAtIndexes: indexes, forKey: "massiveNouns")
 	}
 	
 	@objc(removeVerbsInArray:) func removeVerbs(array arrays: [Verb]) {
