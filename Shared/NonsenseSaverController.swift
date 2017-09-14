@@ -84,13 +84,13 @@ internal class NonsenseSaverController: NSObject {
 				}
 			}
 		}()
-	private(set) dynamic var verbs = [Verb]()
-	private(set) dynamic var pluralNouns = [String]()
-	private(set) dynamic var singularNouns = [String]()
-	private(set) dynamic var properNouns = [String]()
-	private(set) dynamic var adverbs = [String]()
-	private(set) dynamic var adjectives = [String]()
-	private(set) dynamic var massiveNouns = [String]()
+	@objc private(set) dynamic var verbs = [Verb]()
+	@objc private(set) dynamic var pluralNouns = [String]()
+	@objc private(set) dynamic var singularNouns = [String]()
+	@objc private(set) dynamic var properNouns = [String]()
+	@objc private(set) dynamic var adverbs = [String]()
+	@objc private(set) dynamic var adjectives = [String]()
+	@objc private(set) dynamic var massiveNouns = [String]()
 	
 	let pronouns = ["him", "her", "it", "them"]
 	let conjugates = ["and", "but", "or", "yet", "so", "because"]

@@ -24,18 +24,11 @@ private func RandomPoint(forSize size: NSSize, withinRect rect: NSRect) -> NSPoi
 		y: RandomFloatBetween(rect.origin.y, rect.origin.y + rect.size.height - size.height))
 }
 
-private func CenteredInRect(_ innerRect: NSRect, outerRect: NSRect) -> NSRect {
-	var aInner = innerRect
-	aInner.origin.x = floor((outerRect.size.width - innerRect.size.width) / 2.0);
-	aInner.origin.y = floor((outerRect.size.height - innerRect.size.height) / 2.0);
-	return aInner
-}
-
 final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertible {
 	let nonsense: String
 	let backgroundColor: NSColor
 	let foregroundColor: NSColor
-	let fontAttributes: [String: NSObject]
+	let fontAttributes: [NSAttributedStringKey: Any]
 	let placement: NSRect
 
 	var textPosition: NSRect {
@@ -44,10 +37,12 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 		return returnRect;
 	}
 
-	fileprivate static let randomColorArray: [(foreground: NSColor, background: NSColor)] = [(NSColor.red, NSColor.yellow),
-		(NSColor.green, NSColor.orange), (NSColor.blue, NSColor.magenta), (NSColor.cyan, NSColor.orange),
-		(NSColor.yellow, NSColor.red), (NSColor.magenta, NSColor.blue), (NSColor.orange, NSColor.blue),
-		(NSColor.purple, NSColor.orange), (NSColor.brown, NSColor.purple)]
+	fileprivate static let randomColorArray: [(foreground: NSColor, background: NSColor)] =
+		[(NSColor.red, NSColor.yellow), (NSColor.green, NSColor.orange),
+		 (NSColor.blue, NSColor.magenta), (NSColor.cyan, NSColor.orange),
+		 (NSColor.yellow, NSColor.red), (NSColor.magenta, NSColor.blue),
+		 (NSColor.orange, NSColor.blue), (NSColor.purple, NSColor.orange),
+		 (NSColor.brown, NSColor.purple)]
 	
 	class func randomColors(_ showBackgroundColor: Bool = true) -> (foreground: NSColor, background: NSColor) {
 		return randObject(randomColorArray)
@@ -118,9 +113,9 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 		let style = NSMutableParagraphStyle()
 		style.alignment = .center
 		style.lineBreakMode = .byWordWrapping
-		fontAttributes = [NSForegroundColorAttributeName: foregroundColor,
-			NSFontAttributeName: theFont,
-			NSParagraphStyleAttributeName: style];
+		fontAttributes = [.foregroundColor: foregroundColor,
+		                  .font: theFont,
+		                  .paragraphStyle: style];
 		
 		var tmpPlace = NSRect.zero
 		

@@ -10,14 +10,14 @@ import Cocoa
 
 class NonsenseView: NSView {
 	let nonsenseController = NonsenseSaverController()
-	dynamic var nonDuration: CGFloat = 2.7 {
+	@objc dynamic var nonDuration: CGFloat = 2.7 {
 		didSet {
 			refreshRate?.invalidate()
 			refreshRate = Timer(timeInterval: TimeInterval(nonDuration), target: self, selector: #selector(NonsenseView.reloadScreen(_:)), userInfo:nil, repeats: true)
 			RunLoop.main.add(refreshRate!, forMode: RunLoopMode.commonModes)
 		}
 	}
-	dynamic var nonNumber: Int = 5 {
+	@objc dynamic var nonNumber: Int = 5 {
 		didSet {
 			if nonNumber > oldValue {
 				
@@ -29,7 +29,7 @@ class NonsenseView: NSView {
 			needsDisplay = true
 		}
 	}
-	dynamic var showBackground: Bool = true {
+	@objc dynamic var showBackground: Bool = true {
 		didSet {
 			if oldValue != showBackground {
 				needsDisplay = true

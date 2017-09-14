@@ -404,7 +404,7 @@
 						TestTargetID = 5556EFA818E0B46000B49E98;
 					};
 					8D255AC50486D3F9007BF209 = {
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -756,6 +756,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.nonsensesaver.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NonsenseSaver;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -772,6 +773,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @loader_path/../Frameworks $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.maddthesane.nonsensesaver.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = NonsenseSaver;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
@@ -823,11 +825,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
-				PLIST_FILE_OUTPUT_FORMAT = binary;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -870,10 +871,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PLIST_FILE_OUTPUT_FORMAT = binary;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -25,9 +25,9 @@ private enum VocabType: Int {
 }
 
 open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
-	dynamic var maxNonsenses: Int = 3
-	dynamic var nonsenseDuration: TimeInterval = 2.7
-	dynamic var showBackground = true
+	@objc dynamic var maxNonsenses: Int = 3
+	@objc dynamic var nonsenseDuration: TimeInterval = 2.7
+	@objc dynamic var showBackground = true
 	
 	@IBOutlet weak var configSheet: NSWindow! = nil
 	@IBOutlet weak var creditsScrollView: NSScrollView!
@@ -80,14 +80,14 @@ open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		}
 	}
 	
-	open override func hasConfigureSheet() -> Bool {
+	open override var hasConfigureSheet: Bool {
 		return true
 	}
 	
-	open override func configureSheet() -> NSWindow? {
+	open override var configureSheet: NSWindow? {
 		if configSheet == nil {
 			let ourBundle = Bundle(for: type(of: self))
-			ourBundle.loadNibNamed("NonsenseSettings", owner: self, topLevelObjects: &nibArray!)
+			ourBundle.loadNibNamed(NSNib.Name(rawValue: "NonsenseSettings"), owner: self, topLevelObjects: &nibArray)
 			if let creditsPath = ourBundle.path(forResource: "Credits", ofType: "rtf") {
 				credits.readRTFD(fromFile: creditsPath)
 			}
@@ -251,7 +251,7 @@ open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		} else if let sender = sender {
 			let nsSender: NSObject = (sender as? NSObject) ?? NSString(string: "Non-NSObject class (Maybe Swift)")
 			NSLog("I just don't know what went wrong!\nObject value: %@, type: %@", nsSender, nsSender.className)
-			NSBeep()
+			NSSound.beep()
 		} else {
 			NSLog("I just don't know what went wrong!\nGot sent \"nil\".")
 		}
@@ -357,7 +357,7 @@ open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 	@IBAction func removeSelectedWord(_ sender: AnyObject) {
 		let rows = vocabList.selectedRowIndexes
 		if rows.count == 0 {
-			NSBeep()
+			NSSound.beep()
 			return
 		}
 		
@@ -384,13 +384,13 @@ open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 			controller.removeProperNouns(at: rows)
 			
 		default:
-			NSBeep()
+			NSSound.beep()
 		}
 		vocabList.reloadData()
 	}
 
 	@IBAction func addWord(_ sender: AnyObject) {
-		func completion(_ response: NSModalResponse) {
+		func completion(_ response: NSApplication.ModalResponse) {
 			self.vocabList.reloadData()
 		}
 		
@@ -429,7 +429,7 @@ open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 			configSheet.beginSheet(wordWindow, completionHandler: completion)
 			
 		default:
-			NSBeep()
+			NSSound.beep()
 		}
 	}
 
