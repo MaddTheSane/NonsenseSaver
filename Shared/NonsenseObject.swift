@@ -119,7 +119,7 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 		
 		var tmpPlace = NSRect.zero
 		
-		let strRect = (nonsense as NSString).boundingRect(with: NSSize(width: maxWidth, height: 0), options: [.usesFontLeading, .usesDeviceMetrics, .usesLineFragmentOrigin], attributes: fontAttributes).insetBy(dx: -kNonsenseBorder / 2, dy: -kNonsenseBorder / 2)
+		let strRect = nonsense.boundingRect(with: NSSize(width: maxWidth, height: 0), options: [.usesFontLeading, .usesDeviceMetrics, .usesLineFragmentOrigin], attributes: fontAttributes).insetBy(dx: -kNonsenseBorder / 2, dy: -kNonsenseBorder / 2)
 		let strSize = strRect.size
 		
 		tmpPlace.origin = RandomPoint(forSize: strSize, withinRect: bound)
@@ -133,7 +133,7 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 			backgroundColor.set()
 			NSBezierPath.fill(placement)
 		}
-		(nonsense as NSString).draw(in: textPosition, withAttributes: fontAttributes)
+		nonsense.draw(in: textPosition, withAttributes: fontAttributes)
 	}
 
 	var description: String {
