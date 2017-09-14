@@ -56,7 +56,7 @@ open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 	fileprivate var nibArray: NSArray? = nil
 	
 	public override init?(frame: NSRect, isPreview: Bool) {
-		_=NonsenseSaverView.ourSetDefaults
+		_=NonsenseSaverView.__ourSetDefaults
 		srandom(UInt32(time(nil) & 0x7FFFFFFF))
 
 		super.init(frame: frame, isPreview: isPreview)
@@ -101,7 +101,7 @@ open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 	
 	public required init?(coder: NSCoder) {
 		srandom(UInt32(time(nil) & 0x7FFFFFFF))
-		_=NonsenseSaverView.ourSetDefaults
+		_=NonsenseSaverView.__ourSetDefaults
 
 		super.init(coder: coder)
 	}
@@ -363,25 +363,25 @@ open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		
 		switch vocabSelectorSelected {
 		case .singularNoun:
-			controller.removeSingularNouns(indexes: rows)
+			controller.removeSingularNouns(at: rows)
 			
 		case .pluralNoun:
-			controller.removePluralNouns(indexes: rows)
+			controller.removePluralNouns(at: rows)
 			
 		case .adjective:
-			controller.removeAdjectives(indexes: rows)
+			controller.removeAdjectives(at: rows)
 			
 		case .verb:
-			controller.removeVerbs(indexes: rows)
+			controller.removeVerbs(at: rows)
 			
 		case .adverb:
-			controller.removeAdverbs(indexes: rows)
+			controller.removeAdverbs(at: rows)
 			
 		case .massiveNoun:
-			controller.removeMassiveNouns(indexes: rows)
+			controller.removeMassiveNouns(at: rows)
 			
 		case .properNoun:
-			controller.removeProperNouns(indexes: rows)
+			controller.removeProperNouns(at: rows)
 			
 		default:
 			NSBeep()
@@ -433,7 +433,7 @@ open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		}
 	}
 
-	fileprivate static var ourSetDefaults: Void = {
+	fileprivate static var __ourSetDefaults: Void = {
 		let defaults = defaultsProvider()
 		defaults.register(defaults: [NONSAtATime: 3, NONSDuration: 2.7, NONSBGColor: true])
 	}()

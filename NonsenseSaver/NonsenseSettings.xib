@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NonsenseSaverView" customModule="NonsenseSaver">
@@ -28,7 +29,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="185" width="619" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="619" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -65,7 +66,7 @@ Gw
                         <tabViewItems>
                             <tabViewItem label="Words" identifier="1" id="260">
                                 <view key="view" id="261">
-                                    <rect key="frame" x="10" y="33" width="574" height="257"/>
+                                    <rect key="frame" x="10" y="33" width="573" height="257"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="157" userLabel="Remove button">
@@ -89,7 +90,7 @@ Gw
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" id="116">
-                                                        <rect key="frame" x="0.0" y="0.0" width="324" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="324" height="183"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -114,7 +115,6 @@ Gw
                                                         </connections>
                                                     </tableView>
                                                 </subviews>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="326" id="N0Y-C3-pyb"/>
@@ -224,7 +224,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="264" userLabel="Number slider">
-                                            <rect key="frame" x="18" y="189" width="172" height="25"/>
+                                            <rect key="frame" x="18" y="190" width="172" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="168" id="dVy-rb-jzA"/>
                                             </constraints>
@@ -241,7 +241,7 @@ Gw
                                             </connections>
                                         </slider>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="275" userLabel="Number">
-                                            <rect key="frame" x="194" y="201" width="44" height="17"/>
+                                            <rect key="frame" x="194" y="202" width="44" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="C0O-B1-h5q"/>
                                             </constraints>
@@ -264,7 +264,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="281" userLabel="Duration slider">
-                                            <rect key="frame" x="343" y="189" width="164" height="25"/>
+                                            <rect key="frame" x="343" y="190" width="164" height="24"/>
                                             <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="0.5" maxValue="10" doubleValue="2.7000000000000002" tickMarkPosition="below" numberOfTickMarks="14" sliderType="linear" id="282"/>
                                             <connections>
                                                 <binding destination="-2" name="value" keyPath="self.nonsenseDuration" id="qS9-WC-MP2"/>
@@ -282,7 +282,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="286" userLabel="Duration">
-                                            <rect key="frame" x="511" y="201" width="44" height="17"/>
+                                            <rect key="frame" x="511" y="202" width="44" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="HL9-AN-9V8"/>
                                             </constraints>
@@ -297,7 +297,7 @@ Gw
                                             </connections>
                                         </textField>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="298" userLabel="Color background">
-                                            <rect key="frame" x="18" y="166" width="168" height="18"/>
+                                            <rect key="frame" x="18" y="167" width="168" height="18"/>
                                             <buttonCell key="cell" type="check" title="Show Color Background" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="299">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -344,20 +344,17 @@ Gw
                                             <rect key="frame" x="0.0" y="0.0" width="573" height="257"/>
                                             <clipView key="contentView" id="xsa-AQ-deT">
                                                 <rect key="frame" x="1" y="1" width="571" height="255"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="296">
+                                                    <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="296">
                                                         <rect key="frame" x="0.0" y="0.0" width="571" height="255"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="571" height="255"/>
                                                         <size key="maxSize" width="573" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="571" height="255"/>
-                                                        <size key="maxSize" width="573" height="10000000"/>
                                                     </textView>
                                                 </subviews>
-                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="295">
                                                 <rect key="frame" x="-100" y="-100" width="87" height="18"/>
@@ -397,7 +394,7 @@ Gw
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="292" width="421" height="223"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="183">
                 <rect key="frame" x="0.0" y="0.0" width="421" height="223"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -480,7 +477,7 @@ DQ
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="423" width="308" height="91"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="241">
                 <rect key="frame" x="0.0" y="0.0" width="308" height="91"/>
                 <autoresizingMask key="autoresizingMask"/>
