@@ -15,7 +15,7 @@ let MaxNonsenseWidth: CGFloat = 350
 
 private let kNonsenseBorder: CGFloat = 8
 
-private func RandomFloatBetween(a: CGFloat, _ b: CGFloat) -> CGFloat {
+private func RandomFloatBetween(_ a: CGFloat, _ b: CGFloat) -> CGFloat {
 	return a + (b - a) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
 }
 
@@ -24,7 +24,7 @@ private func RandomPoint(forSize size: NSSize, withinRect rect: NSRect) -> NSPoi
 		y: RandomFloatBetween(rect.origin.y, rect.origin.y + rect.size.height - size.height))
 }
 
-private func CenteredInRect(innerRect: NSRect, outerRect: NSRect) -> NSRect {
+private func CenteredInRect(_ innerRect: NSRect, outerRect: NSRect) -> NSRect {
 	var aInner = innerRect
 	aInner.origin.x = floor((outerRect.size.width - innerRect.size.width) / 2.0);
 	aInner.origin.y = floor((outerRect.size.height - innerRect.size.height) / 2.0);
@@ -39,17 +39,17 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 	let placement: NSRect
 
 	var textPosition: NSRect {
-		var returnRect = placement;
-		returnRect.insetInPlace(dx: kNonsenseBorder / 2, dy: kNonsenseBorder / 2)
+		var returnRect = placement
+		returnRect = returnRect.insetBy(dx: kNonsenseBorder / 2, dy: kNonsenseBorder / 2)
 		return returnRect;
 	}
 
-	private static let randomColorArray: [(foreground: NSColor, background: NSColor)] = [(NSColor.redColor(), NSColor.yellowColor()),
-		(NSColor.greenColor(), NSColor.orangeColor()), (NSColor.blueColor(), NSColor.magentaColor()), (NSColor.cyanColor(), NSColor.orangeColor()),
-		(NSColor.yellowColor(), NSColor.redColor()), (NSColor.magentaColor(), NSColor.blueColor()), (NSColor.orangeColor(), NSColor.blueColor()),
-		(NSColor.purpleColor(), NSColor.orangeColor()), (NSColor.brownColor(), NSColor.purpleColor())]
+	fileprivate static let randomColorArray: [(foreground: NSColor, background: NSColor)] = [(NSColor.red, NSColor.yellow),
+		(NSColor.green, NSColor.orange), (NSColor.blue, NSColor.magenta), (NSColor.cyan, NSColor.orange),
+		(NSColor.yellow, NSColor.red), (NSColor.magenta, NSColor.blue), (NSColor.orange, NSColor.blue),
+		(NSColor.purple, NSColor.orange), (NSColor.brown, NSColor.purple)]
 	
-	class func randomColors(showBackgroundColor: Bool = true) -> (foreground: NSColor, background: NSColor) {
+	class func randomColors(_ showBackgroundColor: Bool = true) -> (foreground: NSColor, background: NSColor) {
 		return randObject(randomColorArray)
 /*
 		var bgColor: NSColor
@@ -111,20 +111,20 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 */
 	}
 	
-	init(string nonString: String, bounds bound: NSRect, font theFont: NSFont = NSFont.systemFontOfSize(kFullFontSize), objectsToAvoid otherNons: [NonsenseObject]? = nil) {
+	init(string nonString: String, bounds bound: NSRect, font theFont: NSFont = NSFont.systemFont(ofSize: kFullFontSize), objectsToAvoid otherNons: [NonsenseObject]? = nil) {
 		let maxWidth = min(MaxNonsenseWidth,  (bound.size.width / 3))
 		(foregroundColor, backgroundColor) = NonsenseObject.randomColors()
 		nonsense = nonString;
 		let style = NSMutableParagraphStyle()
-		style.alignment = .Center
-		style.lineBreakMode = .ByWordWrapping
+		style.alignment = .center
+		style.lineBreakMode = .byWordWrapping
 		fontAttributes = [NSForegroundColorAttributeName: foregroundColor,
 			NSFontAttributeName: theFont,
 			NSParagraphStyleAttributeName: style];
 		
 		var tmpPlace = NSRect.zero
 		
-		let strRect = (nonsense as NSString).boundingRectWithSize(NSSize(width: maxWidth, height: 0), options: [.UsesFontLeading, .UsesDeviceMetrics, .UsesLineFragmentOrigin], attributes: fontAttributes).insetBy(dx: -kNonsenseBorder / 2, dy: -kNonsenseBorder / 2)
+		let strRect = (nonsense as NSString).boundingRect(with: NSSize(width: maxWidth, height: 0), options: [.usesFontLeading, .usesDeviceMetrics, .usesLineFragmentOrigin], attributes: fontAttributes).insetBy(dx: -kNonsenseBorder / 2, dy: -kNonsenseBorder / 2)
 		let strSize = strRect.size
 		
 		tmpPlace.origin = RandomPoint(forSize: strSize, withinRect: bound)
@@ -136,9 +136,9 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 	func draw(background bgDraw: Bool = true) {
 		if bgDraw {
 			backgroundColor.set()
-			NSBezierPath.fillRect(placement)
+			NSBezierPath.fill(placement)
 		}
-		(nonsense as NSString).drawInRect(textPosition, withAttributes: fontAttributes)
+		(nonsense as NSString).draw(in: textPosition, withAttributes: fontAttributes)
 	}
 
 	var description: String {

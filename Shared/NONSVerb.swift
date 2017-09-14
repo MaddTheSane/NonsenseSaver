@@ -58,7 +58,7 @@ final class Verb: NSObject {
 		super.init()
 	}
 
-	override func isEqual(object: AnyObject?) -> Bool {
+	override func isEqual(_ object: Any?) -> Bool {
 		if let objectVerb = object as? Verb {
 			return self == objectVerb
 		}

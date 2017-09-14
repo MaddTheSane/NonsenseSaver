@@ -14,19 +14,19 @@ private let NONSDuration = "Nonsense Duration"
 private let NONSBGColor = "Show Background"
 
 private enum VocabType: Int {
-	case None = 0
-	case SingularNoun = 1
-	case PluralNoun = 2
-	case Verb = 3
-	case ProperNoun = 4
-	case Adjective = 5
-	case Adverb = 6
-	case MassiveNoun = 7
+	case none = 0
+	case singularNoun = 1
+	case pluralNoun = 2
+	case verb = 3
+	case properNoun = 4
+	case adjective = 5
+	case adverb = 6
+	case massiveNoun = 7
 }
 
-public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
+open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 	dynamic var maxNonsenses: Int = 3
-	dynamic var nonsenseDuration: NSTimeInterval = 2.7
+	dynamic var nonsenseDuration: TimeInterval = 2.7
 	dynamic var showBackground = true
 	
 	@IBOutlet weak var configSheet: NSWindow! = nil
@@ -53,25 +53,25 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 	
 	let controller = NonsenseSaverController()
 	var nonsenses = [NonsenseObject]()
-	private var nibArray: NSArray? = nil
+	fileprivate var nibArray: NSArray? = nil
 	
 	public override init?(frame: NSRect, isPreview: Bool) {
+		_=NonsenseSaverView.ourSetDefaults
 		srandom(UInt32(time(nil) & 0x7FFFFFFF))
-		dispatch_once(&NonsenseSaverView.oursreensaverDefaults, NonsenseSaverView.ourSetDefaults)
 
 		super.init(frame: frame, isPreview: isPreview)
 		
 		let defaults = defaultsProvider()
-		maxNonsenses = defaults.integerForKey(NONSAtATime)
-		nonsenseDuration = defaults.doubleForKey(NONSDuration)
-		showBackground = defaults.boolForKey(NONSBGColor)
+		maxNonsenses = defaults.integer(forKey: NONSAtATime)
+		nonsenseDuration = defaults.double(forKey: NONSDuration)
+		showBackground = defaults.bool(forKey: NONSBGColor)
 		animationTimeInterval = nonsenseDuration
 		
 		var theFont: NSFont
 		if isPreview {
-			theFont = NSFont.systemFontOfSize(kPreviewFontSize)
+			theFont = NSFont.systemFont(ofSize: kPreviewFontSize)
 		} else {
-			theFont = NSFont.systemFontOfSize(kFullFontSize)
+			theFont = NSFont.systemFont(ofSize: kFullFontSize)
 		}
 
 		for _ in 0..<maxNonsenses {
@@ -80,51 +80,51 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		}
 	}
 	
-	public override func hasConfigureSheet() -> Bool {
+	open override func hasConfigureSheet() -> Bool {
 		return true
 	}
 	
-	public override func configureSheet() -> NSWindow? {
+	open override func configureSheet() -> NSWindow? {
 		if configSheet == nil {
-			let ourBundle = NSBundle(forClass: self.dynamicType)
-			ourBundle.loadNibNamed("NonsenseSettings", owner: self, topLevelObjects: &nibArray)
-			if let creditsPath = ourBundle.pathForResource("Credits", ofType: "rtf") {
-				credits.readRTFDFromFile(creditsPath)
+			let ourBundle = Bundle(for: type(of: self))
+			ourBundle.loadNibNamed("NonsenseSettings", owner: self, topLevelObjects: &nibArray!)
+			if let creditsPath = ourBundle.path(forResource: "Credits", ofType: "rtf") {
+				credits.readRTFD(fromFile: creditsPath)
 			}
 		}
 		return configSheet
 	}
 	
-	public override func animateOneFrame() {
+	open override func animateOneFrame() {
 		needsDisplay = true
 	}
 	
 	public required init?(coder: NSCoder) {
 		srandom(UInt32(time(nil) & 0x7FFFFFFF))
-		dispatch_once(&NonsenseSaverView.oursreensaverDefaults, NonsenseSaverView.ourSetDefaults)
+		_=NonsenseSaverView.ourSetDefaults
 
 		super.init(coder: coder)
 	}
 	
-    public override func drawRect(dirtyRect: NSRect) {
+    open override func draw(_ dirtyRect: NSRect) {
 		//Clear the screen
-        super.drawRect(dirtyRect)
+        super.draw(dirtyRect)
 
 		var theFont: NSFont
-		if preview {
-			theFont = NSFont.systemFontOfSize(kPreviewFontSize)
+		if isPreview {
+			theFont = NSFont.systemFont(ofSize: kPreviewFontSize)
 		} else {
-			theFont = NSFont.systemFontOfSize(kFullFontSize)
+			theFont = NSFont.systemFont(ofSize: kFullFontSize)
 		}
 		for obj in nonsenses {
 			obj.draw(background: showBackground)
 		}
-		nonsenses.removeAtIndex(0)
+		nonsenses.remove(at: 0)
 		let non = NonsenseObject(string: controller.randomSaying(), bounds: bounds, font:theFont)
 		nonsenses.append(non)
     }
 	
-	private func clearVerbWindow() {
+	fileprivate func clearVerbWindow() {
 		fieldThirdPersonSinglePresent.stringValue = ""
 		fieldThirdPersonPluralPresent.stringValue = ""
 		fieldThirdPersonPast.stringValue = ""
@@ -132,38 +132,38 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		fieldThirdPersonPresentCont.stringValue = ""
 	}
 	
-	private func clearWordWindow() {
+	fileprivate func clearWordWindow() {
 		fieldWord.stringValue = ""
 	}
 	
-	@IBAction func okayAddNonsensePart(sender: NSButton?) {
+	@IBAction func okayAddNonsensePart(_ sender: NSButton?) {
 		if sender?.window === wordWindow {
-			let tmpFieldWord = fieldWord.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+			let tmpFieldWord = fieldWord.stringValue.trimmingCharacters(in: CharacterSet.whitespaces)
 			if tmpFieldWord == "" {
 				let noVerb = NSAlert()
 				noVerb.messageText = "No Word"
 				noVerb.informativeText = "Please enter a word."
-				noVerb.beginSheetModalForWindow(wordWindow, completionHandler: nil)
+				noVerb.beginSheetModal(for: wordWindow, completionHandler: nil)
 				return
 			}
 			
 			switch vocabSelectorSelected {
-			case .SingularNoun:
+			case .singularNoun:
 				controller.addSingularNoun(tmpFieldWord)
 				
-			case .PluralNoun:
+			case .pluralNoun:
 				controller.addPluralNoun(tmpFieldWord)
 				
-			case .Adjective:
+			case .adjective:
 				controller.addAdjective(tmpFieldWord)
 				
-			case .Adverb:
+			case .adverb:
 				controller.addAdverb(tmpFieldWord)
 				
-			case .MassiveNoun:
+			case .massiveNoun:
 				controller.addMassiveNoun(tmpFieldWord)
 				
-			case .ProperNoun:
+			case .properNoun:
 				controller.addProperNoun(tmpFieldWord)
 				
 			default:
@@ -175,11 +175,11 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 			wordWindow.orderOut(sender)
 		} else if sender?.window === verbWindow {
 			var i = 0
-			let thirdPersSingPres	= fieldThirdPersonSinglePresent.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-			let thirdPersPlurPres	= fieldThirdPersonPluralPresent.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-			let thirdPersPas		= fieldThirdPersonPast.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-			let thirPersPasPer		= fieldThirdPersonPastPerfect.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-			let thirPersPresCont	= fieldThirdPersonPresentCont.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+			let thirdPersSingPres	= fieldThirdPersonSinglePresent.stringValue.trimmingCharacters(in: CharacterSet.whitespaces)
+			let thirdPersPlurPres	= fieldThirdPersonPluralPresent.stringValue.trimmingCharacters(in: CharacterSet.whitespaces)
+			let thirdPersPas		= fieldThirdPersonPast.stringValue.trimmingCharacters(in: CharacterSet.whitespaces)
+			let thirPersPasPer		= fieldThirdPersonPastPerfect.stringValue.trimmingCharacters(in: CharacterSet.whitespaces)
+			let thirPersPresCont	= fieldThirdPersonPresentCont.stringValue.trimmingCharacters(in: CharacterSet.whitespaces)
 			
 			if thirdPersSingPres != "" {
 				i += 1;
@@ -207,12 +207,12 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 				let noVerb = NSAlert()
 				noVerb.messageText = "Incomplete Verb"
 				noVerb.informativeText = "The verb doesn't have all members filled. Please fill them out."
-				noVerb.beginSheetModalForWindow(verbWindow, completionHandler: nil)
+				noVerb.beginSheetModal(for: verbWindow, completionHandler: nil)
 			}
 		}
 	}
 	
-	@IBAction func cancelAddNonsensePart(sender: NSButton?) {
+	@IBAction func cancelAddNonsensePart(_ sender: NSButton?) {
 		if sender?.window === wordWindow {
 			configSheet.endSheet(wordWindow)
 			clearWordWindow()
@@ -224,29 +224,29 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		}
 	}
 	
-	@IBAction func closeNonsense(sender: AnyObject?) {
+	@IBAction func closeNonsense(_ sender: AnyObject?) {
 		let defaults = ScreenSaverDefaults(forModuleWithName: NonsenseDefaultsKey)!
 		if let respSender = sender as? NSControl {
 			if respSender.tag != 1 {
 				controller.saveSettings()
-				defaults.setInteger(maxNonsenses, forKey: NONSAtATime)
-				defaults.setDouble(nonsenseDuration, forKey: NONSDuration)
-				defaults.setBool(showBackground, forKey: NONSBGColor)
+				defaults.set(maxNonsenses, forKey: NONSAtATime)
+				defaults.set(nonsenseDuration, forKey: NONSDuration)
+				defaults.set(showBackground, forKey: NONSBGColor)
 				defaults.synchronize()
 				animationTimeInterval = nonsenseDuration
 				
 				nonsenses.removeAll()
 				
 				for _ in 0..<maxNonsenses {
-					let non = NonsenseObject(string: controller.randomSaying(), bounds: bounds, font: NSFont.systemFontOfSize(kPreviewFontSize))
+					let non = NonsenseObject(string: controller.randomSaying(), bounds: bounds, font: NSFont.systemFont(ofSize: kPreviewFontSize))
 					nonsenses.append(non)
 				}
 			} else {
 				//Clear settings by re-loading them
 				controller.loadSettings()
-				self.maxNonsenses = defaults.integerForKey(NONSAtATime)
-				self.nonsenseDuration = defaults.doubleForKey(NONSDuration)
-				self.showBackground = defaults.boolForKey(NONSBGColor)
+				self.maxNonsenses = defaults.integer(forKey: NONSAtATime)
+				self.nonsenseDuration = defaults.double(forKey: NONSDuration)
+				self.showBackground = defaults.bool(forKey: NONSBGColor)
 			}
 		} else if let sender = sender {
 			let nsSender: NSObject = (sender as? NSObject) ?? NSString(string: "Non-NSObject class (Maybe Swift)")
@@ -258,19 +258,19 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		NSApp.endSheet(configSheet) //Ignore warning: Sceen Saver's documentation says we *need* to call NSApp's version!
 	}
 
-	@IBAction func okayNonsense(sender: AnyObject?) {
+	@IBAction func okayNonsense(_ sender: AnyObject?) {
 		closeNonsense(sender)
 	}
 	
-	@IBAction func cancelNonsense(sender: NSButton?) {
+	@IBAction func cancelNonsense(_ sender: NSButton?) {
 		closeNonsense(sender)
 	}
 	
-	@IBAction func changeVocabView(sender: AnyObject) {
+	@IBAction func changeVocabView(_ sender: AnyObject) {
 		vocabList.reloadData()
 	}
 	
-	private var vocabSelectorSelected: VocabType {
+	fileprivate var vocabSelectorSelected: VocabType {
 		if let selectedCell = vocabSelector.selectedCell() {
 			if let selectedConverted = VocabType(rawValue: selectedCell.tag) {
 				return selectedConverted
@@ -295,30 +295,30 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 			}
 */
 		}
-		return .None
+		return .none
 	}
 	
-	public func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+	open func numberOfRows(in tableView: NSTableView) -> Int {
 		switch vocabSelectorSelected {
-		case .SingularNoun:
+		case .singularNoun:
 			return controller.singularNouns.count
 			
-		case .PluralNoun:
+		case .pluralNoun:
 			return controller.pluralNouns.count
 			
-		case .Adjective:
+		case .adjective:
 			return controller.adjectives.count
 			
-		case .Verb:
+		case .verb:
 			return controller.verbs.count
 			
-		case .Adverb:
+		case .adverb:
 			return controller.adverbs.count
 			
-		case .MassiveNoun:
+		case .massiveNoun:
 			return controller.massiveNouns.count
 			
-		case .ProperNoun:
+		case .properNoun:
 			return controller.properNouns.count
 			
 		default:
@@ -326,27 +326,27 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		}
 	}
 	
-	public func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
+	open func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
 		switch vocabSelectorSelected {
-		case .SingularNoun:
+		case .singularNoun:
 			return controller.singularNouns[row]
 			
-		case .PluralNoun:
+		case .pluralNoun:
 			return controller.pluralNouns[row]
 			
-		case .Adjective:
+		case .adjective:
 			return controller.adjectives[row]
 			
-		case .Verb:
+		case .verb:
 			return controller.verbs[row].description
 			
-		case .Adverb:
+		case .adverb:
 			return controller.adverbs[row]
 			
-		case .MassiveNoun:
+		case .massiveNoun:
 			return controller.massiveNouns[row]
 			
-		case .ProperNoun:
+		case .properNoun:
 			return controller.properNouns[row]
 			
 		default:
@@ -354,7 +354,7 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		}
 	}
 
-	@IBAction func removeSelectedWord(sender: AnyObject) {
+	@IBAction func removeSelectedWord(_ sender: AnyObject) {
 		let rows = vocabList.selectedRowIndexes
 		if rows.count == 0 {
 			NSBeep()
@@ -362,25 +362,25 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		}
 		
 		switch vocabSelectorSelected {
-		case .SingularNoun:
+		case .singularNoun:
 			controller.removeSingularNouns(indexes: rows)
 			
-		case .PluralNoun:
+		case .pluralNoun:
 			controller.removePluralNouns(indexes: rows)
 			
-		case .Adjective:
+		case .adjective:
 			controller.removeAdjectives(indexes: rows)
 			
-		case .Verb:
+		case .verb:
 			controller.removeVerbs(indexes: rows)
 			
-		case .Adverb:
+		case .adverb:
 			controller.removeAdverbs(indexes: rows)
 			
-		case .MassiveNoun:
+		case .massiveNoun:
 			controller.removeMassiveNouns(indexes: rows)
 			
-		case .ProperNoun:
+		case .properNoun:
 			controller.removeProperNouns(indexes: rows)
 			
 		default:
@@ -389,41 +389,41 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		vocabList.reloadData()
 	}
 
-	@IBAction func addWord(sender: AnyObject) {
-		func completion(response: NSModalResponse) {
+	@IBAction func addWord(_ sender: AnyObject) {
+		func completion(_ response: NSModalResponse) {
 			self.vocabList.reloadData()
 		}
 		
 		switch vocabSelectorSelected {
-		case .SingularNoun:
+		case .singularNoun:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "cat"
 			wordToAdd.stringValue = "Singular Noun"
 			configSheet.beginSheet(wordWindow, completionHandler: completion)
 			
-		case .PluralNoun:
+		case .pluralNoun:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "cats"
 			wordToAdd.stringValue = "Plural Noun"
 			configSheet.beginSheet(wordWindow, completionHandler: completion)
 
-		case .Adjective:
+		case .adjective:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "blue"
 			wordToAdd.stringValue = "Adjective"
 			configSheet.beginSheet(wordWindow, completionHandler: completion)
 			
-		case .Verb:
+		case .verb:
 			configSheet.beginSheet(verbWindow, completionHandler: completion)
 			
-		case .Adverb:
+		case .adverb:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "quickly"
 			wordToAdd.stringValue = "Adverb"
 			configSheet.beginSheet(wordWindow, completionHandler: completion)
 
-		case .MassiveNoun:
+		case .massiveNoun:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "water"
 			wordToAdd.stringValue = "Massive Noun"
 			configSheet.beginSheet(wordWindow, completionHandler: completion)
 
-		case .ProperNoun:
+		case .properNoun:
 			(fieldWord.cell as? NSTextFieldCell)?.placeholderString = "Al Gore"
 			wordToAdd.stringValue = "Proper Noun"
 			configSheet.beginSheet(wordWindow, completionHandler: completion)
@@ -433,9 +433,8 @@ public class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 		}
 	}
 
-	private static var oursreensaverDefaults: dispatch_once_t = 0
-	private static func ourSetDefaults() {
+	fileprivate static var ourSetDefaults: Void = {
 		let defaults = defaultsProvider()
-		defaults.registerDefaults([NONSAtATime: 3, NONSDuration: 2.7, NONSBGColor: true])
-	}
+		defaults.register(defaults: [NONSAtATime: 3, NONSDuration: 2.7, NONSBGColor: true])
+	}()
 }

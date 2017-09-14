@@ -13,8 +13,8 @@ class NonsenseView: NSView {
 	dynamic var nonDuration: CGFloat = 2.7 {
 		didSet {
 			refreshRate?.invalidate()
-			refreshRate = NSTimer(timeInterval: NSTimeInterval(nonDuration), target: self, selector: "reloadScreen:", userInfo:nil, repeats: true)
-			NSRunLoop.mainRunLoop().addTimer(refreshRate!, forMode: NSRunLoopCommonModes)
+			refreshRate = Timer(timeInterval: TimeInterval(nonDuration), target: self, selector: #selector(NonsenseView.reloadScreen(_:)), userInfo:nil, repeats: true)
+			RunLoop.main.add(refreshRate!, forMode: RunLoopMode.commonModes)
 		}
 	}
 	dynamic var nonNumber: Int = 5 {
@@ -38,11 +38,11 @@ class NonsenseView: NSView {
 	}
 	private var nonsenses = [NonsenseObject]()
 	private var settingsChanged = false
-	private var refreshRate: NSTimer! = nil
+	private var refreshRate: Timer! = nil
 
-    override func drawRect(dirtyRect: NSRect) {
-		super.drawRect(dirtyRect)
-		let theFont = NSFont.systemFontOfSize(kPreviewFontSize)
+	override func draw(_ dirtyRect: NSRect) {
+		super.draw(dirtyRect)
+		let theFont = NSFont.systemFont(ofSize: kPreviewFontSize)
 		if settingsChanged {
 			settingsChanged = false
 		} else {
@@ -56,7 +56,7 @@ class NonsenseView: NSView {
 	}
 	
 	func populateNonsenses() {
-		let theFont = NSFont.systemFontOfSize(kPreviewFontSize)
+		let theFont = NSFont.systemFont(ofSize: kPreviewFontSize)
 		for _ in 0 ..< nonNumber {
 			let non = NonsenseObject(string: nonsenseController.randomSaying(), bounds: self.bounds, font: theFont)
 			nonsenses.append(non)
@@ -79,15 +79,15 @@ class NonsenseView: NSView {
 		populateNonsenses()
 	}
 	
-	@objc(reloadScreen:) private func reloadScreen(theTime: NSTimer?) {
+	@objc(reloadScreen:) private func reloadScreen(_ theTime: Timer?) {
 		self.needsDisplay = true
 	}
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		
-		refreshRate = NSTimer(timeInterval: NSTimeInterval(nonDuration), target: self, selector: "reloadScreen:", userInfo:nil, repeats: true)
-		NSRunLoop.mainRunLoop().addTimer(refreshRate!, forMode: NSRunLoopCommonModes)
+		refreshRate = Timer(timeInterval: TimeInterval(nonDuration), target: self, selector: #selector(NonsenseView.reloadScreen(_:)), userInfo:nil, repeats: true)
+		RunLoop.main.add(refreshRate!, forMode: RunLoopMode.commonModes)
 	}
 	
 }
