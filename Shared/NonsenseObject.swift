@@ -28,7 +28,7 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 	let nonsense: String
 	let backgroundColor: NSColor
 	let foregroundColor: NSColor
-	let fontAttributes: [NSAttributedStringKey: Any]
+	let fontAttributes: [NSAttributedString.Key: Any]
 	let placement: NSRect
 
 	var textPosition: NSRect {

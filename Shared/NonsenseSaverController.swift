@@ -129,7 +129,7 @@ internal class NonsenseSaverController: NSObject {
 	
 	// Simple test to see if a noun ends with an 's'
 	private func nounOwningObject(_ theNoun: String) -> String {
-		let endNounPos = theNoun.characters.index(before: theNoun.endIndex)
+		let endNounPos = theNoun.index(before: theNoun.endIndex)
 		let endNounChar = theNoun[endNounPos]
 		switch endNounChar {
 		case "s":
@@ -375,7 +375,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeVerbsInArray:) func removeVerbs(in arrays: [Verb]) {
 		var idxSet = IndexSet()
 		for aVerb in arrays {
-			if let anIdx = verbs.index(of: aVerb) {
+			if let anIdx = verbs.firstIndex(of: aVerb) {
 				idxSet.insert(anIdx)
 			}
 		}
@@ -385,7 +385,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removePluralNounsInArray:) func removePluralNouns(in arrays: [String]) {
 		var idxSet = IndexSet()
 		for aVerb in arrays {
-			if let anIdx = pluralNouns.index(of: aVerb) {
+			if let anIdx = pluralNouns.firstIndex(of: aVerb) {
 				idxSet.insert(anIdx)
 			}
 		}
@@ -395,7 +395,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeSingularNounsInArray:) func removeSingularNouns(in arrays: [String]) {
 		var idxSet = IndexSet()
 		for aVerb in arrays {
-			if let anIdx = singularNouns.index(of: aVerb) {
+			if let anIdx = singularNouns.firstIndex(of: aVerb) {
 				idxSet.insert(anIdx)
 			}
 		}
@@ -405,7 +405,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeProperNounsInArray:) func removeProperNouns(in arrays: [String]) {
 		var idxSet = IndexSet()
 		for aVerb in arrays {
-			if let anIdx = properNouns.index(of: aVerb) {
+			if let anIdx = properNouns.firstIndex(of: aVerb) {
 				idxSet.insert(anIdx)
 			}
 		}
@@ -415,7 +415,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeAdverbsInArray:) func removeAdverbs(in arrays: [String]) {
 		var idxSet = IndexSet()
 		for aVerb in arrays {
-			if let anIdx = adverbs.index(of: aVerb) {
+			if let anIdx = adverbs.firstIndex(of: aVerb) {
 				idxSet.insert(anIdx)
 			}
 		}
@@ -425,7 +425,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeAdjectivesInArray:) func removeAdjectives(in arrays: [String]) {
 		var idxSet = IndexSet()
 		for aVerb in arrays {
-			if let anIdx = adjectives.index(of: aVerb) {
+			if let anIdx = adjectives.firstIndex(of: aVerb) {
 				idxSet.insert(anIdx)
 			}
 		}
@@ -435,7 +435,7 @@ internal class NonsenseSaverController: NSObject {
 	@objc(removeMassiveNounsInArray:) func removeMassiveNouns(in arrays: [String]) {
 		var idxSet = IndexSet()
 		for aVerb in arrays {
-			if let anIdx = massiveNouns.index(of: aVerb) {
+			if let anIdx = massiveNouns.firstIndex(of: aVerb) {
 				idxSet.insert(anIdx)
 			}
 		}

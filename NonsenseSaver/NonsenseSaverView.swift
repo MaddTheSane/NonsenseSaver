@@ -87,7 +87,7 @@ open class NonsenseSaverView: ScreenSaverView, NSTableViewDataSource {
 	open override var configureSheet: NSWindow? {
 		if configSheet == nil {
 			let ourBundle = Bundle(for: type(of: self))
-			ourBundle.loadNibNamed(NSNib.Name(rawValue: "NonsenseSettings"), owner: self, topLevelObjects: &nibArray)
+			ourBundle.loadNibNamed("NonsenseSettings", owner: self, topLevelObjects: &nibArray)
 			if let creditsPath = ourBundle.path(forResource: "Credits", ofType: "rtf") {
 				credits.readRTFD(fromFile: creditsPath)
 			}

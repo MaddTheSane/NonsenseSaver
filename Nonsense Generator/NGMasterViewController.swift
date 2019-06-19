@@ -47,7 +47,7 @@ class NGMasterViewController: UITableViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-	func insertNewObject(_ sender: AnyObject) {
+	@objc func insertNewObject(_ sender: AnyObject) {
 		let newNons = nonsenseController.randomSaying()
 		objects.insert(newNons, at: 0)
 		let indexPath = IndexPath(row: 0, section: 0)
@@ -95,7 +95,7 @@ class NGMasterViewController: UITableViewController {
 		return true
 	}
 
-	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 			objects.remove(at: indexPath.row)
 			tableView.deleteRows(at: [indexPath], with: .fade)

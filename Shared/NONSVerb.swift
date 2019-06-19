@@ -40,9 +40,14 @@ final class Verb: NSObject {
 	let thirdPersonPastPerfect: String
 	let thirdPersonPresentCont: String
 	
-	override var hashValue: Int {
-		return thirdPersonPast.hashValue ^ thirdPersonPastPerfect.hashValue ^ thirdPersonPluralPresent.hashValue ^
-			thirdPersonPresentCont.hashValue ^ thirdPersonSinglePresent.hashValue
+	override var hash: Int {
+		var hash = Hasher()
+		thirdPersonPast.hash(into: &hash)
+		thirdPersonPastPerfect.hash(into: &hash)
+		thirdPersonPluralPresent.hash(into: &hash)
+		thirdPersonPresentCont.hash(into: &hash)
+		thirdPersonSinglePresent.hash(into: &hash)
+		return hash.finalize()
 	}
 	
 	override var description: String {

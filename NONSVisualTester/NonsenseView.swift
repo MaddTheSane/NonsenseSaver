@@ -14,7 +14,7 @@ class NonsenseView: NSView {
 		didSet {
 			refreshRate?.invalidate()
 			refreshRate = Timer(timeInterval: TimeInterval(nonDuration), target: self, selector: #selector(NonsenseView.reloadScreen(_:)), userInfo:nil, repeats: true)
-			RunLoop.main.add(refreshRate!, forMode: RunLoopMode.commonModes)
+			RunLoop.main.add(refreshRate!, forMode: RunLoop.Mode.common)
 		}
 	}
 	@objc dynamic var nonNumber: Int = 5 {
@@ -87,7 +87,7 @@ class NonsenseView: NSView {
 		super.awakeFromNib()
 		
 		refreshRate = Timer(timeInterval: TimeInterval(nonDuration), target: self, selector: #selector(NonsenseView.reloadScreen(_:)), userInfo:nil, repeats: true)
-		RunLoop.main.add(refreshRate!, forMode: RunLoopMode.commonModes)
+		RunLoop.main.add(refreshRate!, forMode: RunLoop.Mode.common)
 	}
 	
 }
