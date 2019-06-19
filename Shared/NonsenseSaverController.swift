@@ -112,13 +112,13 @@ internal class NonsenseSaverController: NSObject {
 		massiveNouns.removeAll(keepingCapacity: true)
 		
 		//load values from settings.
-		verbs += GetVerbsFromSaved(defaults.array(forKey: NONSVerbList) as! [[String: String]])
-		pluralNouns += defaults.array(forKey: NONSPluralNounList) as! [String]
-		singularNouns += defaults.array(forKey: NONSSingularNounList) as! [String]
-		properNouns += defaults.array(forKey: NONSProperNounList) as! [String]
-		adverbs += defaults.array(forKey: NONSAdverbList) as! [String]
-		adjectives += defaults.array(forKey: NONSAdjectiveList) as! [String]
-		massiveNouns += defaults.array(forKey: NONSMassiveNounList) as! [String]
+		verbs += GetVerbsFromSaved(defaults.array(forKey: NONSVerbList) as? [[String: String]] ?? [])
+		pluralNouns += defaults.stringArray(forKey: NONSPluralNounList) ?? []
+		singularNouns += defaults.stringArray(forKey: NONSSingularNounList) ?? []
+		properNouns += defaults.stringArray(forKey: NONSProperNounList) ?? []
+		adverbs += defaults.stringArray(forKey: NONSAdverbList) ?? []
+		adjectives += defaults.stringArray(forKey: NONSAdjectiveList) ?? []
+		massiveNouns += defaults.stringArray(forKey: NONSMassiveNounList) ?? []
 	}
 	
 	// Simple test to see if a noun ends with an 's'
