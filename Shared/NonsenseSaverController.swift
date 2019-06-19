@@ -24,12 +24,6 @@ let NONSProperNounList = "Proper Nouns"
 let NONSMassiveNounList = "Massive Nouns"
 let NONSInterjections = "Interjections"
 
-/// Get a random object in an array
-internal func randObject<X>(_ anArray: [X]) -> X {
-	let aRand = Int(arc4random_uniform(UInt32(anArray.count)))
-	return anArray[aRand]
-}
-
 private func PrepareVerbsForSaving(_ toSave: [Verb]) -> [[String: String]] {
 	func PrepareVerbForSaving(_ toSave: Verb) -> [String: String] {
 		return [ThirdPersonPastKey: toSave.thirdPersonPast,
@@ -141,59 +135,59 @@ internal class NonsenseSaverController: NSObject {
 	}
 	
 	func randomVerb() -> Verb {
-		return randObject(verbs);
+		return verbs.randomElement()!
 	}
 	
 	func randomPluralNoun() -> String {
-		return randObject(pluralNouns);
+		return pluralNouns.randomElement()!
 	}
 	
 	func randomSingularNoun() -> String {
-		return randObject(singularNouns);
+		return singularNouns.randomElement()!
 	}
 	
 	func randomProperNoun() -> String {
-		return randObject(properNouns);
+		return properNouns.randomElement()!
 	}
 	
 	func randomAdverb() -> String {
-		return randObject(adverbs);
+		return adverbs.randomElement()!
 	}
 	
 	func randomAdjective() -> String {
-		return randObject(adjectives);
+		return adjectives.randomElement()!
 	}
 	
 	func randomMassiveNoun() -> String {
-		return randObject(massiveNouns);
+		return massiveNouns.randomElement()!
 	}
 	
 	func randomPronoun() -> String {
-		return randObject(pronouns);
+		return pronouns.randomElement()!
 	}
 	
 	func randomConjugate() -> String {
-		return randObject(conjugates);
+		return conjugates.randomElement()!
 	}
 	
 	func randomAmount() -> String {
-		return randObject(amounts);
+		return amounts.randomElement()!
 	}
 	
 	func randomRelativeAdjective() -> String {
-		return randObject(relativeAdjectives);
+		return relativeAdjectives.randomElement()!
 	}
 	
 	func randomDeterminer() -> String {
-		return randObject(determiners);
+		return determiners.randomElement()!
 	}
 	
 	func randomComparative() -> String {
-		return randObject(comparatives);
+		return comparatives.randomElement()!
 	}
 
 	func randomNoun() -> String {
-		return (arc4random_uniform(2)) == 1 ? randomSingularNoun() : randomProperNoun()
+		return Bool.random() ? randomSingularNoun() : randomProperNoun()
 	}
 	
 	private lazy var nonsenseGenList: Array<() -> String> = {
@@ -251,7 +245,7 @@ internal class NonsenseSaverController: NSObject {
 	
 	func randomSaying() -> String {
 		//FIXME: this is where it falls short. There needs to be a better way of generating nonsense than the one that I'm using right here.
-		return randObject(self.nonsenseGenList)()
+		return self.nonsenseGenList.randomElement()!()
 			//nonsensestring = "The developer's brain farted \(randomAdverb()), producing this error.";
 	}
 

@@ -14,25 +14,6 @@ let ThirdPersonPastKey = "ThirdPersonPast";
 let ThirdPersonPastPerfectKey = "ThirdPersonPastPerfect";
 let ThirdPersonPresentContKey = "ThirdPersonPresentCont";
 
-func ==(lhs: Verb, rhs: Verb) -> Bool {
-	if lhs.thirdPersonPast != rhs.thirdPersonPast {
-		return false
-	}
-	if lhs.thirdPersonSinglePresent != rhs.thirdPersonSinglePresent {
-		return false
-	}
-	if lhs.thirdPersonPluralPresent != rhs.thirdPersonPluralPresent {
-		return false
-	}
-	if rhs.thirdPersonPastPerfect != lhs.thirdPersonPastPerfect {
-		return false
-	}
-	if lhs.thirdPersonPresentCont != rhs.thirdPersonPresentCont {
-		return false
-	}
-	return true
-}
-
 final class Verb: NSObject {
 	let thirdPersonSinglePresent: String
 	let thirdPersonPluralPresent: String
@@ -91,6 +72,25 @@ final class Verb: NSObject {
 		}
 		
 		self.init(singlePresent: array[0], pluralPresent: array[1], past: array[2], pastPerfect: array[3], presentCont: array[4])
+	}
+	
+	static func ==(lhs: Verb, rhs: Verb) -> Bool {
+		if lhs.thirdPersonPast != rhs.thirdPersonPast {
+			return false
+		}
+		if lhs.thirdPersonSinglePresent != rhs.thirdPersonSinglePresent {
+			return false
+		}
+		if lhs.thirdPersonPluralPresent != rhs.thirdPersonPluralPresent {
+			return false
+		}
+		if rhs.thirdPersonPastPerfect != lhs.thirdPersonPastPerfect {
+			return false
+		}
+		if lhs.thirdPersonPresentCont != rhs.thirdPersonPresentCont {
+			return false
+		}
+		return true
 	}
 }
 

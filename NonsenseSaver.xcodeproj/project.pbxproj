@@ -71,13 +71,13 @@
 		5549DE731350D5CD00745EF3 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
 		5556EFA918E0B46000B49E98 /* Nonsense Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nonsense Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5556EFAF18E0B46000B49E98 /* Nonsense Generator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Nonsense Generator-Info.plist"; sourceTree = "<group>"; };
-		5556EFB118E0B46000B49E98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5556EFB118E0B46000B49E98 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5556EFB518E0B46000B49E98 /* Nonsense Generator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nonsense Generator-Prefix.pch"; sourceTree = "<group>"; };
 		5556EFC518E0B46000B49E98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5556EFCB18E0B46000B49E98 /* Nonsense GeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nonsense GeneratorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5556EFCC18E0B46000B49E98 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5556EFD418E0B46000B49E98 /* Nonsense GeneratorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Nonsense GeneratorTests-Info.plist"; sourceTree = "<group>"; };
-		5556EFD618E0B46000B49E98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5556EFD618E0B46000B49E98 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5556EFD818E0B46000B49E98 /* Nonsense_GeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nonsense_GeneratorTests.m; sourceTree = "<group>"; };
 		557B1DB719F04C58009DFEA5 /* NonsenseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonsenseObject.swift; sourceTree = "<group>"; };
 		55882B5F121CB53400CB16C6 /* NonsenseTester */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NonsenseTester; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,7 +92,7 @@
 		55BBE3531A034CB500DDE9F7 /* NGDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGDetailViewController.swift; sourceTree = "<group>"; };
 		55BBE3541A034CB500DDE9F7 /* NGMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGMasterViewController.swift; sourceTree = "<group>"; };
 		55BD4CDB1A6300A200940970 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		55BD4CE01A6300DA00940970 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		55BD4CE01A6300DA00940970 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55C3966015A20FCB005DBC66 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966215A20FCB005DBC66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		55C3966415A20FCB005DBC66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };

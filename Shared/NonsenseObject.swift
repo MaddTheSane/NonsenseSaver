@@ -16,7 +16,7 @@ let MaxNonsenseWidth: CGFloat = 350
 private let kNonsenseBorder: CGFloat = 8
 
 private func RandomFloatBetween(_ a: CGFloat, _ b: CGFloat) -> CGFloat {
-	return a + (b - a) * (CGFloat(arc4random()) / CGFloat(UInt32.max))
+	return CGFloat.random(in: a...b)
 }
 
 private func RandomPoint(forSize size: NSSize, withinRect rect: NSRect) -> NSPoint {
@@ -45,7 +45,7 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 		 (NSColor.brown, NSColor.purple)]
 	
 	class func randomColors(_ showBackgroundColor: Bool = true) -> (foreground: NSColor, background: NSColor) {
-		return randObject(randomColorArray)
+		return randomColorArray.randomElement()!
 /*
 		var bgColor: NSColor
 		var fgColor: NSColor
