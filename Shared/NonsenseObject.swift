@@ -15,13 +15,13 @@ let MaxNonsenseWidth: CGFloat = 350
 
 private let kNonsenseBorder: CGFloat = 8
 
-private func RandomFloatBetween(_ a: CGFloat, _ b: CGFloat) -> CGFloat {
+private func randomFloatBetween(_ a: CGFloat, _ b: CGFloat) -> CGFloat {
 	return CGFloat.random(in: a...b)
 }
 
-private func RandomPoint(forSize size: NSSize, withinRect rect: NSRect) -> NSPoint {
-	return NSPoint(x: RandomFloatBetween(rect.origin.x, rect.origin.x + rect.size.width - size.width),
-		y: RandomFloatBetween(rect.origin.y, rect.origin.y + rect.size.height - size.height))
+private func randomPoint(for size: NSSize, within rect: NSRect) -> NSPoint {
+	return NSPoint(x: randomFloatBetween(rect.origin.x, rect.origin.x + rect.size.width - size.width),
+		y: randomFloatBetween(rect.origin.y, rect.origin.y + rect.size.height - size.height))
 }
 
 final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertible {
@@ -31,13 +31,13 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 	let fontAttributes: [NSAttributedString.Key: Any]
 	let placement: NSRect
 
-	var textPosition: NSRect {
+	lazy var textPosition: NSRect = {
 		var returnRect = placement
 		returnRect = returnRect.insetBy(dx: kNonsenseBorder / 2, dy: kNonsenseBorder / 2)
 		return returnRect;
-	}
+	}()
 
-	fileprivate static let randomColorArray: [(foreground: NSColor, background: NSColor)] =
+	private static let randomColorArray: [(foreground: NSColor, background: NSColor)] =
 		[(NSColor.red, NSColor.yellow), (NSColor.green, NSColor.orange),
 		 (NSColor.blue, NSColor.magenta), (NSColor.cyan, NSColor.orange),
 		 (NSColor.yellow, NSColor.red), (NSColor.magenta, NSColor.blue),
@@ -122,7 +122,7 @@ final class NonsenseObject: CustomStringConvertible, CustomDebugStringConvertibl
 		let strRect = nonsense.boundingRect(with: NSSize(width: maxWidth, height: 0), options: [.usesFontLeading, .usesDeviceMetrics, .usesLineFragmentOrigin], attributes: fontAttributes).insetBy(dx: -kNonsenseBorder / 2, dy: -kNonsenseBorder / 2)
 		let strSize = strRect.size
 		
-		tmpPlace.origin = RandomPoint(forSize: strSize, withinRect: bound)
+		tmpPlace.origin = randomPoint(for: strSize, within: bound)
 		tmpPlace.size = strSize;
 		
 		placement = tmpPlace
